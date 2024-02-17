@@ -1,0 +1,86 @@
+[{
+    "studentid":1,
+    "userid":1,
+    "advisorid":1,
+    "firstName":"UUID 3", 
+    "lastName":"UUID 4",
+    "major":"UUID 4",
+    "classification":"Sophomore",
+    "liberalArts": [{
+        "courseCode": [],
+        "Grade": ["A","B","c","A","B+","A","B","C","B+","A"]
+
+    }],
+    "electives": [{
+        "courseCode": [],
+        "Grade": ["A","A","B+","A","C","B+","A","A","B","c"]
+    }],
+    "applicationArea": [{
+        "courseCode": [],
+        "Grade": ["A","A","B+","A","C","B+","A","A","B","c"]
+    }],
+    "GPA":3.5, //may not need GPA
+    "majorGPA": 3.7,
+    "atRisk": false,//may not need 
+    "notes":"...",
+    "tranferCredits":0
+    
+
+},{
+    "studentid":2,
+    "userid":2,
+    "advisorid":2,
+    "firstName":"UUID 3", 
+    "lastName":"UUID 4",
+    "major":"UUID 4",
+    "classification":"Junior",
+    "liberalArts": [{
+        "courseCode": [],
+        "Grade": ["A","B","c","A","B+","A","B","C","B+","A","A","B+","A","B","C","A","B","c","A","B+"]
+
+    }],
+    "electives": [{
+        "courseCode": [],
+        "Grade": ["A","A","B+","A","C","B+","A","A","B","C","A","B+","A","C","B+","B","C","B+","A","A"]
+    }],
+    "applicationArea": [{
+        "courseCode": [],
+        "Grade": ["A","A","B+","A","C","B+","A","A","B","C","B+","A","C","B+","A","c","B+","A","C","B+"]
+    }],
+    "GPA":3.5, //may not need GPA
+    "majorGPA": 3.7,
+    "atRisk": false,//may not need 
+    "notes":"...",
+    "tranferCredits":80
+    
+    },
+    {
+    "studentid":2,
+    "userid":2,
+    "advisorid":2,
+    "firstName":"UUID 3", 
+    "lastName":"UUID 4",
+    "major":"UUID 4",
+    "classification":"Junior",
+    "liberalArts": [{
+        "courseCode": [],
+        "Grade": []
+
+    }],
+    "electives": [{
+        "courseCode": [],
+        "Grade": []
+    }],
+    "applicationArea": [{
+        "courseCode": [],
+        "Grade": []
+    }],
+    "GPA":3.5, //may not need GPA
+    "majorGPA": 3.7,
+    "atRisk": false,//may not need 
+    "notes":"...",
+    "tranferCredits":47
+    
+    }
+    
+]
