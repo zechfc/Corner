@@ -42,13 +42,10 @@ public class UserList {
         return userList;
     }
 
-    public User getUser(String userID){
-        return new User(userID, null, null, null, null, null);
-    }
 
     public User getUser(String userName, String password){
         //Checks each user in users array list
-        for(User user : users){
+        for(User user : userList){
             if(user.getUsername().equals(userName) && user.getPassword().equals(password)){
                 return user;
             } //checks if usernames are equals and passwords are equal
@@ -72,7 +69,4 @@ public class UserList {
 
     }
 
-    public void addUser(User user){
-        user = new User(null, null, null, null);
-    }
-}
+
