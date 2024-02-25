@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class MajorList {
     private static MajorList majorList;
-    private static ArrayList<User> majors;
+    private static ArrayList<Major> majors;
 
     private MajorList(){
         majors = new ArrayList<Major>();
@@ -16,7 +16,7 @@ public class MajorList {
     }
 
     public Major getMajor(String major){
-        return new Major(null, null, null, null, null, null, null);
+        return new Major(null, null, null, null, null);
     }
 
     public void setMajor(){

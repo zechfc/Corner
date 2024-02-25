@@ -1,13 +1,16 @@
 import java.util.ArrayList;
 
+import javax.xml.crypto.Data;
+
 public class UserList {
     private static UserList userList;
-    private static ArrayList<User> users;
-    private static ArrayList<User> students;
+    private  ArrayList<User> users;
+    private  ArrayList<User> students;
 
     private UserList(){
-        users = new ArrayList<User>();
-        students = new ArrayList<User>();
+        users = Database.getUsers();
+        //users = new ArrayList<User>();
+        //students = new ArrayList<User>();
     }
 
     public static UserList getInstance(){
@@ -18,6 +21,7 @@ public class UserList {
     }
 
     public User getUser(String userID){
+        if(!haveUser(userID)) return null;
         return new User(userID, null, null, null, null, null);
     }
 
@@ -27,5 +31,9 @@ public class UserList {
 
     public void editUser(String user){
 
+    }
+
+    public boolean haveUser(String userName){
+        return true;
     }
 }

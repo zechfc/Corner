@@ -5,7 +5,7 @@ public class Database {
 	public static ArrayList<User> getUsers(){
 		return new ArrayList<User>();
 	}
-	public static ArrayList<Class> getClass(){
+	public static ArrayList<Class> getClasses(){
 		return new ArrayList<Class>();
 	}
 	public static ArrayList<Major> getMajor(){
