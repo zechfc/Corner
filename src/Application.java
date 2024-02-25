@@ -4,58 +4,115 @@ public class Application {
     private User user;
 
     public Application(){
-
+        this.userList = UserList.getInstance();
+        this.classList = ClassList.getInstance();
     }
 
-    public User login(String userName, String password){
-        return user;
+    public boolean login(String userName, String password){
+        User loggedInUser = userList.getUser(userName, password);
+        if(loggedInUser != null){
+            user = loggedInUser;
+            return true;
+        }
+        return false;
     }
 
     public User createAccount(String userName, String password, String firstName, String lastName){
+        user = new User(userName, firstName, lastName, password);
+        userList.addUser(user);
         return user;
     }
 
-    public MajorMap getMajorMap(String userID){
-        return null;
+    public boolean getMajorMap(String userID){
+        if(user != null && user.getUserID().equals(userID)){
+            if(user instanceof Student){
+                System.out.println(((Student) user).getMajorMap());
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void editMajorMap(String userID){
-
+    public boolean editMajorMap(String userID, MajorMap map){
+        if(user != null && user.getUserID().equals(userID)){
+            if(user instanceof Student){
+                ((Student) user).editMajorMap(map);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public SemesterPlan getSemesterPlan(){
-        return null;
+    public boolean getSemesterPlan(){
+        if(user != null){
+            if(user instanceof Student){
+                System.out.println(((Student) user).getSemesterPlan());
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void editAdvisorNote(String note){
-
+    public boolean editAdvisorNote(String note){
+        if(user != null){
+            if(user instanceof Student){
+                ((Student) user).editAdvisorNote(note);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void getAdvisorNote(String userID){
-
+    public boolean getAdvisorNote(String userID){
+        if(user !=null && user.getUserID().equals(userID)){
+            if(user instanceof Student){
+                String advisorNote = ((Student) user).getAdvisorNote();
+                System.out.println("Advisor note: " + advisorNote);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void addStudent(Advisor advisor, String userType){
-
+    public boolean addStudent(Advisor advisor, String userID, String userType){
+        if(user != null && user.equals(advisor) && isAdmin(userType) && advisor != null){
+            Student studentToAdd = advisor.addStudent(userID);
+            if(studentToAdd != null){
+                advisor.addStudent(studentToAdd);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void removeStudent(String userID){
-
+    public boolean removeStudent(Advisor advisor, String userID, String userType){
+        if(user != null && user.equals(advisor) && isAdmin(userType) && advisor != null){
+            return advisor.removeStudent(userID);
+        }
+        return false;
     }
 
     public Student getStudent(String userID){
+        User user = userList.getUser(userID);
+        if(user != null && user instanceof Student){
+            return (Student) user;
+        }
         return null;
     }
 
     public Student getStudent(String firstName, String lastName){
+        User user = userList.getUser(firstName, lastName);
+        if(user != null && user instanceof Student){
+            return (Student) user;
+        }
         return null;
     }
 
     public Advisor getAdvisor(){
-        return null;
+        return (Advisor) user;
     }
 
-    public boolean isAdmin(){
-        return false;
+    public boolean isAdmin(String userType){
+        return user != null && userType == "Admin";
     }
 }

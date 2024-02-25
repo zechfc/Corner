@@ -42,6 +42,19 @@ public class UserList {
         return userList;
     }
 
+    public User getUser(String userID){
+        return new User(userID, null, null, null, null, null);
+    }
+
+    public User getUser(String userName, String password){
+        //Checks each user in users array list
+        for(User user : users){
+            if(user.getUsername().equals(userName) && user.getPassword().equals(password)){
+                return user;
+            } //checks if usernames are equals and passwords are equal
+        }
+        return null;
+    }
 
     public void setUser(){
         
@@ -57,5 +70,9 @@ public class UserList {
         userList.add(new User(UserID, firstName, lastName, age, email, userType, userType, userType));
         DataWriter.saveUsers();
 
+    }
+
+    public void addUser(User user){
+        user = new User(null, null, null, null);
     }
 }

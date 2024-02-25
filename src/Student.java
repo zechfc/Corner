@@ -4,15 +4,16 @@ import java.util.HashMap;
 public class Student extends User{
     private HashMap<Class, grade> classesTaken;
     private ArrayList<Class> currentClasses;
-    private SemesterPlan SemesterPlan;
+    private SemesterPlan semesterPlan;
     private MajorMap majorMap;
     private Major major;
     private String concentration;
     private double majorGPA;
     private double overallGPA;
+    private String age;
     private String firstName;
     private String lastName;
-    private String userName;
+    private String userName; //email
     private String userID;
     private String userType;
     private String classLevel;
@@ -23,8 +24,10 @@ public class Student extends User{
     private Advisor advisor;
     private String advisorNote;
 
-    public Student(String userName, String firstName, String lastName, String userID, Advisor advisor, String userType, Major major, String concentration){
-        this.userName = userName;
+    public Student(String userName, String age, String firstName, String lastName, String userID, Advisor advisor, String userType, Major major, String concentration){
+        super(userID, firstName, lastName, age, userName, userType); //User(userID, firstName, lastName, age, userName, userType)
+        this.userName = userName; //email
+        this.age = age;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userID = userID;
@@ -77,5 +80,21 @@ public class Student extends User{
 
     public boolean updateFailureRisk(){
         failureRisk = true;
+    }
+
+    public void editMajorMap(MajorMap newMajorMap){
+        majorMap = newMajorMap;
+    }
+
+    public SemesterPlan getSemesterPlan(){
+        return semesterPlan;
+    }
+
+    public void editAdvisorNote(String note){
+        advisorNote = note;
+    }
+
+    public String getAdvisorNote(){
+        return advisorNote;
     }
 }
