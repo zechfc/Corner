@@ -59,7 +59,7 @@ public class User {
   public String getMiddleName() {
 		return lastName;
 	}
-    protected String getPassword() {
+    public String getPassword() {
 		return password;
 	}
 
