@@ -8,13 +8,15 @@ public class User {
     private String password;
 
 
-    public User(String userID, String firstName, String lastName, String age, String email, String userType){
+    public User(String userID, String firstName, String lastName, String age, String email, String userType, String password){
         this.userID = userID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.email = email;
         this.userType = userType;
+        this.password = password;
+
     }
     public String getUserName() {
 		return email;
