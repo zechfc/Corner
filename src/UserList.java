@@ -46,7 +46,7 @@ public class UserList {
     public User getUser(String userName, String password){
         //Checks each user in users array list
         for(User user : userList){
-            if(user.getUsername().equals(userName) && user.getPassword().equals(password)){
+            if(user.getUserName().equals(userName) && user.getPassword().equals(password)){
                 return user;
             } //checks if usernames are equals and passwords are equal
         }
@@ -68,5 +68,5 @@ public class UserList {
         DataWriter.saveUsers();
 
     }
-
+}
 
