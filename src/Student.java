@@ -98,7 +98,9 @@ public class Student extends User{
     }
 
     public SemesterPlan getSemesterPlan(){
-        return semesterPlan;
+        SemesterPlan(major, classesTaken); 
+        //SemesterPlan needs an ArrayList of completedCourses
+        //Student only stores the hashmap of classesTaken
     }
 
     public void editAdvisorNote(String note){
