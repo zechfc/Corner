@@ -15,7 +15,7 @@ public class DataWriter extends DataConstants {
 		
 		//creating all the json objects
 		for(int i=0; i< users.size(); i++) {
-			jsonUsers.add(getUserJSON(users.get(i)));
+			jsonUsers.add(getUserJSON(users.get(i), null, null));
 		}
 		
 		//Write JSON file
@@ -31,7 +31,7 @@ public class DataWriter extends DataConstants {
 
 	
 	
-	public static JSONObject getUserJSON(User user) {	
+	public static JSONObject getUserJSON(User user, Student student, Advisor advisor) {	
 		JSONObject userDetails = new JSONObject();
 		userDetails.put(USER_ID, user.getUserID().toString());
 		userDetails.put(USER_USER_NAME, user.getUserName());
@@ -42,8 +42,47 @@ public class DataWriter extends DataConstants {
 		userDetails.put(USER_PASSWORD, user.getPassword());
 		userDetails.put(USER_AGE, user.getUserAge());
 
+		if (user.getUserType().equalsIgnoreCase("student")) {
 
+			getStudentJSON(student);
+
+		}
+		if (user.getUserType().equalsIgnoreCase("advisor")) {
+
+			userDetails.put(ADVISOR_ID, user.getUserID().toString());
+			getAdvisorJSON(advisor);
+
+		}
         
         return userDetails;
 	}
+
+	public static JSONObject getStudentJSON(Student student) {	
+		JSONObject studentDetails = new JSONObject();
+
+
+		
+		studentDetails.put(ADVISOR_ID, student.getAdvisor());
+			studentDetails.put(MAJOR, student.getMajor());
+			studentDetails.put(CURRENT_YEAR, student.getCurrentYear());
+			studentDetails.put(FALL, "Fall"); //ENUM
+			studentDetails.put(SPRING, "Spring"); //ENUM
+			studentDetails.put(SUMMER, "Summer"); //ENUM
+			studentDetails.put(CLASSIFICATION, "Junior");
+			studentDetails.put(ADVISOR_NOTE, student.getAdvisorNote());
+			studentDetails.put(TRANSFER_CREDITS, student.getTransferCredits());
+
+		
+        return studentDetails;
+	}
+
+	public static JSONObject getAdvisorJSON(Advisor advisor) {	
+		JSONObject advisorDetails = new JSONObject();
+		
+		advisorDetails.put(STUDENT_LIST, advisor.getStudentList());	
+
+		
+        return advisorDetails;
+	}
+	
 }

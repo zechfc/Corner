@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class Student extends User{
     private HashMap<Class, grade> classesTaken;
@@ -14,8 +15,8 @@ public class Student extends User{
     private String firstName;
     private String lastName;
     private String userName; //email
-    private String userID;
-    private String userType;
+    private UUID userID;
+    //private String userType;
     private String classLevel;
     private boolean failureRisk;
     private int totalCredits;
@@ -24,8 +25,8 @@ public class Student extends User{
     private Advisor advisor;
     private String advisorNote;
 
-    public Student(String userName, String age, String firstName, String lastName, String userID, Advisor advisor, String userType, Major major, String concentration){
-        super(userID, firstName, lastName, age, userName, userType); //User(userID, firstName, lastName, age, userName, userType)
+    public Student(String userName, String age, String firstName, String lastName, String userID, Advisor advisor,  Major major, String concentration){
+        super(userID, firstName, lastName, age, userName); //User(userID, firstName, lastName, age, userName, userType)
         this.userName = userName; //email
         this.age = age;
         this.firstName = firstName;
@@ -74,6 +75,14 @@ public class Student extends User{
         return advisor;
     }
 
+    public Major getMajor(){
+        return major;
+    }
+
+    public Student getStudent(){
+        Student student;
+        return student;
+    }
     public MajorMap getMajorMap(){
         return majorMap;
     }
@@ -97,4 +106,14 @@ public class Student extends User{
     public String getAdvisorNote(){
         return advisorNote;
     }
+
+    public String getCurrentYear() {
+        // TODO Auto-generated method stub
+        return "2024";
+    }
+
+    public int getTransferCredits(){
+        return transferCredits;
+    }
+    
 }

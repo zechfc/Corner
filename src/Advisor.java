@@ -1,7 +1,10 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Advisor {
     private ArrayList<Student> studentsSupervising;
+    private UUID userID;
+
 
     public Advisor(String userName, String firstName, String lastName, String userID, int userRolse){
 
@@ -19,4 +22,8 @@ public class Advisor {
     public void removeStudent(String userID){}
 
     public void editAdvisorNote(String userID){}
+
+    public ArrayList<Student> getStudentList() {
+        return studentsSupervising;
+    }
 }

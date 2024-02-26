@@ -28,10 +28,35 @@ public class DataLoader extends DataConstants{
 				String age = ((String)userJSON.get(USER_AGE));
 				String password = (String)userJSON.get(USER_PASSWORD);
 				
+				if (Usertype.equalsIgnoreCase("student")) {
+					
+					JSONObject StudentJSON = (JSONObject)userListJSON.get(i);
+					UUID advisorid = (UUID)StudentJSON.get(ADVISOR_ID);
+					String major = (String)StudentJSON.get(MAJOR);
+					String classification = (String)StudentJSON.get(CLASSIFICATION);
+					String fall = (String)StudentJSON.get(FALL);
+					String summer = (String)StudentJSON.get(SUMMER);
+					String spring = (String)StudentJSON.get(SPRING);
+					String advisorNote = (String)StudentJSON.get(ADVISOR_NOTE);
+					String currentYear = (String)StudentJSON.get(CURRENT_YEAR);
+					int transferCredits = (int)StudentJSON.get(TRANSFER_CREDITS);
+					new Student(advisorNote, age, firstName, lastName, Usertype, null, null, currentYear);
+
+				}
+				if (Usertype.equalsIgnoreCase("advisor")) {
+					
+					JSONObject AdvisorJSON = (JSONObject)userListJSON.get(i);
+					UUID userid = (UUID)AdvisorJSON.get(ADVISOR_ID); //or should this be userID?
+					ArrayList<Student> studentList = (ArrayList)AdvisorJSON.get(STUDENT_LIST);
+					
+					new Advisor(password, firstName, lastName, Usertype, i);
+
+				}
+
+				
 				users.add(new User(Userid, email, firstName,middleName, lastName, age, password, Usertype));
 			}
 			
-			return users;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
