@@ -4,20 +4,14 @@ import java.util.UUID;
 
 public class Advisor extends User{
 
-    private UUID userID;
-    private String firstName;
-    private String lastName;
-    private String middleName;
-    private String age;
-    private String email;
     private boolean admin;
-    private String password;
     private ArrayList<Student> studentsSupervising;
 
 
     public Advisor( UUID userID,ArrayList<Student> studentsSupervising, String firstName, String middleName, String lastName, String age, String email, 
         boolean admin, String password){
-        super(userID, firstName, middleName, lastName, age, email, admin, password);
+        super(userID, firstName, middleName, lastName, age, email, password);
+        this.admin = admin;
         this.studentsSupervising = studentsSupervising;
     }
 
@@ -49,9 +43,6 @@ public class Advisor extends User{
         return studentsSupervising;
     }
 
-    public String getAdvisorName() {
-        return email;
-      }
 
       public Boolean getAdmin() {
         return admin;

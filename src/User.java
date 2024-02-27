@@ -1,36 +1,22 @@
 import java.util.UUID;
 
 public class User {
-  private UUID userID;
-  private String firstName;
-  private String lastName;
-  private String middleName;
-  private String age;
-  private String email;
-  private String userType;
-  private String password;
-
-  //exisitng accounts loaded form JSON
-  /*public User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password){
-    this.userID = userID;
-    this.firstName = firstName;
-    this.middleName = middleName;
-    this.lastName = lastName;
-    this.age = age;
-    this.email = email;
-    this.userType = userType;
-    this.password = password;
-  }*/
+  protected UUID userID;
+  protected String firstName;
+  protected String lastName;
+  protected String middleName;
+  protected String age;
+  protected String email;
+  protected String password;
 
   //new account
-  public User(String email, String firstName, String middleName, String lastName, String age, String userType, String password){
+  public User(UUID userID2, String firstName, String middleName, String lastName, String age, String email, String password){
     this.userID = UUID.randomUUID();
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
     this.age = age;
     this.email = email;
-    this.userType = userType;
     this.password = password;
   }
     
@@ -38,9 +24,6 @@ public class User {
     return email;
   }
 
-  public String getUserType() {
-    return userType;
-  }
 
   public String getUserAge(){
     return age;

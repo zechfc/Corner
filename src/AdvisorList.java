@@ -21,22 +21,14 @@ public class AdvisorList {
 
     public boolean haveAdvisor(String email){
         for(Advisor Advisor : AdvisorList )  {
-            if(Advisor.getAdvisorName().equals(email)){
+            if(Advisor.getUserName().equals(email)){
                 return true;
             }
     }
     return false;
 
     }
-    public Advisor getAdvisor(String email){
-        for(Advisor Advisor : AdvisorList )  {
-            if(Advisor.getAdvisorName().equals(email)){
-                return Advisor;
-            }
-
-        }   
-        return null;
-    }
+ 
     
     //need this one
 
@@ -49,7 +41,7 @@ public class AdvisorList {
     public Advisor getVerfiedAdvisor(String AdvisorName, String password){
         //Checks each Advisor in Advisors array list
         for(Advisor Advisor : AdvisorList){
-            if(Advisor.getAdvisorName().equals(AdvisorName) && Advisor.getPassword().equals(password)){
+            if(Advisor.getUserName().equals(AdvisorName) && Advisor.getPassword().equals(password)){
                 return Advisor;
             } //checks if Advisornames are equals and passwords are equal
         }
