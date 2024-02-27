@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public abstract class DataConstants {
     protected static final String STUDENT_FILE_NAME = "src/student.json";
