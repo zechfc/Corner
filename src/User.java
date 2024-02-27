@@ -11,7 +11,7 @@ public class User {
   private String password;
 
   //exisitng accounts loaded form JSON
-  public User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password){
+  /*public User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password){
     this.userID = userID;
     this.firstName = firstName;
     this.middleName = middleName;
@@ -20,7 +20,7 @@ public class User {
     this.email = email;
     this.userType = userType;
     this.password = password;
-  }
+  }*/
 
   //new account
   public User(String email, String firstName, String middleName, String lastName, String age, String userType, String password){
