@@ -3,7 +3,6 @@ public abstract class DataConstants {
     protected static final String STUDENT_FILE_NAME = "src/student.json";
     protected static final String ADVISOR_FILE_NAME = "src/advisor.json";
 
-
 	protected static final String USER_ID = "userid";
 	protected static final String USER_USER_NAME = "email";
 	protected static final String USER_FIRST_NAME = "firstName";
@@ -30,12 +29,6 @@ public abstract class DataConstants {
     protected static final String GRADE = "grade";
     protected static final int TRANSFER_CREDITS = 0;
 
-
-
-
-
-
     //better way to store year
-    
 
 }

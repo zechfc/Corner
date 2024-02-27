@@ -6,8 +6,10 @@ public class Advisor extends User{
     private UUID userID;
 
 
-    public Advisor(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password){
+    public Advisor(ArrayList<Student> studentsSupervising, UUID userID, String firstName, String middleName, String lastName, String age, String email, 
+        String userType, String password){
         super(userID, firstName, middleName, lastName, age, email, userType, password);
+        this.studentsSupervising = studentsSupervising;
     }
 
     //Can't have overloaded methods with the same param types
