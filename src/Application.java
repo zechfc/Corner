@@ -1,21 +1,39 @@
 import java.util.UUID;
 
 public class Application {
-    private UserList userList;
+    private StudentList studentList;
+    private AdvisorList advisorList;
     private ClassList classList;
     private User user;
 
     public Application(){
-        this.userList = UserList.getInstance();
+        this.studentList = StudentList.getInstance();
+        this.advisorList = AdvisorList.getInstance();
         this.classList = ClassList.getInstance();
     }
 
-    public boolean login(String userName, String password){
-        User loggedInUser = userList.getUser(userName, password);
-        if(loggedInUser != null){
-            user = loggedInUser;
+    public int checkUser(String input){
+        if(input == "student"){
+            return 1;
+        }
+        return 2;
+    }
+
+    public boolean login(int i, String userName, String password){
+        if(i == 1){
+            User loggedInUser = studentList.getStudent(userName, password);
+            if(loggedInUser != null){
+                user = loggedInUser;
+                return true;
+            }
+        } else if(i == 2){
+            User loggedInAdvisor = advisorList.getAdvisor(userName, password);
+            if(loggedInAdvisor != null){
+            user = loggedInAdvisor;
             return true;
         }
+        }
+        
         return false;
     }
 
