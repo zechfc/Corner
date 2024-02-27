@@ -1,12 +1,21 @@
 [{
     "userid":"d5478261-e50a-4ff9-b8bf-8c03b0280bc2",
-    "advisorid":"7871b844-03b3-40a8-b2d3-c410ef6a2eae",
+    "firstName":"John",
+    "middleName":"lee",
+    "lastName":"Doe",
+    "age":20,
+    "email": "jlDoe@email.sc.edu",
+    "password": "password1",
+    "advisorid":"4c01faab-34eb-482d-8def-1c45ea80a22d",
     "major":"cd28e093-e17f-49e2-b11c-163cbf993b26",
     "classification":"Sophomore",
-    "year1": [{
-        "fall": [{
-            "courseCodes": ["b5e7e0d0-f63f-4e14-bc19-041deab09f5c","4a00e68d-b385-458f-aac6-719959a37280","3a26f80c-4867-4e36-949a-553c403433e0", "65ddf1c8-1c8f-4b97-ad87-33d5816c447e","bb5b9677-eea0-44cb-825c-2d40010aad71"],
-            "Grade": ["A","B","C","A","B+"]
+    "courses": [{"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "grade": "A", "semester": "fall", "year":2022},
+                {"courseCode":"4a00e68d-b385-458f-aac6-719959a37280", "grade": "B", "semester": "fall", "year":2022},
+                {"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0", "grade": "C", "semester": "fall", "year":2022},
+                {"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e", "grade": "A", "semester": "fall", "year":2022},
+                {"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71", "grade": "B+", "semester": "fall","year":2022}
+            ]
+
         }],
         "spring": [{
             "courseCodes": ["bb5b9677-eea0-44cb-825c-2d40010aad71","577ed51a-9123-43da-a09a-629e139ad276","49a0d284-1de7-4511-b481-ff6d60b7339b", "17ac1913-d4ae-4ab4-aa39-4cceeaa36d4d", "408e3294-1714-4f2f-bbc0-498385b662fc" ],
@@ -37,8 +46,14 @@
 
 },
 {
-    "userid":"5c280f3c-c2a8-4f0a-abe4-754a9aee5bff",
-    "advisorid":"133c3a78-9644-4334-aec5-2640e0c12259",
+    "userid:":"d5478261-e50a-4ff9-b8bf-8c03b0280bc2",
+    "firstName":"Mary",
+    "middleName":"ann",
+    "lastName":"Sue",
+    "age":18,
+    "email": "masue@email.sc.edu",
+    "password": "password2",
+    "advisorid":"5c280f3c-c2a8-4f0a-abe4-754a9aee5bff",
     "major":"177cb7f6-2b0e-4718-a68d-327c6252a88a",
     "classification":"Junior",
     "year1": [{ "fall": [{
@@ -86,8 +101,14 @@
     
     },
     {
-        "userid":"5c280f3c-c2a8-4f0a-abe4-754a9aee5bff",
-        "advisorid":"133c3a78-9644-4334-aec5-2640e0c12259",
+        "userid:":"513b2857-a10f-4aac-87a8-b094604a3001",
+        "firstName":"Tracy",
+        "middleName":"dolores",
+        "lastName":"Johnson",
+        "age":19,
+        "email": "tdjohnson@email.sc.edu",
+        "password": "password3",
+        "advisorid":"8d6928e2-140a-4ef8-b5b3-96ceabfd4b45",
         "major":"177cb7f6-2b0e-4718-a68d-327c6252a88a",
         "classification":"Freshman",
         "currentYear": [{
