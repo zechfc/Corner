@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.UUID;
 
 public class UI {
     private Scanner scanner;
@@ -23,7 +24,7 @@ public class UI {
         }
         System.out.println("John Doe is now logged in");
 
-        Advisor advisor = application.getAdvisor();
+        Advisor advisor = application.getAdvisor("d5478261-e50a-4ff9-b8bf-8c03b0280bc2");
         if(advisor == null){
             System.out.println("Sorry advisor not found.");
         }
@@ -45,11 +46,15 @@ public class UI {
         //Create account scenario
         System.out.println("\nCreating a new account...");
 
-        String userName = "mayernii@email.sc.edu";
+        String email = "definitelyrealemail@gmail.com";
         String firstName = "Isaac";
+        String middleName = "Andrew";
         String lastName = "Mayernik";
+        String age = "20";
         String password = "lol987";
-        User newUser = application.createAccount(userName, password, firstName, lastName);
+        String userType = "Student";
+        UUID uuid = UUID.randomUUID();
+        User newUser = application.createAccount(uuid, email, firstName, middleName, lastName, age, password, userType);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }

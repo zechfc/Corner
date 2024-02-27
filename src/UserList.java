@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class UserList {
     private static UserList users;
@@ -65,10 +66,14 @@ public class UserList {
 
 
     //method for adding to the JSON
-    public void addUser(String firstName, String middleName, String lastName, String UserID, String age, String email, String userType){
-        userList.add(new User(UserID, firstName, lastName, age, email, userType, userType, userType));
+    public void addUser(UUID uuid, String email, String firstName, String middleName, String lastName, String age, String userType, String password){
+        userList.add(new User(uuid, email, firstName, middleName, lastName, age, userType, password));
         DataWriter.saveUsers();
 
+    }
+
+    public void removeStudent(Student student){
+        //Calls data writer to remove Student from system
     }
 }
 

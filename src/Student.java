@@ -14,9 +14,10 @@ public class Student extends User{
     private String age;
     private String firstName;
     private String lastName;
-    private String userName; //email
+    private String email; 
+    private String password;
     private UUID userID;
-    //private String userType;
+    private String userType;
     private String classLevel;
     private boolean failureRisk;
     private int totalCredits;
@@ -25,9 +26,10 @@ public class Student extends User{
     private Advisor advisor;
     private String advisorNote;
 
-    public Student(String userName, String age, String firstName, String lastName, String userID, Advisor advisor,  Major major, String concentration){
-        super(userID, firstName, lastName, age, userName); //User(userID, firstName, lastName, age, userName, userType)
-        this.userName = userName; //email
+    public Student(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password, Advisor advisor,  Major major, String concentration){
+        super(userID, firstName, middleName, lastName, age, email, userType, password); //User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password)
+        this.email = email;
+        this.password = password;
         this.age = age;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -96,7 +98,9 @@ public class Student extends User{
     }
 
     public SemesterPlan getSemesterPlan(){
-        return semesterPlan;
+        SemesterPlan(major, classesTaken); 
+        //SemesterPlan needs an ArrayList of completedCourses
+        //Student only stores the hashmap of classesTaken
     }
 
     public void editAdvisorNote(String note){

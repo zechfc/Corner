@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public class Application {
     private UserList userList;
     private ClassList classList;
@@ -17,9 +19,9 @@ public class Application {
         return false;
     }
 
-    public User createAccount(String userName, String password, String firstName, String lastName){
-        user = new User(userName, firstName, lastName, password);
-        userList.addUser(user);
+    public User createAccount(UUID uuid, String email, String firstName, String middleName, String lastName, String age, String password, String userType){
+        user = new User(uuid, email, firstName, middleName, lastName, age, password, userType);
+        userList.addUser(uuid, email, firstName, middleName, lastName, age, userType, password);
         return user;
     }
 
@@ -108,8 +110,12 @@ public class Application {
         return null;
     }
 
-    public Advisor getAdvisor(){
-        return (Advisor) user;
+    public Advisor getAdvisor(String userID){
+        User user = userList.getUser(userID);
+        if(user != null && user instanceof Advisor){
+            return (Advisor) user;
+        }
+        return null;
     }
 
     public boolean isAdmin(String userType){
