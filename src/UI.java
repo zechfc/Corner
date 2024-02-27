@@ -11,36 +11,36 @@ public class UI {
     }
 
     public void run(){
-        scenario1(); //Login scenario
+        // scenario1(); //Login scenario
         scenario2(); //Create account scenario
     }
 
-    public void scenario1(){
-        //Login scenario
-        System.out.println();
-        if(!application.login("jlDoe@email.sc.edu", "password123")){
-            System.out.println("Sorry we couldn't login."); //login failed
-            return;
-        }
-        System.out.println("John Doe is now logged in");
+    // public void scenario1(){
+    //     //Login scenario
+    //     System.out.println();
+    //     if(!application.login("jlDoe@email.sc.edu", "password123")){
+    //         System.out.println("Sorry we couldn't login."); //login failed
+    //         return;
+    //     }
+    //     System.out.println("John Doe is now logged in");
 
-        Advisor advisor = application.getAdvisor("d5478261-e50a-4ff9-b8bf-8c03b0280bc2");
-        if(advisor == null){
-            System.out.println("Sorry advisor not found.");
-        }
-        System.out.println("Advisor is in the system");
-        System.out.println("\nMark Stevens is your advisor");
+    //     Advisor advisor = application.getAdvisor("d5478261-e50a-4ff9-b8bf-8c03b0280bc2");
+    //     if(advisor == null){
+    //         System.out.println("Sorry advisor not found.");
+    //     }
+    //     System.out.println("Advisor is in the system");
+    //     System.out.println("\nMark Stevens is your advisor");
 
-        if(!application.getAdvisorNote("d5478261-e50a-4ff9-b8bf-8c03b0280bc2")){
-            System.out.println("Failed to get advisor note.");
-        }
-        System.out.println("Advisor note retrieved");
+    //     if(!application.getAdvisorNote("d5478261-e50a-4ff9-b8bf-8c03b0280bc2")){
+    //         System.out.println("Failed to get advisor note.");
+    //     }
+    //     System.out.println("Advisor note retrieved");
 
-        if(!application.editAdvisorNote("Student recommended to take CSCE247")){
-            System.out.println("Failed to edit advisor note.");
-        }
-        System.out.println("Advisor note edited");
-    }
+    //     if(!application.editAdvisorNote("Student recommended to take CSCE247")){
+    //         System.out.println("Failed to edit advisor note.");
+    //     }
+    //     System.out.println("Advisor note edited");
+    // }
 
     public void scenario2(){
         //Create account scenario
@@ -52,7 +52,7 @@ public class UI {
         String lastName = "Mayernik";
         String age = "20";
         String password = "lol987";
-        String userType = "Student";
+        String userType = "student";
         UUID uuid = UUID.randomUUID();
         User newUser = application.createAccount(uuid, email, firstName, middleName, lastName, age, password, userType);
         if(newUser == null){

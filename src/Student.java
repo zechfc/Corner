@@ -18,7 +18,6 @@ public class Student extends User{
     private String email; 
     private String password;
     private UUID userID;
-    private String userType;
     private String classLevel;
     private String currentYear;
     private boolean failureRisk;
@@ -28,26 +27,23 @@ public class Student extends User{
     private Advisor advisor;
     private String advisorNote;
 
-    public Student(UUID Userid, String email, String firstName, String middleName, String lastName, String Usertype, 
-        String age, String password, Major major, String classification, String advisorNote, String currentYear, int transferCredits){
-        super(Userid, firstName, middleName, lastName, age, email, Usertype, password);
+    public Student(UUID Userid, String email, String firstName, String middleName, String lastName,  
+        String age, String password, Major major, String classification, int transferCredits){
+        super(Userid, firstName, middleName, lastName, age, email, password);
         this.userID = Userid;
         this.email = email;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
-        this.userType = Usertype;
         this.age = age;
         this.password = password;
         this.major = major;
         this.concentration = classification; //Isaac - I am assuming this is what classification meant?
-        this.advisorNote = advisorNote;
-        this.currentYear = currentYear;
         this.transferCredits = transferCredits;
     }
 
-    public Student(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password, Advisor advisor,  Major major, String concentration){
-        super(userID, firstName, middleName, lastName, age, email, userType, password); //User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password)
+    public Student(UUID userID, String firstName, String middleName, String lastName, String age, String email, String password, Advisor advisor,  Major major, String concentration){
+        super(userID, firstName, middleName, lastName, age, email, password); //User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password)
         this.email = email;
         this.password = password;
         this.age = age;
@@ -55,7 +51,6 @@ public class Student extends User{
         this.lastName = lastName;
         this.userID = userID;
         this.advisor = advisor;
-        this.userType = userType;
         this.major = major;
         this.concentration = concentration;
     }

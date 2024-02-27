@@ -7,39 +7,32 @@ public class User {
   private String middleName;
   private String age;
   private String email;
-  private String userType;
   private String password;
 
   //exisitng accounts loaded form JSON
-  public User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password){
+  public User(UUID userID, String email, String firstName, String middleName, String lastName, String age, String password){
     this.userID = userID;
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
     this.age = age;
     this.email = email;
-    this.userType = userType;
     this.password = password;
   }
 
   //new account
-  public User(String email, String firstName, String middleName, String lastName, String age, String userType, String password){
+  public User(String email, String firstName, String middleName, String lastName, String age, String password){
     this.userID = UUID.randomUUID();
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
     this.age = age;
     this.email = email;
-    this.userType = userType;
     this.password = password;
   }
     
   public String getUserName() {
     return email;
-  }
-
-  public String getUserType() {
-    return userType;
   }
 
   public String getUserAge(){

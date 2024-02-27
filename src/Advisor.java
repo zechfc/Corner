@@ -6,9 +6,9 @@ public class Advisor extends User{
     private UUID userID;
 
 
-    public Advisor(ArrayList<Student> studentsSupervising, UUID userID, String firstName, String middleName, String lastName, String age, String email, 
-        String userType, String password){
-        super(userID, firstName, middleName, lastName, age, email, userType, password);
+    public Advisor(ArrayList<Student> studentsSupervising, UUID userID, String firstName, 
+        String middleName, String lastName, String age, String email, String password){
+        super(userID, firstName, middleName, lastName, age, email, password);
         this.studentsSupervising = studentsSupervising;
     }
 
