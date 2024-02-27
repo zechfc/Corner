@@ -82,8 +82,8 @@
     ],
 
 "coursesPresent": 
-    [{"courseCode":"577ed51a-9123-43da-a09a-629e139ad276", "grade": "TBD", "semester": "fall", "year":2024},
-    {"courseCode":"49a0d284-1de7-4511-b481-ff6d60b7339b", "grade": "TBD", "semester": "fall", "year":2024},
+    [{"courseCode":"577ed51a-9123-43da-a09a-629e139ad276", "semester": "fall", "year":2024},
+    {"courseCode":"49a0d284-1de7-4511-b481-ff6d60b7339b", "semester": "fall", "year":2024},
     {"courseCode":"17ac1913-d4ae-4ab4-aa39-4cceeaa36d4d", "grade": "TBD", "semester": "fall", "year":2024},
     {"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc", "grade": "TBD", "semester": "fall", "year":2024},
     {"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc", "grade": "TBD", "semester": "fall", "year":2024}
