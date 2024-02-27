@@ -34,12 +34,12 @@ public class UI {
         if(!application.getAdvisorNote("d5478261-e50a-4ff9-b8bf-8c03b0280bc2")){
             System.out.println("Failed to get advisor note.");
         }
-        System.out.println("Editing advisor note...");
+        System.out.println("Advisor note retrieved");
 
-        if(!application.editAdvisorNote("")){
-            System.out.println("");
+        if(!application.editAdvisorNote("Student recommended to take CSCE247")){
+            System.out.println("Failed to edit advisor note.");
         }
-        System.out.println("");
+        System.out.println("Advisor note edited");
     }
 
     public void scenario2(){
