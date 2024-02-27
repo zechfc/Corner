@@ -3,13 +3,12 @@ import java.util.UUID;
 
 public class UserList {
     private static UserList users;
-    private  ArrayList<User> userList;
-    // not sure we need this private  ArrayList<User> students;
+    private ArrayList<User> studentList;
+    private ArrayList<User> arrayList;
 
     private UserList(){
-        userList = DataLoader.getUsers();
-        //users = new ArrayList<User>();
-        //students = new ArrayList<User>();
+        studentList = DataLoader.getStudents();
+        arrayList = DataLoader.getAdvisors();
     }
 
     public static UserList getInstance(){
@@ -66,8 +65,8 @@ public class UserList {
 
 
     //method for adding to the JSON
-    public void addUser(UUID uuid, String email, String firstName, String middleName, String lastName, String age, String userType, String password){
-        userList.add(new User(uuid, email, firstName, middleName, lastName, age, userType, password));
+    public void addUser(UUID uuid, String email, String firstName, String middleName, String lastName, String age, String password){
+        userList.add(new User(uuid, email, firstName, middleName, lastName, age, password));
         DataWriter.saveUsers();
 
     }
