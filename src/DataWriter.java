@@ -1,4 +1,3 @@
-	
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,10 +28,9 @@ public class DataWriter extends DataConstants {
         }
 	}
 
-	
-	
 	public static JSONObject getUserJSON(User user, Student student, Advisor advisor) {	
 		JSONObject userDetails = new JSONObject();
+		
 		userDetails.put(USER_ID, user.getUserID().toString());
 		userDetails.put(USER_USER_NAME, user.getUserName());
 		userDetails.put(USER_FIRST_NAME, user.getFirstName());
@@ -43,15 +41,12 @@ public class DataWriter extends DataConstants {
 		userDetails.put(USER_AGE, user.getUserAge());
 
 		if (user.getUserType().equalsIgnoreCase("student")) {
-
 			getStudentJSON(student);
-
 		}
-		if (user.getUserType().equalsIgnoreCase("advisor")) {
 
+		if (user.getUserType().equalsIgnoreCase("advisor")) {
 			userDetails.put(ADVISOR_ID, user.getUserID().toString());
 			getAdvisorJSON(advisor);
-
 		}
         
         return userDetails;
@@ -60,19 +55,16 @@ public class DataWriter extends DataConstants {
 	public static JSONObject getStudentJSON(Student student) {	
 		JSONObject studentDetails = new JSONObject();
 
-
-		
 		studentDetails.put(ADVISOR_ID, student.getAdvisor());
-			studentDetails.put(MAJOR, student.getMajor());
-			studentDetails.put(CURRENT_YEAR, student.getCurrentYear());
-			studentDetails.put(FALL, "Fall"); //ENUM
-			studentDetails.put(SPRING, "Spring"); //ENUM
-			studentDetails.put(SUMMER, "Summer"); //ENUM
-			studentDetails.put(CLASSIFICATION, "Junior");
-			studentDetails.put(ADVISOR_NOTE, student.getAdvisorNote());
-			studentDetails.put(TRANSFER_CREDITS, student.getTransferCredits());
+		studentDetails.put(MAJOR, student.getMajor());
+		studentDetails.put(CURRENT_YEAR, student.getCurrentYear());
+		studentDetails.put(FALL, "Fall"); //ENUM
+		studentDetails.put(SPRING, "Spring"); //ENUM
+		studentDetails.put(SUMMER, "Summer"); //ENUM
+		studentDetails.put(CLASSIFICATION, "Junior");
+		studentDetails.put(ADVISOR_NOTE, student.getAdvisorNote());
+		studentDetails.put(TRANSFER_CREDITS, student.getTransferCredits());
 
-		
         return studentDetails;
 	}
 

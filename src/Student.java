@@ -13,18 +13,38 @@ public class Student extends User{
     private double overallGPA;
     private String age;
     private String firstName;
+    private String middleName;
     private String lastName;
     private String email; 
     private String password;
     private UUID userID;
     private String userType;
     private String classLevel;
+    private String currentYear;
     private boolean failureRisk;
     private int totalCredits;
     private int USC_CREDITS;
     private int transferCredits;
     private Advisor advisor;
     private String advisorNote;
+
+    public Student(UUID Userid, String email, String firstName, String middleName, String lastName, String Usertype, 
+        String age, String password, Major major, String classification, String advisorNote, String currentYear, int transferCredits){
+        super(Userid, firstName, middleName, lastName, age, email, Usertype, password);
+        this.userID = Userid;
+        this.email = email;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.userType = Usertype;
+        this.age = age;
+        this.password = password;
+        this.major = major;
+        this.concentration = classification; //Isaac - I am assuming this is what classification meant?
+        this.advisorNote = advisorNote;
+        this.currentYear = currentYear;
+        this.transferCredits = transferCredits;
+    }
 
     public Student(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password, Advisor advisor,  Major major, String concentration){
         super(userID, firstName, middleName, lastName, age, email, userType, password); //User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password)
