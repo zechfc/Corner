@@ -36,6 +36,8 @@ public class UserList {
         }   
         return null;
     }
+    
+    //need this one
 
     public ArrayList<User> getUsers(){
        
@@ -43,7 +45,7 @@ public class UserList {
     }
 
 
-    public User getUser(String userName, String password){
+    public User getVerfiedUser(String userName, String password){
         //Checks each user in users array list
         for(User user : userList){
             if(user.getUserName().equals(userName) && user.getPassword().equals(password)){
