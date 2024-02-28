@@ -68,11 +68,11 @@ public class Student extends User{
         //is this a priority?
     }
 
-    public boolean atFailure(Class class, double grade){
+    public boolean atFailure(Class course, double grade){
         return false;
     }
 
-    public double updateGrade(Class class, double grade){
+    public double updateGrade(Class course, double grade){
         return 0.0;
     }
 
@@ -88,8 +88,10 @@ public class Student extends User{
         return majorMap;
     }
 
+    //todo - implement functionality
     public boolean updateFailureRisk(){
         failureRisk = true;
+        return failureRisk;
     }
 
     public void editMajorMap(MajorMap newMajorMap){
@@ -97,9 +99,10 @@ public class Student extends User{
     }
 
     public SemesterPlan getSemesterPlan(){
-        SemesterPlan(major, classesTaken); 
+        return new SemesterPlan(major, pastClasses);
         //SemesterPlan needs an ArrayList of completedCourses
         //Student only stores the hashmap of classesTaken
+
     }
 
     public void editAdvisorNote(String note){
