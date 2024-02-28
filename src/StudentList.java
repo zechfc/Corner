@@ -1,12 +1,11 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class StudentList {
     private static StudentList students;
     private ArrayList<Student> studentList;
 
     public StudentList(){  //constructor
-        studentList = DataLoader.getStudents();
+        this.studentList = DataLoader.getStudents();
     }
 
     public static StudentList getInstance(){ 
@@ -37,10 +36,10 @@ public class StudentList {
         
     } 
 
-    public void addStudent(UUID userID, String firstName, String middleName, String lastName, String age, String email, 
-        String password, Advisor advisor,  Major major, String concentration){ 
+    public void addStudent(String userID, String email, String firstName, String middleName, String lastName, String age, 
+        String password, String advisorID,  String major, String concentration, long transferCredits){ 
 
-        studentList.add(new Student(userID, firstName, middleName, lastName, age, email, password, advisor, major, concentration));
+        studentList.add(new Student(userID, email, firstName, middleName, lastName, age, password, advisorID, major, concentration, transferCredits));
         DataWriter.saveStudents();
     } 
 

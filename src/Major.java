@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Major {
     private String name;
@@ -9,14 +10,17 @@ public class Major {
     private ArrayList<Class> carolinacoreCourses;
     private ArrayList<Class> majorCourses;
     private int totalhours;
+    private UUID majorID;
 
 
-    public Major(ArrayList<Class> collegeRequirements, ArrayList<Class> carolinacoreCoursesReq, ArrayList<Class> concentrationCourses, ArrayList<Class> carolinacoreCourses, ArrayList<Class> majorCourses){
+    public Major(ArrayList<Class> collegeRequirements, ArrayList<Class> carolinacoreCoursesReq, 
+        ArrayList<Class> concentrationCourses, ArrayList<Class> carolinacoreCourses, ArrayList<Class> majorCourses, UUID majorID){
         this.collegeRequirements = collegeRequirements;
         this.carolinacoreCoursesReq = carolinacoreCoursesReq;
         this.concentrationCourses = concentrationCourses;
         this.carolinacoreCourses = carolinacoreCourses;
         this.majorCourses = majorCourses;
+        this.majorID = majorID;
     }
     public String getMajor() {
 		return name;
@@ -50,6 +54,4 @@ public class Major {
 
         return requiredClasses;
 	}
-    
-
 }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -23,7 +24,7 @@ public class UI {
         application.checkUser("student");
         System.out.println("User is a student");
     
-        if(!application.login(1, "jlDoe@email.sc.edu", "password123")){
+        if(!application.login(1, "jlDoe@email.sc.edu", "password1")){
             System.out.println("Sorry we couldn't login."); //login failed
             return;
         }
@@ -51,15 +52,22 @@ public class UI {
         //Create account scenario
         System.out.println("\nCreating a new account...");
 
+        int i = 1;
         String email = "definitelyrealemail@gmail.com";
         String firstName = "Isaac";
         String middleName = "Andrew";
         String lastName = "Mayernik";
         String age = "20";
         String password = "lol987";
-        String userType = "student";
-        UUID uuid = UUID.randomUUID();
-        User newUser = application.createAccount(uuid, email, firstName, middleName, lastName, age, password, userType);
+        String advisor = "temp person";
+        String major = "CS";
+        String concentration = "temp";
+        ArrayList<Student> studentsSupervising = null;
+        boolean admin = false;
+        String uuid = "esnfaslkdfmlsakmdf";
+        long transferCredits = 48;
+        User newUser = application.createAccount(i, uuid, firstName, middleName, lastName, age, email, password, 
+            advisor, major, concentration, studentsSupervising, admin, transferCredits);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }

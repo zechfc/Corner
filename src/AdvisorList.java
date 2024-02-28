@@ -53,7 +53,7 @@ public class AdvisorList {
     }
 
     //method for adding to the JSON
-    public void addAdvisor(UUID userId, ArrayList<Student> studentsSupervising, String email, String firstName, String middleName, 
+    public void addAdvisor(String userId, ArrayList<Student> studentsSupervising, String email, String firstName, String middleName, 
         String lastName, String age, Boolean admin, String password){
         AdvisorList.add(new Advisor(userId,studentsSupervising, email, firstName, middleName, lastName, age, admin, password));
         DataWriter.saveAdvisors();
