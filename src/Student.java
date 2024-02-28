@@ -41,6 +41,10 @@ public class Student extends User{
         this.advisor = advisor;
         this.major = major;
         this.concentration = concentration;
+        this.totalCredits = totalCredits;
+        this.classLevel = classLevel;
+        this.USC_CREDITS = USC_CREDITS;
+
     }
 
     public void totalCompletedCredits(int transferCredits, int USC_CREDITS){
