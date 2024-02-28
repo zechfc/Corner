@@ -3,12 +3,10 @@ import java.util.UUID;
 
 
 public class Advisor extends User{
-
     private boolean admin;
     private ArrayList<Student> studentsSupervising;
 
-
-    public Advisor( UUID userID,ArrayList<Student> studentsSupervising, String firstName, String middleName, String lastName, String age, String email, 
+    public Advisor(UUID userID, ArrayList<Student> studentsSupervising, String firstName, String middleName, String lastName, String age, String email, 
         boolean admin, String password){
         super(userID, firstName, middleName, lastName, age, email, password);
         this.admin = admin;

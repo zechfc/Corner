@@ -10,7 +10,7 @@ public class User {
   protected String password;
 
   //new account
-  public User(UUID userID2, String firstName, String middleName, String lastName, String age, String email, String password){
+  public User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String password){
     this.userID = UUID.randomUUID();
     this.firstName = firstName;
     this.middleName = middleName;
@@ -20,10 +20,9 @@ public class User {
     this.password = password;
   }
     
-  public String getUserName() {
+  public String getEmail() {
     return email;
   }
-
 
   public String getUserAge(){
     return age;

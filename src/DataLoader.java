@@ -7,7 +7,7 @@ import org.json.simple.parser.JSONParser;;
 
 public class DataLoader extends DataConstants{
 	
-	public static ArrayList<User> getStudents() {
+	public static ArrayList<Student> getStudents() {
 		ArrayList<User> users = new ArrayList<User>();
 		
 		try {
@@ -40,7 +40,7 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
-	public static ArrayList<User> getAdvisors(){
+	public static ArrayList<Advisor> getAdvisors(){
 		ArrayList<User> users = new ArrayList<User>();
 
 		try{
