@@ -20,7 +20,9 @@ public abstract class DataConstants {
     protected static final String NOTES = "notes";
 	protected static final String MAJOR = "major";
 	protected static final String CLASSIFICATION = "classification";
-    protected static final String FALL = "fall";
+    protected static final String SEMESTER = "semester";
+    protected static final String GRADE = "grade";
+    protected static final String YEAR = "year";
     protected static final String COURSE_CODES = "courseCodes";
     protected static final String TRANSFER_CREDITS = "tranferCredits";
 

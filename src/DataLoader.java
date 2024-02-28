@@ -27,7 +27,9 @@ public class DataLoader extends DataConstants{
 				
 				Major major = (Major)studentJSON.get(MAJOR);
 				String classification = (String)studentJSON.get(CLASSIFICATION);
-				String fall = (String)studentJSON.get(FALL);
+				String semester = (String)studentJSON.get(SEMESTER);
+				String grade = (String)studentJSON.get(GRADE);
+				String year = (String)studentJSON.get(YEAR);
 				int transferCredits = (int)studentJSON.get(TRANSFER_CREDITS);
 				new Student(Userid, email, firstName, middleName, lastName, age, password, major, classification, transferCredits);
 						
