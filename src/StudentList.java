@@ -43,11 +43,10 @@ public class StudentList {
         DataWriter.saveStudents();
     } 
 
-    public void addStudent2(Student student){ 
-    
-    studentList.add((student));
-    DataWriter.saveStudents();
-} 
+    public void addStudent(Student student){ 
+        studentList.add((student));
+        DataWriter.saveStudents();
+    } 
 
     public boolean haveStudent(String email){ 
         for(Student student : studentList )  {
