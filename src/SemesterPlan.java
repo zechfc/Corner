@@ -4,7 +4,7 @@ public class SemesterPlan {
     private String studentRequirements;
     private ArrayList<String> plan;
 
-    public SemesterPlan(String major, ArrayList<Class> completedCourses) {
+    public SemesterPlan(Major major, ArrayList<Class> completedCourses) {
         this.studentRequirements = major;
         this.plan = new ArrayList<>();
         // Generate semester plan based on completed courses and major requirements
