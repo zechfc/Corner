@@ -50,8 +50,8 @@ public class DataWriter extends DataConstants {
 		JSONObject studentDetails = new JSONObject();
 
 //		studentDetails.put(ADVISOR_ID, student.getAdvisor());
-		studentDetails.put(student.getAdvisorID(), student.getAdvisor());
-		studentDetails.put(MAJOR, student.getMajor());
+		studentDetails.put(ADVISOR_ID, student.getAdvisor());
+		studentDetails.put(MAJOR, student.getMajorName());
 		studentDetails.put(COURSES_PRESENT, student.getCurrentYear());
 //		studentDetails.put(FALL, "Fall"); //ENUM
 //		studentDetails.put(SPRING, "Spring"); //ENUM
