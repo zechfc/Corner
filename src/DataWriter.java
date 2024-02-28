@@ -64,6 +64,12 @@ public class DataWriter extends DataConstants {
         return studentDetails;
 	}
 
+	//todo
+	public static JSONObject getCoursesJSON(Class c){
+		JSONObject courses = new JSONObject();
+		return courses;
+	}
+
 	public static JSONObject getAdvisorJSON(Advisor advisor) {	
 		JSONObject advisorDetails = new JSONObject();
 		advisorDetails.put(STUDENT_LIST, advisor.getStudentList());
