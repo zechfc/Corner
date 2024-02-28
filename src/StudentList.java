@@ -74,4 +74,13 @@ public class StudentList {
         }
         return null;
     }
+
+    public boolean emailTaken(String email){
+        for(Student student : studentList){
+            if(student.getEmail().equals(email)){
+                return true;
+            }
+        }
+        return false; //email not taken
+    }
 }

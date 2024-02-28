@@ -1,4 +1,3 @@
-import java.util.UUID;
 import java.util.ArrayList;
 
 public class Application {
@@ -25,17 +24,15 @@ public class Application {
         ArrayList<Advisor> advisors = DataLoader.getAdvisors();
         if(i == 1){
             for(Student student : students){
-                User loggedInStudent = studentList.getVerifiedStudent(email, password);
-                if(loggedInStudent != null && loggedInStudent == student){
-                    user = loggedInStudent;
+                if(student != null && student.getEmail().equals(email) && student.getPassword().equals(password)){
+                    user = student;
                     return true;
                 }
             }
         }else if(i == 2){
             for(Advisor advisor : advisors){
-                User loggedInAdvisor = advisorList.getVerfiedAdvisor(email, password);
-                if(loggedInAdvisor != null && loggedInAdvisor == advisor){
-                    user = loggedInAdvisor;
+                if(advisor != null && advisor.getEmail().equals(email) && advisor.getPassword().equals(password)){
+                    user = advisor;
                     return true; 
                 }
             }
@@ -45,6 +42,12 @@ public class Application {
 
     public User createAccount(int i, String userID, String firstName, String middleName, String lastName, String age, String email, 
         String password, String advisorID, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin, long transferCredits){
+        
+        //Email (username) already used
+        if(studentList.emailTaken(email) || advisorList.emailTaken(email)){
+            return null;
+        }
+        
         user = new User(userID, email, firstName, middleName, lastName, age, password);
         if(i == 1){
             Student temp = new Student(userID, email, firstName, middleName, lastName, age, password, advisorID, major, concentration, transferCredits);
@@ -103,7 +106,7 @@ public class Application {
         if(user !=null && user.getUserID().equals(userID)){
             if(user instanceof Student){
                 String advisorNote = ((Student) user).getAdvisorNote();
-                System.out.println("Advisor note: " + advisorNote);
+                System.out.print(advisorNote);
                 return true;
             }
         }
@@ -144,8 +147,26 @@ public class Application {
         return null;
     }
 
-    public Advisor getAdvisor(String email){
-        User user = advisorList.getAdvisor(email);
+    // public String getAdvisorName(String userID){
+    //     User user = advisorList.getAdvisor(userID);
+    //     if(user != null && user instanceof Advisor){
+    //         return user.getFirstName() + " " + user.getLastName();
+    //     }
+    //     return null;
+    // }
+
+    public boolean getAdvisorID(String userID){
+        if(user != null && user.getUserID().equals(userID)){
+            if(user instanceof Student){
+                ((Student) user).getAdvisorID();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Advisor getAdvisor(String userID){
+        User user = advisorList.getAdvisor(userID);
         if(user != null && user instanceof Advisor){
             return (Advisor) user;
         }

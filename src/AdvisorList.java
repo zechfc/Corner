@@ -1,27 +1,23 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class AdvisorList {
-    private static AdvisorList Advisors;
+    private static AdvisorList advisors;
     private  ArrayList<Advisor> AdvisorList;
-    // not sure we need this private  ArrayList<Advisor> students;
 
     private AdvisorList(){
         AdvisorList = DataLoader.getAdvisors();
-        //Advisors = new ArrayList<Advisor>();
-        //students = new ArrayList<Advisor>();
     }
 
     public static AdvisorList getInstance(){
-        if (Advisors == null){
-            Advisors = new AdvisorList();
+        if (advisors == null){
+            advisors = new AdvisorList();
         }
-        return Advisors;
+        return advisors;
     }
 
     public boolean haveAdvisor(String email){
-        for(Advisor Advisor : AdvisorList )  {
-            if(Advisor.getEmail().equals(email)){
+        for(Advisor advisor : AdvisorList )  {
+            if(advisor.getEmail().equals(email)){
                 return true;
             }
         }
@@ -64,14 +60,22 @@ public class AdvisorList {
         //Calls data writer to remove Student from system
     }
 
-    public Advisor getAdvisor(String email){
+    public Advisor getAdvisor(String userID){
         for(Advisor advisor : AdvisorList){
-            if(advisor.getEmail().equals(email)){
+            if(advisor.getUserID().equals(userID)){
                 return advisor;
             }
         }
         return null;
     }
 
+    public boolean emailTaken(String email){
+        for(Advisor advisor : AdvisorList){
+            if(advisor.getEmail().equals(email)){
+                return true;
+            }
+        }
+        return false; //email not taken
+    }
 }
 
