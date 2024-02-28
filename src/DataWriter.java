@@ -8,7 +8,7 @@ public class DataWriter extends DataConstants {
 
 	public static void saveStudents() {
 		StudentList studentList/*users*/ = StudentList.getInstance();
-		ArrayList<Student> students = studentList.getStudent();
+		ArrayList<Student> students = studentList.getStudents();
 		JSONArray jsonStudents = new JSONArray();
 
 		//creating all the json objects
