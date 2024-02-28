@@ -7,7 +7,7 @@ import org.json.simple.parser.JSONParser;;
 
 public class DataLoader extends DataConstants{
 	
-	public static ArrayList<User> getStudents() {
+	public static ArrayList<Student> getStudents() {
 		ArrayList<User> users = new ArrayList<User>();
 		
 		try {
@@ -42,7 +42,7 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
-	public static ArrayList<User> getAdvisors(){
+	public static ArrayList<Advisor> getAdvisors(){
 		ArrayList<User> users = new ArrayList<User>();
 
 		try{
@@ -59,9 +59,9 @@ public class DataLoader extends DataConstants{
 				String lastName = (String)advisorJSON.get(USER_LAST_NAME);
 				String age = ((String)advisorJSON.get(USER_AGE));
 				String password = (String)advisorJSON.get(USER_PASSWORD);
-				String admin = ((String)advisorJSON.get(ADMIN));
+				boolean admin = ((boolean)advisorJSON.get(ADMIN));
 				ArrayList<Student> studentList = (ArrayList<Student>)advisorJSON.get(STUDENT_LIST);
-				new Advisor(studentList, Userid, firstName, middleName, lastName, age, email, password);
+				new Advisor(Userid, studentList, firstName, middleName, lastName, age, email, admin, password);
 
 				users.add(new User(Userid, email, firstName, middleName, lastName, age, password));
 			}			

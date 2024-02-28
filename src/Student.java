@@ -20,13 +20,13 @@ public class Student extends User{
     private Advisor advisor;
     private String advisorNote;
 
-    public Student(UUID Userid, String email, String firstName, String middleName, String lastName, String Usertype, 
-        String age, String password, Major major, String classification, String advisorNote, String currentYear, int transferCredits){
+    public Student(UUID Userid, String email, String firstName, String middleName, String lastName, String age, String password, 
+        Major major, String classification, int transferCredits){
         super(Userid, firstName, middleName, lastName, age, email, password);
         this.major = major;
         this.concentration = classification; //Isaac - I am assuming this is what classification meant?
-        this.advisorNote = advisorNote;
-        this.currentYear = currentYear;
+        this.advisorNote = "";
+        this.currentYear = "2024";
         this.transferCredits = transferCredits;
     }
 
@@ -88,11 +88,7 @@ public class Student extends User{
     public Major getMajor(){
         return major;
     }
-
-    public Student getStudent(){
-        Student student;
-        return student;
-    }
+    
     public MajorMap getMajorMap(){
         return majorMap;
     }
@@ -120,12 +116,10 @@ public class Student extends User{
     }
 
     public String getCurrentYear() {
-        // TODO Auto-generated method stub
-        return "2024";
+        return currentYear;
     }
 
     public int getTransferCredits(){
         return transferCredits;
     }
-    
 }

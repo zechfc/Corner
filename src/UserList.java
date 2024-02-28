@@ -62,14 +62,14 @@ public class UserList {
     public void editUser(String user){
 
     }
-
-
-    //method for adding to the JSON
-    public void addUser(UUID uuid, String email, String firstName, String middleName, String lastName, String age, String password){
-        userList.add(new User(uuid, email, firstName, middleName, lastName, age, password));
-        DataWriter.saveUsers();
-
-    }
+//
+//
+//    //method for adding to the JSON
+//    public void addUser(UUID uuid, String email, String firstName, String middleName, String lastName, String age, String password){
+//        userList.add(new User(uuid, email, firstName, middleName, lastName, age, password));
+//        DataWriter.saveUsers();
+//
+//    }
 
     public void removeStudent(Student student){
         //Calls data writer to remove Student from system
