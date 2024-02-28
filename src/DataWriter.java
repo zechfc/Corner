@@ -6,9 +6,6 @@ import org.json.simple.JSONObject;
 
 public class DataWriter extends DataConstants {
 
-
-//
-
 	public static void saveStudents() {
 		StudentList studentList/*users*/ = StudentList.getInstance();
 		ArrayList<Student> students = studentList.getStudent();
@@ -61,7 +58,7 @@ public class DataWriter extends DataConstants {
 //		studentDetails.put(SPRING, "Spring"); //ENUM
 //		studentDetails.put(SUMMER, "Summer"); //ENUM
 		studentDetails.put(CLASSIFICATION, "Junior");
-		studentDetails.put(ADVISOR_NOTE, student.getAdvisorNote());
+		studentDetails.put(NOTES, student.getAdvisorNote());
 		studentDetails.put(TRANSFER_CREDITS, student.getTransferCredits());
 
         return studentDetails;
@@ -69,7 +66,6 @@ public class DataWriter extends DataConstants {
 
 	public static JSONObject getAdvisorJSON(Advisor advisor) {	
 		JSONObject advisorDetails = new JSONObject();
-		
 		advisorDetails.put(STUDENT_LIST, advisor.getStudentList());
         return advisorDetails;
 	}
