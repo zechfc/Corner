@@ -17,7 +17,7 @@ public class DataWriter extends DataConstants {
 		}
 
 		//Write JSON file
-		try (FileWriter file = new FileWriter(STUDENT_FILE_NAME)) {
+		try (FileWriter file = new FileWriter(STUDENT_FILE_NAME, true)) {
 			file.write(jsonStudents.toJSONString());
 			file.flush();
 

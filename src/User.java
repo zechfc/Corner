@@ -11,7 +11,8 @@ public class User {
 
   //new account
   public User(String userID, String firstName, String middleName, String lastName, String age, String email, String password){
-    this.userID = userID;
+    this.userID = userID; 
+    //this.userID = UUID.randomUUID();
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;

@@ -66,7 +66,7 @@ public class UI {
         boolean admin = false;
         String uuid = "esnfaslkdfmlsakmdf";
         long transferCredits = 48;
-        User newUser = application.createAccount(i, uuid, firstName, middleName, lastName, age, email, password, 
+        Student newUser = application.createAccount(i, uuid, firstName, middleName, lastName, age, email, password, 
             advisor, major, concentration, studentsSupervising, admin, transferCredits);
         if(newUser == null){
             System.out.println("Failed to create account.");

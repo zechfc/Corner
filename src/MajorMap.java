@@ -12,7 +12,8 @@ public class MajorMap {
     }
 
     public MajorMap whatIf(Major major){
-        MajorMap newMajorMap = new MajorMap(major, null, null, null, null, null);
-        return newMajorMap;
+       // MajorMap newMajorMap = new MajorMap(major, null, null, null, null, null);
+       // return newMajorMap;
+       return null;
     }
 }

@@ -43,15 +43,18 @@ public class Application {
         return false;
     }
 
-    public User createAccount(int i, String userID, String firstName, String middleName, String lastName, String age, String email, 
+    public Student createAccount(int i, String userID, String firstName, String middleName, String lastName, String age, String email, 
         String password, String advisorID, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin, long transferCredits){
         user = new User(userID, email, firstName, middleName, lastName, age, password);
         if(i == 1){
-            studentList.addStudent(userID, email, firstName, middleName, lastName, age, password, advisorID, major, concentration, transferCredits);
+            Student temp = new Student(userID, email, firstName, middleName, lastName, age, password, advisorID, major, concentration, transferCredits);
+            studentList.addStudent2(temp);
+            return temp; // do we want to return temp or a student list
+
         }else if(i == 2){
-            advisorList.addAdvisor(userID, studentsSupervising, email, firstName, middleName, lastName, age, admin, password);
+          //  advisorList.addAdvisor(userID, studentsSupervising, email, firstName, middleName, lastName, age, admin, password);
         }
-        return user;
+        return null;
     }
 
     public boolean getMajorMap(String userID){
