@@ -7,7 +7,7 @@ public class Student extends User{
     private ArrayList<Class> currentClasses;
     private SemesterPlan semesterPlan;
     private MajorMap majorMap;
-    private Major major;
+    private String major;
     private String concentration;
     private double majorGPA;
     private double overallGPA;
@@ -16,12 +16,13 @@ public class Student extends User{
     private boolean failureRisk;
     private int totalCredits;
     private int USC_CREDITS;
-    private int transferCredits;
+    private long transferCredits;
     private Advisor advisor;
+    private String advisorID;
     private String advisorNote;
 
-    public Student(UUID Userid, String email, String firstName, String middleName, String lastName, String age, String password, 
-        Major major, String classification, int transferCredits){
+    public Student(String Userid, String email, String firstName, String middleName, String lastName, String age, String password, String advisorID, 
+        String major, String classification, long transferCredits){
         super(Userid, firstName, middleName, lastName, age, email, password);
         this.major = major;
         this.concentration = classification; //Isaac - I am assuming this is what classification meant?
@@ -29,8 +30,10 @@ public class Student extends User{
         this.currentYear = "2024";
         this.transferCredits = transferCredits;
     }
+    
 
-    public Student(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password, Advisor advisor,  Major major, String concentration){
+    //this will need to be updated isaac
+    public Student(String userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password, Advisor advisor,  String major, String concentration){
         super(userID, firstName, middleName, lastName, age, email, password); //User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password)
         this.email = email;
         this.password = password;
@@ -84,12 +87,12 @@ public class Student extends User{
         return advisor;
     }
 
-    public UUID getAdvisorID(){
+    public String getAdvisorID(){
         return advisor.getUserID();
         
     }
 
-    public Major getMajor(){
+    public String getMajorName(){
         return major;
     }
     
@@ -126,7 +129,7 @@ public class Student extends User{
         return currentYear;
     }
 
-    public int getTransferCredits(){
+    public long getTransferCredits(){
         return transferCredits;
     }
 }

@@ -1,7 +1,7 @@
 import java.util.UUID;
 
 public class User {
-  protected UUID userID;
+  protected String userID;
   protected String firstName;
   protected String lastName;
   protected String middleName;
@@ -10,8 +10,8 @@ public class User {
   protected String password;
 
   //new account
-  public User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String password){
-    this.userID = UUID.randomUUID();
+  public User(String userID, String firstName, String middleName, String lastName, String age, String email, String password){
+    this.userID = userID;
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
@@ -45,7 +45,7 @@ public class User {
     return password;
   }
   
-  public UUID getUserID(){
+  public String getUserID(){
     return userID;
   }
 }

@@ -21,30 +21,35 @@ public class Application {
     }
 
     public boolean login(int i, String email, String password){
+        ArrayList<Student> students = DataLoader.getStudents();
+        ArrayList<Advisor> advisors = DataLoader.getAdvisors();
         if(i == 1){
-            User loggedInStudent = studentList.getVerifiedStudent(email, password);
-            if(loggedInStudent != null){
-                user = loggedInStudent;
-                return true;
+            for(Student student : students){
+                User loggedInStudent = studentList.getVerifiedStudent(email, password);
+                if(loggedInStudent != null && loggedInStudent == student){
+                    user = loggedInStudent;
+                    return true;
+                }
             }
-        } else if(i == 2){
-            User loggedInAdvisor = advisorList.getVerfiedAdvisor(email, password);
-            if(loggedInAdvisor != null){
-                user = loggedInAdvisor;
-                return true;
+        }else if(i == 2){
+            for(Advisor advisor : advisors){
+                User loggedInAdvisor = advisorList.getVerfiedAdvisor(email, password);
+                if(loggedInAdvisor != null && loggedInAdvisor == advisor){
+                    user = loggedInAdvisor;
+                    return true; 
+                }
             }
         }
-        
         return false;
     }
 
-    public User createAccount(int i, UUID uuid, String firstName, String middleName, String lastName, String age, String email, 
-        String password, Advisor advisor, Major major, String concentration, ArrayList<Student> studentsSupervising, boolean admin){
-        user = new User(uuid, email, firstName, middleName, lastName, age, password);
+    public User createAccount(int i, String userID, String firstName, String middleName, String lastName, String age, String email, 
+        String password, String advisorID, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin, long transferCredits){
+        user = new User(userID, email, firstName, middleName, lastName, age, password);
         if(i == 1){
-            studentList.addStudent(uuid, firstName, middleName, lastName, age, email, password, advisor, major, concentration);
+            studentList.addStudent(userID, email, firstName, middleName, lastName, age, password, advisorID, major, concentration, transferCredits);
         }else if(i == 2){
-            advisorList.addAdvisor(uuid, studentsSupervising, email, firstName, middleName, lastName, age, admin, password);
+            advisorList.addAdvisor(userID, studentsSupervising, email, firstName, middleName, lastName, age, admin, password);
         }
         return user;
     }
@@ -100,16 +105,16 @@ public class Application {
         return false;
     }
 
-    public boolean addStudent(Advisor advisor, String userID, boolean admin){
-        if(user != null && user.equals(advisor) && advisor.getAdmin() && advisor != null){
-            Student studentToAdd = advisor.addStudent(userID);
-            if(studentToAdd != null){
-                advisor.addStudent(studentToAdd);
-                return true;
-            }
-        }
-        return false;
-    }
+    // public boolean addStudent(Advisor advisor, String userID, boolean admin){
+    //     if(user != null && user.equals(advisor) && advisor.getAdmin() && advisor != null){
+    //         Student studentToAdd = advisor.addStudent(userID);
+    //         if(studentToAdd != null){
+    //             advisor.addStudent(studentToAdd);
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 
     public boolean removeStudent(Advisor advisor, String userID, boolean admin){
         if(user != null && user.equals(advisor) && advisor.getAdmin() && advisor != null){

@@ -1,7 +1,7 @@
 
 public abstract class DataConstants {
     protected static final String STUDENT_FILE_NAME = "src/student.json";
-    protected static final String ADVISOR_FILE_NAME = "src/advisor.json";
+    protected static final String ADVISOR_FILE_NAME = "src/advisors.json";
 
 	protected static final String USER_ID = "userid";
     protected static final String STUDENT_LIST = "studentList";
@@ -14,8 +14,7 @@ public abstract class DataConstants {
     protected static final String ADMIN = "admin";
     protected static final String COURSES_PAST = "coursesPast";
     protected static final String COURSES_PRESENT = "coursesPresent";
-
-
+    protected static final String ADVISOR_ID = "advisorid";
 
     protected static final String NOTES = "notes";
 	protected static final String MAJOR = "major";
