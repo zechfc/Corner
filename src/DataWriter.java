@@ -48,7 +48,7 @@ public class DataWriter extends DataConstants {
 			userDetails.put(ADVISOR_ID, user.getUserID().toString());
 			getAdvisorJSON(advisor);
 		}
-        
+          
         return userDetails;
 	}
 
