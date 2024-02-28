@@ -27,7 +27,6 @@ public class DataLoader extends DataConstants{
 				
 				Major major = (Major)studentJSON.get(MAJOR);
 				String classification = (String)studentJSON.get(CLASSIFICATION);
-				String fall = (String)studentJSON.get(FALL);
 				int transferCredits = (int)studentJSON.get(TRANSFER_CREDITS);
 				new Student(Userid, email, firstName, middleName, lastName, age, password, major, classification, transferCredits);
 						
@@ -57,9 +56,9 @@ public class DataLoader extends DataConstants{
 				String lastName = (String)advisorJSON.get(USER_LAST_NAME);
 				String age = ((String)advisorJSON.get(USER_AGE));
 				String password = (String)advisorJSON.get(USER_PASSWORD);
-				String admin = ((String)advisorJSON.get(ADMIN));
+				boolean admin = ((boolean)advisorJSON.get(ADMIN));
 				ArrayList<Student> studentList = (ArrayList<Student>)advisorJSON.get(STUDENT_LIST);
-				new Advisor(studentList, Userid, firstName, middleName, lastName, age, email, password);
+				new Advisor(Userid, studentList, firstName, middleName, lastName, age, email, admin, password);
 
 				users.add(new User(Userid, email, firstName, middleName, lastName, age, password));
 			}			
