@@ -82,6 +82,7 @@ public class Student extends User{
 
     public UUID getAdvisorID(){
         return advisor.getUserID();
+        
     }
 
     public Major getMajor(){
