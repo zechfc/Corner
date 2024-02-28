@@ -31,7 +31,7 @@ public class Student extends User{
     }
 
     public Student(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password, Advisor advisor,  Major major, String concentration){
-        super(userID, firstName, middleName, lastName, age, email, userType, password); //User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password)
+        super(userID, firstName, middleName, lastName, age, email, password); //User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password)
         this.email = email;
         this.password = password;
         this.age = age;
@@ -39,7 +39,6 @@ public class Student extends User{
         this.lastName = lastName;
         this.userID = userID;
         this.advisor = advisor;
-        this.userType = userType;
         this.major = major;
         this.concentration = concentration;
     }
