@@ -41,7 +41,7 @@ public class Application {
     }
 
     public User createAccount(int i, String userID, String firstName, String middleName, String lastName, String age, String email, 
-        String password, String advisorID, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin, long transferCredits){
+        String password, String advisorID, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin, int transferCredits){
         
         //Email (username) already used
         if(studentList.emailTaken(email) || advisorList.emailTaken(email)){
