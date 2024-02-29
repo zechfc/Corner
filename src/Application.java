@@ -41,7 +41,7 @@ public class Application {
     }
 
     public User createAccount(int i, String userID, String firstName, String middleName, String lastName, String age, String email, 
-        String password, String advisorID, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin, int transferCredits){
+        String password, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin, int transferCredits){
         
         //Email (username) already used
         if(studentList.emailTaken(email) || advisorList.emailTaken(email)){
@@ -50,7 +50,7 @@ public class Application {
         
         user = new User(userID, email, firstName, middleName, lastName, age, password);
         if(i == 1){
-            Student temp = new Student(userID, email, firstName, middleName, lastName, age, password, advisorID, major, concentration, transferCredits);
+            Student temp = new Student(userID, email, firstName, middleName, lastName, age, password, major, concentration, transferCredits);
             studentList.addStudent(temp);
             return temp; // do we want to return temp or a student list
 
@@ -113,11 +113,11 @@ public class Application {
         return false;
     }
 
-    // public boolean addStudent(Advisor advisor, String userID, boolean admin){
+    // public boolean addStudent(Advisor advisor, String userID){
     //     if(user != null && user.equals(advisor) && advisor.getAdmin() && advisor != null){
-    //         Student studentToAdd = advisor.addStudent(userID);
+    //         Student studentToAdd = studentList.addStudent(userID);
     //         if(studentToAdd != null){
-    //             advisor.addStudent(studentToAdd);
+    //             advisorList.addStudent(studentToAdd);
     //             return true;
     //         }
     //     }

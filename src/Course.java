@@ -22,5 +22,23 @@ public class Course {
         return true;
     }
 
-    
+    public String getCourseID(){
+        return courseID;
+    }
+
+    public String getCourseKey(){
+        return courseKey;
+    }
+
+    public String getCourseName(){
+        return courseName;
+    }
+
+    public String getDescription(){
+        return courseDescription;
+    }
+
+    public boolean getAvailability(){
+        return courseAvailability;
+    }
 }

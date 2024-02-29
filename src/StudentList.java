@@ -37,9 +37,9 @@ public class StudentList {
     } 
 
     public void addStudent(String userID, String email, String firstName, String middleName, String lastName, String age, 
-        String password, String advisorID,  String major, String concentration, int transferCredits){ 
+        String password, String major, String concentration, int transferCredits){ 
 
-        studentList.add(new Student(userID, email, firstName, middleName, lastName, age, password, advisorID, major, concentration, transferCredits));
+        studentList.add(new Student(userID, email, firstName, middleName, lastName, age, password, major, concentration, transferCredits));
         DataWriter.saveStudents();
     } 
 

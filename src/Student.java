@@ -20,7 +20,7 @@ public class Student extends User{
     private String advisorID;
     private String advisorNote;
 
-    public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password, String advisorID, 
+    public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password,  
         String major, String classification, int transferCredits){
         super(userID, firstName, middleName, lastName, age, email, password);
         this.major = major;

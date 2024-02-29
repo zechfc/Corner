@@ -19,12 +19,6 @@ public class Advisor extends User{
     }
     //public void getStudent(String lastName){}
 
-    //Adding student to system, must be admin, checked by Application.java
-    public Student addStudent(String userID){
-        return null;
-    }
-
-
     //Removing student from system, must be admin, checked by Application.java
     //Returns true if student removed from system (default true)
     public boolean removeStudent(String userID){
