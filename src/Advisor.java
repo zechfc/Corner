@@ -48,29 +48,5 @@ public class Advisor extends User{
         return admin;
       }
     
-    
-      public String getAdvisorAge(){
-        return age;
-      }
-    
-      public String getFirstName(){
-        return firstName;
-      }
-    
-      public String getMiddleName(){
-        return middleName;
-      }
-    
-      
-      public String getLastName() {
-        return lastName;
-      }
-    
-      public String getPassword() {
-        return password;
-      }
-      
-      public UUID getuserID(){
-        return userID;
-      }
+
 }
