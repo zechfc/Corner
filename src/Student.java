@@ -28,24 +28,9 @@ public class Student extends User{
         this.advisorNote = "";
         this.currentYear = "2024";
         this.transferCredits = transferCredits;
-    }
-    
-
-    //this will need to be updated isaac
-    public Student(String userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password, Advisor advisor,  String major, String concentration){
-        super(userID, firstName, middleName, lastName, age, email, password); //User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password)
-        this.email = email;
-        this.password = password;
-        this.age = age;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userID = userID;
-        this.advisor = advisor;
-        this.major = major;
-        this.concentration = concentration;
-        this.totalCredits = totalCredits;
-        this.classLevel = classLevel;
-        this.USC_CREDITS = USC_CREDITS;
+        this.totalCredits = 0;
+        this.classLevel = "Freshman";
+        this.USC_CREDITS = 0;
     }
 
     public void totalCompletedCredits(int transferCredits, int USC_CREDITS){
