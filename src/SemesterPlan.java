@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 public class SemesterPlan {
     private String studentRequirements;
-    private ArrayList<String> plan;
+    protected ArrayList<String> SemesterPlan;
 
     public SemesterPlan(String major, ArrayList<Course> completedCourses) {
         this.studentRequirements = major;
-        this.plan = new ArrayList<>();
+        this.SemesterPlan = new ArrayList<>();
         // Generate semester plan based on completed courses and major requirements
         generatePlan(completedCourses);
     }
@@ -21,9 +21,9 @@ public class SemesterPlan {
         return new ArrayList<>(); // Placeholder
     }
 
-    public String remainingCourses(String input) {
+    public ArrayList<Course> remainingCourses(String input) {
         // Logic to calculate remaining courses based on input
-        return ""; // Placeholder
+        return new ArrayList<>(); // Placeholder
     }
 
     public int totalCourses(String input) {

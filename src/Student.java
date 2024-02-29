@@ -15,13 +15,13 @@ public class Student extends User{
     private boolean failureRisk;
     private int totalCredits;
     private int USC_CREDITS;
-    private long transferCredits;
+    private int transferCredits;
     private Advisor advisor;
     private String advisorID;
     private String advisorNote;
 
     public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password, String advisorID, 
-        String major, String classification, long transferCredits){
+        String major, String classification, int transferCredits){
         super(userID, firstName, middleName, lastName, age, email, password);
         this.major = major;
         this.concentration = classification; //Isaac - I am assuming this is what classification meant?
@@ -128,7 +128,7 @@ public class Student extends User{
         return currentYear;
     }
 
-    public long getTransferCredits(){
+    public int getTransferCredits(){
         return transferCredits;
     }
 }
