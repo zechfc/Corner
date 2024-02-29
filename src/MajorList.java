@@ -16,7 +16,7 @@ public class MajorList {
     }
 
     public Major getMajor(String major){
-        return new Major(null, null, null, null, null);
+        return new Major(null, null, null, null, null, null);
     }
 
     public void setMajor(){

@@ -1,13 +1,12 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.UUID;
 
 public class Student extends User{
-    private ArrayList<Class> pastClasses;
-    private ArrayList<Class> currentClasses;
+    private ArrayList<Course> pastCourses;
+    private ArrayList<Course> currentCourses;
     private SemesterPlan semesterPlan;
     private MajorMap majorMap;
-    private Major major;
+    private String major;
     private String concentration;
     private double majorGPA;
     private double overallGPA;
@@ -16,21 +15,24 @@ public class Student extends User{
     private boolean failureRisk;
     private int totalCredits;
     private int USC_CREDITS;
-    private int transferCredits;
+    private long transferCredits;
     private Advisor advisor;
+    private String advisorID;
     private String advisorNote;
 
-    public Student(UUID Userid, String email, String firstName, String middleName, String lastName, String Usertype, 
-        String age, String password, Major major, String classification, String advisorNote, String currentYear, int transferCredits){
-        super(Userid, firstName, middleName, lastName, age, email, password);
+    public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password, String advisorID, 
+        String major, String classification, long transferCredits){
+        super(userID, firstName, middleName, lastName, age, email, password);
         this.major = major;
         this.concentration = classification; //Isaac - I am assuming this is what classification meant?
-        this.advisorNote = advisorNote;
-        this.currentYear = currentYear;
+        this.advisorNote = "";
+        this.currentYear = "2024";
         this.transferCredits = transferCredits;
     }
+    
 
-    public Student(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password, Advisor advisor,  Major major, String concentration){
+    //this will need to be updated isaac
+    public Student(String userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password, Advisor advisor,  String major, String concentration){
         super(userID, firstName, middleName, lastName, age, email, password); //User(UUID userID, String firstName, String middleName, String lastName, String age, String email, String userType, String password)
         this.email = email;
         this.password = password;
@@ -41,6 +43,9 @@ public class Student extends User{
         this.advisor = advisor;
         this.major = major;
         this.concentration = concentration;
+        this.totalCredits = totalCredits;
+        this.classLevel = classLevel;
+        this.USC_CREDITS = USC_CREDITS;
     }
 
     public void totalCompletedCredits(int transferCredits, int USC_CREDITS){
@@ -68,11 +73,11 @@ public class Student extends User{
         //is this a priority?
     }
 
-    public boolean atFailure(Class class, double grade){
+    public boolean atFailure(Course course, double grade){
         return false;
     }
 
-    public double updateGrade(Class class, double grade){
+    public double updateGrade(Course course, double grade){
         return 0.0;
     }
 
@@ -80,20 +85,23 @@ public class Student extends User{
         return advisor;
     }
 
-    public Major getMajor(){
-        return major;
+    public String getAdvisorID(){
+        return advisor.getUserID();
+        
     }
 
-    public Student getStudent(){
-        Student student;
-        return student;
+    public String getMajorName(){
+        return major;
     }
+    
     public MajorMap getMajorMap(){
         return majorMap;
     }
 
+    //todo - implement functionality
     public boolean updateFailureRisk(){
         failureRisk = true;
+        return failureRisk;
     }
 
     public void editMajorMap(MajorMap newMajorMap){
@@ -101,12 +109,14 @@ public class Student extends User{
     }
 
     public SemesterPlan getSemesterPlan(){
-        SemesterPlan(major, classesTaken); 
+        return new SemesterPlan(major, pastCourses);
         //SemesterPlan needs an ArrayList of completedCourses
         //Student only stores the hashmap of classesTaken
+
     }
 
     public void editAdvisorNote(String note){
+        //This will need to DataWriter to that student's 'note' in their json
         advisorNote = note;
     }
 
@@ -115,12 +125,10 @@ public class Student extends User{
     }
 
     public String getCurrentYear() {
-        // TODO Auto-generated method stub
-        return "2024";
+        return currentYear;
     }
 
-    public int getTransferCredits(){
+    public long getTransferCredits(){
         return transferCredits;
     }
-    
 }

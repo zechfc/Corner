@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MajorMap {
-    public MajorMap(Major major, ArrayList<Class> concentration, ArrayList<Class> liberalArts, ArrayList<Class> carolinaCore, ArrayList<Class> other, HashMap<Class, grade> classesTaken){
+    public MajorMap(Major major, ArrayList<Course> concentration, ArrayList<Course> liberalArts, ArrayList<Course> carolinaCore, ArrayList<Course> other, HashMap<Course, grade> classesTaken){
         major = null;
         concentration = null;
         liberalArts = null;
@@ -11,8 +11,17 @@ public class MajorMap {
         classesTaken = null;
     }
 
+    public boolean majorProgress(Student student){
+        return false;
+    }
+
+    public double progress(int creditsTaken, int totalHours){
+        return 0.0;
+    }
+
     public MajorMap whatIf(Major major){
-        MajorMap newMajorMap = new MajorMap(major, null, null, null, null, null);
-        return newMajorMap;
+       // MajorMap newMajorMap = new MajorMap(major, null, null, null, null, null);
+       // return newMajorMap;
+       return null;
     }
 }

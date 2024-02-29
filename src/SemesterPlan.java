@@ -1,17 +1,16 @@
 import java.util.ArrayList;
-
 public class SemesterPlan {
     private String studentRequirements;
     private ArrayList<String> plan;
 
-    public SemesterPlan(String major, ArrayList<Class> completedCourses) {
+    public SemesterPlan(String major, ArrayList<Course> completedCourses) {
         this.studentRequirements = major;
         this.plan = new ArrayList<>();
         // Generate semester plan based on completed courses and major requirements
         generatePlan(completedCourses);
     }
 
-    private void generatePlan(ArrayList<Class> completedCourses) {
+    private void generatePlan(ArrayList<Course> completedCourses) {
         // Logic to generate semester plan based on completed courses and major requirements
         // This can include checking prerequisites, corequisites, and other major requirements
         // and then planning out the upcoming semesters accordingly

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Class {
+public class Course {
     private ArrayList<CourseChoice> prerequisite;
     private String courseID;
     private String courseKey;
@@ -9,15 +9,16 @@ public class Class {
     private boolean courseAvailability;
     private double courseCredits;
 
-    public Class(ArrayList<CourseChoice> prereq, String id, String key, String name, String description, boolean availability, double credits) {
+    public Course(ArrayList<CourseChoice> prereq, String id, String key, String name, String description, boolean availability, double credits) {
         prerequisite = prereq; courseID = id; courseKey = key; courseName = name; courseDescription = description; courseAvailability = availability; courseCredits = credits;
     }
 
 
-    public boolean checkPrerequisites(ArrayList<Class> classes) {
+    public boolean checkPrerequisites(ArrayList<Course> courses) {
         return true;
     }
-    public boolean checkCoreqs(ArrayList<Class> classes) {
+    
+    public boolean checkCoreqs(ArrayList<Course> courses) {
         return true;
     }
 

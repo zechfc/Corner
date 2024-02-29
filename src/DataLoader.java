@@ -3,12 +3,12 @@ import java.util.ArrayList;
 import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;;
+import org.json.simple.parser.JSONParser;
 
 public class DataLoader extends DataConstants{
 	
-	public static ArrayList<User> getStudents() {
-		ArrayList<User> users = new ArrayList<User>();
+	public static ArrayList<Student> getStudents() {
+		ArrayList<Student> studentList = new ArrayList<Student>();
 		
 		try {
 			FileReader reader = new FileReader(STUDENT_FILE_NAME);
@@ -17,22 +17,24 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < studentListJSON.size(); i++) {
 				JSONObject studentJSON = (JSONObject)studentListJSON.get(i);
-				UUID Userid = UUID.fromString((String)studentJSON.get(USER_ID));
+				String Userid = (String)studentJSON.get(USER_ID);
 				String email = (String)studentJSON.get(USER_USER_NAME);
 				String firstName = (String)studentJSON.get(USER_FIRST_NAME);
 				String middleName = (String)studentJSON.get(USER_MIDDLE_NAME);
 				String lastName = (String)studentJSON.get(USER_LAST_NAME);
 				String age = ((String)studentJSON.get(USER_AGE));
 				String password = (String)studentJSON.get(USER_PASSWORD);
-				
-				Major major = (Major)studentJSON.get(MAJOR);
+				String advisorID = (String)studentJSON.get(ADVISOR_ID);
+				String major = (String)studentJSON.get(MAJOR);
 				String classification = (String)studentJSON.get(CLASSIFICATION);
-				String fall = (String)studentJSON.get(FALL);
-				int transferCredits = (int)studentJSON.get(TRANSFER_CREDITS);
-				new Student(Userid, email, firstName, middleName, lastName, age, password, major, classification, transferCredits);
-						
-				users.add(new User(Userid, email, firstName, middleName, lastName, age, password));
+				String semester = (String)studentJSON.get(SEMESTER);
+				String grade = (String)studentJSON.get(GRADE);
+				String year = (String)studentJSON.get(YEAR);
+				int transferCredits = ((Long)studentJSON.get(TRANSFER_CREDITS)).intValue(); //need to change subsequent to int instead of long
+				studentList.add(new Student(Userid, email, firstName, middleName, lastName, age, password, advisorID, major, classification, transferCredits));
 			}
+
+			return studentList;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -40,8 +42,8 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
-	public static ArrayList<User> getAdvisors(){
-		ArrayList<User> users = new ArrayList<User>();
+	public static ArrayList<Advisor> getAdvisors(){
+		ArrayList<Advisor> advisorList = new ArrayList<Advisor>();
 
 		try{
 			FileReader reader = new FileReader(ADVISOR_FILE_NAME);
@@ -50,19 +52,19 @@ public class DataLoader extends DataConstants{
 
 			for(int i = 0; i < advisorListJSON.size(); i++){
 				JSONObject advisorJSON = (JSONObject)advisorListJSON.get(i);
-				UUID Userid = UUID.fromString((String)advisorJSON.get(USER_ID));
+				String Userid = (String)advisorJSON.get(USER_ID);
 				String email = (String)advisorJSON.get(USER_USER_NAME);
 				String firstName = (String)advisorJSON.get(USER_FIRST_NAME);
 				String middleName = (String)advisorJSON.get(USER_MIDDLE_NAME);
 				String lastName = (String)advisorJSON.get(USER_LAST_NAME);
 				String age = ((String)advisorJSON.get(USER_AGE));
 				String password = (String)advisorJSON.get(USER_PASSWORD);
-				String admin = ((String)advisorJSON.get(ADMIN));
+				boolean admin = ((boolean)advisorJSON.get(ADMIN));
 				ArrayList<Student> studentList = (ArrayList<Student>)advisorJSON.get(STUDENT_LIST);
-				new Advisor(studentList, Userid, firstName, middleName, lastName, age, email, password);
-
-				users.add(new User(Userid, email, firstName, middleName, lastName, age, password));
+				advisorList.add(new Advisor(Userid, studentList, firstName, middleName, lastName, age, email, admin, password));
 			}			
+
+			return advisorList;
 		} catch(Exception e){
 			e.printStackTrace();
 		}
