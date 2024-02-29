@@ -65,7 +65,7 @@ public class DataWriter extends DataConstants {
 	}
 
 	//todo
-	public static JSONObject getCoursesJSON(Class c){
+	public static JSONObject getCoursesJSON(Course c){
 		JSONObject courses = new JSONObject();
 		return courses;
 	}

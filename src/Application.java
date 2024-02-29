@@ -3,13 +3,13 @@ import java.util.ArrayList;
 public class Application {
     private StudentList studentList;
     private AdvisorList advisorList;
-    private ClassList classList;
+    private CourseList classList;
     private User user;
 
     public Application(){
         this.studentList = StudentList.getInstance();
         this.advisorList = AdvisorList.getInstance();
-        this.classList = ClassList.getInstance();
+        this.classList = CourseList.getInstance();
     }
 
     public int checkUser(String input){

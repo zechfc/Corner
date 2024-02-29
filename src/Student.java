@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.UUID;
 
 public class Student extends User{
-    private ArrayList<Class> pastClasses;
-    private ArrayList<Class> currentClasses;
+    private ArrayList<Course> pastCourses;
+    private ArrayList<Course> currentCourses;
     private SemesterPlan semesterPlan;
     private MajorMap majorMap;
     private String major;
@@ -21,9 +20,9 @@ public class Student extends User{
     private String advisorID;
     private String advisorNote;
 
-    public Student(String Userid, String email, String firstName, String middleName, String lastName, String age, String password, String advisorID, 
+    public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password, String advisorID, 
         String major, String classification, long transferCredits){
-        super(Userid, firstName, middleName, lastName, age, email, password);
+        super(userID, firstName, middleName, lastName, age, email, password);
         this.major = major;
         this.concentration = classification; //Isaac - I am assuming this is what classification meant?
         this.advisorNote = "";
@@ -47,7 +46,6 @@ public class Student extends User{
         this.totalCredits = totalCredits;
         this.classLevel = classLevel;
         this.USC_CREDITS = USC_CREDITS;
-
     }
 
     public void totalCompletedCredits(int transferCredits, int USC_CREDITS){
@@ -75,11 +73,11 @@ public class Student extends User{
         //is this a priority?
     }
 
-    public boolean atFailure(Class course, double grade){
+    public boolean atFailure(Course course, double grade){
         return false;
     }
 
-    public double updateGrade(Class course, double grade){
+    public double updateGrade(Course course, double grade){
         return 0.0;
     }
 
@@ -111,7 +109,7 @@ public class Student extends User{
     }
 
     public SemesterPlan getSemesterPlan(){
-        return new SemesterPlan(major, pastClasses);
+        return new SemesterPlan(major, pastCourses);
         //SemesterPlan needs an ArrayList of completedCourses
         //Student only stores the hashmap of classesTaken
 

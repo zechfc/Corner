@@ -1,20 +1,19 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Major {
     private String name;
     private String description;
-    private ArrayList<Class> collegeRequirements;
-    private ArrayList<Class> carolinacoreCoursesReq;
-    private ArrayList<Class> concentrationCourses;
-    private ArrayList<Class> carolinacoreCourses;
-    private ArrayList<Class> majorCourses;
+    private ArrayList<Course> collegeRequirements;
+    private ArrayList<Course> carolinacoreCoursesReq;
+    private ArrayList<Course> concentrationCourses;
+    private ArrayList<Course> carolinacoreCourses;
+    private ArrayList<Course> majorCourses;
     private int totalhours;
-    private UUID majorID;
+    private String majorID;
 
 
-    public Major(ArrayList<Class> collegeRequirements, ArrayList<Class> carolinacoreCoursesReq, 
-        ArrayList<Class> concentrationCourses, ArrayList<Class> carolinacoreCourses, ArrayList<Class> majorCourses, UUID majorID){
+    public Major(ArrayList<Course> collegeRequirements, ArrayList<Course> carolinacoreCoursesReq, 
+        ArrayList<Course> concentrationCourses, ArrayList<Course> carolinacoreCourses, ArrayList<Course> majorCourses, UUID majorID){
         this.collegeRequirements = collegeRequirements;
         this.carolinacoreCoursesReq = carolinacoreCoursesReq;
         this.concentrationCourses = concentrationCourses;
@@ -29,29 +28,29 @@ public class Major {
     public int getTotalHours() {
 		return totalhours;
 	}
-    public ArrayList<Class> getCollegeRequirements() {    
+    public ArrayList<Course> getCollegeRequirements() {    
         return collegeRequirements;
 	}
-    public ArrayList<Class> getCarolinacoreCoursesReq() {    
+    public ArrayList<Course> getCarolinacoreCoursesReq() {    
         return carolinacoreCoursesReq;
 	}
-    public ArrayList<Class> getCarolinacoreCourses() {    
+    public ArrayList<Course> getCarolinacoreCourses() {    
         return carolinacoreCourses;
 	}
-    public ArrayList<Class> getConcentrationCourses() {    
+    public ArrayList<Course> getConcentrationCourses() {    
         return concentrationCourses;
 	}
-    public ArrayList<Class> getMajorCourses() {    
+    public ArrayList<Course> getMajorCourses() {    
         return majorCourses;
 	}
-    public ArrayList<Class> getRequiredClasses() {    
-        ArrayList<Class> requiredClasses = new ArrayList<>();
-        requiredClasses.addAll(this.getCarolinacoreCoursesReq());
-        requiredClasses.addAll(this.getCarolinacoreCourses());
-        requiredClasses.addAll(this.getCollegeRequirements());
-        requiredClasses.addAll(this.getConcentrationCourses());
-        requiredClasses.addAll(this.getMajorCourses());
+    public ArrayList<Course> getRequiredCourses() {    
+        ArrayList<Course> requiredCourses = new ArrayList<>();
+        requiredCourses.addAll(this.getCarolinacoreCoursesReq());
+        requiredCourses.addAll(this.getCarolinacoreCourses());
+        requiredCourses.addAll(this.getCollegeRequirements());
+        requiredCourses.addAll(this.getConcentrationCourses());
+        requiredCourses.addAll(this.getMajorCourses());
 
-        return requiredClasses;
+        return requiredCourses;
 	}
 }

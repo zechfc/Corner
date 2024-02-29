@@ -7,10 +7,10 @@ public class CourseChoice {
         this.prerequisite = prereq;
         this.courses = courseIDs;
     }
-    public boolean checkPrerequisites(ArrayList<Class> classTaken) {
+    public boolean checkPrerequisites(ArrayList<Course> classTaken) {
         return true;
     }
-    public boolean checkCoreqs(ArrayList<Class> classTaking) {
+    public boolean checkCoreqs(ArrayList<Course> classTaking) {
         return true;
     }
 }

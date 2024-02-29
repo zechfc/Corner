@@ -60,7 +60,7 @@ public class UI {
         System.out.println("User is a student");
     
         if(!application.login(1, "jlDoe@email.sc.edu", "correctpassword")){
-            System.out.println("Sorry we couldn't login."); //login failed
+            System.out.println("Sorry we couldn't login."); //login failed (not the right password in the system)
             return;
         }
         System.out.println("John Doe is now logged in");
