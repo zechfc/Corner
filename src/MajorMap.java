@@ -11,6 +11,14 @@ public class MajorMap {
         classesTaken = null;
     }
 
+    public boolean majorProgress(Student student){
+        return false;
+    }
+
+    public double progress(int creditsTaken, int totalHours){
+        return 0.0;
+    }
+
     public MajorMap whatIf(Major major){
        // MajorMap newMajorMap = new MajorMap(major, null, null, null, null, null);
        // return newMajorMap;

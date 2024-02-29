@@ -21,6 +21,7 @@ public class Major {
         this.majorCourses = majorCourses;
         this.majorID = majorID;
     }
+
     public String getMajor() {
 		return name;
 	}
@@ -28,21 +29,27 @@ public class Major {
     public int getTotalHours() {
 		return totalhours;
 	}
+
     public ArrayList<Course> getCollegeRequirements() {    
         return collegeRequirements;
 	}
+
     public ArrayList<Course> getCarolinacoreCoursesReq() {    
         return carolinacoreCoursesReq;
 	}
+
     public ArrayList<Course> getCarolinacoreCourses() {    
         return carolinacoreCourses;
 	}
+
     public ArrayList<Course> getConcentrationCourses() {    
         return concentrationCourses;
 	}
+
     public ArrayList<Course> getMajorCourses() {    
         return majorCourses;
 	}
+    
     public ArrayList<Course> getRequiredCourses() {    
         ArrayList<Course> requiredCourses = new ArrayList<>();
         requiredCourses.addAll(this.getCarolinacoreCoursesReq());

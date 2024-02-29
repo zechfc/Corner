@@ -14,10 +14,11 @@ public class Course {
     }
 
 
-    public boolean checkPrerequisites(ArrayList<Course> classes) {
+    public boolean checkPrerequisites(ArrayList<Course> courses) {
         return true;
     }
-    public boolean checkCoreqs(ArrayList<Course> classes) {
+    
+    public boolean checkCoreqs(ArrayList<Course> courses) {
         return true;
     }
 
