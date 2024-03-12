@@ -50,7 +50,7 @@ public class DataWriter extends DataConstants {
 		JSONObject studentDetails = new JSONObject();
 
 		// studentDetails.put(ADVISOR_ID, student.getAdvisor());
-		studentDetails.put(ADVISOR_ID, student.getAdvisor());
+		studentDetails.put(ADVISOR_ID, student.getAdvisorID());
 		studentDetails.put(USER_FIRST_NAME, student.getFirstName());
 		studentDetails.put(USER_MIDDLE_NAME, student.getMiddleName());
 		studentDetails.put(USER_LAST_NAME, student.getLastName());

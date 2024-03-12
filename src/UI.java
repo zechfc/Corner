@@ -11,8 +11,8 @@ public class UI {
     }
 
     public void run(){
-        scenario1(); //Login success scenario
-        scenario2(); //Login failure scenario
+        scenario1(); //Student login success scenario
+        scenario2(); //Student login failure scenario
         scenario3(); //Student account created success scenario
         scenario4(); //Student account created failure scenario
         scenario5(); //Advisor (not an admin) account created success scenario
@@ -81,12 +81,12 @@ public class UI {
         String password = "lol987";
         String major = "CS";
         String concentration = "None";
-        ArrayList<Student> studentsSupervising = null;
         boolean admin = false;
         String userID = "esnfaslkdfmlsakmdf";
         int transferCredits = 48;
+        String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
         User newUser = application.createAccount(i, userID, firstName, middleName, lastName, age, email, password, 
-            major, concentration, studentsSupervising, admin, transferCredits);
+            major, concentration, null, admin, transferCredits, advisorID);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -109,9 +109,10 @@ public class UI {
         String major = "CIS";
         boolean admin = false;
         String userID = "sflkve-dfsfde34fsdfv-csda";
+        String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
         int transferCredits = 23;
         User newUser = application.createAccount(i, userID, firstName, middleName, lastName, age, email, password, 
-            major, concentration, null, admin, transferCredits);
+            major, concentration, null, admin, transferCredits, advisorID);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -133,7 +134,7 @@ public class UI {
         String password = "";
         ArrayList<Student> studentsSupervising = new ArrayList<Student>();
         boolean admin = false;
-        User newUser = application.createAccount(i, userID, firstName, middleName, lastName, age, email, password, null, null, studentsSupervising, admin, 0);
+        User newUser = application.createAccount(i, userID, firstName, middleName, lastName, age, email, password, null, null, studentsSupervising, admin, 0, null);
         if(newUser == null){
             System.out.println("Failed to create account.");
 

@@ -42,7 +42,7 @@ public class Application {
 
     public User createAccount(int i, String userID, String firstName, String middleName, String lastName, String age,
             String email, String password, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin,
-            int transferCredits) {
+            int transferCredits, String advisorID) {
         // i dictates if user is student(1) or advisor(2)
         // Email (username) already used
         if (studentList.emailTaken(email) || advisorList.emailTaken(email)) {
@@ -52,7 +52,7 @@ public class Application {
         user = new User(userID, email, firstName, middleName, lastName, age, password);
         if (i == 1) {
             Student newStudent = new Student(userID, email, firstName, middleName, lastName, age, password, major,
-                    concentration, transferCredits);
+                    concentration, transferCredits, advisorID);
             studentList.addStudent(newStudent);
             return newStudent; 
 

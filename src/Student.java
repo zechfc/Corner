@@ -17,12 +17,12 @@ public class Student extends User {
     private int USC_CREDITS;
     private int transferCredits;
     private Advisor advisor;
+    public String advisorID;
     private String advisorNote;
     private String classification;
 
     public Student(String userID, String email, String firstName, String middleName, String lastName, String age,
-            String password,
-            String major, String classification, int transferCredits) {
+            String password, String major, String classification, int transferCredits, String advisorID) {
         super(userID, firstName, middleName, lastName, age, email, password);
         this.major = major;
         this.concentration = concentration; 
@@ -33,6 +33,7 @@ public class Student extends User {
         this.totalCredits = 0;
         this.classLevel = "Freshman";
         this.USC_CREDITS = 0;
+        this.advisorID = advisorID;
     }
 
     public void totalCompletedCredits(int transferCredits, int USC_CREDITS) {
@@ -68,27 +69,22 @@ public class Student extends User {
         return 0.0;
     }
 
-    public Advisor getAdvisor(){
-        
+    // This does not work since DataWriter is calling this method, and this is returning
+    // a type Advisor, which the DataWriter line is setting the ADVISOR_ID, which is a string
+    // public Advisor getAdvisor(){
+    //     for(Advisor advisor: AdvisorList.getInstance().getAdvisors()){
+    //         Student temp = this.student();
+    //         if(advisor.hasStudent(temp))
+    //         {
+    //             return advisor;
+    //         }
+    //     }
+    //     return null;
+    // }
 
-        for(Advisor advisor: AdvisorList.getInstance().getAdvisors()){
-            Student temp = this.student();
-            if(advisor.hasStudent(temp))
-            {
-                return advisor;
-
-            }
-        }
-
-        return null;
-
-    }
-
-
-
+    //The DataWriter should be calling this, no? (I have changed)
     public String getAdvisorID(){
-        return advisor.getUserID();
-
+        return advisorID;
     }
 
     public String getMajorName() {
