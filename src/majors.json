@@ -2,6 +2,7 @@
     "majorid":"cd28e093-e17f-49e2-b11c-163cbf993b26",
     "name":"CS",
     "description":"Computer Science",
+    
     "totalHoursprogramRequirements":[46,55],
     "programRequirements": [{
         "courseCodeFoundational": ["MATH241","MATH344","MATH344L"],
