@@ -71,14 +71,15 @@ public class Student extends User{
         
 
         for(Advisor advisor: AdvisorList.getInstance().getAdvisors()){
-            if(Advisor.hasStudent(this.getStudent()))
+            Student temp = this.student();
+            if(advisor.hasStudent(temp))
             {
-                return true;
+                return advisor;
 
             }
         }
-        return false;
-        return advisor;
+
+        return null;
 
     }
 
