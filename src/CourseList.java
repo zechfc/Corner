@@ -1,22 +1,31 @@
 import java.util.ArrayList;
 
 public class CourseList {
-    private static CourseList courseList;
-    private static ArrayList<Course> courses;
+    private static CourseList courses;
+    private static ArrayList<Course> courseList;
     
     private CourseList() {
-        courses = new ArrayList<Course>();
+        courseList = new ArrayList<Course>();
     }
 
     public static CourseList getInstance() {
-        if (courseList == null){
-            courseList = new CourseList();
+        if (courses == null){
+            courses = new CourseList();
         }
+        return courses;
+    }
+
+    public ArrayList<Course> getCourses(){
         return courseList;
     }
 
-    public ArrayList<Course> getCourse(String courseName) {
-        return courses;
+    public Course getCourse(String courseKey){
+        for(Course course : courseList){
+            if(course.getCourseKey().equals(courseKey)){
+                return course;
+            }
+        }
+        return null;
     }
 
     public Course checkPrereq(Course course, double grade) {

@@ -78,15 +78,14 @@ public class UI {
         String lastName = "Mayernik";
         String age = "20";
         String password = "lol987";
-        String advisor = "temp person";
         String major = "CS";
-        String concentration = "temp";
+        String concentration = "None";
         ArrayList<Student> studentsSupervising = null;
         boolean admin = false;
         String userID = "esnfaslkdfmlsakmdf";
         int transferCredits = 48;
         User newUser = application.createAccount(i, userID, firstName, middleName, lastName, age, email, password, 
-            advisor, major, concentration, studentsSupervising, admin, transferCredits);
+            major, concentration, studentsSupervising, admin, transferCredits);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -105,14 +104,14 @@ public class UI {
         String lastName = "Doe";
         String age = "19";
         String password = "sAfEpassword";
-        String advisor = "Real Person";
+        String concentration = "None";
         String major = "CIS";
         ArrayList<Student> studentsSupervising = null;
         boolean admin = false;
         String userID = "sflkve-dfsfde34fsdfv-csda";
         int transferCredits = 23;
         User newUser = application.createAccount(i, userID, firstName, middleName, lastName, age, email, password, 
-            advisor, major, userID, studentsSupervising, admin, transferCredits);
+            major, concentration, studentsSupervising, admin, transferCredits);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else{

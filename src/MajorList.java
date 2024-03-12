@@ -19,7 +19,13 @@ public class MajorList {
         return new Major(null, null, null, null, null, null);
     }
 
-    public void setMajor(){
-        
+    /**
+     *
+     * @param major String to change major name to
+     * @return String containing major name
+     */
+    public String setMajor(String major){
+        // iterate list, when major is found, set major
+        return major;
     }
 }

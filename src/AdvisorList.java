@@ -44,7 +44,7 @@ public class AdvisorList {
         
     }
 
-    public void editAdvisor(String Advisor){
+    public void editAdvisor(String advisor){
 
     }
 
