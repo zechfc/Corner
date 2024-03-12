@@ -4,12 +4,12 @@ public class MajorList {
     private static MajorList majorList;
     private static ArrayList<Major> majors;
 
-    private MajorList(){
+    private MajorList() {
         majors = new ArrayList<Major>();
     }
 
-    public static MajorList getInstance(){
-        if (majorList == null){
+    public static MajorList getInstance() {
+        if (majorList == null) {
             majorList = new MajorList();
         }
         return majorList;

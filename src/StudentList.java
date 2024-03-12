@@ -4,83 +4,85 @@ public class StudentList {
     private static StudentList students;
     private ArrayList<Student> studentList;
 
-    public StudentList(){  //constructor
+    public StudentList() { // constructor
         this.studentList = DataLoader.getStudents();
     }
 
-    public static StudentList getInstance(){ 
-        if (students == null){
+    public static StudentList getInstance() {
+        if (students == null) {
             students = new StudentList();
         }
         return students;
     }
 
-    public ArrayList<Student> getStudents(){ 
-        return studentList;  
+    public ArrayList<Student> getStudents() {
+        return studentList;
     }
 
-    public Student getVerifiedStudent(String email, String password){
-        for(Student student : studentList){
-            if(student.getEmail().equals(email) && student.getPassword().equals(password)){
+    public Student getVerifiedStudent(String email, String password) {
+        for (Student student : studentList) {
+            if (student.getEmail().equals(email) && student.getPassword().equals(password)) {
                 return student;
             }
         }
         return null;
     }
 
-    public void setStudent(){ 
-        
-    } 
+    public void setStudent() {
 
-    public void editStudent(String student){ 
-        
-    } 
+    }
 
-    public void addStudent(String userID, String email, String firstName, String middleName, String lastName, String age, 
-        String password, String major, String concentration, int transferCredits){ 
+    public void editStudent(String student) {
 
-        studentList.add(new Student(userID, email, firstName, middleName, lastName, age, password, major, concentration, transferCredits));
+    }
+
+    public void addStudent(String userID, String email, String firstName, String middleName, String lastName,
+            String age,
+            String password, String major, String concentration, int transferCredits) {
+
+        studentList.add(new Student(userID, email, firstName, middleName, lastName, age, password, major, concentration,
+                transferCredits));
         DataWriter.saveStudents();
-    } 
+    }
 
-    public void addStudent(Student student){ 
-        studentList.add((student));
+    public void addStudent(Student student) {
+        studentList.add(student);
         DataWriter.saveStudents();
-    } 
+    }
 
-    public boolean haveStudent(String email){ 
-        for(Student student : studentList )  {
-            if(student.getEmail().equals(email)){
+    public boolean haveStudent(String email) {
+        for (Student student : studentList) {
+            if (student.getEmail().equals(email)) {
                 return true;
             }
         }
-        return false;  
+        return false;
     }
 
-    public Student getStudent(String email){
-        for(Student student : studentList){
-            if(student.getEmail().equals(email)){
+    public Student getStudent(String email) {
+        for (Student student : studentList) {
+            if (student.getEmail().equals(email)) {
                 return student;
             }
         }
         return null;
     }
 
-    public Student getStudent(String firstName, String lastName){
-        for(Student student : studentList){
-            if(student.getFirstName().equals(firstName) && student.getLastName().equals(lastName)){
+    public Student getStudent(String firstName, String lastName) {
+        for (Student student : studentList) {
+            if (student.getFirstName().equals(firstName) && student.getLastName().equals(lastName)) {
                 return student;
             }
         }
         return null;
     }
 
-    public boolean emailTaken(String email){
-        for(Student student : studentList){
-            if(student.getEmail().equals(email)){
+    public boolean emailTaken(String email) {
+        for (Student student : studentList) {
+            if (student.getEmail().equals(email)) {
                 return true;
             }
         }
-        return false; //email not taken
+        return false; // email not taken
     }
 }

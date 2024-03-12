@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Student extends User{
+public class Student extends User {
     private ArrayList<Course> pastCourses;
     private ArrayList<Course> currentCourses;
     private SemesterPlan semesterPlan;
@@ -13,6 +13,7 @@ public class Student extends User{
     private int totalCredits;
     private int transferCredits;
     private Advisor advisor;
+    public String advisorID;
     private String advisorNote;
     private String classification;
 
@@ -28,9 +29,10 @@ public class Student extends User{
         this.currentCourses = currentCourses;
         this.pastCourses = pastCourses;
 
+        this.advisorID = advisorID;
     }
 
-    public void totalCompletedCredits(int transferCredits, int USC_CREDITS){
+    public void totalCompletedCredits(int transferCredits, int USC_CREDITS) {
         totalCredits = transferCredits + USC_CREDITS;
     }
 
@@ -57,89 +59,84 @@ public class Student extends User{
 
     }
 
-    public void updateGPA(double gpa, int credits){
+    public void updateGPA(double gpa, int credits) {
 
     }
 
-    public void whatIf(String major, String concentration){
+    public void whatIf(String major, String concentration) {
 
     }
 
-    public void contactAdvisor(String firstName, String lastName){
-        //is this a priority?
+    public void contactAdvisor(String firstName, String lastName) {
+        // is this a priority?
     }
 
-    public void courseFeedback(String courseName){
-        //is this a priority?
+    public void courseFeedback(String courseName) {
+        // is this a priority?
     }
 
-    public boolean atFailure(Course course, double grade){
+    public boolean atFailure(Course course, double grade) {
         return false;
     }
 
-    public double updateGrade(Course course, double grade){
+    public double updateGrade(Course course, double grade) {
         return 0.0;
     }
 
-    public Advisor getAdvisor(){
-        
+    // This does not work since DataWriter is calling this method, and this is returning
+    // a type Advisor, which the DataWriter line is setting the ADVISOR_ID, which is a string
+    // public Advisor getAdvisor(){
+    //     for(Advisor advisor: AdvisorList.getInstance().getAdvisors()){
+    //         Student temp = this.student();
+    //         if(advisor.hasStudent(temp))
+    //         {
+    //             return advisor;
+    //         }
+    //     }
+    //     return null;
+    // }
 
-        for(Advisor advisor: AdvisorList.getInstance().getAdvisors()){
-            Student temp = this.student();
-            if(advisor.hasStudent(temp))
-            {
-                return advisor;
-
-            }
-        }
-
-        return null;
-
-    }
-
-
-
+    //The DataWriter should be calling this, no? (I have changed)
     public String getAdvisorID(){
-        return advisor.getUserID();
-        
+        return advisorID;
     }
 
-    public String getMajorName(){
+    public String getMajorName() {
         return major;
     }
-    
-    public MajorMap getMajorMap(){
+
+    public MajorMap getMajorMap() {
         return majorMap;
     }
 
-    //todo - implement functionality
-    public boolean updateFailureRisk(){
+    // todo - implement functionality
+    public boolean updateFailureRisk() {
         failureRisk = true;
         return failureRisk;
     }
 
-    public void editMajorMap(MajorMap newMajorMap){
+    public void editMajorMap(MajorMap newMajorMap) {
         majorMap = newMajorMap;
     }
 
-    public SemesterPlan getSemesterPlan(){
+    public SemesterPlan getSemesterPlan() {
         return new SemesterPlan(major, pastCourses);
-        //SemesterPlan needs an ArrayList of completedCourses
-        //Student only stores the hashmap of classesTaken
+        // SemesterPlan needs an ArrayList of completedCourses
+        // Student only stores the hashmap of classesTaken
 
     }
 
-    public void editAdvisorNote(String note){
-        //This will need to DataWriter to that student's 'note' in their json
+    public void editAdvisorNote(String note) {
+        // This will need to DataWriter to that student's 'note' in their json
         advisorNote = note;
     }
 
-    public String getAdvisorNote(){
+    public String getAdvisorNote() {
         return advisorNote;
     }
 
 
-    public int getTransferCredits(){
+    public int getTransferCredits() {
         return transferCredits;
     }
 

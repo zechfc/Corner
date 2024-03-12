@@ -11,9 +11,9 @@ public class Major {
     private int totalhours;
     private String majorID;
 
-
-    public Major(ArrayList<Course> collegeRequirements, ArrayList<Course> carolinacoreCoursesReq, 
-        ArrayList<Course> concentrationCourses, ArrayList<Course> carolinacoreCourses, ArrayList<Course> majorCourses, UUID majorID){
+    public Major(ArrayList<Course> collegeRequirements, ArrayList<Course> carolinacoreCoursesReq,
+            ArrayList<Course> concentrationCourses, ArrayList<Course> carolinacoreCourses,
+            ArrayList<Course> majorCourses, UUID majorID) {
         this.collegeRequirements = collegeRequirements;
         this.carolinacoreCoursesReq = carolinacoreCoursesReq;
         this.concentrationCourses = concentrationCourses;
@@ -23,34 +23,34 @@ public class Major {
     }
 
     public String getMajor() {
-		return name;
-	}
+        return name;
+    }
 
     public int getTotalHours() {
-		return totalhours;
-	}
+        return totalhours;
+    }
 
-    public ArrayList<Course> getCollegeRequirements() {    
+    public ArrayList<Course> getCollegeRequirements() {
         return collegeRequirements;
-	}
+    }
 
-    public ArrayList<Course> getCarolinacoreCoursesReq() {    
+    public ArrayList<Course> getCarolinacoreCoursesReq() {
         return carolinacoreCoursesReq;
-	}
+    }
 
-    public ArrayList<Course> getCarolinacoreCourses() {    
+    public ArrayList<Course> getCarolinacoreCourses() {
         return carolinacoreCourses;
-	}
+    }
 
-    public ArrayList<Course> getConcentrationCourses() {    
+    public ArrayList<Course> getConcentrationCourses() {
         return concentrationCourses;
-	}
+    }
 
-    public ArrayList<Course> getMajorCourses() {    
+    public ArrayList<Course> getMajorCourses() {
         return majorCourses;
-	}
-    
-    public ArrayList<Course> getRequiredCourses() {    
+    }
+
+    public ArrayList<Course> getRequiredCourses() {
         ArrayList<Course> requiredCourses = new ArrayList<>();
         requiredCourses.addAll(this.getCarolinacoreCoursesReq());
         requiredCourses.addAll(this.getCarolinacoreCourses());
@@ -59,5 +59,5 @@ public class Major {
         requiredCourses.addAll(this.getMajorCourses());
 
         return requiredCourses;
-	}
+    }
 }

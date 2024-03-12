@@ -2,6 +2,7 @@
 public abstract class DataConstants {
     protected static final String STUDENT_FILE_NAME = "src/student.json";
     protected static final String ADVISOR_FILE_NAME = "src/advisors.json";
+    protected static final String COURSE_FILE_NAME = "src/courses.json";
 
 	protected static final String USER_ID = "userid";
     protected static final String STUDENT_LIST = "studentList";
@@ -25,6 +26,16 @@ public abstract class DataConstants {
     protected static final String COURSE_CODES = "courseCodes";
     protected static final String TRANSFER_CREDITS = "tranferCredits";
 
+    protected static final String COURSE_PREREQS = "prerequisite";
+    protected static final String COURSE_ID = "courseID";
+    protected static final String COURSE_KEY = "courseKey";
+    protected static final String COURSE_NAME = "courseName";
+    protected static final String COURSE_DESCRIPTION = "courseDescription";
+    protected static final String COURSE_AVAILABILITY = "courseAvailability";
+    protected static final String COURSE_CREDITS = "courseCredits";
+    protected static final String COURSE_TERM = "courseTerm";
+    protected static final String COURSE_PASSING_GRADE = "passingGrade";
+    protected static final String COURSE_PREREQ_REQUIRETYPE = "requireType";
     //better way to store year
 
 }

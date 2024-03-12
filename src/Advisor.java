@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 
 public class Advisor extends User{
@@ -20,11 +19,11 @@ public class Advisor extends User{
     //public void getStudent(String lastName){}
 
     //Removing student from system, must be admin, checked by Application.java
-    //Returns true if student removed from system (default true)
+    //Returns true if student removed from system (default false)
     public boolean removeStudent(String userID){
         StudentList students = StudentList.getInstance();
         //will call Advisors.removeStudent()
-        return true;
+        return false;
     }
 
     public void editAdvisorNote(String userID){
