@@ -46,7 +46,7 @@ public class StudentList {
     }
 
     public void addStudent(Student student) {
-        studentList.add((student));
+        studentList.add(student);
         DataWriter.saveStudents();
     }
 

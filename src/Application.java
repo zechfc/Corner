@@ -41,10 +41,9 @@ public class Application {
     }
 
     public User createAccount(int i, String userID, String firstName, String middleName, String lastName, String age,
-            String email,
-            String password, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin,
+            String email, String password, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin,
             int transferCredits) {
-
+        // i dictates if user is student(1) or advisor(2)
         // Email (username) already used
         if (studentList.emailTaken(email) || advisorList.emailTaken(email)) {
             return null;
@@ -52,17 +51,16 @@ public class Application {
 
         user = new User(userID, email, firstName, middleName, lastName, age, password);
         if (i == 1) {
-            Student temp = new Student(userID, email, firstName, middleName, lastName, age, password, major,
+            Student newStudent = new Student(userID, email, firstName, middleName, lastName, age, password, major,
                     concentration, transferCredits);
-            studentList.addStudent(temp);
-            return temp; // do we want to return temp or a student list
+            studentList.addStudent(newStudent);
+            return newStudent; 
 
         } else if (i == 2) {
-            Advisor temp = new Advisor(userID, studentsSupervising, firstName, middleName, lastName, age, email, admin,
+            Advisor newAdvisor = new Advisor(userID, studentsSupervising, firstName, middleName, lastName, age, email, admin,
                     password);
-            advisorList.addAdvisor(userID, studentsSupervising, email, firstName, middleName, lastName, age, admin,
-                    password);
-            return temp;
+            advisorList.addAdvisor(newAdvisor);
+            return newAdvisor;
         }
         return null;
     }
@@ -152,14 +150,6 @@ public class Application {
         }
         return null;
     }
-
-    // public String getAdvisorName(String userID){
-    // User user = advisorList.getAdvisor(userID);
-    // if(user != null && user instanceof Advisor){
-    // return user.getFirstName() + " " + user.getLastName();
-    // }
-    // return null;
-    // }
 
     public boolean getAdvisorID(String userID) {
         if (user != null && user.getUserID().equals(userID)) {

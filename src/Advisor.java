@@ -1,35 +1,34 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
-public class Advisor extends User {
-  private boolean admin;
-  private ArrayList<Student> studentsSupervising;
 
-  public Advisor(String userID, ArrayList<Student> studentsSupervising, String firstName, String middleName,
-      String lastName, String age, String email,
-      boolean admin, String password) {
-    super(userID, firstName, middleName, lastName, age, email, password);
-    this.admin = admin;
-    this.studentsSupervising = studentsSupervising;
-  }
+public class Advisor extends User{
+    private boolean admin;
+    private ArrayList<Student> studentsSupervising;
 
-  // Can't have overloaded methods with the same param types
-  public void getStudent(String userID) {
+    public Advisor(String userID, ArrayList<Student> studentsSupervising, String firstName, String middleName, String lastName, String age, String email, 
+        boolean admin, String password){
+        super(userID, firstName, middleName, lastName, age, email, password);
+        this.admin = admin;
+        this.studentsSupervising = studentsSupervising;
+    }
 
-  }
-  // public void getStudent(String lastName){}
+    //Can't have overloaded methods with the same param types
+    public void getStudent(String userID){
 
-  // Removing student from system, must be admin, checked by Application.java
-  // Returns true if student removed from system (default true)
-  public boolean removeStudent(String userID) {
-    StudentList students = StudentList.getInstance();
-    // will call Advisors.removeStudent()
-    return true;
-  }
+    }
+    //public void getStudent(String lastName){}
 
-  public void editAdvisorNote(String userID) {
+    //Removing student from system, must be admin, checked by Application.java
+    //Returns true if student removed from system (default false)
+    public boolean removeStudent(String userID){
+        StudentList students = StudentList.getInstance();
+        //will call Advisors.removeStudent()
+        return false;
+    }
 
-  }
+    public void editAdvisorNote(String userID){
+
+    }
 
     public ArrayList<Student> getStudentList(){
         return studentsSupervising;
