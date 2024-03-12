@@ -5,7 +5,7 @@ public class CourseList {
     private static ArrayList<Course> courseList;
 
     private CourseList() {
-        courseList = new ArrayList<Course>();
+        courseList = DataLoader.getCourses();
     }
 
     public static CourseList getInstance() {
@@ -29,7 +29,7 @@ public class CourseList {
     }
 
     public Course checkPrereq(Course course, double grade) {
-        Course c = new Course(null, null, null, null, null, false, 0, null, grade);
+        Course c = new Course(null, null, null, null, null, false, 0, null, 0);
         return c;
     }
 }

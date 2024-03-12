@@ -6,13 +6,15 @@ public class CourseChoice {
     private ArrayList<Course> courses;
 
     public CourseChoice(String prereq, ArrayList<String> courseIDs) {
+        System.out.println(prereq);
         this.prerequisite = requireType.valueOf(prereq);
         this.courseIDs = courseIDs;
+        this.courses = new ArrayList<Course>();
     }
 
     public void linkFromUUIDRelatedClasses(ArrayList<Course> classes) {
         for (String s : courseIDs) {
-            for (Course c : courses) {
+            for (Course c : classes) {
                 if (c.getCourseID().equals(s))
                     courses.add(c);
             }
@@ -52,5 +54,17 @@ public class CourseChoice {
 
     public boolean checkCoreqs(ArrayList<Course> classTaking) {
         return true;
+    }
+
+    public String getCoursesToString() {
+        String s = "";
+        if (this.prerequisite.equals(requireType.OR)) s += "One of these courses must be completed: \n";
+        else if (this.prerequisite.equals(requireType.AND)) s += "All courses listed below must be completed: \n";
+        else if (this.prerequisite.equals(requireType.PRE_OR_COREQ)) s += "This can be taken as a prerequisite or a corequisite: \n";
+        else if (this.prerequisite.equals(requireType.COREQ)) s += "This must be taken as a corequisite: \n";
+        for (Course c : this.courses) {
+            s += c.getCourseKey() + ": " + c.getCourseName() + "\n";
+        }
+        return s;
     }
 }

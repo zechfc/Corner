@@ -85,9 +85,9 @@ public class DataLoader extends DataConstants {
 				JSONObject courseJSON = (JSONObject) courseListJSON.get(i);
 				JSONArray jsonArray = (JSONArray) courseJSON.get(COURSE_PREREQS);
 				ArrayList<CourseChoice> cc = new ArrayList<CourseChoice>();
-				for (int j = 0; j < jsonArray.size(); j++) {
+				for (int j = 0; jsonArray != null && j < jsonArray.size(); j++) {
 					JSONObject courseChoiceJSON = (JSONObject) jsonArray.get(j);
-					String requireType = (String) courseJSON.get(COURSE_PREREQ_REQUIRETYPE);
+					String requireType = (String) courseChoiceJSON.get(COURSE_PREREQ_REQUIRETYPE);
 					ArrayList<String> courseIDList = (ArrayList<String>) courseChoiceJSON.get(COURSE_ID);
 					cc.add(new CourseChoice(requireType, courseIDList));
 				}
@@ -98,11 +98,18 @@ public class DataLoader extends DataConstants {
 				boolean courseAvailability = (boolean) courseJSON.get(COURSE_AVAILABILITY);
 				double courseCredits = ((double) courseJSON.get(COURSE_CREDITS));
 				String term = (String) courseJSON.get(COURSE_TERM);
-				double passingGrade = ((double) courseJSON.get(COURSE_PASSING_GRADE));
+				double passingGrade;
+				if (courseJSON.get(COURSE_PASSING_GRADE) != null) {
+					passingGrade = (double)((long) courseJSON.get(COURSE_PASSING_GRADE));
+				}
+				else {
+					passingGrade = 0;
+				}
 				classlist.add(new Course(cc, courseid, coursekey, courseName, courseDescription, courseAvailability,
 						courseCredits, term, passingGrade));
 			}
 			for (Course c : classlist) {
+				System.out.println(c.getCourseName());
 				for (CourseChoice cc : c.getPrereqs()) {
 					cc.linkFromUUIDRelatedClasses(classlist);
 				}
