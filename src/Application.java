@@ -161,6 +161,14 @@ public class Application {
         return false;
     }
 
+    public Course getClass(String classCode) {
+        return classList.getCourse(classCode);
+    }
+
+    public ArrayList<Course> getClasses() {
+        return classList.getCourses();
+    }
+
     public Advisor getAdvisor(String userID) {
         User user = advisorList.getAdvisor(userID);
         if (user != null && user instanceof Advisor) {

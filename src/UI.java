@@ -11,19 +11,20 @@ public class UI {
     }
 
     public void run(){
-        scenario1(); //Student login success scenario
-        scenario2(); //Student login failure scenario
-        scenario3(); //Student account created success scenario
-        scenario4(); //Student account created failure scenario
+        //scenario1(); //Student login success scenario
+        //scenario2(); //Student login failure scenario
+        //scenario3(); //Student account created success scenario
+        //scenario4(); //Student account created failure scenario
         scenario5(); //Advisor (not an admin) account created success scenario
+        scenario5();
     }
 
     public void scenario1(){
         //Login success scenario
         System.out.println("Scenario 1");
     
-        System.out.println("Type student or advisor for what you are");
-        application.checkUser("student");
+        System.out.println("Type student or advisor for what you are"); // ?
+        application.checkUser("student"); 
         System.out.println("User is a student");
     
         if(!application.login(1, "jlDoe@email.sc.edu", "password1")){
@@ -141,6 +142,50 @@ public class UI {
         }else {
             System.out.println("Successfully created account for " + newUser.getFirstName());
         }
+    }
+
+    public void scenario5() {
+        /*if(!application.login(1, "jlDoe@email.sc.edu", "password1")){
+            System.out.println("Sorry we couldn't login."); //login failed
+            return;
+        }
+        System.out.println("John Doe is now logged in");*/ 
+        ArrayList<Course> cList = application.getClasses();
+        for (Course l : cList) {
+            System.out.println("Class!");
+            System.out.println(l.getCourseID());
+        }
+        System.out.println("Searching for data on CSCE146");
+        Course c = application.getClass("CSCE146");
+        if (c == null) {
+            System.out.println("Class not found :(");
+            return;
+        }
+        System.out.println("Getting details on CSCE146:\n" + c.getDescription());
+        System.out.println("Getting availability of CSCE146:\n" + c.getAvailability());
+        System.out.println("These are the prerequisites of CSCE146:\n" + c.getPrereqsToString());
+    }
+
+    public void scenario5() {
+        /*if(!application.login(1, "jlDoe@email.sc.edu", "password1")){
+            System.out.println("Sorry we couldn't login."); //login failed
+            return;
+        }
+        System.out.println("John Doe is now logged in");*/ 
+        ArrayList<Course> cList = application.getClasses();
+        for (Course l : cList) {
+            System.out.println("Class!");
+            System.out.println(l.getCourseID());
+        }
+        System.out.println("Searching for data on CSCE146");
+        Course c = application.getClass("CSCE146");
+        if (c == null) {
+            System.out.println("Class not found :(");
+            return;
+        }
+        System.out.println("Getting details on CSCE146:\n" + c.getDescription());
+        System.out.println("Getting availability of CSCE146:\n" + c.getAvailability());
+        System.out.println("These are the prerequisites of CSCE146:\n" + c.getPrereqsToString());
     }
 
     public static void main(String[] args){
