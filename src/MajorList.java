@@ -16,7 +16,14 @@ public class MajorList {
     }
 
     public Major getMajor(String major){
-        return new Major(null, null, null, null, null, null);
+        for (Major newmajor:majors){
+            if(major.equals(newmajor.getMajor())){
+                return newmajor;
+            }
+            
+        }
+
+        return null;
     }
 
     /**

@@ -7,40 +7,54 @@ public class Student extends User{
     private SemesterPlan semesterPlan;
     private MajorMap majorMap;
     private String major;
-    private String concentration;
     private double majorGPA;
     private double overallGPA;
-    private String classLevel;
-    private String currentYear;
     private boolean failureRisk;
     private int totalCredits;
-    private int USC_CREDITS;
     private int transferCredits;
     private Advisor advisor;
     private String advisorNote;
     private String classification;
 
     public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password,  
-        String major, String classification, int transferCredits){
+        String major, String classification, int transferCredits, ArrayList<Course> currentCourses,ArrayList<Course> pastCourses ){
         super(userID, firstName, middleName, lastName, age, email, password);
         this.major = major;
-        this.concentration = concentration; 
         this.classification = classification; 
         this.advisorNote = advisorNote;
-        this.currentYear = currentYear;
         this.transferCredits = transferCredits;
         this.totalCredits = 0;
-        this.classLevel = "Freshman";
-        this.USC_CREDITS = 0;
+        this.classification = classification;
+        this.currentCourses = currentCourses;
+        this.pastCourses = pastCourses;
+
     }
 
     public void totalCompletedCredits(int transferCredits, int USC_CREDITS){
         totalCredits = transferCredits + USC_CREDITS;
     }
 
-    public double GPA(int totalCredits, int totalHours){
-        //where is totalHours coming from (not on UML)
-        return 0.0;
+    public double overallGPA(double overallGPA){
+        return overallGPA;
+    }
+
+    public double majorGPA(double majorGPA){
+        return majorGPA;
+    }
+
+    public void calcMajorGPA(String major){
+        ArrayList<Course> temp = MajorList.getInstance().getMajor(major).getMajorCourses();
+        int length = temp.size();
+
+        //looping through the major courses array
+        for (int i=0; i<length; i++) {
+            //checking if the name matches a course a student has taken
+            Course 
+            if(temp.getCourseName)
+        };
+
+
+
     }
 
     public void updateGPA(double gpa, int credits){
@@ -124,9 +138,6 @@ public class Student extends User{
         return advisorNote;
     }
 
-    public String getCurrentYear() {
-        return currentYear;
-    }
 
     public int getTransferCredits(){
         return transferCredits;
