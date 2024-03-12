@@ -144,7 +144,7 @@ public class UI {
         }
     }
 
-    public void scenario5() {
+    public void scenario6() {
         /*if(!application.login(1, "jlDoe@email.sc.edu", "password1")){
             System.out.println("Sorry we couldn't login."); //login failed
             return;
