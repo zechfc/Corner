@@ -2,80 +2,81 @@ import java.util.ArrayList;
 
 public class AdvisorList {
     private static AdvisorList advisors;
-    private  ArrayList<Advisor> AdvisorList;
+    private ArrayList<Advisor> AdvisorList;
 
-    private AdvisorList(){
+    private AdvisorList() {
         AdvisorList = DataLoader.getAdvisors();
     }
 
-    public static AdvisorList getInstance(){
-        if (advisors == null){
+    public static AdvisorList getInstance() {
+        if (advisors == null) {
             advisors = new AdvisorList();
         }
         return advisors;
     }
 
-    public boolean haveAdvisor(String email){
-        for(Advisor advisor : AdvisorList )  {
-            if(advisor.getEmail().equals(email)){
+    public boolean haveAdvisor(String email) {
+        for (Advisor advisor : AdvisorList) {
+            if (advisor.getEmail().equals(email)) {
                 return true;
             }
         }
         return false;
 
     }
- 
-    //need this one
-    public ArrayList<Advisor> getAdvisors(){
+
+    // need this one
+    public ArrayList<Advisor> getAdvisors() {
         return AdvisorList;
     }
 
-    public Advisor getVerfiedAdvisor(String email, String password){
-        //Checks each Advisor in Advisors array list
-        for(Advisor Advisor : AdvisorList){
-            if(Advisor.getEmail().equals(email) && Advisor.getPassword().equals(password)){
+    public Advisor getVerfiedAdvisor(String email, String password) {
+        // Checks each Advisor in Advisors array list
+        for (Advisor Advisor : AdvisorList) {
+            if (Advisor.getEmail().equals(email) && Advisor.getPassword().equals(password)) {
                 return Advisor;
-            } //checks if Advisornames are equals and passwords are equal
+            } // checks if Advisornames are equals and passwords are equal
         }
         return null;
     }
 
-    public void setAdvisor(){
-        
-    }
-
-    public void editAdvisor(String advisor){
+    public void setAdvisor() {
 
     }
 
-    //method for adding to the JSON
-    public void addAdvisor(String userId, ArrayList<Student> studentsSupervising, String email, String firstName, String middleName, 
-        String lastName, String age, Boolean admin, String password){
-        AdvisorList.add(new Advisor(userId,studentsSupervising, email, firstName, middleName, lastName, age, admin, password));
+    public void editAdvisor(String advisor) {
+
+    }
+
+    // method for adding to the JSON
+    public void addAdvisor(String userId, ArrayList<Student> studentsSupervising, String email, String firstName,
+            String middleName,
+            String lastName, String age, Boolean admin, String password) {
+        AdvisorList.add(
+                new Advisor(userId, studentsSupervising, email, firstName, middleName, lastName, age, admin, password));
         DataWriter.saveAdvisors();
 
     }
 
-    public void removeStudent(Student student){
-        //Calls data writer to remove Student from system
+    public void removeStudent(Student student) {
+        // Calls data writer to remove Student from system
     }
 
-    public Advisor getAdvisor(String userID){
-        for(Advisor advisor : AdvisorList){
-            if(advisor.getUserID().equals(userID)){
+    public Advisor getAdvisor(String userID) {
+        for (Advisor advisor : AdvisorList) {
+            if (advisor.getUserID().equals(userID)) {
                 return advisor;
             }
         }
         return null;
     }
 
-    public boolean emailTaken(String email){
-        for(Advisor advisor : AdvisorList){
-            if(advisor.getEmail().equals(email)){
+    public boolean emailTaken(String email) {
+        for (Advisor advisor : AdvisorList) {
+            if (advisor.getEmail().equals(email)) {
                 return true;
             }
         }
-        return false; //email not taken
+        return false; // email not taken
     }
 }
-

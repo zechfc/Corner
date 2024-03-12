@@ -7,9 +7,10 @@ public class User {
   protected String email;
   protected String password;
 
-  //new account
-  public User(String userID, String firstName, String middleName, String lastName, String age, String email, String password){
-    this.userID = userID; 
+  // new account
+  public User(String userID, String firstName, String middleName, String lastName, String age, String email,
+      String password) {
+    this.userID = userID;
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
@@ -17,24 +18,23 @@ public class User {
     this.email = email;
     this.password = password;
   }
-    
+
   public String getEmail() {
     return email;
   }
 
-  public String getUserAge(){
+  public String getUserAge() {
     return age;
   }
 
-  public String getFirstName(){
+  public String getFirstName() {
     return firstName;
   }
 
-  public String getMiddleName(){
+  public String getMiddleName() {
     return middleName;
   }
 
-  
   public String getLastName() {
     return lastName;
   }
@@ -42,8 +42,8 @@ public class User {
   public String getPassword() {
     return password;
   }
-  
-  public String getUserID(){
+
+  public String getUserID() {
     return userID;
   }
 }

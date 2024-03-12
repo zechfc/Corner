@@ -5,67 +5,110 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-public class DataLoader extends DataConstants{
-	
+public class DataLoader extends DataConstants {
+
 	public static ArrayList<Student> getStudents() {
 		ArrayList<Student> studentList = new ArrayList<Student>();
-		
+
 		try {
 			FileReader reader = new FileReader(STUDENT_FILE_NAME);
-			JSONParser parser = new JSONParser();	
-			JSONArray studentListJSON = (JSONArray)new JSONParser().parse(reader);
-			
-			for(int i=0; i < studentListJSON.size(); i++) {
-				JSONObject studentJSON = (JSONObject)studentListJSON.get(i);
-				String Userid = (String)studentJSON.get(USER_ID);
-				String email = (String)studentJSON.get(USER_USER_NAME);
-				String firstName = (String)studentJSON.get(USER_FIRST_NAME);
-				String middleName = (String)studentJSON.get(USER_MIDDLE_NAME);
-				String lastName = (String)studentJSON.get(USER_LAST_NAME);
-				String age = ((String)studentJSON.get(USER_AGE));
-				String password = (String)studentJSON.get(USER_PASSWORD);
-				String advisorID = (String)studentJSON.get(ADVISOR_ID);
-				String major = (String)studentJSON.get(MAJOR);
-				String classification = (String)studentJSON.get(CLASSIFICATION);
-				String semester = (String)studentJSON.get(SEMESTER);
-				String grade = (String)studentJSON.get(GRADE);
-				String year = (String)studentJSON.get(YEAR);
-				int transferCredits = ((Long)studentJSON.get(TRANSFER_CREDITS)).intValue(); //need to change subsequent to int instead of long
-				studentList.add(new Student(Userid, email, firstName, middleName, lastName, age, password, advisorID, major, classification, transferCredits));
+			JSONParser parser = new JSONParser();
+			JSONArray studentListJSON = (JSONArray) new JSONParser().parse(reader);
+
+			for (int i = 0; i < studentListJSON.size(); i++) {
+				JSONObject studentJSON = (JSONObject) studentListJSON.get(i);
+				String Userid = (String) studentJSON.get(USER_ID);
+				String email = (String) studentJSON.get(USER_USER_NAME);
+				String firstName = (String) studentJSON.get(USER_FIRST_NAME);
+				String middleName = (String) studentJSON.get(USER_MIDDLE_NAME);
+				String lastName = (String) studentJSON.get(USER_LAST_NAME);
+				String age = ((String) studentJSON.get(USER_AGE));
+				String password = (String) studentJSON.get(USER_PASSWORD);
+				String advisorID = (String) studentJSON.get(ADVISOR_ID);
+				String major = (String) studentJSON.get(MAJOR);
+				String classification = (String) studentJSON.get(CLASSIFICATION);
+				String semester = (String) studentJSON.get(SEMESTER);
+				String grade = (String) studentJSON.get(GRADE);
+				String year = (String) studentJSON.get(YEAR);
+				int transferCredits = ((Long) studentJSON.get(TRANSFER_CREDITS)).intValue(); // need to change
+																								// subsequent to int
+																								// instead of long
+				studentList.add(new Student(Userid, email, firstName, middleName, lastName, age, password, advisorID,
+						major, classification, transferCredits));
 			}
 
 			return studentList;
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	public static ArrayList<Advisor> getAdvisors(){
+	public static ArrayList<Advisor> getAdvisors() {
 		ArrayList<Advisor> advisorList = new ArrayList<Advisor>();
 
-		try{
+		try {
 			FileReader reader = new FileReader(ADVISOR_FILE_NAME);
 			JSONParser parser = new JSONParser();
-			JSONArray advisorListJSON = (JSONArray)new JSONParser().parse(reader);
+			JSONArray advisorListJSON = (JSONArray) new JSONParser().parse(reader);
 
-			for(int i = 0; i < advisorListJSON.size(); i++){
-				JSONObject advisorJSON = (JSONObject)advisorListJSON.get(i);
-				String Userid = (String)advisorJSON.get(USER_ID);
-				String email = (String)advisorJSON.get(USER_USER_NAME);
-				String firstName = (String)advisorJSON.get(USER_FIRST_NAME);
-				String middleName = (String)advisorJSON.get(USER_MIDDLE_NAME);
-				String lastName = (String)advisorJSON.get(USER_LAST_NAME);
-				String age = ((String)advisorJSON.get(USER_AGE));
-				String password = (String)advisorJSON.get(USER_PASSWORD);
-				boolean admin = ((boolean)advisorJSON.get(ADMIN));
-				ArrayList<Student> studentList = (ArrayList<Student>)advisorJSON.get(STUDENT_LIST);
-				advisorList.add(new Advisor(Userid, studentList, firstName, middleName, lastName, age, email, admin, password));
-			}			
+			for (int i = 0; i < advisorListJSON.size(); i++) {
+				JSONObject advisorJSON = (JSONObject) advisorListJSON.get(i);
+				String Userid = (String) advisorJSON.get(USER_ID);
+				String email = (String) advisorJSON.get(USER_USER_NAME);
+				String firstName = (String) advisorJSON.get(USER_FIRST_NAME);
+				String middleName = (String) advisorJSON.get(USER_MIDDLE_NAME);
+				String lastName = (String) advisorJSON.get(USER_LAST_NAME);
+				String age = ((String) advisorJSON.get(USER_AGE));
+				String password = (String) advisorJSON.get(USER_PASSWORD);
+				boolean admin = ((boolean) advisorJSON.get(ADMIN));
+				ArrayList<Student> studentList = (ArrayList<Student>) advisorJSON.get(STUDENT_LIST);
+				advisorList.add(
+						new Advisor(Userid, studentList, firstName, middleName, lastName, age, email, admin, password));
+			}
 
 			return advisorList;
-		} catch(Exception e){
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static ArrayList<Course> getCourses() {
+		ArrayList<Course> classlist = new ArrayList<Course>();
+		try {
+			FileReader reader = new FileReader(COURSE_FILE_NAME);
+			JSONParser parser = new JSONParser();
+			JSONArray courseListJSON = (JSONArray) new JSONParser().parse(reader);
+			for (int i = 0; i < courseListJSON.size(); i++) {
+				JSONObject courseJSON = (JSONObject) courseListJSON.get(i);
+				JSONArray jsonArray = (JSONArray) courseJSON.get(COURSE_PREREQS);
+				ArrayList<CourseChoice> cc = new ArrayList<CourseChoice>();
+				for (int j = 0; j < jsonArray.size(); j++) {
+					JSONObject courseChoiceJSON = (JSONObject) jsonArray.get(j);
+					String requireType = (String) courseJSON.get(COURSE_PREREQ_REQUIRETYPE);
+					ArrayList<String> courseIDList = (ArrayList<String>) courseChoiceJSON.get(COURSE_ID);
+					cc.add(new CourseChoice(requireType, courseIDList));
+				}
+				String courseid = (String) courseJSON.get(COURSE_ID);
+				String coursekey = (String) courseJSON.get(COURSE_KEY);
+				String courseName = (String) courseJSON.get(COURSE_NAME);
+				String courseDescription = (String) courseJSON.get(COURSE_DESCRIPTION);
+				boolean courseAvailability = (boolean) courseJSON.get(COURSE_AVAILABILITY);
+				double courseCredits = ((double) courseJSON.get(COURSE_CREDITS));
+				String term = (String) courseJSON.get(COURSE_TERM);
+				double passingGrade = ((double) courseJSON.get(COURSE_PASSING_GRADE));
+				classlist.add(new Course(cc, courseid, coursekey, courseName, courseDescription, courseAvailability,
+						courseCredits, term, passingGrade));
+			}
+			for (Course c : classlist) {
+				for (CourseChoice cc : c.getPrereqs()) {
+					cc.linkFromUUIDRelatedClasses(classlist);
+				}
+			}
+			return classlist;
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
