@@ -17,17 +17,18 @@ public class Student extends User {
     private int USC_CREDITS;
     private int transferCredits;
     private Advisor advisor;
-    private String advisorID;
     private String advisorNote;
+    private String classification;
 
     public Student(String userID, String email, String firstName, String middleName, String lastName, String age,
             String password,
             String major, String classification, int transferCredits) {
         super(userID, firstName, middleName, lastName, age, email, password);
         this.major = major;
-        this.concentration = classification; // Isaac - I am assuming this is what classification meant?
-        this.advisorNote = "";
-        this.currentYear = "2024";
+        this.concentration = concentration; 
+        this.classification = classification; 
+        this.advisorNote = advisorNote;
+        this.currentYear = currentYear;
         this.transferCredits = transferCredits;
         this.totalCredits = 0;
         this.classLevel = "Freshman";
@@ -67,11 +68,24 @@ public class Student extends User {
         return 0.0;
     }
 
-    public Advisor getAdvisor() {
+    public Advisor getAdvisor(){
+        
+
+        for(Advisor advisor: AdvisorList.getInstance().getAdvisors()){
+            if(Advisor.hasStudent(this.getStudent()))
+            {
+                return true;
+
+            }
+        }
+        return false;
         return advisor;
+
     }
 
-    public String getAdvisorID() {
+
+
+    public String getAdvisorID(){
         return advisor.getUserID();
 
     }
@@ -116,5 +130,13 @@ public class Student extends User {
 
     public int getTransferCredits() {
         return transferCredits;
+    }
+
+    public String getClassification(){
+        return classification;
+    }
+
+    public Student student(){
+        return student();
     }
 }

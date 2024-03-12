@@ -51,13 +51,14 @@ public class DataWriter extends DataConstants {
 
 		// studentDetails.put(ADVISOR_ID, student.getAdvisor());
 		studentDetails.put(ADVISOR_ID, student.getAdvisor());
+		studentDetails.put(USER_FIRST_NAME, student.getFirstName());
+		studentDetails.put(USER_MIDDLE_NAME, student.getMiddleName());
+		studentDetails.put(USER_LAST_NAME, student.getLastName());
+		studentDetails.put(USER_PASSWORD, student.getPassword());
+		studentDetails.put(USER_AGE, student.getUserAge());
 		studentDetails.put(MAJOR, student.getMajorName());
 		studentDetails.put(COURSES_PRESENT, student.getCurrentYear());
-		// studentDetails.put(FALL, "Fall"); //ENUM
-		// studentDetails.put(SPRING, "Spring"); //ENUM
-		// studentDetails.put(SPRING, "Spring"); //ENUM
-		// studentDetails.put(SUMMER, "Summer"); //ENUM
-		studentDetails.put(CLASSIFICATION, "Junior");
+		studentDetails.put(CLASSIFICATION, student.getClass());
 		studentDetails.put(NOTES, student.getAdvisorNote());
 		studentDetails.put(TRANSFER_CREDITS, student.getTransferCredits());
 

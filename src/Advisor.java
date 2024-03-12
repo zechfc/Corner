@@ -31,15 +31,28 @@ public class Advisor extends User {
 
   }
 
-  public ArrayList<Student> getStudentList() {
-    return studentsSupervising;
-  }
+    public ArrayList<Student> getStudentList(){
+        return studentsSupervising;
+    }
 
-  public Boolean getAdmin() {
-    return admin;
-  }
+    public boolean hasStudent(Student student){
+        for (Student students: studentsSupervising){
+            if(students.equals(student))
+            {
+                return true;
 
-  public String getAdvisorAge() {
-    return age;
-  }
+            }
+        }
+        return false;
+    }
+
+
+      public Boolean getAdmin() {
+        return admin;
+      }
+    
+    
+      public String getAdvisorAge(){
+        return age;
+      }
 }
