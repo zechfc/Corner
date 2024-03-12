@@ -66,16 +66,6 @@
 }
 ,
 {
-    "prerequisites":[
-        [{},{}],
-        [],
-        []
-    ],
-    "corequisites":[
-
-    ]
-
-
     "prerequisite":[
         {
             "requireType":"coreq",

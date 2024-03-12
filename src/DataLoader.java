@@ -33,7 +33,7 @@ public class DataLoader extends DataConstants {
 				int transferCredits = ((Long) studentJSON.get(TRANSFER_CREDITS)).intValue(); // need to change
 																								// subsequent to int
 																								// instead of long
-				studentList.add(new Student(Userid, email, firstName, middleName, lastName, age, password, advisorID,
+				studentList.add(new Student(Userid, email, firstName, lastName, age, password, advisorID,
 						major, classification, transferCredits));
 			}
 
