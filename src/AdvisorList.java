@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 public class AdvisorList {
     private static AdvisorList advisors;
-    private ArrayList<Advisor> AdvisorList;
+    private ArrayList<Advisor> advisorList;
 
     private AdvisorList() {
-        AdvisorList = DataLoader.getAdvisors();
+        advisorList = DataLoader.getAdvisors();
     }
 
     public static AdvisorList getInstance() {
@@ -16,7 +16,7 @@ public class AdvisorList {
     }
 
     public boolean haveAdvisor(String email) {
-        for (Advisor advisor : AdvisorList) {
+        for (Advisor advisor : advisorList) {
             if (advisor.getEmail().equals(email)) {
                 return true;
             }
@@ -27,12 +27,12 @@ public class AdvisorList {
 
     // need this one
     public ArrayList<Advisor> getAdvisors() {
-        return AdvisorList;
+        return advisorList;
     }
 
     public Advisor getVerfiedAdvisor(String email, String password) {
         // Checks each Advisor in Advisors array list
-        for (Advisor Advisor : AdvisorList) {
+        for (Advisor Advisor : advisorList) {
             if (Advisor.getEmail().equals(email) && Advisor.getPassword().equals(password)) {
                 return Advisor;
             } // checks if Advisornames are equals and passwords are equal
@@ -52,10 +52,13 @@ public class AdvisorList {
     public void addAdvisor(String userId, ArrayList<Student> studentsSupervising, String email, String firstName,
             String middleName,
             String lastName, String age, Boolean admin, String password) {
-        AdvisorList.add(
-                new Advisor(userId, studentsSupervising, email, firstName, middleName, lastName, age, admin, password));
+        advisorList.add(new Advisor(userId, studentsSupervising, email, firstName, middleName, lastName, age, admin, password));
         DataWriter.saveAdvisors();
+    }
 
+    public void addAdvisor(Advisor advisor){
+        advisorList.add(advisor);
+        DataWriter.saveAdvisors();
     }
 
     public void removeStudent(Student student) {
@@ -63,7 +66,7 @@ public class AdvisorList {
     }
 
     public Advisor getAdvisor(String userID) {
-        for (Advisor advisor : AdvisorList) {
+        for (Advisor advisor : advisorList) {
             if (advisor.getUserID().equals(userID)) {
                 return advisor;
             }
@@ -72,7 +75,7 @@ public class AdvisorList {
     }
 
     public boolean emailTaken(String email) {
-        for (Advisor advisor : AdvisorList) {
+        for (Advisor advisor : advisorList) {
             if (advisor.getEmail().equals(email)) {
                 return true;
             }
