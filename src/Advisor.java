@@ -41,6 +41,17 @@ public class Advisor extends User{
         return studentsSupervising;
     }
 
+    public boolean hasStudent(Student student){
+        for (Student students: studentsSupervising){
+            if(students.equals(student))
+            {
+                return true;
+
+            }
+        }
+        return false;
+    }
+
 
       public Boolean getAdmin() {
         return admin;

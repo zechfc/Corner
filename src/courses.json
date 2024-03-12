@@ -66,6 +66,16 @@
 }
 ,
 {
+    "prerequisites":[
+        [{},{}],
+        [],
+        []
+    ],
+    "corequisites":[
+
+    ]
+
+
     "prerequisite":[
         {
             "requireType":"coreq",
@@ -92,8 +102,9 @@
     "courseName":"Basic College Mathematics",
     "courseDescription": "Basic college algebra; linear and quadratic equations, inequalities, functions and graphs of functions, exponential and logarithm functions, systems of equations.",
     "courseAvailability": true,
+    "reccomendedSemester":"freshman",
     "courseCredits": 3,
-    "courseTerm": "SPRING",
+    "reccomendedCourseTerm": "SPRING",
     "passingGrade": 70
 }
 ,
