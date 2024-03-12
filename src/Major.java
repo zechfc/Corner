@@ -5,7 +5,6 @@ public class Major {
     private String description;
     private ArrayList<Course> collegeRequirements;
     private ArrayList<Course> carolinacoreCoursesReq;
-    private ArrayList<Course> concentrationCourses;
     private ArrayList<Course> carolinacoreCourses;
     private ArrayList<Course> majorCourses;
     private int totalhours;
@@ -13,10 +12,10 @@ public class Major {
 
 
     public Major(ArrayList<Course> collegeRequirements, ArrayList<Course> carolinacoreCoursesReq, 
-        ArrayList<Course> concentrationCourses, ArrayList<Course> carolinacoreCourses, ArrayList<Course> majorCourses, UUID majorID){
+        ArrayList<Course> concentrationCourses, ArrayList<Course> carolinacoreCourses, ArrayList<Course> majorCourses, String majorID, String description){
         this.collegeRequirements = collegeRequirements;
         this.carolinacoreCoursesReq = carolinacoreCoursesReq;
-        this.concentrationCourses = concentrationCourses;
+        this.description = description;
         this.carolinacoreCourses = carolinacoreCourses;
         this.majorCourses = majorCourses;
         this.majorID = majorID;
@@ -26,6 +25,13 @@ public class Major {
 		return name;
 	}
 
+    public String getMajorID() {
+		return majorID;
+	}
+
+    public String getDescription() {
+		return description;
+	}
     public int getTotalHours() {
 		return totalhours;
 	}
@@ -42,10 +48,6 @@ public class Major {
         return carolinacoreCourses;
 	}
 
-    public ArrayList<Course> getConcentrationCourses() {    
-        return concentrationCourses;
-	}
-
     public ArrayList<Course> getMajorCourses() {    
         return majorCourses;
 	}
@@ -55,7 +57,6 @@ public class Major {
         requiredCourses.addAll(this.getCarolinacoreCoursesReq());
         requiredCourses.addAll(this.getCarolinacoreCourses());
         requiredCourses.addAll(this.getCollegeRequirements());
-        requiredCourses.addAll(this.getConcentrationCourses());
         requiredCourses.addAll(this.getMajorCourses());
 
         return requiredCourses;
