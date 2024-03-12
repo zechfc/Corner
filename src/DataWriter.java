@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 public class DataWriter extends DataConstants {
 
 	public static void saveStudents() {
-		StudentList studentList/* users */ = StudentList.getInstance();
+		StudentList studentList = StudentList.getInstance();
 		ArrayList<Student> students = studentList.getStudents();
 		JSONArray jsonStudents = new JSONArray();
 
@@ -27,7 +27,7 @@ public class DataWriter extends DataConstants {
 	}
 
 	public static void saveAdvisors() {
-		AdvisorList advisorList/* users */ = AdvisorList.getInstance();
+		AdvisorList advisorList = AdvisorList.getInstance();
 		ArrayList<Advisor> advisors = advisorList.getAdvisors();
 		JSONArray jsonAdvisors = new JSONArray();
 
@@ -49,12 +49,12 @@ public class DataWriter extends DataConstants {
 	public static JSONObject getStudentJSON(Student student) {
 		JSONObject studentDetails = new JSONObject();
 
-		// studentDetails.put(ADVISOR_ID, student.getAdvisor());
 		studentDetails.put(ADVISOR_ID, student.getAdvisorID());
 		studentDetails.put(USER_FIRST_NAME, student.getFirstName());
 		studentDetails.put(USER_MIDDLE_NAME, student.getMiddleName());
 		studentDetails.put(USER_LAST_NAME, student.getLastName());
 		studentDetails.put(USER_PASSWORD, student.getPassword());
+		studentDetails.put(USER_USER_NAME, student.getEmail());
 		studentDetails.put(USER_AGE, student.getUserAge());
 		studentDetails.put(MAJOR, student.getMajorName());
 		studentDetails.put(COURSES_PRESENT, student.getCurrentYear());
@@ -73,57 +73,17 @@ public class DataWriter extends DataConstants {
 
 	public static JSONObject getAdvisorJSON(Advisor advisor) {
 		JSONObject advisorDetails = new JSONObject();
+		
 		advisorDetails.put(STUDENT_LIST, advisor.getStudentList());
+		advisorDetails.put(USER_ID, advisor.getUserID());
+		advisorDetails.put(USER_FIRST_NAME, advisor.getFirstName());
+		advisorDetails.put(USER_MIDDLE_NAME, advisor.getMiddleName());
+		advisorDetails.put(USER_LAST_NAME, advisor.getLastName());
+		advisorDetails.put(USER_PASSWORD, advisor.getPassword());
+		advisorDetails.put(USER_AGE, advisor.getUserAge());
+		advisorDetails.put(USER_USER_NAME, advisor.getEmail());
+		advisorDetails.put(ADMIN, advisor.getAdmin());
+		
 		return advisorDetails;
 	}
-
-	// Users is deprecated
-
-	// public static void saveUsers() {
-	// UserList userList/*users*/ = UserList.getInstance();
-	//// ArrayList<User> users = userList.getUsers();
-	// ArrayList<User> users = userList.getUsers();
-	// JSONArray jsonUsers = new JSONArray();
-	//
-	// //creating all the json objects
-	// for(int i=0; i< users.size(); i++) {
-	// jsonUsers.add(getUserJSON(users.get(i), null, null));
-	// }
-	//
-	// //Write JSON file
-	// try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
-	//
-	// file.write(jsonUsers.toJSONString());
-	// file.flush();
-	//
-	// } catch (IOException e) {
-	// e.printStackTrace();
-	// }
-	// }
-
-	// public static JSONObject getUserJSON(User user, Student student, Advisor
-	// advisor) {
-	// JSONObject userDetails = new JSONObject();
-	//
-	// userDetails.put(USER_ID, user.getUserID().toString());
-	// userDetails.put(USER_USER_NAME, user.getUserName());
-	// userDetails.put(USER_FIRST_NAME, user.getFirstName());
-	// userDetails.put(USER_LAST_NAME, user.getLastName());
-	// userDetails.put(USER_TYPE, user.getUserType());
-	// userDetails.put(USER_MIDDLE_NAME, user.getMiddleName());
-	// userDetails.put(USER_PASSWORD, user.getPassword());
-	// userDetails.put(USER_AGE, user.getUserAge());
-	//
-	// if (user.getUserType().equalsIgnoreCase("student")) {
-	// getStudentJSON(student);
-	// }
-	//
-	// if (user.getUserType().equalsIgnoreCase("advisor")) {
-	// userDetails.put(ADVISOR_ID, user.getUserID().toString());
-	// getAdvisorJSON(advisor);
-	// }
-	//
-	// return userDetails;
-	// }
-
 }
