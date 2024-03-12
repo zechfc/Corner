@@ -25,6 +25,7 @@ public class MajorList {
      * @return String containing major name
      */
     public String setMajor(String major){
+        // iterate list, when major is found, set major
         return major;
     }
 }
