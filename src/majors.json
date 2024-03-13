@@ -7,18 +7,19 @@
         "courseCodePrograms": ["MATH241","MATH344","MATH344L"]
     }],
 
-    "hoursFoundational": 35,
+    "hourscarolinaCore": 41,
     "carolinaCore": [{
-        "courseCodeCarolinaCore": ["ENGL101","ENGL102","SPCH101"]
+        "courseCodeCarolinaCore": ["ENGL101","ENGL102","SPCH101"],
     }],
-        //add major hours to uml
-    "hoursMajor": 12,
+    "hoursMajor": 33,
     "majorRequirements": [{
         "courseCodeMajor": ["CSCE311","MATH344","MATH344L"]
     }],
     "totalMajorHours":120
 
-},{
+},
+
+{
     "majorid":"177cb7f6-2b0e-4718-a68d-327c6252a88a",
     "name":"CIS",
     "description":"Computer Information Systems",
