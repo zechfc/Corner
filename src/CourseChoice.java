@@ -6,7 +6,7 @@ public class CourseChoice {
     private ArrayList<Course> courses;
 
     public CourseChoice(String prereq, ArrayList<String> courseIDs) {
-        System.out.println(prereq);
+        //System.out.println(prereq);
         this.prerequisite = requireType.valueOf(prereq);
         this.courseIDs = courseIDs;
         this.courses = new ArrayList<Course>();

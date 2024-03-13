@@ -17,25 +17,25 @@ public class DataLoader extends DataConstants {
 
 			for (int i = 0; i < studentListJSON.size(); i++) {
 				JSONObject studentJSON = (JSONObject) studentListJSON.get(i);
-				String Userid = (String) studentJSON.get(USER_ID);
+				String userID = (String) studentJSON.get(USER_ID);
 				String email = (String) studentJSON.get(USER_USER_NAME);
 				String firstName = (String) studentJSON.get(USER_FIRST_NAME);
 				String middleName = (String) studentJSON.get(USER_MIDDLE_NAME);
 				String lastName = (String) studentJSON.get(USER_LAST_NAME);
 				String age = ((String) studentJSON.get(USER_AGE));
 				String password = (String) studentJSON.get(USER_PASSWORD);
-				String advisorID = (String) studentJSON.get(ADVISOR_ID);
 				String major = (String) studentJSON.get(MAJOR);
 				String classification = (String) studentJSON.get(CLASSIFICATION);
-				String semester = (String) studentJSON.get(SEMESTER);
-				String grade = (String) studentJSON.get(GRADE);
-				String year = (String) studentJSON.get(YEAR);
-				int transferCredits = ((Long) studentJSON.get(TRANSFER_CREDITS)).intValue(); // need to change
-																								// subsequent to int
-																								// instead of long
-				studentList.add(new Student(Userid, email, firstName, middleName, lastName, age,
-					password, major, classification, transferCredits, advisorID));
+				int transferCredits = ((Long) studentJSON.get(TRANSFER_CREDITS)).intValue();
+				ArrayList<Course> currentCourses = (ArrayList<Course>) studentJSON.get(COURSES_PRESENT);
+				ArrayList<Course> pastCourses = (ArrayList<Course>) studentJSON.get(COURSES_PAST);
+
+				String advisorID = (String) studentJSON.get(ADVISOR_ID);
+				String advisorNote = (String) studentJSON.get(NOTES);
+				studentList.add(new Student(userID, email, firstName, middleName, lastName, age,
+					password, major, classification, transferCredits, currentCourses, pastCourses, advisorID, advisorNote));
 			}
+
 
 			return studentList;
 
@@ -109,7 +109,7 @@ public class DataLoader extends DataConstants {
 						courseCredits, term, passingGrade));
 			}
 			for (Course c : classlist) {
-				System.out.println(c.getCourseName());
+				//System.out.println(c.getCourseName());
 				for (CourseChoice cc : c.getPrereqs()) {
 					cc.linkFromUUIDRelatedClasses(classlist);
 				}

@@ -40,30 +40,28 @@ public class Application {
         return false;
     }
 
-    public User createAccount(int i, String userID, String firstName, String middleName, String lastName, String age,
-            String email, String password, String major, String concentration, ArrayList<Student> studentsSupervising, boolean admin,
-            int transferCredits, String advisorID) {
-        // i dictates if user is student(1) or advisor(2)
+    public User createStudentAccount(String userID, String firstName, String middleName, String lastName, String age,
+            String email, String password, String major, String classification, int transferCredits, String advisorID, 
+            String advisorNote, ArrayList<Course> currentCourses, ArrayList<Course> pastCourses) {
         // Email (username) already used
-        if (studentList.emailTaken(email) || advisorList.emailTaken(email)) {
+        if (studentList.emailTaken(email)){
             return null;
         }
+        Student newStudent = new Student(userID, email, firstName, middleName, lastName, age, password, major, classification, 
+                transferCredits, currentCourses, pastCourses, advisorID, advisorNote);
+        studentList.addStudent(newStudent);
+        return newStudent; 
+    }
 
-        user = new User(userID, email, firstName, middleName, lastName, age, password);
-        if (i == 1) {
-            Student newStudent = new Student(userID, email, firstName, middleName, lastName, age, password, major,
-                    concentration, transferCredits, advisorID);
-            studentList.addStudent(newStudent);
-            return newStudent; 
-
-        } else if (i == 2) {
-            Advisor newAdvisor = new Advisor(userID, studentsSupervising, firstName, middleName, lastName, age, email, admin,
-                    password);
+    public User createAdvisorAccount(String userID, String firstName, String middleName, String lastName, String age, String email, String password,
+        ArrayList<Student> studentsSupervising, boolean admin){
+            if (advisorList.emailTaken(email)){
+                return null;
+            }
+            Advisor newAdvisor = new Advisor(userID, studentsSupervising, firstName, middleName, lastName, age, email, admin, password);
             advisorList.addAdvisor(newAdvisor);
             return newAdvisor;
         }
-        return null;
-    }
 
     public boolean getMajorMap(String userID) {
         if (user != null && user.getUserID().equals(userID)) {
