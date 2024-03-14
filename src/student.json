@@ -83,8 +83,6 @@
     {"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc", "grade": "TBD", "semester": "fall", "year":2024},
     {"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc", "grade": "TBD", "semester": "fall", "year":2024}]
 },
-    
-
 {
     "userid":"513b2857-a10f-4aac-87a8-b094604a3001",
     "firstName":"Tracy",
@@ -111,4 +109,67 @@
         {"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0", "grade": "TBD", "semester": "spring", "year":2024},
         {"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e", "grade": "TBD", "semester": "spring", "year":2024},
         {"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71", "grade": "TBD", "semester": "spring","year":2024}]    
-}][{"lastName":"Doe","coursesPresent":[{"year":2023,"courseCode":"577ed51a-9123-43da-a09a-629e139ad276","grade":"TBD","semester":"spring"},{"year":2023,"courseCode":"49a0d284-1de7-4511-b481-ff6d60b7339b","grade":"TBD","semester":"spring"},{"year":2023,"courseCode":"17ac1913-d4ae-4ab4-aa39-4cceeaa36d4d","grade":"TBD","semester":"spring"},{"year":2023,"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc","grade":"TBD","semester":"spring"},{"year":2023,"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc","grade":"TBD","semester":"spring"}],"advisorid":"4c01faab-34eb-482d-8def-1c45ea80a22d","notes":"...","classification":"Sophomore","userid":"d5478261-e50a-4ff9-b8bf-8c03b0280bc2","tranferCredits":80,"firstName":"John","password":"password1","major":"cd28e093-e17f-49e2-b11c-163cbf993b26","middleName":"lee","coursesPast":[{"year":2022,"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c","grade":"A","semester":"fall"},{"year":2022,"courseCode":"4a00e68d-b385-458f-aac6-719959a37280","grade":"B","semester":"fall"},{"year":2022,"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0","grade":"C","semester":"fall"},{"year":2022,"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e","grade":"A","semester":"fall"},{"year":2022,"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71","grade":"B+","semester":"fall"},{"year":2023,"courseCode":"577ed51a-9123-43da-a09a-629e139ad276","grade":"A","semester":"spring"},{"year":2023,"courseCode":"49a0d284-1de7-4511-b481-ff6d60b7339b","grade":"B","semester":"spring"},{"year":2023,"courseCode":"17ac1913-d4ae-4ab4-aa39-4cceeaa36d4d","grade":"B+","semester":"spring"},{"year":2023,"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc","grade":"A","semester":"spring"},{"year":2023,"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c","grade":"A","semester":"fall"},{"year":2023,"courseCode":"4a00e68d-b385-458f-aac6-719959a37280","grade":"B","semester":"fall"},{"year":2023,"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0","grade":"C","semester":"fall"},{"year":2023,"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e","grade":"A","semester":"fall"},{"year":2023,"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71","grade":"B+","semester":"fall"}],"email":"jlDoe@email.sc.edu","age":"20"},{"lastName":"Sue","coursesPresent":[{"year":2024,"courseCode":"577ed51a-9123-43da-a09a-629e139ad276","semester":"fall"},{"year":2024,"courseCode":"49a0d284-1de7-4511-b481-ff6d60b7339b","semester":"fall"},{"year":2024,"courseCode":"17ac1913-d4ae-4ab4-aa39-4cceeaa36d4d","grade":"TBD","semester":"fall"},{"year":2024,"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc","grade":"TBD","semester":"fall"},{"year":2024,"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc","grade":"TBD","semester":"fall"}],"advisorid":"5c280f3c-c2a8-4f0a-abe4-754a9aee5bff","notes":"...","classification":"Junior","userid":"b5478261-e50a-4ff9-b8bf-8c03b0280bc2","tranferCredits":0,"firstName":"Mary","password":"password2","major":"177cb7f6-2b0e-4718-a68d-327c6252a88a","middleName":"ann","coursesPast":[{"year":2022,"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c","grade":"A","semester":"fall"},{"year":2022,"courseCode":"4a00e68d-b385-458f-aac6-719959a37280","grade":"B","semester":"fall"},{"year":2022,"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0","grade":"C","semester":"fall"},{"year":2022,"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e","grade":"A","semester":"fall"},{"year":2022,"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71","grade":"B+","semester":"fall"},{"year":2023,"courseCode":"577ed51a-9123-43da-a09a-629e139ad276","grade":"A","semester":"spring"},{"year":2023,"courseCode":"49a0d284-1de7-4511-b481-ff6d60b7339b","grade":"B","semester":"spring"},{"year":2023,"courseCode":"17ac1913-d4ae-4ab4-aa39-4cceeaa36d4d","grade":"B+","semester":"spring"},{"year":2023,"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc","grade":"A","semester":"spring"},{"year":2023,"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c","grade":"A","semester":"fall"},{"year":2023,"courseCode":"4a00e68d-b385-458f-aac6-719959a37280","grade":"B","semester":"fall"},{"year":2023,"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0","grade":"C","semester":"fall"},{"year":2023,"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e","grade":"A","semester":"fall"},{"year":2023,"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71","grade":"B+","semester":"fall"},{"year":2024,"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c","grade":"A","semester":"spring"},{"year":2024,"courseCode":"4a00e68d-b385-458f-aac6-719959a37280","grade":"B","semester":"spring"},{"year":2024,"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0","grade":"C","semester":"spring"},{"year":2024,"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e","grade":"A","semester":"spring"},{"year":2024,"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71","grade":"B+","semester":"spring"},{"year":2024,"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c","grade":"A","semester":"summer"},{"year":2024,"courseCode":"4a00e68d-b385-458f-aac6-719959a37280","grade":"B","semester":"summer"},{"year":2024,"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0","grade":"C","semester":"summer"},{"year":2024,"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e","grade":"A","semester":"summer"},{"year":2024,"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71","grade":"B+","semester":"summer"}],"email":"masue@email.sc.edu","age":"18"},{"lastName":"Johnson","coursesPresent":[{"year":2024,"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c","grade":"TBD","semester":"spring"},{"year":2024,"courseCode":"4a00e68d-b385-458f-aac6-719959a37280","grade":"TBD","semester":"spring"},{"year":2024,"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0","grade":"TBD","semester":"spring"},{"year":2024,"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e","grade":"TBD","semester":"spring"},{"year":2024,"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71","grade":"TBD","semester":"spring"}],"advisorid":"8d6928e2-140a-4ef8-b5b3-96ceabfd4b45","notes":"...","classification":"Freshman","userid":"513b2857-a10f-4aac-87a8-b094604a3001","tranferCredits":30,"firstName":"Tracy","password":"password3","major":"177cb7f6-2b0e-4718-a68d-327c6252a88a","middleName":"dolores","coursesPast":[{"year":2023,"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c","grade":"A","semester":"fall"},{"year":2023,"courseCode":"4a00e68d-b385-458f-aac6-719959a37280","grade":"B","semester":"fall"},{"year":2023,"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0","grade":"C","semester":"fall"},{"year":2023,"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e","grade":"A","semester":"fall"},{"year":2023,"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71","grade":"B+","semester":"fall"}],"email":"tdjohnson@email.sc.edu","age":"19"},{"lastName":"Mayernik","coursesPresent":[],"advisorid":"d5478261-e50a-4ff9-b8bf-8c03b0280bc2","notes":"...","classification":"Senior","userid":"esnfaslkdfmlsakmdf","tranferCredits":48,"firstName":"Isaac","password":"lol987","major":"CS","middleName":"Andrew","coursesPast":[],"email":"definitelyrealemail@gmail.com","age":"20"}]
+},{
+    "userid":"81668235-0606-4e6b-bfcf-d3243f916315",
+    "firstName":"Brax",
+    "middleName":"Oswald",
+    "lastName":"West",
+    "age":"20",
+    "email":"westb@email.sc.edu",
+    "password":"mypassword56",
+    "advisorid":"4c01faab-34eb-482d-8def-1c45ea80a22d",
+    "major":"cd28e093-e17f-49e2-b11c-163cbf993b26",
+    "classification":"Junior",
+    "notes":"...",
+    "transferCredits":48,
+    "coursesPast":
+    [{"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "grade": "C", "semester": "fall", "year":2022},
+    {"courseCode":"4a00e68d-b385-458f-aac6-719959a37280", "grade": "B", "semester": "fall", "year":2022},
+    {"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0", "grade": "C", "semester": "fall", "year":2022},
+    {"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e", "grade": "A", "semester": "fall", "year":2022},
+    {"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71", "grade": "B-", "semester": "fall","year":2022},
+    {"courseCode":"577ed51a-9123-43da-a09a-629e139ad276", "grade": "A", "semester": "spring", "year":2023},
+    {"courseCode":"49a0d284-1de7-4511-b481-ff6d60b7339b", "grade": "B", "semester": "spring", "year":2023},
+    {"courseCode":"17ac1913-d4ae-4ab4-aa39-4cceeaa36d4d", "grade": "B", "semester": "spring", "year":2023},
+    {"courseCode":"408e3294-1714-4f2f-bbc0-498385b662fc", "grade": "B", "semester": "spring", "year":2023},
+    {"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "grade": "A", "semester": "fall", "year":2023},
+    {"courseCode":"4a00e68d-b385-458f-aac6-719959a37280", "grade": "B", "semester": "fall", "year":2023},
+    {"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0", "grade": "C", "semester": "fall", "year":2023},
+    {"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e", "grade": "A", "semester": "fall", "year":2023},
+    {"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71", "grade": "B+", "semester": "fall","year":2023},
+    {"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "grade": "A", "semester": "spring", "year":2024},
+    {"courseCode":"4a00e68d-b385-458f-aac6-719959a37280", "grade": "B", "semester": "spring", "year":2024},
+    {"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0", "grade": "C+", "semester": "spring", "year":2024},
+    {"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e", "grade": "A", "semester": "spring", "year":2024},
+    {"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71", "grade": "B", "semester": "spring","year":2024},
+    {"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "grade": "A", "semester": "summer", "year":2024},
+    {"courseCode":"4a00e68d-b385-458f-aac6-719959a37280", "grade": "B", "semester": "summer", "year":2024},
+    {"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0", "grade": "B-", "semester": "summer", "year":2024},
+    {"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e", "grade": "A", "semester": "summer", "year":2024},
+    {"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71", "grade": "B+", "semester": "summer","year":2024}],
+
+    "coursesPresent":
+    [{"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseCode":"4a00e68d-b385-458f-aac6-719959a37280", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseCode":"3a26f80c-4867-4e36-949a-553c403433e0", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseCode":"65ddf1c8-1c8f-4b97-ad87-33d5816c447e", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseCode":"bb5b9677-eea0-44cb-825c-2d40010aad71", "grade": "TBD", "semester": "spring","year":2024}]
+},{
+    "userid":"0a119e07-a0aa-435e-9b9d-21e5b91b1c39",
+    "firstName":"Tawnie",
+    "middleName":"Bo",
+    "lastName":"Hill",
+    "age":"20",
+    "email":"hillt@email.sc.edu",
+    "password":"hbtpassword",
+    "advisorid":"",
+    "major":"cd28e093-e17f-49e2-b11c-163cbf993b26",
+    "classification":"Sophomore",
+    "notes":"...",
+    "transferCredits":34,
+    "coursesPast":
+    [{}],
+
+    "coursesPresent":
+    [{}]
+}]

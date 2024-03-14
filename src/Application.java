@@ -93,7 +93,8 @@ public class Application {
         return false;
     }
 
-    public boolean editAdvisorNote(String note) {
+    public boolean editAdvisorNote(String userID, String note) {
+        User user = studentList.getStudent(userID);
         if (user != null) {
             if (user instanceof Student) {
                 ((Student) user).editAdvisorNote(note);
@@ -104,6 +105,7 @@ public class Application {
     }
 
     public boolean getAdvisorNote(String userID) {
+        User user = studentList.getStudent(userID);
         if (user != null && user.getUserID().equals(userID)) {
             if (user instanceof Student) {
                 String advisorNote = ((Student) user).getAdvisorNote();
@@ -114,24 +116,34 @@ public class Application {
         return false;
     }
 
+    // This adds a student to the system, do not worry about right now
     // public boolean addStudent(Advisor advisor, String userID){
-    // if(user != null && user.equals(advisor) && advisor.getAdmin() && advisor !=
-    // null){
-    // Student studentToAdd = studentList.addStudent(userID);
-    // if(studentToAdd != null){
-    // advisorList.addStudent(studentToAdd);
-    // return true;
-    // }
-    // }
-    // return false;
+    //     if(user != null && user.equals(advisor) && advisor.getAdmin() && advisor != null){
+    //         Student studentToAdd = studentList.addStudent(userID);
+    //         if(studentToAdd != null){
+    //             advisorList.addStudent(studentToAdd);
+    //         return true;
+    //         }
+    //     }
+    //     return false;
     // }
 
-    public boolean removeStudent(Advisor advisor, String userID, boolean admin) {
-        if (user != null && user.equals(advisor) && advisor.getAdmin() && advisor != null) {
-            return advisor.removeStudent(userID);
+    public boolean addStudentList(String advisorID, String studentID){
+        User user = advisorList.getAdvisor(advisorID);
+        if (user != null && user instanceof Advisor){
+            advisor.addStudentList(studentID);
+            return true;
         }
         return false;
     }
+
+    //This removes a student from the system, do not worry about right now
+    // public boolean removeStudent(Advisor advisor, String userID, boolean admin) {
+    //     if (user != null && user.equals(advisor) && advisor.getAdmin() && advisor != null) {
+    //         return advisor.removeStudent(userID);
+    //     }
+    //     return false;
+    // }
 
     public Student getStudent(String email) {
         User user = studentList.getStudent(email);
