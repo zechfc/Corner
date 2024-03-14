@@ -44,20 +44,20 @@ public class Student extends User {
         return majorGPA;
     }
 
-    public void calcMajorGPA(String major){
-        ArrayList<Course> temp = MajorList.getInstance().getMajor(major).getMajorCourses();
-        int length = temp.size();
+    // public void calcMajorGPA(String major){
+    //     ArrayList<Course> temp = MajorList.getInstance().getMajor(major).getMajorCourses();
+    //     int length = temp.size();
 
-        //looping through the major courses array
-        for (int i=0; i<length; i++) {
-            //checking if the name matches a course a student has taken
-            Course 
-            if(temp.getCourseName)
-        };
+    //     //looping through the major courses array
+    //     for (int i=0; i<length; i++) {
+    //         //checking if the name matches a course a student has taken
+    //         Course 
+    //         if(temp.getCourseName)
+    //     };
 
 
 
-    }
+    // }
 
     public void updateGPA(double gpa, int credits) {
 
