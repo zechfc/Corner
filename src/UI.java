@@ -16,14 +16,15 @@ public class UI {
         scenario3(); //Student account created success scenario
         scenario4(); //Student account created failure scenario
         scenario5(); //Advisor (not an admin) account created success scenario
+        scenario6();
     }
 
     public void scenario1(){
         //Login success scenario
         System.out.println("Scenario 1");
     
-        System.out.println("Type student or advisor for what you are");
-        application.checkUser("student");
+        System.out.println("Type student or advisor for what you are"); // ?
+        application.checkUser("student"); 
         System.out.println("User is a student");
     
         if(!application.login(1, "jlDoe@email.sc.edu", "password1")){
@@ -72,7 +73,6 @@ public class UI {
         System.out.println("\nScenario 3");
         System.out.println("Creating a new account...");
 
-        int i = 1;
         String email = "definitelyrealemail@gmail.com";
         String firstName = "Isaac";
         String middleName = "Andrew";
@@ -80,13 +80,15 @@ public class UI {
         String age = "20";
         String password = "lol987";
         String major = "CS";
-        String concentration = "None";
-        boolean admin = false;
+        String classification = "Senior";
         String userID = "esnfaslkdfmlsakmdf";
         int transferCredits = 48;
         String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
-        User newUser = application.createAccount(i, userID, firstName, middleName, lastName, age, email, password, 
-            major, concentration, null, admin, transferCredits, advisorID);
+        String note = "...";
+        ArrayList<Course> currentCourses = new ArrayList<Course>();
+        ArrayList<Course> pastCourses = new ArrayList<Course>();
+        User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
+        transferCredits, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -98,21 +100,22 @@ public class UI {
         System.out.println("\nScenario 4");
         //The way it is setup now, users cannot share the same email. Therefore,
         System.out.println("Creating a new account...");
-        int i = 1;
         String email = "jlDoe@email.sc.edu";
         String firstName = "Jane";
         String middleName = "Lauren";
         String lastName = "Doe";
         String age = "19";
         String password = "sAfEpassword";
-        String concentration = "None";
+        String classification = "Sophomore";
         String major = "CIS";
-        boolean admin = false;
         String userID = "sflkve-dfsfde34fsdfv-csda";
         String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
+        String note = "...";
         int transferCredits = 23;
-        User newUser = application.createAccount(i, userID, firstName, middleName, lastName, age, email, password, 
-            major, concentration, null, admin, transferCredits, advisorID);
+        ArrayList<Course> currentCourses = new ArrayList<Course>();
+        ArrayList<Course> pastCourses = new ArrayList<Course>();
+        User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
+            transferCredits, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -124,7 +127,6 @@ public class UI {
         System.out.println("\nScenario 5");
         //Successfully create an advisor, not an admin
         System.out.println("Creating a new account...");
-        int i = 2;
         String userID = "plfdgksamdf-avdfa-fded";
         String firstName = "";
         String middleName = "";
@@ -134,13 +136,40 @@ public class UI {
         String password = "";
         ArrayList<Student> studentsSupervising = new ArrayList<Student>();
         boolean admin = false;
-        User newUser = application.createAccount(i, userID, firstName, middleName, lastName, age, email, password, null, null, studentsSupervising, admin, 0, null);
+        User newUser = application.createAdvisorAccount(userID, firstName, middleName, lastName, age, email, password, studentsSupervising, admin);
+        
         if(newUser == null){
             System.out.println("Failed to create account.");
 
         }else {
             System.out.println("Successfully created account for " + newUser.getFirstName());
         }
+    }
+
+    public void scenario6() {
+        /*if(!application.login(1, "jlDoe@email.sc.edu", "password1")){
+            System.out.println("Sorry we couldn't login."); //login failed
+            return;
+        }
+        System.out.println("John Doe is now logged in");*/ 
+        System.out.println("\nScenario 6");
+
+        //for testing
+        // ArrayList<Course> cList = application.getClasses();
+        // for (Course l : cList) {
+        //     System.out.println("Class!");
+        //     System.out.println(l.getCourseID());
+        // }
+        
+        System.out.println("Searching for data on CSCE146");
+        Course c = application.getClass("CSCE146");
+        if (c == null) {
+            System.out.println("Class not found :(");
+            return;
+        }
+        System.out.println("Getting details on CSCE146:\n" + c.getDescription());
+        System.out.println("Getting availability of CSCE146:\n" + c.getAvailability());
+        System.out.println("These are the prerequisites of CSCE146:\n" + c.getPrereqsToString());
     }
 
     public static void main(String[] args){

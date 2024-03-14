@@ -18,7 +18,9 @@ public class Student extends User {
     private String classification;
 
     public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password,  
-        String major, String classification, int transferCredits, ArrayList<Course> currentCourses,ArrayList<Course> pastCourses ){
+        String major, String classification, int transferCredits, ArrayList<Course> currentCourses, ArrayList<Course> pastCourses, 
+        String advisorID, String advisorNote){
+            
         super(userID, firstName, middleName, lastName, age, email, password);
         this.major = major;
         this.classification = classification; 
@@ -28,8 +30,24 @@ public class Student extends User {
         this.classification = classification;
         this.currentCourses = currentCourses;
         this.pastCourses = pastCourses;
-
         this.advisorID = advisorID;
+    }
+
+    //Error thrown line 43 of StudentList, no constructor matches args
+    // overloaded removed ArrayLists 3/14
+    public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password,
+                   String major, String classification, int transferCredits){
+
+        super(userID, firstName, middleName, lastName, age, email, password);
+        this.major = major;
+        this.classification = classification;
+//        this.advisorNote = null;
+        this.transferCredits = transferCredits;
+        this.totalCredits = 0;
+        this.classification = classification;
+//        this.currentCourses = null;
+//        this.pastCourses = null;
+//        this.advisorID = null;
     }
 
     public void totalCompletedCredits(int transferCredits, int USC_CREDITS) {
@@ -142,6 +160,14 @@ public class Student extends User {
 
     public String getClassification(){
         return classification;
+    }
+
+    public ArrayList<Course> getPastCourses(){
+        return pastCourses;
+    }
+
+    public ArrayList<Course> getCurrentCourses(){
+        return currentCourses;
     }
 
     public Student student(){

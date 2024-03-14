@@ -17,7 +17,7 @@ public class DataWriter extends DataConstants {
 		}
 
 		// Write JSON file
-		try (FileWriter file = new FileWriter(STUDENT_FILE_NAME, true)) {
+		try (FileWriter file = new FileWriter(STUDENT_FILE_NAME, true)) { //REMOVE TRUE later
 			file.write(jsonStudents.toJSONString());
 			file.flush();
 
@@ -37,7 +37,7 @@ public class DataWriter extends DataConstants {
 		}
 
 		// Write JSON file
-		try (FileWriter file = new FileWriter(ADVISOR_FILE_NAME)) {
+		try (FileWriter file = new FileWriter(ADVISOR_FILE_NAME, true)) { // REMOVE TRUE later
 			file.write(jsonAdvisors.toJSONString());
 			file.flush();
 
@@ -49,6 +49,7 @@ public class DataWriter extends DataConstants {
 	public static JSONObject getStudentJSON(Student student) {
 		JSONObject studentDetails = new JSONObject();
 
+		studentDetails.put(USER_ID, student.getUserID());
 		studentDetails.put(ADVISOR_ID, student.getAdvisorID());
 		studentDetails.put(USER_FIRST_NAME, student.getFirstName());
 		studentDetails.put(USER_MIDDLE_NAME, student.getMiddleName());
@@ -57,10 +58,13 @@ public class DataWriter extends DataConstants {
 		studentDetails.put(USER_USER_NAME, student.getEmail());
 		studentDetails.put(USER_AGE, student.getUserAge());
 		studentDetails.put(MAJOR, student.getMajorName());
-		studentDetails.put(COURSES_PRESENT, student.getCurrentYear());
-		studentDetails.put(CLASSIFICATION, student.getClass());
+		// studentDetails.put(COURSES_PRESENT, student.getCurrentYear()); 
+		// Courses present is not a current year?
+		studentDetails.put(CLASSIFICATION, student.getClassification());
 		studentDetails.put(NOTES, student.getAdvisorNote());
 		studentDetails.put(TRANSFER_CREDITS, student.getTransferCredits());
+		studentDetails.put(COURSES_PRESENT, student.getCurrentCourses());
+		studentDetails.put(COURSES_PAST, student.getPastCourses());
 
 		return studentDetails;
 	}

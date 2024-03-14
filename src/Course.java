@@ -22,7 +22,11 @@ public class Course {
     }
 
     public boolean checkPrerequisites(ArrayList<Course> courses) {
-        return true;
+        boolean b = true;
+        for (CourseChoice pre : prerequisite) {
+            b = b && pre.checkPrerequisites(courses); // This is genius don;t think about it
+        }
+        return b;
     }
 
     public boolean checkCoreqs(ArrayList<Course> courses) {
@@ -49,7 +53,15 @@ public class Course {
         return courseAvailability;
     }
 
-    public ArrayList<CourseChoice> getPrereqs() {
+    public ArrayList<CourseChoice> getPrereqs() { // Only if you want array itself. For string form look at other method.
         return this.prerequisite;
+    }
+
+    public String getPrereqsToString() {
+        String s = "";
+        for (CourseChoice cc : this.prerequisite) {
+            s += cc.getCoursesToString();
+        }
+        return s;
     }
 }
