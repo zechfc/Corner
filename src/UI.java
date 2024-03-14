@@ -11,12 +11,12 @@ public class UI {
     }
 
     public void run(){
-        scenario1(); //Student login success scenario
-        scenario2(); //Student login failure scenario
-        scenario3(); //Student account created success scenario
-        scenario4(); //Student account created failure scenario
-        scenario5(); //Advisor (not an admin) account created success scenario
-        scenario6();
+        //scenario1(); //Student login success scenario
+        //scenario2(); //Student login failure scenario
+        //scenario3(); //Student account created success scenario
+        //scenario4(); //Student account created failure scenario
+        //scenario5(); //Advisor (not an admin) account created success scenario
+        //scenario6();
         demoscenario1();
         demoscenario2();
     }
@@ -189,7 +189,7 @@ public class UI {
             System.out.println("Failed to create a new account");
             return;
         } else{
-            System.out.println("Successfully created a new account for..." + newuser.getFirstName() + " " + newuser.getLastName());
+            System.out.println("Successfully created a new account for...\n" + newuser.getFirstName() + " " + newuser.getLastName());
         }
 
         if(!application.login(2, "oddeno@email.sc.edu", "oddenpassword")){
