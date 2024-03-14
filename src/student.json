@@ -1,7 +1,7 @@
 [{
     "userid":"d5478261-e50a-4ff9-b8bf-8c03b0280bc2",
     "firstName":"John",
-    "middleName":"lee",
+    "middleName":"Lee",
     "lastName":"Doe",
     "age":"20",
     "email": "jlDoe@email.sc.edu",
@@ -39,7 +39,7 @@
 {
     "userid":"b5478261-e50a-4ff9-b8bf-8c03b0280bc2",
     "firstName":"Mary",
-    "middleName":"ann",
+    "middleName":"Ann",
     "lastName":"Sue",
     "age":"18",
     "email": "masue@email.sc.edu",
@@ -86,7 +86,7 @@
 {
     "userid":"513b2857-a10f-4aac-87a8-b094604a3001",
     "firstName":"Tracy",
-    "middleName":"dolores",
+    "middleName":"Dolores",
     "lastName":"Johnson",
     "age":"19",
     "email": "tdjohnson@email.sc.edu",
