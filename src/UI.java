@@ -17,6 +17,8 @@ public class UI {
         scenario4(); //Student account created failure scenario
         scenario5(); //Advisor (not an admin) account created success scenario
         scenario6();
+        demoscenario1();
+        demoscenario2();
     }
 
     public void scenario1(){
@@ -45,7 +47,7 @@ public class UI {
         }
         System.out.println("Advisor note retrieved");
 
-        if(!application.editAdvisorNote("Student recommended to take CSCE247")){
+        if(!application.editAdvisorNote("d5478261-e50a-4ff9-b8bf-8c03b0280bc2", "Student recommended to take CSCE247")){
             System.out.println("Failed to edit advisor note.");
         }else {
             System.out.println("Advisor note edited.");
@@ -128,12 +130,12 @@ public class UI {
         //Successfully create an advisor, not an admin
         System.out.println("Creating a new account...");
         String userID = "plfdgksamdf-avdfa-fded";
-        String firstName = "";
-        String middleName = "";
-        String lastName = "";
-        String age = "";
-        String email = "";
-        String password = "";
+        String firstName = "Lee";
+        String middleName = "Robert";
+        String lastName = "Mo";
+        String age = "47";
+        String email = "molee@email.sc.edu";
+        String password = "safesecurepass";
         ArrayList<Student> studentsSupervising = new ArrayList<Student>();
         boolean admin = false;
         User newUser = application.createAdvisorAccount(userID, firstName, middleName, lastName, age, email, password, studentsSupervising, admin);
@@ -170,6 +172,32 @@ public class UI {
         System.out.println("Getting details on CSCE146:\n" + c.getDescription());
         System.out.println("Getting availability of CSCE146:\n" + c.getAvailability());
         System.out.println("These are the prerequisites of CSCE146:\n" + c.getPrereqsToString());
+    }
+
+    public void demoscenario1(){
+        System.out.println("\nScenario 1");
+
+    }
+
+    public void demoscenario2(){
+        System.out.println("\nScenario 2");
+        System.out.println("Creating a new account...");
+        ArrayList<Student> studentsSupervising = new ArrayList<Student>();
+        User newuser = application.createAdvisorAccount("asifkk-vsfmmmsc-lafd023", "Osbert", "Will", "Odden", "34", "oddeno@email.sc.edu", "oddenpassword", studentsSupervising, false);
+
+        if(newuser == null){
+            System.out.println("Failed to create a new account");
+            return;
+        } else{
+            System.out.println("Successfully created a new account for..." + newuser.getFirstName() + " " + newuser.getLastName());
+        }
+
+        if(!application.login(2, "oddeno@email.sc.edu", "oddenpassword")){
+            System.out.println("Sorry we couldn't login."); //login failed (not the right password in the system)
+            return;
+        }
+        System.out.println(newuser.getFirstName() + " " + newuser.getLastName() + " is now logged in");
+
     }
 
     public static void main(String[] args){
