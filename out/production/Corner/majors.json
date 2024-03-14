@@ -1,0 +1,52 @@
+[{
+    "majorid":"cd28e093-e17f-49e2-b11c-163cbf993b26",
+    "name":"CS",
+    "description":"Computer Science",
+    "totalHoursProgramRequirements":46,
+    "programRequirements": [{
+        "courseCodePrograms": ["MATH241","MATH344","MATH344L"]
+    }],
+
+    "hourscarolinaCore": 41,
+    "carolinaCore": [{
+        "courseCodeCarolinaCore": ["ENGL101","ENGL102","SPCH101"],
+    }],
+    "hoursMajor": 33,
+    "majorRequirements": [{
+        "courseCodeMajor": ["CSCE311","MATH344","MATH344L"]
+    }],
+    "totalMajorHours":120
+
+},
+
+{
+    "majorid":"177cb7f6-2b0e-4718-a68d-327c6252a88a",
+    "name":"CIS",
+    "description":"Computer Information Systems",
+    "totalHoursprogramRequirements":[46,55],
+    "programRequirements": [{
+        "courseCodeFoundational": ["MATH241","MATH344","MATH344L"],
+        "hoursFoundational": 16,
+        "courseCodeLab": ["075dc2b0-8f5a-4fdd-8f9e-9925317b9650","740f0ce5-16b1-4915-b377-0f7082110193","ASTR 101"],
+        "hoursLab": 4,
+        "courseCodeElectives": [""],
+        "hoursElectives": [4,13],
+        "courseCodeMajor": ["MATH241","MATH344","MATH344L"],
+        "hoursMajor": 16
+    }],
+
+    "carolinaCore": [{
+        "courseCodeCarolinaCore": ["ENGL101","ENGL102","SPCH101"],
+        "hoursFoundational": [35,41]
+    }],
+    "majorRequirements": [{
+        "courseCodeMajor": ["CSCE311","MATH344","MATH344L"],
+        "hoursFoundational": 21,
+        "courseCodeMajorElectives": ["075dc2b0-8f5a-4fdd-8f9e-9925317b9650","740f0ce5-16b1-4915-b377-0f7082110193","ASTR 101"],
+        "hoursElectives": 9,
+        "courseCodeConcentration": ["MATH241","MATH344","MATH344L"],
+        "hoursMajor": 12
+    }],
+    "totalMajorHours":120
+}
+]
