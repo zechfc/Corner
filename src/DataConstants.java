@@ -24,7 +24,7 @@ public abstract class DataConstants {
     protected static final String GRADE = "grade";
     protected static final String YEAR = "year";
     protected static final String COURSE_CODES = "courseCodes";
-    protected static final String TRANSFER_CREDITS = "tranferCredits";
+    protected static final String TRANSFER_CREDITS = "transferCredits";
 
     protected static final String COURSE_PREREQS = "prerequisite";
     protected static final String COURSE_ID = "courseID";

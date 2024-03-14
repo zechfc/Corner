@@ -10,7 +10,7 @@
     "major":"cd28e093-e17f-49e2-b11c-163cbf993b26",
     "classification":"Sophomore",
     "notes":"...",
-    "tranferCredits":80,
+    "transferCredits":80,
     "coursesPast": 
         [{"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "grade": "A", "semester": "fall", "year":2022},
         {"courseCode":"4a00e68d-b385-458f-aac6-719959a37280", "grade": "B", "semester": "fall", "year":2022},
@@ -48,7 +48,7 @@
     "major":"177cb7f6-2b0e-4718-a68d-327c6252a88a",
     "classification":"Junior",
     "notes":"...",
-    "tranferCredits":0,
+    "transferCredits":0,
     
     "coursesPast": 
     [{"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "grade": "A", "semester": "fall", "year":2022},
@@ -95,7 +95,7 @@
     "major":"177cb7f6-2b0e-4718-a68d-327c6252a88a",
     "classification":"Freshman",
     "notes":"...",
-    "tranferCredits":30,
+    "transferCredits":30,
     "coursesPast": 
         [{"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "grade": "A", "semester": "fall", "year":2023},
         {"courseCode":"4a00e68d-b385-458f-aac6-719959a37280", "grade": "B", "semester": "fall", "year":2023},
