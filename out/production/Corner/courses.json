@@ -1,0 +1,197 @@
+[{
+    "prerequisite":[
+        {
+            "requireType": "OR",
+            "courseID": ["MATH142"]
+        }
+    ],
+    "courseID": "662bea32-9ceb-4f83-9c1d-b3d413c5e017",
+    "courseKey":"MATH241",
+    "courseName": "Vector Calculus",
+    "courseDescription":"An introduction to multivariable calculus, including vectors and vector-valued functions, partial derivatives and applications of partial derivatives (such as tangent planes and Lagrange multipliers), multiple integrals, volume, surface area, and the classical theorems of Green, Stokes and Gauss.",
+    "courseAvailability": true,
+    "courseCredits": 3.5,
+    "courseTerm": "SPRING",
+    "passingGrade": 70
+},
+{
+    "prerequisite":[
+        {
+            "requireType":"AND",
+            "courseID": ["458fa4fb-af61-48e5-b33f-ae4f65b2feb0"]
+        },
+        {
+            "requireType":"PRE_OR_COREQ",
+            "courseID":["MATH122","MATH141"]
+    }],
+    "courseID":"c4f3f3a2-cfcf-4612-9b9e-d830514ba2c4",
+    "courseKey":"CSCE146",
+    "courseName":"Algorithmic Design II",
+    "courseDescription":"Rigorous development of algorithms and computer programs; elementary data structures. Three lecture hours and two laboratory hours per week. Open to all majors.",
+    "courseAvailability": true,
+    "courseCredits": 4.0,
+    "courseTerm": "FALL",
+    "passingGrade": 70
+},
+{
+    "prerequisite":[],
+    "courseID": "962c9a4e-7bd7-4fe4-adf1-bf9a0bf911c6",
+    "courseKey":"CSCE390",
+    "courseName":"Prof. Issues in Computer Science Engr",
+    "courseDescription": "Professional issues in the information technology professions; history and social context of computing; professional responsibilities; privacy; intellectual property; risks and liabilities of computer-based systems.",
+    "courseAvailability": true,
+    "courseCredits": 1.0,
+    "courseTerm": "SPRING",
+    "passingGrade": 70
+}
+,
+{
+    "prerequisite":[
+        {
+            "requireType":"COREQ",
+            "courseID": ["740f0ce5-16b1-4915-b377-0f7082110193"]
+        },
+        {
+            "requireType":"OR",
+            "courseID":["5ca3f004-9c79-4054-9e8b-548f7c096907","91730226-f79b-4fe0-b976-6f72d3c328b5"]  
+    }],   
+    "courseID": "075dc2b0-8f5a-4fdd-8f9e-9925317b9650",
+    "courseKey":"CHEM111",
+    "courseName":"General Chemistry I",
+    "courseDescription": "Survey of the principles that underlie all chemistry with applications illustrating these principles. Three lecture and one recitation hours per week.",
+    "courseAvailability": true,
+    "courseCredits": 3.0,
+    "courseTerm": "SPRING",
+    "passingGrade": 70
+}
+,
+{
+    "prerequisite":[
+        {
+            "requireType":"COREQ",
+            "courseID": ["740f0ce5-16b1-4915-b377-0f7082110193"]
+        },
+        {
+            "requireType":"AND",
+            "courseID":["5ca3f004-9c79-4054-9e8b-548f7c096907","91730226-f79b-4fe0-b976-6f72d3c328b5"]
+        }
+    ],   
+    "courseID": "740f0ce5-16b1-4915-b377-0f7082110193",
+    "courseKey":"CHEM111L",
+    "courseName":"General Chemistry I Lab",
+    "courseDescription": "Introduction to the principles and techniques of experimental chemistry with emphasis on formula investigations, equations, elementary statistics, and chemical reactivity.",
+    "courseAvailability": true,
+    "courseCredits": 1.0,
+    "courseTerm": "SPRING"
+}
+,
+{
+    "prerequisite":[],
+    "courseID": "5ca3f004-9c79-4054-9e8b-548f7c096907",
+    "courseKey":"MATH111",
+    "courseName":"Basic College Mathematics",
+    "courseDescription": "Basic college algebra; linear and quadratic equations, inequalities, functions and graphs of functions, exponential and logarithm functions, systems of equations.",
+    "courseAvailability": true,
+    "reccomendedSemester":"freshman",
+    "courseCredits": 3.0,
+    "reccomendedCourseTerm": "SPRING",
+    "passingGrade": 70
+}
+,
+{
+    "prerequisite":[
+        {
+            "requireType":"OR",
+            "courseID": ["5ca3f004-9c79-4054-9e8b-548f7c096907"]
+        }
+    ],        
+    "courseID": "91730226-f79b-4fe0-b976-6f72d3c328b5",
+    "courseKey":"MATH115",
+    "courseName":"Precalculus Mathematics",
+    "courseDescription": "Topics in algebra and trigonometry specifically needed for MATH 141, MATH 142, MATH 241. Subsets of the real line, absolute value; polynomial, rational, inverse, logarithmic, exponential functions; circular functions; analytic trigonometry.",
+    "courseAvailability": true,
+    "courseCredits": 4.0,
+    "courseTerm": "SPRING",
+    "passingGrade": 70
+}
+,
+{
+    "prerequisite":[],
+    "courseID": "962c9a4e-7bd7-4fe4-adf1-bf9a0bf911c6",
+    "courseKey":"ENGL101",
+    "courseName":"Critical Reading and Composition",
+    "courseDescription": "Instruction in strategies for critically reading and analyzing literature and non-literary texts; structured, sustained practice in composing expository and analytical essays.",
+    "courseAvailability": true,
+    "courseCredits": 3.0,
+    "courseTerm": "SPRING",
+    "passingGrade": 70
+}
+,
+{
+    "prerequisite":[
+        {
+            "requireType":"OR",
+            "courseID": ["962c9a4e-7bd7-4fe4-adf1-bf9a0bf911c6"]
+        }
+    ],    
+    "courseID": "46fb49c2-44de-40df-9043-fc935c1f16e6",
+    "courseKey":"ENGL102",
+    "courseName":"Rhetoric and Composition ",
+    "courseDescription": "Instruction and intensive practice in researching, analyzing, and composing written arguments about academic and public issues.",
+    "courseAvailability": true,
+    "courseCredits": 3.0,
+    "courseTerm": "SPRING",
+    "passingGrade": 70
+}
+,
+{
+    "prerequisite":[
+        {
+            "requireType":"AND",
+            "courseID":["5ca3f004-9c79-4054-9e8b-548f7c096907","91730226-f79b-4fe0-b976-6f72d3c328b5"]
+        }
+    ],     
+    "courseID": "458fa4fb-af61-48e5-b33f-ae4f65b2feb0",
+    "courseKey":"CSCE145",
+    "courseName":"Algorithmic Design I",
+    "courseDescription": "Problem-solving, algorithmic design, and programming. Three lectures and two laboratory hours per week.",
+    "courseAvailability": true,
+    "courseCredits": 4.0,
+    "courseTerm": "SPRING",
+    "passingGrade": 70
+}
+,
+{
+    "prerequisite":[
+        {
+            "requireType":"OR",
+            "courseID":["458fa4fb-af61-48e5-b33f-ae4f65b2feb0"]
+        }
+    ],     
+    "courseID": "a629aefc-4e61-4fb7-a2f1-3f6b68d35784",
+    "courseKey":"CSCE567",
+    "courseName":"Visualization Tools",
+    "courseDescription": "Scientific visualization tools as applied to sampled and generated data; methods for data manipulation and representation; investigation of visualization techniques.",
+    "courseAvailability": true,
+    "courseCredits": 3.0,
+    "courseTerm": "SPRING",
+    "passingGrade": 70
+}
+,
+{
+    "prerequisite":[
+        {
+            "requireType":"OR",
+            "courseID":["458fa4fb-af61-48e5-b33f-ae4f65b2feb0"]
+        }
+    ],     
+    "courseID": "f3f0c399-8e05-4ac8-b80c-82c63360ffa8",
+    "courseKey":"CSCE201",
+    "courseName":"Introduction to Computer Security",
+    "courseDescription": "Introduction to the theory and practice of computer security, including security policies, authentification, digital certificates, firewalls, malicious code, legal and ethical issues, and incident handling.",
+    "courseAvailability": true,
+    "courseCredits": 3.0,
+    "courseTerm": "SPRING",
+    "passingGrade": 70
+}
+]

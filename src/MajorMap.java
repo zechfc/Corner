@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MajorMap {
-    public MajorMap(Major major, ArrayList<Course> concentration, ArrayList<Course> liberalArts, ArrayList<Course> carolinaCore, ArrayList<Course> other, HashMap<Course, grade> classesTaken){
+    public MajorMap(Major major, ArrayList<Course> concentration, ArrayList<Course> liberalArts, ArrayList<Course> carolinaCore, ArrayList<Course> other/*, HashMap<Course<grade>> classesTake*/){
         major = null;
         concentration = null;
         liberalArts = null;
         carolinaCore = null;
         other = null; //these are electives basically
-        classesTaken = null;
+//        classesTaken = null;
     }
 
     public boolean majorProgress(Student student){
