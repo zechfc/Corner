@@ -68,6 +68,15 @@ public class StudentList {
         return null;
     }
 
+    public Student getStudentID(String userID) {
+        for (Student student : studentList) {
+            if (student.getUserID().equals(userID)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
     public Student getStudent(String firstName, String lastName) {
         for (Student student : studentList) {
             if (student.getFirstName().equals(firstName) && student.getLastName().equals(lastName)) {

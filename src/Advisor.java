@@ -13,8 +13,19 @@ public class Advisor extends User{
     }
 
     //Can't have overloaded methods with the same param types
-    public void getStudent(String userID){
+    public Student getStudent(String userID){
+        StudentList studentList= StudentList.getInstance();
+        ArrayList<Student> students = studentList.getStudents();
 
+        for (Student student : students) {
+            {
+                if(student.getUserID().equals(userID)){
+                    return student;
+                }
+          
+        }
+    }
+        return null;
     }
     //public void getStudent(String lastName){}
 
@@ -24,6 +35,21 @@ public class Advisor extends User{
         StudentList students = StudentList.getInstance();
         //will call Advisors.removeStudent()
         return false;
+    }
+
+    public boolean addStudent(String userID){
+        Student student = StudentList.getInstance().getStudentID(userID);
+
+        if(student != null)
+        {
+            if (hasStudent(student)) {
+               return false; 
+            }
+            studentsSupervising.add(student);
+        };
+        studentsSupervising.add(student);
+        return true;
+
     }
 
     public void editAdvisorNote(String userID){

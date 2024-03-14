@@ -3,9 +3,9 @@
     "name":"CS",
     "description":"Computer Science",
     "totalHoursProgramRequirements":46,
-    "programRequirements": [{
-        "courseCodePrograms": ["MATH241","MATH344","MATH344L"]
-    }],
+    "programRequirements": 
+        [{"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "reccomenedYear": "freshman", "recsemester": "fall"},
+        {"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "reccomenedYear": "freshman", "recsemester": "fall"}],
 
     "hourscarolinaCore": 41,
     "carolinaCore": [{
