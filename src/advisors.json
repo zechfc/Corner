@@ -1,5 +1,5 @@
 [{
-    "userid" : "5c280f3c-c2a8-4f0a-abe4-754a9aee5bff",
+    "userid": "5c280f3c-c2a8-4f0a-abe4-754a9aee5bff",
     "studentList":["d5478261-e50a-4ff9-b8bf-8c03b0280bc2"],
     "firstName":"Mark",
     "middleName":"john",
@@ -10,7 +10,7 @@
     "admin": false
 },
 {
-    "userid" : "4c01faab-34eb-482d-8def-1c45ea80a22d",
+    "userid": "4c01faab-34eb-482d-8def-1c45ea80a22d",
     "studentList":["50809b79-5942-4dd6-9b8b-e64af7066bb6"],
     "firstName":"Johnny",
     "middleName":"Apple",
@@ -21,7 +21,7 @@
     "admin": false
 },
 {
-    "userid" : "8d6928e2-140a-4ef8-b5b3-96ceabfd4b45",
+    "userid": "8d6928e2-140a-4ef8-b5b3-96ceabfd4b45",
     "studentList":["513b2857-a10f-4aac-87a8-b094604a3001"],
     "firstName":"jim",
     "middleName":"mask",
@@ -32,7 +32,7 @@
     "admin": true
 },
 {
-    "userid:":"2985970a-8f0d-48da-bf8c-065aa9055948",
+    "userid":"2985970a-8f0d-48da-bf8c-065aa9055948",
     "studentList":["513b2857-a10f-4aac-87a8-b094604a3001"],
     "firstName":"Lucy",
     "middleName":"mini",
@@ -44,7 +44,7 @@
 
 },
 {
-    "userid:":"c3c8f20e-98c4-4ff0-8235-f22fb43552c6",
+    "userid":"c3c8f20e-98c4-4ff0-8235-f22fb43552c6",
     "studentList":["513b2857-a10f-4aac-87a8-b094604a3001"],
     "firstName":"Stacy",
     "middleName":"Mum",
@@ -55,7 +55,7 @@
     "admin": true
 },
 {
-    "userid:":"3c6645f2-6843-46c8-839c-4ba3a3653b72",
+    "userid":"3c6645f2-6843-46c8-839c-4ba3a3653b72",
     "studentList":["513b2857-a10f-4aac-87a8-b094604a3001"],
     "firstName":"scarlet",
     "middleName":"widow",

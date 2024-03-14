@@ -59,9 +59,9 @@ public class StudentList {
         return false;
     }
 
-    public Student getStudent(String email) {
+    public Student getStudent(String key) {
         for (Student student : studentList) {
-            if (student.getEmail().equals(email)) {
+            if (student.getEmail().equals(key) || student.getUserID().equals(key)) {
                 return student;
             }
         }
