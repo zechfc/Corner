@@ -57,6 +57,10 @@ public class Course {
         return this.prerequisite;
     }
 
+    public String toString() {
+        return courseKey + ": " + courseName;
+    }
+
     public String getPrereqsToString() {
         String s = "";
         for (CourseChoice cc : this.prerequisite) {
