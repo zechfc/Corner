@@ -1,6 +1,5 @@
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -55,7 +54,7 @@ public class DataLoader extends DataConstants {
 
 			for (int i = 0; i < advisorListJSON.size(); i++) {
 				JSONObject advisorJSON = (JSONObject) advisorListJSON.get(i);
-				String Userid = (String) advisorJSON.get(USER_ID);
+				String userid = (String) advisorJSON.get(USER_ID);
 				String email = (String) advisorJSON.get(USER_USER_NAME);
 				String firstName = (String) advisorJSON.get(USER_FIRST_NAME);
 				String middleName = (String) advisorJSON.get(USER_MIDDLE_NAME);
@@ -65,7 +64,7 @@ public class DataLoader extends DataConstants {
 				boolean admin = ((boolean) advisorJSON.get(ADMIN));
 				ArrayList<Student> studentList = (ArrayList<Student>) advisorJSON.get(STUDENT_LIST);
 				advisorList.add(
-						new Advisor(Userid, studentList, firstName, middleName, lastName, age, email, admin, password));
+						new Advisor(userid, studentList, firstName, middleName, lastName, age, email, admin, password));
 			}
 
 			return advisorList;

@@ -42,10 +42,7 @@ public class UI {
         System.out.println("Advisor is in the system");
         System.out.println("Mark Stevens is your advisor");
 
-        if(!application.getAdvisorNote("d5478261-e50a-4ff9-b8bf-8c03b0280bc2")){
-            System.out.println("Failed to get advisor note.");
-        }
-        System.out.println("Advisor note retrieved");
+        application.getAdvisorNote("d5478261-e50a-4ff9-b8bf-8c03b0280bc2");
 
         if(!application.editAdvisorNote("d5478261-e50a-4ff9-b8bf-8c03b0280bc2", "Student recommended to take CSCE247")){
             System.out.println("Failed to edit advisor note.");
@@ -191,13 +188,33 @@ public class UI {
         } else{
             System.out.println("Successfully created a new account for...\n" + newuser.getFirstName() + " " + newuser.getLastName());
         }
-
+        
+        System.out.println("\nLogging in...");
+        //THIS WILL GIVE AN ERROR unless DataWriter append in savestudents and saveadvisors is removed
         if(!application.login(2, "oddeno@email.sc.edu", "oddenpassword")){
-            System.out.println("Sorry we couldn't login."); //login failed (not the right password in the system)
+            System.out.println("Sorry we couldn't login."); //login failed
             return;
         }
         System.out.println(newuser.getFirstName() + " " + newuser.getLastName() + " is now logged in");
 
+        //Need to add advisorID to student's json
+        System.out.println("\nAdding student to supervising list...");
+        if(!application.addStudentList("asifkk-vsfmmmsc-lafd023", "0a119e07-a0aa-435e-9b9d-21e5b91b1c39")){
+            System.out.println("Could not add student."); //failed
+            return;
+        } else{
+            System.out.println("Successfully added student to supervising list.");
+        }
+
+        //Editing advisor note
+        if(!application.editAdvisorNote("0a119e07-a0aa-435e-9b9d-21e5b91b1c39", "Consider taking Stats as your Application area.")){
+            System.out.println("\nCould not edit advisor note."); //failed
+            return;
+        } else{
+            System.out.println("\nSuccessfully edited advisor note.");
+            System.out.println("Showing student's advisor note...");
+            application.getAdvisorNote("0a119e07-a0aa-435e-9b9d-21e5b91b1c39");
+        }
     }
 
     public static void main(String[] args){

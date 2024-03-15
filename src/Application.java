@@ -104,16 +104,14 @@ public class Application {
         return false;
     }
 
-    public boolean getAdvisorNote(String userID) {
+    public void getAdvisorNote(String userID) {
         User user = studentList.getStudent(userID);
         if (user != null && user.getUserID().equals(userID)) {
             if (user instanceof Student) {
                 String advisorNote = ((Student) user).getAdvisorNote();
                 System.out.print(advisorNote);
-                return true;
             }
         }
-        return false;
     }
 
     // This adds a student to the system, do not worry about right now
@@ -129,9 +127,13 @@ public class Application {
     // }
 
     public boolean addStudentList(String advisorID, String studentID){
-        User user = advisorList.getAdvisor(advisorID);
-        if (user != null && user instanceof Advisor){
-            advisor.addStudentList(studentID);
+        Student student = studentList.getStudent(studentID);
+        Advisor advisor = advisorList.getAdvisor(advisorID);
+        if (advisor != null && advisor instanceof Advisor){
+            advisor.addStudent(studentID);
+            student.editAdvisorID(advisorID);
+            // DataWriter.saveAdvisors();
+            // DataWriter.saveStudents();
             return true;
         }
         return false;

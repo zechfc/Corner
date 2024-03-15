@@ -145,8 +145,8 @@ public class Student extends User {
     }
 
     public void editAdvisorNote(String note) {
-        // This will need to DataWriter to that student's 'note' in their json
-        advisorNote = note;
+        this.advisorNote = note;
+        DataWriter.saveStudents();
     }
 
     public String getAdvisorNote() {
