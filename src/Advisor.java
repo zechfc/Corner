@@ -16,15 +16,11 @@ public class Advisor extends User{
     public Student getStudent(String userID){
         StudentList studentList= StudentList.getInstance();
         ArrayList<Student> students = studentList.getStudents();
-
-        for (Student student : students) {
-            {
-                if(student.getUserID().equals(userID)){
-                    return student;
-                }
-          
+        for (Student student : students) {        
+            if(student.getUserID().equals(userID)){
+                return student;
+            }
         }
-    }
         return null;
     }
     //public void getStudent(String lastName){}
@@ -39,16 +35,11 @@ public class Advisor extends User{
 
     public boolean addStudent(String userID){
         Student student = StudentList.getInstance().getStudentID(userID);
-
-        if(student != null)
-        {
-            if (hasStudent(student)) {
-               return false; 
-            }
+        if(student != null && !hasStudent(student)){
             studentsSupervising.add(student);
-        };
-        studentsSupervising.add(student);
-        return true;
+            return true;
+        }
+        return false;
 
     }
 
@@ -74,10 +65,5 @@ public class Advisor extends User{
 
       public Boolean getAdmin() {
         return admin;
-      }
-    
-    
-      public String getAdvisorAge(){
-        return age;
       }
 }
