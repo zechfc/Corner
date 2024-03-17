@@ -1,31 +1,29 @@
 import java.util.ArrayList;
 
 public class Course {
-    private ArrayList<CourseChoice> prerequisite;
+    private ArrayList<Course> prerequisite;
     private String courseID;
     private String courseSubject;
     private String courseNumber;
     private String courseName;
     private String courseDescription;
-    private boolean courseAvailability;
-    private double courseCredits;
+    private String courseCredits;
 
     // Not sure all of the things in the constructor are stored.
-    public Course(ArrayList<CourseChoice> prereq, String id, String subject, String number, String name, String description,
-            boolean availability, double credits, String semester, int year) {
+    public Course(ArrayList<Course> prereq, String id, String subject, String number, String name, String description,
+            String credits, String semester, int year) {
         prerequisite = prereq;
         courseID = id;
         courseSubject = subject;
         courseNumber = number;
         courseName = name;
         courseDescription = description;
-        courseAvailability = availability;
         courseCredits = credits;
     }
 
     public boolean checkPrerequisites(ArrayList<Course> courses) {
         boolean b = true;
-        for (CourseChoice pre : prerequisite) {
+        for (Course pre : prerequisite) {
             b = b && pre.checkPrerequisites(courses); // This is genius don;t think about it
         }
         return b;
@@ -47,7 +45,7 @@ public class Course {
         return courseNumber;
     }
 
-    public double getCourseCredits(){
+    public String getCourseCredits(){
         return courseCredits;
     }
 
@@ -59,11 +57,7 @@ public class Course {
         return courseDescription;
     }
 
-    public boolean getAvailability() {
-        return courseAvailability;
-    }
-
-    public ArrayList<CourseChoice> getPrereqs() { // Only if you want array itself. For string form look at other method.
+    public ArrayList<Course> getPrereqs() { // Only if you want array itself. For string form look at other method.
         return this.prerequisite;
     }
 
@@ -71,11 +65,11 @@ public class Course {
         return courseSubject + " " + courseNumber + ": " + courseName;
     }
 
-    public String getPrereqsToString() {
-        String s = "";
-        for (CourseChoice cc : this.prerequisite) {
-            s += cc.getCoursesToString();
-        }
-        return s;
-    }
+    // public String getPrereqsToString() {
+    //     String s = "";
+    //     for (Course cc : this.prerequisite) {
+    //         s += cc.getCoursesToString();
+    //     }
+    //     return s;
+    // }
 }

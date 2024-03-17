@@ -156,7 +156,7 @@ public class Application {
     public ArrayList<Course> getPastClasses(String userID){
         Student student = studentList.getStudent(userID);
         if(student != null){
-            return student.getPastCourses();
+            student.getPastCourses();
         }
         return null;
     }

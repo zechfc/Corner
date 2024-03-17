@@ -167,8 +167,8 @@ public class UI {
             return;
         }
         System.out.println("Getting details on CSCE146:\n" + c.getDescription());
-        System.out.println("Getting availability of CSCE146:\n" + c.getAvailability());
-        System.out.println("These are the prerequisites of CSCE146:\n" + c.getPrereqsToString());
+        // System.out.println("Getting availability of CSCE146:\n" + c.getAvailability());
+        // System.out.println("These are the prerequisites of CSCE146:\n" + c.getPrereqsToString());
     }
 
     public void demoscenario1(){
