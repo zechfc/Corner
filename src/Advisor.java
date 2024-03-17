@@ -37,13 +37,10 @@ public class Advisor extends User{
         Student student = StudentList.getInstance().getStudentID(userID);
         if(student != null && !hasStudent(student)){
             studentsSupervising.add(student);
+            DataWriter.saveAdvisors();
             return true;
         }
         return false;
-
-    }
-
-    public void editAdvisorNote(String userID){
 
     }
 

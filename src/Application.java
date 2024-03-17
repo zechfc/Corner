@@ -132,8 +132,6 @@ public class Application {
         if (advisor != null && advisor instanceof Advisor){
             advisor.addStudent(studentID);
             student.editAdvisorID(advisorID);
-            // DataWriter.saveAdvisors();
-            // DataWriter.saveStudents();
             return true;
         }
         return false;
@@ -151,6 +149,14 @@ public class Application {
         User user = studentList.getStudent(email);
         if (user != null && user instanceof Student) {
             return (Student) user;
+        }
+        return null;
+    }
+
+    public ArrayList<Course> getPastClasses(String userID){
+        Student student = studentList.getStudent(userID);
+        if(student != null){
+            return student.getPastCourses();
         }
         return null;
     }

@@ -206,6 +206,9 @@ public class UI {
             System.out.println("Successfully added student to supervising list.");
         }
 
+        System.out.println("\nPrinting student's past courses...");
+        application.getPastClasses("0a119e07-a0aa-435e-9b9d-21e5b91b1c39");
+
         //Editing advisor note
         if(!application.editAdvisorNote("0a119e07-a0aa-435e-9b9d-21e5b91b1c39", "Consider taking Stats as your Application area.")){
             System.out.println("\nCould not edit advisor note."); //failed
