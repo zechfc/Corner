@@ -3,6 +3,8 @@ public abstract class DataConstants {
     protected static final String STUDENT_FILE_NAME = "src/student.json";
     protected static final String ADVISOR_FILE_NAME = "src/advisors.json";
     protected static final String COURSE_FILE_NAME = "src/courses.json";
+    protected static final String MAJORS_FILE_NAME = "src/majors.json";
+
 
 	protected static final String USER_ID = "userid";
     protected static final String STUDENT_LIST = "studentList";
@@ -38,6 +40,21 @@ public abstract class DataConstants {
     protected static final String COURSE_PREREQ_REQUIRETYPE = "requireType";
     protected static final String COURSE_ELECTIVE_AREA = "electiveArea";
     //better way to store year
+
+    //majors JSON constants
+    protected static final String MAJOR_ID = "majorid";
+    protected static final String MAJOR_NAME = "name";
+    protected static final String DESCRIPTION = "description";
+    protected static final String TOTAL_PROGRAM_REQ_HOURS = "totalHoursProgramRequirements";
+    protected static final String TOTAL_HOURS = "totalHours";
+    protected static final String CAROLINA_HOURS = "carolinaHours";
+    protected static final String MAJOR_REQUIRMENTS_HOURS = "majorHours";
+    protected static final String PROGRAM_REQUIREMENTS = "programRequirements";
+    protected static final String CAROLINA_CORE = "carolinaCore";
+    protected static final String MAJOR_REQUIRMENTS = "majorRequirements";
+
+
+
 
 }
 
