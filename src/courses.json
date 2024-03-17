@@ -664,6 +664,99 @@
         "credit_hours": 3,
         "prerequisites": "See Bulletin listing",
         "semester_offered": "Varies"
+      },
+      {
+        "uuid":  "908c0386-258e-45ed-bea5-e44cf5d9cd57",
+        "subject":  "STAT",
+        "number":  "201",
+        "name":  "Elementary Statistics",
+        "description":  "Introduction to the fundamentals of modern statistical methods, including descriptive statistics, probability, random sampling, simple linear regression, correlation, tests of hypotheses, and estimation.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         "645087ab-2dd0-463d-bd0b-474f60d5f9fd",
+                                                         "31d32056-66f2-47a1-8fd1-dfc12126b775",
+                                                         "905cccf6-1e47-46c0-998d-f388eea24a33"
+                                                     ],
+                                  "min_grade":  "C"
+                              }
+                          ],
+        "corequisites":  []
+      },{
+        "uuid":  "905cccf6-1e47-46c0-998d-f388eea24a33",
+        "subject":  "STAT",
+        "number":  "110",
+        "name":  "Introduction to Statistical Reasoning",
+        "description":  "A course in statistical literacy. Topics include data sources and sampling, concepts of experimental design, graphical and numerical data description, measuring association for continuous and categorical variables, introduction to probability and statistical inference, and use of appropriate software.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         
+                                                     ],
+                                  "min_grade":  "C"
+                              }
+                          ],
+        "corequisites":  []
+      },{
+        "uuid":  "645087ab-2dd0-463d-bd0b-474f60d5f9fd",
+        "subject":  "MATH",
+        "number":  "111",
+        "name":  "Basic College Mathematics",
+        "description":  "Basic college algebra; linear and quadratic equations, inequalities, functions and graphs of functions, exponential and logarithm functions, systems of equations.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         
+                                                     ],
+                                  "min_grade":  "C"
+                              }
+                          ],
+        "corequisites":  []
+      },{
+        "uuid":  "31d32056-66f2-47a1-8fd1-dfc12126b775",
+        "subject":  "MATH",
+        "number":  "115",
+        "name":  "Precalculus Mathematics",
+        "description":  "Topics in algebra and trigonometry specifically needed for MATH 141, MATH 142, MATH 241. Subsets of the real line, absolute value; polynomial, rational, inverse, logarithmic, exponential functions; circular functions; analytic trigonometry.",
+        "credit_hours":  "4.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                       "645087ab-2dd0-463d-bd0b-474f60d5f9fd"  
+                                                     ],
+                                  "min_grade":  "C"
+                              }
+                          ],
+        "corequisites":  []
+      },{
+        "uuid":  "c870363c-4194-4a3b-a6c5-0303e7238981",
+        "subject":  "STAT",
+        "number":  "112",
+        "name":  "Statistics and the Media",
+        "description":  "Statistical and information literacy. Experimental and survey design; descriptive statistics; basic probability; simple confidence intervals and hypothesis tests; statistical software; collection, management, and evaluation of information; and presentation of statistics in the media.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         
+                                                     ],
+                                  "min_grade":  "D"
+                              }
+                          ],
+        "corequisites":  []
       }
     ]
   }

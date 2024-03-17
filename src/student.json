@@ -166,9 +166,11 @@
     "major":"cd28e093-e17f-49e2-b11c-163cbf993b26",
     "classification":"Sophomore",
     "notes":"...",
-    "transferCredits":34,
+    "transferCredits":6,
     "coursesPast":
-    [{}],
+    [{"courseCode":"f4b55e57-6034-4462-81ca-13c559697988", "grade":"B", "semester":"fall", "year":2022},
+    {"courseCode":"c870363c-4194-4a3b-a6c5-0303e7238981", "grade":"A-", "semester":"spring", "year":2023}
+    ],
 
     "coursesPresent":
     [{}]
