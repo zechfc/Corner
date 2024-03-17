@@ -3,18 +3,20 @@ import java.util.ArrayList;
 public class Course {
     private ArrayList<CourseChoice> prerequisite;
     private String courseID;
-    private String courseKey;
+    private String courseSubject;
+    private String courseNumber;
     private String courseName;
     private String courseDescription;
     private boolean courseAvailability;
     private double courseCredits;
 
     // Not sure all of the things in the constructor are stored.
-    public Course(ArrayList<CourseChoice> prereq, String id, String key, String name, String description,
-            boolean availability, double credits, String term, double passingGrade) {
+    public Course(ArrayList<CourseChoice> prereq, String id, String subject, String number, String name, String description,
+            boolean availability, double credits, String semester, int year) {
         prerequisite = prereq;
         courseID = id;
-        courseKey = key;
+        courseSubject = subject;
+        courseNumber = number;
         courseName = name;
         courseDescription = description;
         courseAvailability = availability;
@@ -37,8 +39,16 @@ public class Course {
         return courseID;
     }
 
-    public String getCourseKey() {
-        return courseKey;
+    public String getCourseSubject() {
+        return courseSubject;
+    }
+
+    public String getCourseNumber(){
+        return courseNumber;
+    }
+
+    public double getCourseCredits(){
+        return courseCredits;
     }
 
     public String getCourseName() {
@@ -58,7 +68,7 @@ public class Course {
     }
 
     public String toString() {
-        return courseKey + ": " + courseName;
+        return courseSubject + " " + courseNumber + ": " + courseName;
     }
 
     public String getPrereqsToString() {
