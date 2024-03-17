@@ -7,17 +7,19 @@ public class Course {
     private String courseName;
     private String courseDescription;
     private boolean courseAvailability;
+    private String electiveArea;
     private double courseCredits;
 
     // Not sure all of the things in the constructor are stored.
     public Course(ArrayList<CourseChoice> prereq, String id, String key, String name, String description,
-            boolean availability, double credits, String term, double passingGrade) {
+            boolean availability, double credits, String term, String elecArea, double passingGrade) {
         prerequisite = prereq;
         courseID = id;
         courseKey = key;
         courseName = name;
         courseDescription = description;
         courseAvailability = availability;
+        electiveArea = elecArea;
         courseCredits = credits;
     }
 
@@ -51,6 +53,10 @@ public class Course {
 
     public boolean getAvailability() {
         return courseAvailability;
+    }
+
+    public String getElectiveArea() {
+        return electiveArea;
     }
 
     public ArrayList<CourseChoice> getPrereqs() { // Only if you want array itself. For string form look at other method.
