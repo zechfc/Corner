@@ -54,7 +54,7 @@ public class Application {
     }
 
     public User createAdvisorAccount(String userID, String firstName, String middleName, String lastName, String age, String email, String password,
-        ArrayList<Student> studentsSupervising, boolean admin){
+        ArrayList<String> studentsSupervising, boolean admin){
             if (advisorList.emailTaken(email)){
                 return null;
             }
