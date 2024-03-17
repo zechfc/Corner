@@ -154,12 +154,11 @@ public class Application {
         return null;
     }
 
-    public String getPastClasses(String userID){
+    public void getPastClasses(String userID){
         Student student = studentList.getStudent(userID);
         if(student != null){
             student.getPastCourseValues();
         }
-        return null;
     }
 
     public Student getStudent(String firstName, String lastName) {

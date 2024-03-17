@@ -172,20 +172,24 @@ public class Student extends User {
         return currentCourses;
     }
 
-    public String getPastCourseValues(){
+    public void getPastCourseValues(){
         for(int i = 0; i < pastCourses.size(); i++){
             JSONObject temp = (JSONObject) pastCourses.get(i);
+            //Gets ID and grade from student JSON
             String id = (String) temp.get("courseID");
+            String grade = (String) temp.get("grade");
+            String semester = (String) temp.get("semester");
+            int year = ((Long) temp.get("year")).intValue();
 
             CourseList courseList = CourseList.getInstance();
             ArrayList<Course> courses = courseList.getCourses();
             for(Course course : courses){
+                //Goes through EVERY course (from JSON) and finds matching ID
                 if(course.getCourseID().equals(id)){
-                    return course.getCourseName();
+                    System.out.println(course.getCourseName() + ": " + grade + ", taken in " + semester + " " + year);
                 }
             }
         }
-        return null;
     }
 
     public void getCurrentCourseValues(){
