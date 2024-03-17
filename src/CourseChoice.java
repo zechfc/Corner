@@ -63,7 +63,7 @@ public class CourseChoice {
         else if (this.prerequisite.equals(requireType.PRE_OR_COREQ)) s += "This can be taken as a prerequisite or a corequisite: \n";
         else if (this.prerequisite.equals(requireType.COREQ)) s += "This must be taken as a corequisite: \n";
         for (Course c : this.courses) {
-            s += c.getCourseName() + c.getCourseNumber() + ": " + c.getCourseName() + "\n";
+            s += c.getCourseKey() + ": " + c.getCourseName() + "\n";
         }
         return s;
     }
