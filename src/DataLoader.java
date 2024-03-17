@@ -3,13 +3,12 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import java.util.HashMap;
 
 public class DataLoader extends DataConstants {
 
 	public static ArrayList<Student> getStudents() {
 		ArrayList<Student> studentList = new ArrayList<Student>();
-		HashMap<String, Course> courseMap = new HashMap<String, Course>();
+
 		try {
 			FileReader reader = new FileReader(STUDENT_FILE_NAME);
 			JSONParser parser = new JSONParser();
@@ -27,36 +26,8 @@ public class DataLoader extends DataConstants {
 				String major = (String) studentJSON.get(MAJOR);
 				String classification = (String) studentJSON.get(CLASSIFICATION);
 				int transferCredits = ((Long) studentJSON.get(TRANSFER_CREDITS)).intValue();
-
-				JSONArray pastCoursesJSON = (JSONArray) studentJSON.get(COURSES_PAST);
-				ArrayList<Course> pastCourses = new ArrayList<Course>();
-				for(int j = 0; j < pastCoursesJSON.size(); j++){
-					JSONObject pastCourse = (JSONObject) pastCoursesJSON.get(j);
-					String courseCode = (String) pastCourse.get(COURSE_ID);
-					String grade = (String) pastCourse.get(GRADE);
-					String semester = (String) pastCourse.get(SEMESTER);
-					int year = ((Long) pastCourse.get(YEAR)).intValue();
-					Course course = courseMap.get(courseCode);
-					if(course != null){
-						pastCourses.add(new Course(course.getPrereqs(), course.getCourseID(), course.getCourseSubject(), course.getCourseNumber(), course.getCourseName(), course.getDescription(), course.getAvailability(), course.getCourseCredits(), semester, year));
-					}else {
-						System.err.println("Course not found for code: " + courseCode);
-					}
-				}
-				
-				JSONArray currentCoursesJSON = (JSONArray) studentJSON.get(COURSES_PRESENT);
-				ArrayList<Course> currentCourses = new ArrayList<Course>();
-				for(int j = 0; j < currentCourses.size(); j++){
-					JSONObject currentCourse = (JSONObject) currentCoursesJSON.get(j);
-					String courseCode = (String) currentCourse.get(COURSE_ID);
-					String grade = (String) currentCourse.get(GRADE);
-					String semester = (String) currentCourse.get(SEMESTER);
-					int year = ((Long) currentCourse.get(YEAR)).intValue();
-					Course course = courseMap.get(courseCode);
-					if(course != null){
-						currentCourses.add(new Course(course.getPrereqs(), course.getCourseID(), course.getCourseSubject(), course.getCourseNumber(), course.getCourseName(), course.getDescription(), course.getAvailability(), course.getCourseCredits(), semester, year));
-					}
-				}
+				ArrayList<Course> currentCourses = (ArrayList<Course>) studentJSON.get(COURSES_PRESENT);
+				ArrayList<Course> pastCourses = (ArrayList<Course>) studentJSON.get(COURSES_PAST);
 
 				String advisorID = (String) studentJSON.get(ADVISOR_ID);
 				String advisorNote = (String) studentJSON.get(NOTES);
@@ -91,7 +62,7 @@ public class DataLoader extends DataConstants {
 				String age = ((String) advisorJSON.get(USER_AGE));
 				String password = (String) advisorJSON.get(USER_PASSWORD);
 				boolean admin = ((boolean) advisorJSON.get(ADMIN));
-				ArrayList<String> studentList = (ArrayList<String>) advisorJSON.get(STUDENT_LIST);
+				ArrayList<Student> studentList = (ArrayList<Student>) advisorJSON.get(STUDENT_LIST);
 				advisorList.add(
 						new Advisor(userid, studentList, firstName, middleName, lastName, age, email, admin, password));
 			}
@@ -119,9 +90,8 @@ public class DataLoader extends DataConstants {
 					ArrayList<String> courseIDList = (ArrayList<String>) courseChoiceJSON.get(COURSE_ID);
 					cc.add(new CourseChoice(requireType, courseIDList));
 				}
-				String courseID = (String) courseJSON.get(COURSE_ID);
-				String courseSubject = (String) courseJSON.get(COURSE_SUBJECT);
-				String courseNumber = (String) courseJSON.get(COURSE_NUMBER);
+				String courseid = (String) courseJSON.get(COURSE_ID);
+				String coursekey = (String) courseJSON.get(COURSE_KEY);
 				String courseName = (String) courseJSON.get(COURSE_NAME);
 				String courseDescription = (String) courseJSON.get(COURSE_DESCRIPTION);
 				boolean courseAvailability = (boolean) courseJSON.get(COURSE_AVAILABILITY);
@@ -131,7 +101,7 @@ public class DataLoader extends DataConstants {
 				double passingGrade = (courseJSON.get(COURSE_PASSING_GRADE) != null) ? passingGrade = (double)((long) courseJSON.get(COURSE_PASSING_GRADE)) : 0;
 				
 				classlist.add(new Course(cc, courseid, coursekey, courseName, courseDescription, courseAvailability,
-						courseCredits, term, electiveArea, passingGrade));
+						courseCredits, term, electiveArea,passingGrade));
 			}
 			for (Course c : classlist) {
 				//System.out.println(c.getCourseName());
