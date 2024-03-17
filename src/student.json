@@ -168,8 +168,8 @@
     "notes":"...",
     "transferCredits":6,
     "coursesPast":
-    [{"courseID":"f4b55e57-6034-4462-81ca-13c559697988", "grade":"B", "semester":"fall", "year":2022},
-    {"courseID":"c870363c-4194-4a3b-a6c5-0303e7238981", "grade":"A-", "semester":"spring", "year":2023}
+    [{"courseID":"01591088-ef0d-4ca0-a841-81b34dba046e", "grade":"B", "semester":"fall", "year":2022},
+    {"courseID":"c72f7f19-ea04-4b39-8b47-e216a02e9c01", "grade":"A-", "semester":"spring", "year":2023}
     ],
 
     "coursesPresent":

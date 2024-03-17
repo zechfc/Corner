@@ -30,12 +30,11 @@ public abstract class DataConstants {
 
     protected static final String COURSE_PREREQS = "prerequisite";
     protected static final String COURSE_ID = "courseID";
-    protected static final String COURSE_SUBJECT = "subject";
-    protected static final String COURSE_NUMBER = "number";
-    protected static final String COURSE_NAME = "name";
-    protected static final String COURSE_DESCRIPTION = "description";
-    // protected static final String COURSE_AVAILABILITY = "courseAvailability";
-    protected static final String COURSE_CREDITS = "credit_hours";
+    protected static final String COURSE_KEY = "courseKey";
+    protected static final String COURSE_NAME = "courseName";
+    protected static final String COURSE_DESCRIPTION = "courseDescription";
+    protected static final String COURSE_AVAILABILITY = "courseAvailability";
+    protected static final String COURSE_CREDITS = "courseCredits";
     protected static final String COURSE_PASSING_GRADE = "passingGrade";
     protected static final String COURSE_PREREQ_REQUIRETYPE = "requireType";
     protected static final String COURSE_ELECTIVE_AREA = "electiveArea";

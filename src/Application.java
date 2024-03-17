@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import org.json.simple.JSONArray;
 
 public class Application {
     private StudentList studentList;
@@ -42,7 +43,7 @@ public class Application {
 
     public User createStudentAccount(String userID, String firstName, String middleName, String lastName, String age,
             String email, String password, String major, String classification, int transferCredits, String advisorID, 
-            String advisorNote, ArrayList<Course> currentCourses, ArrayList<Course> pastCourses) {
+            String advisorNote, JSONArray currentCourses, JSONArray pastCourses) {
         // Email (username) already used
         if (studentList.emailTaken(email)){
             return null;
@@ -153,12 +154,11 @@ public class Application {
         return null;
     }
 
-    public ArrayList<Course> getPastClasses(String userID){
+    public void getPastClasses(String userID){
         Student student = studentList.getStudent(userID);
         if(student != null){
-            student.getPastCourses();
+            student.getPastCourseValues();
         }
-        return null;
     }
 
     public Student getStudent(String firstName, String lastName) {

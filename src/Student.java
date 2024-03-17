@@ -1,9 +1,11 @@
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Student extends User {
-    private ArrayList<Course> pastCourses;
-    private ArrayList<Course> currentCourses;
+    private JSONArray pastCourses;
+    private JSONArray currentCourses;
     private SemesterPlan semesterPlan;
     private MajorMap majorMap;
     private String major;
@@ -18,7 +20,7 @@ public class Student extends User {
     private String classification;
 
     public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password,  
-        String major, String classification, int transferCredits, ArrayList<Course> currentCourses, ArrayList<Course> pastCourses, 
+        String major, String classification, int transferCredits, JSONArray currentCourses, JSONArray pastCourses, 
         String advisorID, String advisorNote){
             
         super(userID, firstName, middleName, lastName, age, email, password);
@@ -162,12 +164,39 @@ public class Student extends User {
         return classification;
     }
 
-    public ArrayList<Course> getPastCourses(){
+    public JSONArray getPastCourses(){
         return pastCourses;
     }
 
-    public ArrayList<Course> getCurrentCourses(){
+    public JSONArray getCurrentCourses(){
         return currentCourses;
+    }
+
+    public void getPastCourseValues(){
+        for(int i = 0; i < pastCourses.size(); i++){
+            JSONObject temp = (JSONObject) pastCourses.get(i);
+            //Gets ID and grade from student JSON
+            String id = (String) temp.get("courseID");
+            String grade = (String) temp.get("grade");
+            String semester = (String) temp.get("semester");
+            int year = ((Long) temp.get("year")).intValue();
+
+            CourseList courseList = CourseList.getInstance();
+            ArrayList<Course> courses = courseList.getCourses();
+            for(Course course : courses){
+                //Goes through EVERY course (from JSON) and finds matching ID
+                if(course.getCourseID().equals(id)){
+                    System.out.println(course.getCourseName() + ": " + grade + ", taken in " + semester + " " + year);
+                }
+            }
+        }
+    }
+
+    public void getCurrentCourseValues(){
+        for(int i = 0; i < currentCourses.size(); i++){
+            JSONObject temp = (JSONObject) currentCourses.get(i);
+            String id = (String) temp.toJSONString();
+        }
     }
 
     public Student student(){

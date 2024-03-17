@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import org.json.simple.JSONArray;
 
 public class UI {
     private Scanner scanner;
@@ -84,8 +85,8 @@ public class UI {
         int transferCredits = 48;
         String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
         String note = "...";
-        ArrayList<Course> currentCourses = new ArrayList<Course>();
-        ArrayList<Course> pastCourses = new ArrayList<Course>();
+        JSONArray currentCourses = new JSONArray();
+        JSONArray pastCourses = new JSONArray();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
         transferCredits, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){
@@ -111,8 +112,8 @@ public class UI {
         String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
         String note = "...";
         int transferCredits = 23;
-        ArrayList<Course> currentCourses = new ArrayList<Course>();
-        ArrayList<Course> pastCourses = new ArrayList<Course>();
+        JSONArray currentCourses = new JSONArray();
+        JSONArray pastCourses = new JSONArray();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
             transferCredits, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){

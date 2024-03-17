@@ -19,9 +19,9 @@ public class CourseList {
         return courseList;
     }
 
-    public Course getCourse(String courseName) {
+    public Course getCourse(String key) {
         for (Course course : courseList) {
-            if (course.getCourseName().equals(courseName)) {
+            if (course.getCourseName().equals(key) || course.getCourseID().equals(key)) {
                 return course;
             }
         }
@@ -29,7 +29,7 @@ public class CourseList {
     }
 
     public Course checkPrereq(Course course, double grade) {
-        Course c = new Course(null, null, null, null, null, null, null, null, 0);
+        Course c = new Course(null, null, null, null, null, 0, null, 0);
         return c;
     }
 }
