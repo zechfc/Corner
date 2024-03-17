@@ -129,7 +129,7 @@ public class Application {
     public boolean addStudentList(String advisorID, String studentID){
         Student student = studentList.getStudent(studentID);
         Advisor advisor = advisorList.getAdvisor(advisorID);
-        if (advisor != null && advisor instanceof Advisor){
+        if (advisor != null){
             advisor.addStudent(studentID);
             student.editAdvisorID(advisorID);
             return true;

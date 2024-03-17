@@ -175,8 +175,9 @@ public class Student extends User {
     }
 
     public void editAdvisorID(String advisorID){
-        if(this.advisorID == null){
+        if(this.advisorID == ""){
             this.advisorID = advisorID;
+            DataWriter.saveStudents();
         }
     }
 }
