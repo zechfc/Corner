@@ -1,197 +1,670 @@
-[{
-    "prerequisite":[
-        {
-            "requireType": "OR",
-            "courseID": ["MATH142"]
-        }
-    ],
-    "courseID": "662bea32-9ceb-4f83-9c1d-b3d413c5e017",
-    "courseKey":"MATH241",
-    "courseName": "Vector Calculus",
-    "courseDescription":"An introduction to multivariable calculus, including vectors and vector-valued functions, partial derivatives and applications of partial derivatives (such as tangent planes and Lagrange multipliers), multiple integrals, volume, surface area, and the classical theorems of Green, Stokes and Gauss.",
-    "courseAvailability": true,
-    "courseCredits": 3.5,
-    "courseTerm": "SPRING",
-    "passingGrade": 70
-},
+
 {
-    "prerequisite":[
-        {
-            "requireType":"AND",
-            "courseID": ["458fa4fb-af61-48e5-b33f-ae4f65b2feb0"]
-        },
-        {
-            "requireType":"PRE_OR_COREQ",
-            "courseID":["MATH122","MATH141"]
-    }],
-    "courseID":"c4f3f3a2-cfcf-4612-9b9e-d830514ba2c4",
-    "courseKey":"CSCE146",
-    "courseName":"Algorithmic Design II",
-    "courseDescription":"Rigorous development of algorithms and computer programs; elementary data structures. Three lecture hours and two laboratory hours per week. Open to all majors.",
-    "courseAvailability": true,
-    "courseCredits": 4.0,
-    "courseTerm": "FALL",
-    "passingGrade": 70
-},
-{
-    "prerequisite":[],
-    "courseID": "962c9a4e-7bd7-4fe4-adf1-bf9a0bf911c6",
-    "courseKey":"CSCE390",
-    "courseName":"Prof. Issues in Computer Science Engr",
-    "courseDescription": "Professional issues in the information technology professions; history and social context of computing; professional responsibilities; privacy; intellectual property; risks and liabilities of computer-based systems.",
-    "courseAvailability": true,
-    "courseCredits": 1.0,
-    "courseTerm": "SPRING",
-    "passingGrade": 70
-}
-,
-{
-    "prerequisite":[
-        {
-            "requireType":"COREQ",
-            "courseID": ["740f0ce5-16b1-4915-b377-0f7082110193"]
-        },
-        {
-            "requireType":"OR",
-            "courseID":["5ca3f004-9c79-4054-9e8b-548f7c096907","91730226-f79b-4fe0-b976-6f72d3c328b5"]  
-    }],   
-    "courseID": "075dc2b0-8f5a-4fdd-8f9e-9925317b9650",
-    "courseKey":"CHEM111",
-    "courseName":"General Chemistry I",
-    "courseDescription": "Survey of the principles that underlie all chemistry with applications illustrating these principles. Three lecture and one recitation hours per week.",
-    "courseAvailability": true,
-    "courseCredits": 3.0,
-    "courseTerm": "SPRING",
-    "passingGrade": 70
-}
-,
-{
-    "prerequisite":[
-        {
-            "requireType":"COREQ",
-            "courseID": ["740f0ce5-16b1-4915-b377-0f7082110193"]
-        },
-        {
-            "requireType":"AND",
-            "courseID":["5ca3f004-9c79-4054-9e8b-548f7c096907","91730226-f79b-4fe0-b976-6f72d3c328b5"]
-        }
-    ],   
-    "courseID": "740f0ce5-16b1-4915-b377-0f7082110193",
-    "courseKey":"CHEM111L",
-    "courseName":"General Chemistry I Lab",
-    "courseDescription": "Introduction to the principles and techniques of experimental chemistry with emphasis on formula investigations, equations, elementary statistics, and chemical reactivity.",
-    "courseAvailability": true,
-    "courseCredits": 1.0,
-    "courseTerm": "SPRING"
-}
-,
-{
-    "prerequisite":[],
-    "courseID": "5ca3f004-9c79-4054-9e8b-548f7c096907",
-    "courseKey":"MATH111",
-    "courseName":"Basic College Mathematics",
-    "courseDescription": "Basic college algebra; linear and quadratic equations, inequalities, functions and graphs of functions, exponential and logarithm functions, systems of equations.",
-    "courseAvailability": true,
-    "reccomendedSemester":"freshman",
-    "courseCredits": 3.0,
-    "reccomendedCourseTerm": "SPRING",
-    "passingGrade": 70
-}
-,
-{
-    "prerequisite":[
-        {
-            "requireType":"OR",
-            "courseID": ["5ca3f004-9c79-4054-9e8b-548f7c096907"]
-        }
-    ],        
-    "courseID": "91730226-f79b-4fe0-b976-6f72d3c328b5",
-    "courseKey":"MATH115",
-    "courseName":"Precalculus Mathematics",
-    "courseDescription": "Topics in algebra and trigonometry specifically needed for MATH 141, MATH 142, MATH 241. Subsets of the real line, absolute value; polynomial, rational, inverse, logarithmic, exponential functions; circular functions; analytic trigonometry.",
-    "courseAvailability": true,
-    "courseCredits": 4.0,
-    "courseTerm": "SPRING",
-    "passingGrade": 70
-}
-,
-{
-    "prerequisite":[],
-    "courseID": "962c9a4e-7bd7-4fe4-adf1-bf9a0bf911c6",
-    "courseKey":"ENGL101",
-    "courseName":"Critical Reading and Composition",
-    "courseDescription": "Instruction in strategies for critically reading and analyzing literature and non-literary texts; structured, sustained practice in composing expository and analytical essays.",
-    "courseAvailability": true,
-    "courseCredits": 3.0,
-    "courseTerm": "SPRING",
-    "passingGrade": 70
-}
-,
-{
-    "prerequisite":[
-        {
-            "requireType":"OR",
-            "courseID": ["962c9a4e-7bd7-4fe4-adf1-bf9a0bf911c6"]
-        }
-    ],    
-    "courseID": "46fb49c2-44de-40df-9043-fc935c1f16e6",
-    "courseKey":"ENGL102",
-    "courseName":"Rhetoric and Composition ",
-    "courseDescription": "Instruction and intensive practice in researching, analyzing, and composing written arguments about academic and public issues.",
-    "courseAvailability": true,
-    "courseCredits": 3.0,
-    "courseTerm": "SPRING",
-    "passingGrade": 70
-}
-,
-{
-    "prerequisite":[
-        {
-            "requireType":"AND",
-            "courseID":["5ca3f004-9c79-4054-9e8b-548f7c096907","91730226-f79b-4fe0-b976-6f72d3c328b5"]
-        }
-    ],     
-    "courseID": "458fa4fb-af61-48e5-b33f-ae4f65b2feb0",
-    "courseKey":"CSCE145",
-    "courseName":"Algorithmic Design I",
-    "courseDescription": "Problem-solving, algorithmic design, and programming. Three lectures and two laboratory hours per week.",
-    "courseAvailability": true,
-    "courseCredits": 4.0,
-    "courseTerm": "SPRING",
-    "passingGrade": 70
-}
-,
-{
-    "prerequisite":[
-        {
-            "requireType":"OR",
-            "courseID":["458fa4fb-af61-48e5-b33f-ae4f65b2feb0"]
-        }
-    ],     
-    "courseID": "a629aefc-4e61-4fb7-a2f1-3f6b68d35784",
-    "courseKey":"CSCE567",
-    "courseName":"Visualization Tools",
-    "courseDescription": "Scientific visualization tools as applied to sampled and generated data; methods for data manipulation and representation; investigation of visualization techniques.",
-    "courseAvailability": true,
-    "courseCredits": 3.0,
-    "courseTerm": "SPRING",
-    "passingGrade": 70
-}
-,
-{
-    "prerequisite":[
-        {
-            "requireType":"OR",
-            "courseID":["458fa4fb-af61-48e5-b33f-ae4f65b2feb0"]
-        }
-    ],     
-    "courseID": "f3f0c399-8e05-4ac8-b80c-82c63360ffa8",
-    "courseKey":"CSCE201",
-    "courseName":"Introduction to Computer Security",
-    "courseDescription": "Introduction to the theory and practice of computer security, including security policies, authentification, digital certificates, firewalls, malicious code, legal and ethical issues, and incident handling.",
-    "courseAvailability": true,
-    "courseCredits": 3.0,
-    "courseTerm": "SPRING",
-    "passingGrade": 70
-}
-]
+    "courses": [
+      {
+        "uuid":  "12224407-e656-4fe7-9078-88f1d9dc8325",
+        "subject":  "ENGL",
+        "number":  "101",
+        "name":  "Critical Reading and Composition",
+        "description":  "Instruction in strategies for critically reading and analyzing literature and non-literary texts; structured, sustained practice in composing expository and analytical essays.   CL: 2020.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [],
+        "corequisites":  []
+    },
+    {
+      "uuid":  "4bd274cb-260e-47a5-9893-203a3943d704",
+      "subject":  "MATH",
+      "number":  "141",
+      "name":  "Calculus I",
+      "description":  "Functions, limits, derivatives, introduction to integrals, the Fundamental Theorem of Calculus, applications of derivatives and integrals. Four classroom hours and one laboratory hour per week.    CL: 2020.",
+      "credit_hours":  "4.000",
+      "semesters_offered":  [ "SPRING","SUMMER","FALL"],
+      "prerequisites":  [
+                            {
+                                "choices":  1,
+                                "course_options":  [
+                                                       "2f85f19f-f6ba-490f-9bb2-a41b9199d74f",
+                                                       "84b21549-16e9-4117-978c-39a43fb665b2",
+                                                       "0c9c5c16-a478-44eb-89a1-1589750b8604"
+                                                   ],
+                                "min_grade":  "C"
+                            }
+                        ],
+      "corequisites":  []
+  },
+  {
+    "uuid":  "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627",
+    "subject":  "CSCE",
+    "number":  "145",
+    "name":  "Algorithmic Design I",
+    "description":  "Problem-solving, algorithmic design, and programming. Three lectures and two laboratory hours per week.   FS: 12/04/2013.   CL: 2020.",
+    "credit_hours":  "4.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "669e88d5-9009-4f74-85aa-e675ffaaaf12",
+                                                     "84b21549-16e9-4117-978c-39a43fb665b2"
+                                                 ],
+                              "min_grade":  "D"
+                          }
+                      ],
+    "corequisites":  []
+  },
+  {
+    "uuid":  "3cca9c4e-a195-4759-a761-cfe09adb20b8",
+    "subject":  "CSCE",
+    "number":  "190",
+    "name":  "Computing in the Modern World",
+    "description":  "An introduction to the field of computing: trends in computing technology, the profession, and careers; subdisciplines in computing; the nature of research and development.   CL: 2020.",
+    "credit_hours":  "1.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [],
+    "corequisites":  [
+                         "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627"
+                     ]
+  },
+  {
+    "uuid":  "980e1056-4ed2-4459-b0e7-56d78eca5d73",
+    "subject":  "ENGL",
+    "number":  "102",
+    "name":  "Rhetoric and Composition",
+    "description":  "Instruction and intensive practice in researching, analyzing, and composing written arguments about academic and public issues.   FS: 12/7/2016.   CL: 2020.",
+    "credit_hours":  "3.000",
+    "semesters_offered":  ["SPRING", "SUMMER","FALL"],
+    "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         "12224407-e656-4fe7-9078-88f1d9dc8325"
+                                                     ],
+                                  "min_grade":  "C"
+                              }
+                          ],
+        "corequisites":  []
+    },
+    {
+      "uuid":  "3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6",
+      "subject":  "MATH",
+      "number":  "142",
+      "name":  "Calculus II",
+      "description":  "Methods of integration, sequences and series, approximations.   Four classroom hours and one laboratory hour per week.   FS: 12/03/2014.   CL: 2020.",
+      "credit_hours":  "4.000",
+      "semesters_offered":  [ "SPRING","SUMMER","FALL"],
+      "prerequisites":  [
+                            {
+                                "choices":  1,
+                                "course_options":  [
+                                                       "4bd274cb-260e-47a5-9893-203a3943d704"
+                                                   ],
+                                "min_grade":  "C"
+                            }
+                        ],
+      "corequisites":  []
+  },
+  {
+    "uuid":  "a379a182-57c9-4b28-950d-35903009bce3",
+    "subject":  "CHEM",
+    "number":  "111",
+    "name":  "General Chemistry I",
+    "description":  "Survey of the principles that underlie all chemistry with applications illustrating these principles.  Three lecture and one recitation hours per week.   FS: 12/02/2020.   CL: 2020.",
+    "credit_hours":  "3.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "669e88d5-9009-4f74-85aa-e675ffaaaf12",
+                                                     "84b21549-16e9-4117-978c-39a43fb665b2",
+                                                     "f8e10b3a-146b-4d43-a3d8-647028c98641",
+                                                     "4bd274cb-260e-47a5-9893-203a3943d704"
+                                                 ],
+                              "min_grade":  "D"
+                          }
+                      ],
+    "corequisites":  [
+                         "b6bf4208-6933-4e10-a961-118f12d7acba"
+                     ]
+  },
+  {
+    "uuid":  "b6bf4208-6933-4e10-a961-118f12d7acba",
+    "subject":  "CHEM",
+    "number":  "111L",
+    "name":  "General Chemistry I Lab",
+    "description":  "Introduction to the principles and techniques of experimental chemistry with emphasis on formula investigations, equations, elementary statistics, and chemical reactivity.   FS: 12/02/2020.   CL: 2020.",
+    "credit_hours":  "1.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "669e88d5-9009-4f74-85aa-e675ffaaaf12",
+                                                     "84b21549-16e9-4117-978c-39a43fb665b2"
+                                                 ],
+                              "min_grade":  "D"
+                          },
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "a379a182-57c9-4b28-950d-35903009bce3"
+                                                 ],
+                              "min_grade":  "D"
+                          }
+                      ],
+    "corequisites":  []
+  },
+      {
+        "uuid":  "57eaa5d5-a439-43b1-87fc-2d3a4c0b9cd6",
+        "subject":  "CSCE",
+        "number":  "146",
+        "name":  "Algorithmic Design II",
+        "description":  "Continuation of CSCE 145. Rigorous development of algorithms and computer programs; elementary data structures. Three lecture hours and two laboratory hours per week.   FS: 12/04/2013.   CL: 2020.",
+        "credit_hours":  "4.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627"
+                                                     ],
+                                  "min_grade":  "C"
+                              },
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         "f8e10b3a-146b-4d43-a3d8-647028c98641",
+                                                         "4bd274cb-260e-47a5-9893-203a3943d704"
+                                                     ],
+                                  "min_grade":  "D"
+                              }
+                          ],
+        "corequisites":  []
+    },
+    {
+      "uuid":  "9b9ea0d0-3574-44be-b6cf-1ef50ce2aa23",
+      "subject":  "CSCE",
+      "number":  "215",
+      "name":  "UNIX/Linux Fundamentals",
+      "description":  "UNIX operating system, user-level system commands, and programming tools. UNIX scripting languages.   CL: 2020.",
+      "credit_hours":  "1.000",
+      "semesters_offered":  ["SPRING","SUMMER","FALL"],
+      "prerequisites":  [
+                            {
+                                "choices":  1,
+                                "course_options":  [
+                                                       "2e2ebf3f-c4d3-4dae-956b-d8afa7fca627"
+                                                   ],
+                                "min_grade":  "D"
+                            }
+                        ],
+      "corequisites":  []
+  },
+  {
+    "uuid":  "789c6ed0-53e3-476c-8761-f08bf727d08c",
+    "subject":  "CSCE",
+    "number":  "211",
+    "name":  "Digital Logic Design",
+    "description":  "Number systems, Boolean algebra, logic design, sequential machines.   CL: 2020.",
+    "credit_hours":  "3.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "4bd274cb-260e-47a5-9893-203a3943d704"
+                                                 ],
+                              "min_grade":  "D"
+                          }
+                      ],
+    "corequisites":  []
+  },
+  {
+    "uuid":  "39046cda-f913-4f9b-a002-f06e7c59f235",
+    "subject":  "CSCE",
+    "number":  "240",
+    "name":  "Advanced Programming Techniques",
+    "description":  "Pointers; memory management; advanced programming language structures: operator overloading, iterators, multiple inheritance, polymorphism, templates, virtual functions; Unix programming environment.   FS: 12/6/2017.   CL: 2020.",
+    "credit_hours":  "3.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "9b9ea0d0-3574-44be-b6cf-1ef50ce2aa23"
+                                                 ],
+                              "min_grade":  "D"
+                          },
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "57eaa5d5-a439-43b1-87fc-2d3a4c0b9cd6"
+                                                 ],
+                              "min_grade":  "C"
+                          }
+                      ],
+    "corequisites":  []
+  },
+  {
+    "uuid":  "928eb174-dea9-4b98-80b1-ac594c4360f8",
+    "subject":  "MATH",
+    "number":  "374",
+    "name":  "Discrete Structures",
+    "description":  "Propositional and predicate logic; proof techniques; recursion and recurrence relations; sets, combinatorics, and probability; functions, relations, and matrices; algebraic structures.   FS: 12/03/2014.   CL: 2020.",
+    "credit_hours":  "3.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "min_grade":  "C",
+                              "course_options":  [
+                                                     "3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6"
+                                                 ]
+                          },
+                          {
+                              "choices":  1,
+                              "min_grade":  "C",
+                              "course_options":  [
+                                                     "57eaa5d5-a439-43b1-87fc-2d3a4c0b9cd6"
+                                                 ]
+                          }
+                      ],
+    "corequisites":  []
+  },
+  {
+    "uuid":  "66a95212-0d75-4fae-97ff-c3c76c29d47e",
+    "subject":  "CHEM",
+    "number":  "112",
+    "name":  "General Chemistry II",
+    "description":  "Continuation of CHEM 111. Special emphasis on chemical equilibrium. Three lecture and one recitation hours per week.   FS: 12/07/2016.   CL: 2020.",
+    "credit_hours":  "3.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [],
+    "corequisites":  [
+                         "75764c82-d463-4fcf-a367-e7f925416456"
+                     ]
+  },
+  {
+    "uuid":  "75764c82-d463-4fcf-a367-e7f925416456",
+    "subject":  "CHEM",
+    "number":  "112L",
+    "name":  "General Chemistry II Lab",
+    "description":  "Continuation of CHEM 111L with emphasis on solution properties, kinetics, equilibrium, acids and bases, and qualitative analysis.   FS: 09/12/2013.   CL: 2020.",
+    "credit_hours":  "1.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "66a95212-0d75-4fae-97ff-c3c76c29d47e"
+                                                 ],
+                              "min_grade":  "D"
+                          }
+                      ],
+    "corequisites":  []
+  },
+      {
+        "uuid":  "dd218911-2c00-46b4-99fc-0aa909331369",
+        "subject":  "CSCE",
+        "number":  "212",
+        "name":  "Introduction to Computer Architecture",
+        "description":  "Computer architecture, components. and organization; memory addressing; Input/Output; instruction sets; interrupts; assembly-language programming. Students may not apply both CSCE 210 and CSCE 212 to any minor or major program of study.   FS: 11/04/2020.   CL: 2020.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [],
+        "corequisites":  []
+    },
+    {
+      "uuid":  "730005f1-113d-446e-865c-31b46dfbc924",
+      "subject":  "CSCE",
+      "number":  "247",
+      "name":  "Software Engineering",
+      "description":  "Fundamentals of software design and development; software implementation strategies; object-oriented design techniques; functional design techniques; design patterns; design process; source control; testing.    FS: 12/6/2017.   CL: 2020.",
+      "credit_hours":  "3.000",
+      "semesters_offered":  ["SPRING","SUMMER","FALL"],
+      "prerequisites":  [
+                            {
+                                "choices":  1,
+                                "course_options":  [
+                                                       "57eaa5d5-a439-43b1-87fc-2d3a4c0b9cd6"
+                                                   ],
+                                "min_grade":  "C"
+                            }
+                        ],
+      "corequisites":  []
+  },
+  {
+    "uuid":  "f8b358bf-d69e-4aae-b10c-8dc98f1f651f",
+    "subject":  "MATH",
+    "number":  "241",
+    "name":  "Vector Calculus",
+    "description":  "Vector algebra, geometry of three-dimensional space; lines, planes, and curves in space; polar, cylindrical, and spherical coordinate systems; partial differentiation, max-min theory; multiple and iterated integration, line integrals, and Green’s theorem in the plane.   FS: 12/03/2014.   CL: 2020.",
+    "credit_hours":  "3.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6"
+                                                 ],
+                              "min_grade":  "C"
+                          }
+                      ],
+    "corequisites":  []
+  },
+      {
+        "uuid":  "684f6d78-9f42-4e22-b447-7b15782007b3",
+        "subject":  "CSCE",
+        "number":  "311",
+        "name":  "Operating Systems",
+        "description":  "Operating system structure and function; process implementation, scheduling, and synchronization; memory management; security; naming protection; resource allocation; network file systems.   FS:  12/02/2015.   CL: 2020.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         "39046cda-f913-4f9b-a002-f06e7c59f235"
+                                                     ],
+                                  "min_grade":  "D"
+                              },
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         "f9bc9ca2-9fe9-43eb-8444-2f0fc53da6c3",
+                                                         "dd218911-2c00-46b4-99fc-0aa909331369"
+                                                     ],
+                                  "min_grade":  "D"
+                              }
+                          ],
+        "corequisites":  []
+    },
+    {
+      "uuid":  "d71f3a41-5b83-40b6-94a7-609b01ca2caa",
+      "subject":  "CSCE",
+      "number":  "330",
+      "name":  "Programming Language Structures",
+      "description":  "Formal specification of syntax and semantics; structure of algorithms; list processing and string manipulation languages; statement types, control structures, and interfacing procedures.   FS: 09/14/2016.   CL: 2020.",
+      "credit_hours":  "3.000",
+      "semesters_offered":  ["SPRING","SUMMER","FALL"],
+      "prerequisites":  [
+                            {
+                                "choices":  1,
+                                "course_options":  [
+                                                       "39046cda-f913-4f9b-a002-f06e7c59f235"
+                                                   ],
+                                "min_grade":  "D"
+                            },
+                            {
+                                "choices":  1,
+                                "course_options":  [
+                                                       "a014f77a-2ac5-4f22-87d7-f0ab623dce64",
+                                                       "928eb174-dea9-4b98-80b1-ac594c4360f8",
+                                                       "27ade31b-23da-4c70-8b94-b73f5242229e"
+                                                   ],
+                                "min_grade":  "D"
+                            }
+                        ],
+      "corequisites":  []
+  },
+  {
+    "uuid":  "6c8202fd-b31b-4647-b551-b7f4dbf007a0",
+    "subject":  "CSCE",
+    "number":  "350",
+    "name":  "Data Structures and Algorithms",
+    "description":  "Techniques for representing and processing information, including the use of lists, trees, and graphs; analysis of algorithms; sorting, searching, and hashing techniques.   FS: 12/07/2016.   CL: 2020.",
+    "credit_hours":  "3.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "39046cda-f913-4f9b-a002-f06e7c59f235"
+                                                 ],
+                              "min_grade":  "D"
+                          },
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "a014f77a-2ac5-4f22-87d7-f0ab623dce64",
+                                                     "928eb174-dea9-4b98-80b1-ac594c4360f8",
+                                                     "27ade31b-23da-4c70-8b94-b73f5242229e"
+                                                 ],
+                              "min_grade":  "D"
+                          }
+                      ],
+    "corequisites":  []
+  },
+  {
+    "uuid":  "96cd3d5d-590a-4567-9cc3-787e03cc5140",
+    "subject":  "CSCE",
+    "number":  "390",
+    "name":  "Professional Issues in Computer Science and Engineering",
+    "description":  "Professional issues in the information technology professions; history and social context of computing; professional responsibilities; privacy; intellectual property; risks and liabilities of computer-based systems.   FS: 04/02/2014.   CL: 2020.",
+    "credit_hours":  "1.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [],
+    "corequisites":  []
+  },
+      {
+        "course_code": "ENGL 462",
+        "course_title": "Technical Writing",
+  
+  
+        "credit_hours": 3,
+        "prerequisites": "ENGL 101 & 102",
+        "semester_offered": "Semester Five"
+      },
+      {
+        "uuid":  "c30f5f36-fc9c-49d4-b5c4-baec9cc82194",
+        "subject":  "ENGL",
+        "number":  "463",
+        "name":  "Business Writing",
+        "description":  "Extensive practice in different types of business writing, from brief letters to formal articles and reports.   FS: 06/06/2018.   CL: 2020.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "min_grade":  "D",
+                                  "course_options":  [
+                                                         "12224407-e656-4fe7-9078-88f1d9dc8325"
+                                                     ]
+                              },
+                              {
+                                  "choices":  1,
+                                  "min_grade":  "D",
+                                  "course_options":  [
+                                                         "980e1056-4ed2-4459-b0e7-56d78eca5d73"
+                                                     ]
+                              }
+                          ],
+        "corequisites":  []
+    },
+      {
+        "uuid":  "f16c3f7d-4f83-4a11-8b47-632572514136",
+        "subject":  "CSCE",
+        "number":  "416",
+        "name":  "Introduction to Computer Networks",
+        "description":  "Concepts and components of computer networks and the Internet; network applications; network protocol stack.   FS: 10/5/2016.   CL: 2020.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         "57eaa5d5-a439-43b1-87fc-2d3a4c0b9cd6"
+                                                     ],
+                                  "min_grade":  "D"
+                              }
+                          ],
+        "corequisites":  []
+    },
+    {
+      "uuid":  "f4b55e57-6034-4462-81ca-13c559697988",
+      "subject":  "STAT",
+      "number":  "509",
+      "name":  "Statistics for Engineers",
+      "description":  "Basic probability and statistics with applications and examples in engineering. Elementary probability, random variables and their distribution, random processes, statistical inference, linear regression, correlation and basic design of experiments with application to quality assurance, reliability, and life testing. May not be taken concurrently with or after STAT 513, STAT 515, or STAT 516. Not for C.A.S., M.A.S., or Ph.D credit in Statistics.    FS: 12/02/2015.   CL: 2020.",
+      "credit_hours":  "3.000",
+      "semesters_offered":  ["SPRING","SUMMER","FALL"],
+      "prerequisites":  [
+                            {
+                                "choices":  1,
+                                "course_options":  [
+                                                       "3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6"
+                                                   ],
+                                "min_grade":  "D"
+                            }
+                        ],
+      "corequisites":  []
+  },
+      {
+        "uuid":  "42288ffd-4ead-4718-b840-4be2894d8f30",
+        "subject":  "CSCE",
+        "number":  "490",
+        "name":  "Capstone Computing Project I",
+        "description":  "Major team-based software design project to be undertaken in a student’s final year of study; project planning, software requirements analysis, design, and specification. Written reports and oral presentations in a technical setting.   FS: 09/09/2020.   CL: 2020.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         "39046cda-f913-4f9b-a002-f06e7c59f235"
+                                                     ],
+                                  "min_grade":  "D"
+                              },
+                              {
+                                  "choices":  1,
+                                  "course_options":  [
+                                                         "6c8202fd-b31b-4647-b551-b7f4dbf007a0"
+                                                     ],
+                                  "min_grade":  "D"
+                              }
+                          ],
+        "corequisites":  []
+    },
+    {
+      "uuid":  "dcf88287-b888-4fe0-949f-1b2ecd8af011",
+      "subject":  "CSCE",
+      "number":  "355",
+      "name":  "Foundations of Computation",
+      "description":  "Basic theoretical principles of computing as modeled by formal languages, grammars, automata, and Turing machines; fundamental limits of computation.   CL: 2020.",
+      "credit_hours":  "3.000",
+      "semesters_offered":  ["SPRING","SUMMER","FALL"],
+      "prerequisites":  [
+                            {
+                                "choices":  1,
+                                "min_grade":  "D",
+                                "course_options":  [
+                                                       "789c6ed0-53e3-476c-8761-f08bf727d08c"
+                                                   ]
+                            },
+                            {
+                                "choices":  1,
+                                "min_grade":  "D",
+                                "course_options":  [
+                                                       "dd218911-2c00-46b4-99fc-0aa909331369"
+                                                   ]
+                            },
+                            {
+                                "choices":  1,
+                                "min_grade":  "D",
+                                "course_options":  [
+                                                       "6c8202fd-b31b-4647-b551-b7f4dbf007a0"
+                                                   ]
+                            }
+                        ],
+      "corequisites":  []
+  },
+  {
+    "uuid":  "12b2ee6d-d2c5-47fb-93de-08b5950ea2ae",
+    "subject":  "MATH",
+    "number":  "344",
+    "name":  "Applied Linear Algebra",
+    "description":  "General solutions of systems of linear equations, vector spaces and subspaces, linear transformations, determinants, orthogonality, characteristic polynomials, eigenvalues and eigenvectors, singular value decomposition, and generalized inverse.  MATH 344L is an optional laboratory course where additional applications will be discussed.   FS: 12/03/2014.   CL: 2020.",
+    "credit_hours":  "3.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6"
+                                                 ],
+                              "min_grade":  "C"
+                          }
+                      ],
+    "corequisites":  []
+  },
+  {
+    "uuid":  "944f3d4d-9424-48c0-840e-18a79e18e00b",
+    "subject":  "MATH",
+    "number":  "344L",
+    "name":  "Applied Linear Algebra Lab",
+    "description":  "Computer based applications of linear algebra for science and engineering students. Topics include numerical analysis of matrices, direct and indirect methods for solving linear systems, and least squares method (regression). Typical applications include practical issues related to discrete Markov processes, image compression, and linear programming.   FS: 06/01/2022.",
+    "credit_hours":  "1.000",
+    "semesters_offered":  ["SPRING","SUMMER","FALL"],
+    "prerequisites":  [
+                          {
+                              "choices":  1,
+                              "course_options":  [
+                                                     "12b2ee6d-d2c5-47fb-93de-08b5950ea2ae",
+                                                     "e0806772-7c2b-4cc5-8a3e-455abeae7cfa"
+                                                 ],
+                              "min_grade":  "C"
+                          }
+                      ],
+    "corequisites":  []
+  },
+      {
+        "uuid":  "f425f91f-92da-4261-be45-347d81b6ab9d",
+        "subject":  "CSCE",
+        "number":  "492",
+        "name":  "Capstone Computing Project II",
+        "description":  "Continuation of CSCE 490. Computer system implementation, testing, verification and validation of results. Written reports and oral presentations in a technical setting.   FS: 12/07/2022.",
+        "credit_hours":  "3.000",
+        "semesters_offered":  ["SPRING","SUMMER","FALL"],
+        "prerequisites":  [
+                              {
+                                  "choices":  1,
+                                  "min_grade":  "D",
+                                  "course_options":  [
+                                                         "39046cda-f913-4f9b-a002-f06e7c59f235"
+                                                     ]
+                              },
+                              {
+                                  "choices":  1,
+                                  "min_grade":  "D",
+                                  "course_options":  [
+                                                         "6c8202fd-b31b-4647-b551-b7f4dbf007a0"
+                                                     ]
+                              },
+                              {
+                                  "choices":  1,
+                                  "min_grade":  "D",
+                                  "course_options":  [
+                                                         "42288ffd-4ead-4718-b840-4be2894d8f30"
+                                                     ]
+                              }
+                          ],
+        "corequisites":  []
+    },
+      {
+        "course_code": "CSCE Major Elective or Concentration Course",
+        "course_title": "CSCE Major Elective or Concentration Course",
+        "credit_hours": 3,
+        "prerequisites": "See Bulletin listing",
+        "semester_offered": "Varies"
+      },
+      {
+        "course_code": "Approved Elective",
+        "course_title": "Approved Elective",
+        "credit_hours": 3,
+        "prerequisites": "See Bulletin listing",
+        "semester_offered": "Varies"
+      }
+    ]
+  }
+  
