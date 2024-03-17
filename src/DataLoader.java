@@ -27,26 +27,9 @@ public class DataLoader extends DataConstants {
 				String classification = (String) studentJSON.get(CLASSIFICATION);
 				int transferCredits = ((Long) studentJSON.get(TRANSFER_CREDITS)).intValue();
 
-				//JSONArray pastCoursesJSON = (JSONArray) studentJSON.get(COURSES_PAST);
-				ArrayList<Course> pastCourses = (ArrayList<Course>) studentJSON.get(COURSES_PAST);
-				// for(int j = 0; j < pastCoursesJSON.size(); j++){
-				// 	System.out.println(j);
-				// 	JSONObject pastCourse = (JSONObject) pastCoursesJSON.get(j);
-				// 	String courseID = (String) pastCourse.get(COURSE_ID);
-				// 	String grade = (String) pastCourse.get(GRADE);
-				// 	String semester = (String) pastCourse.get(SEMESTER);
-				// 	int year = ((Long) pastCourse.get(YEAR)).intValue();
-				// }
+				JSONArray pastCourses = (JSONArray) studentJSON.get(COURSES_PAST);
 				
-				//JSONArray currentCoursesJSON = (JSONArray) studentJSON.get(COURSES_PRESENT);
-				ArrayList<Course> currentCourses = (ArrayList<Course>) studentJSON.get(COURSES_PRESENT);
-				// for(int j = 0; j < currentCourses.size(); j++){
-				// 	JSONObject currentCourse = (JSONObject) currentCoursesJSON.get(j);
-				// 	String courseCode = (String) currentCourse.get(COURSE_ID);
-				// 	String grade = (String) currentCourse.get(GRADE);
-				// 	String semester = (String) currentCourse.get(SEMESTER);
-				// 	int year = ((Long) currentCourse.get(YEAR)).intValue();
-				// }
+				JSONArray currentCourses = (JSONArray) studentJSON.get(COURSES_PRESENT);
 
 				String advisorID = (String) studentJSON.get(ADVISOR_ID);
 				String advisorNote = (String) studentJSON.get(NOTES);
@@ -81,9 +64,8 @@ public class DataLoader extends DataConstants {
 				String age = ((String) advisorJSON.get(USER_AGE));
 				String password = (String) advisorJSON.get(USER_PASSWORD);
 				boolean admin = ((boolean) advisorJSON.get(ADMIN));
-				ArrayList<Student> studentList = (ArrayList<Student>) advisorJSON.get(STUDENT_LIST);
-				advisorList.add(
-						new Advisor(userid, studentList, firstName, middleName, lastName, age, email, admin, password));
+				ArrayList<String> studentList = (ArrayList<String>) advisorJSON.get(STUDENT_LIST);
+				advisorList.add(new Advisor(userid, studentList, firstName, middleName, lastName, age, email, admin, password));
 			}
 
 			return advisorList;

@@ -1,9 +1,11 @@
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Student extends User {
-    private ArrayList<Course> pastCourses;
-    private ArrayList<Course> currentCourses;
+    private JSONArray pastCourses;
+    private JSONArray currentCourses;
     private SemesterPlan semesterPlan;
     private MajorMap majorMap;
     private String major;
@@ -18,7 +20,7 @@ public class Student extends User {
     private String classification;
 
     public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password,  
-        String major, String classification, int transferCredits, ArrayList<Course> currentCourses, ArrayList<Course> pastCourses, 
+        String major, String classification, int transferCredits, JSONArray currentCourses, JSONArray pastCourses, 
         String advisorID, String advisorNote){
             
         super(userID, firstName, middleName, lastName, age, email, password);
@@ -162,12 +164,35 @@ public class Student extends User {
         return classification;
     }
 
-    public ArrayList<Course> getPastCourses(){
+    public JSONArray getPastCourses(){
         return pastCourses;
     }
 
-    public ArrayList<Course> getCurrentCourses(){
+    public JSONArray getCurrentCourses(){
         return currentCourses;
+    }
+
+    public String getPastCourseValues(){
+        for(int i = 0; i < pastCourses.size(); i++){
+            JSONObject temp = (JSONObject) pastCourses.get(i);
+            String id = (String) temp.get("courseID");
+
+            CourseList courseList = CourseList.getInstance();
+            ArrayList<Course> courses = courseList.getCourses();
+            for(Course course : courses){
+                if(course.getCourseID().equals(id)){
+                    return course.getCourseName();
+                }
+            }
+        }
+        return null;
+    }
+
+    public void getCurrentCourseValues(){
+        for(int i = 0; i < currentCourses.size(); i++){
+            JSONObject temp = (JSONObject) currentCourses.get(i);
+            String id = (String) temp.toJSONString();
+        }
     }
 
     public Student student(){
