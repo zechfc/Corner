@@ -91,7 +91,7 @@ public class DataLoader extends DataConstants {
 				String age = ((String) advisorJSON.get(USER_AGE));
 				String password = (String) advisorJSON.get(USER_PASSWORD);
 				boolean admin = ((boolean) advisorJSON.get(ADMIN));
-				ArrayList<Student> studentList = (ArrayList<Student>) advisorJSON.get(STUDENT_LIST);
+				ArrayList<String> studentList = (ArrayList<String>) advisorJSON.get(STUDENT_LIST);
 				advisorList.add(
 						new Advisor(userid, studentList, firstName, middleName, lastName, age, email, admin, password));
 			}

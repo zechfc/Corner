@@ -3,9 +3,9 @@ import java.util.ArrayList;
 
 public class Advisor extends User{
     private boolean admin;
-    private ArrayList<Student> studentsSupervising;
+    private ArrayList<String> studentsSupervising;
 
-    public Advisor(String userID, ArrayList<Student> studentsSupervising, String firstName, String middleName, String lastName, String age, String email, 
+    public Advisor(String userID, ArrayList<String> studentsSupervising, String firstName, String middleName, String lastName, String age, String email, 
         boolean admin, String password){
         super(userID, firstName, middleName, lastName, age, email, password);
         this.admin = admin;
@@ -35,8 +35,8 @@ public class Advisor extends User{
 
     public boolean addStudent(String userID){
         Student student = StudentList.getInstance().getStudentID(userID);
-        if(student != null && !hasStudent(student)){
-            studentsSupervising.add(student);
+        if(student != null && !hasStudent(student.userID)){
+            studentsSupervising.add(student.userID);
             DataWriter.saveAdvisors();
             return true;
         }
@@ -44,12 +44,12 @@ public class Advisor extends User{
 
     }
 
-    public ArrayList<Student> getStudentList(){
+    public ArrayList<String> getStudentList(){
         return studentsSupervising;
     }
 
-    public boolean hasStudent(Student student){
-        for (Student students: studentsSupervising){
+    public boolean hasStudent(String student){
+        for (String students: studentsSupervising){
             if(students.equals(student))
             {
                 return true;
