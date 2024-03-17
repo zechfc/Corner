@@ -1,52 +1,195 @@
-[{
-    "majorid":"cd28e093-e17f-49e2-b11c-163cbf993b26",
-    "name":"CS",
-    "description":"Computer Science",
-    "totalHoursProgramRequirements":46,
-    "programRequirements": 
-        [{"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "reccomenedYear": "freshman", "recsemester": "fall"},
-        {"courseCode":"b5e7e0d0-f63f-4e14-bc19-041deab09f5c", "reccomenedYear": "freshman", "recsemester": "fall"}],
-
-    "hourscarolinaCore": 41,
-    "carolinaCore": [{
-        "courseCodeCarolinaCore": ["ENGL101","ENGL102","SPCH101"],
-    }],
-    "hoursMajor": 33,
-    "majorRequirements": [{
-        "courseCodeMajor": ["CSCE311","MATH344","MATH344L"]
-    }],
-    "totalMajorHours":120
-
-},
-
 {
-    "majorid":"177cb7f6-2b0e-4718-a68d-327c6252a88a",
-    "name":"CIS",
-    "description":"Computer Information Systems",
-    "totalHoursprogramRequirements":[46,55],
+    "majorid": "cs_bscs",
+    "name": "Computer Science, B.S.C.S.",
+    "description": "Bachelor of Science in Computer Science",
+    "totalHoursProgramRequirements": 55,
     "programRequirements": [{
-        "courseCodeFoundational": ["MATH241","MATH344","MATH344L"],
-        "hoursFoundational": 16,
-        "courseCodeLab": ["075dc2b0-8f5a-4fdd-8f9e-9925317b9650","740f0ce5-16b1-4915-b377-0f7082110193","ASTR 101"],
-        "hoursLab": 4,
-        "courseCodeElectives": [""],
-        "hoursElectives": [4,13],
-        "courseCodeMajor": ["MATH241","MATH344","MATH344L"],
-        "hoursMajor": 16
-    }],
+        "foundationalCourses": [{
+                "courseCode": "MATH241",
+                "title": "Vector Calculus",
+                "credits": 3,
+                "recommendedtime": "Sophmore"
+            },
+            {
+                "courseCode": "MATH344",
+                "title": "Applied Linear Algebra",
+                "credits": 3,
+                "recommendedtime": "Senior"
 
+            },
+            {
+                "courseCode": "MATH344L",
+                "title": "Applied Linear Algebra Lab",
+                "credits": 1,
+                "recommendedtime": "Senior"
+            },
+            {
+                "courseCode": "MATH374",
+                "title": "Discrete Structures",
+                "credits": 3,
+                "recommendedtime": "Sophmore"
+            },
+            {
+                "courseCode": "STAT509",
+                "title": "Statistics for Engineers",
+                "credits": 3,
+                "recommendedtime": "Junior"
+            },
+            {
+                "courseCode": "ENGL462",
+                "title": "Technical Writing",
+                "credits": 3,
+                "recommendedtime": "Junior"
+            }
+        ],
+        "labScienceRequirement": [{
+            "courseCode": "ASTR101",
+            "title": "Introduction to Astronomy",
+            "credits": 4
+        }],
+        "lowerDivisionComputing": [{
+                "courseCode": "CSCE145",
+                "title": "Algorithmic Design I",
+                "credits": 4,
+                "recommendedtime": "Freshman"
+            },
+            {
+                "courseCode": "CSCE146",
+                "title": "Algorithmic Design II",
+                "credits": 4,
+                "recommendedtime": "Freshman"
+            },
+            {
+                "courseCode": "CSCE190",
+                "title": "Computing in the Modern World",
+                "credits": 1,
+                "recommendedtime": "Freshman"
+            },
+            {
+                "courseCode": "CSCE211",
+                "title": "Digital Logic Design",
+                "credits": 3,
+                "recommendedtime": "Sophmore"
+            },
+            {
+                "courseCode": "CSCE212",
+                "title": "Introduction to Computer Architecture",
+                "credits": 3,
+                "recommendedtime": "Sophmore"
+            },
+            {
+                "courseCode": "CSCE215",
+                "title": "UNIX/Linux Fundamentals",
+                "credits": 1,
+                "recommendedtime": "Freshman"
+            },
+            {
+                "courseCode": "CSCE240",
+                "title": "Advanced Programming Techniques",
+                "credits": 3,
+                "recommendedtime": "Sophmore"
+            },
+            {
+                "courseCode": "CSCE247",
+                "title": "Software Engineering",
+                "credits": 3,
+                "recommendedtime": "Sophmore"
+            }
+        ],
+        "electives": 6  
+    }],
     "carolinaCore": [{
-        "courseCodeCarolinaCore": ["ENGL101","ENGL102","SPCH101"],
-        "hoursFoundational": [35,41]
-    }],
+            "courseCode": "ENGL101",
+            "title": "English Composition I",
+            "credits": 3,
+            "recommendedtime": "Freshman"
+
+        },
+        {
+            "courseCode": "ENGL102",
+            "title": "English Composition II",
+            "credits": 3,
+            "recommendedtime": "Freshman"
+        },
+        {
+            "courseCode": "MATH141",
+            "title": "Calculus I",
+            "credits": 3,
+            "recommendedtime": "Freshman"
+        },
+        {
+            "courseCode": "MATH142",
+            "title": "Calculus II",
+            "credits": 3,
+            "recommendedtime": "Freshman"
+        },
+        {
+            "courseCode": "CHEM111",
+            "title": "General Chemistry I",
+            "credits": 4,
+            "recommendedtime": "Freshman"
+        },
+        {
+            "courseCode": "CHEM111L",
+            "title": "General Chemistry I Lab",
+            "credits": 1,
+            "recommendedtime": "Freshman"
+        },
+        {
+            "courseCode": "CSCE390",
+            "title": "Values, Ethics, and Social Responsibility",
+            "credits": 1,
+            "recommendedtime": "Junior"
+        },
+        {
+            "courseCode": "ENGL102",
+            "title": "Technical Writing",
+            "credits": 3,
+            "recommendedtime": "Freshman"
+        }
+    ],
     "majorRequirements": [{
-        "courseCodeMajor": ["CSCE311","MATH344","MATH344L"],
-        "hoursFoundational": 21,
-        "courseCodeMajorElectives": ["075dc2b0-8f5a-4fdd-8f9e-9925317b9650","740f0ce5-16b1-4915-b377-0f7082110193","ASTR 101"],
-        "hoursElectives": 9,
-        "courseCodeConcentration": ["MATH241","MATH344","MATH344L"],
-        "hoursMajor": 12
-    }],
-    "totalMajorHours":120
+            "courseCode": "CSCE311",
+            "title": "Operating Systems",
+            "credits": 3,
+            "recommendedtime": "Junior"
+        },
+        {
+            "courseCode": "CSCE330",
+            "title": "Programming Language Structures",
+            "credits": 3,
+            "recommendedtime": "Junior"
+        },
+        {
+            "courseCode": "CSCE350",
+            "title": "Data Structures and Algorithms",
+            "credits": 3,
+            "recommendedtime": "Junior"
+        },
+        {
+            "courseCode": "CSCE355",
+            "title": "Foundations of Computation",
+            "credits": 3,
+            "recommendedtime": "Senior"
+        },
+        {
+            "courseCode": "CSCE416",
+            "title": "Introduction to Computer Networks",
+            "credits": 3,
+            "recommendedtime": "Junior"
+        },
+        {
+            "courseCode": "CSCE490",
+            "title": "Capstone Computing Project I",
+            "credits": 3,
+            "recommendedtime": "Senior"
+        },
+        {
+            "courseCode": "CSCE492",
+            "title": "Capstone Computing Project II",
+            "credits": 3,
+            "recommendedtime": "Senior"
+        }
+    ],
+    "totalMajorHours": 33
 }
-]
