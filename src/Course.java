@@ -3,8 +3,7 @@ import java.util.ArrayList;
 public class Course {
     private ArrayList<Course> prerequisite;
     private String courseID;
-    private String courseSubject;
-    private String courseNumber;
+    private String courseKey;
     private String courseName;
     private String courseDescription;
     private String courseCredits;
@@ -14,8 +13,7 @@ public class Course {
             String credits, String semester, int year) {
         prerequisite = prereq;
         courseID = id;
-        courseSubject = subject;
-        courseNumber = number;
+        courseKey = key;
         courseName = name;
         courseDescription = description;
         courseCredits = credits;
@@ -62,7 +60,7 @@ public class Course {
     }
 
     public String toString() {
-        return courseSubject + " " + courseNumber + ": " + courseName;
+        return courseKey + ": " + courseName;
     }
 
     // public String getPrereqsToString() {

@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import java.util.HashMap;
 
 public class DataLoader extends DataConstants {
 
@@ -82,7 +81,7 @@ public class DataLoader extends DataConstants {
 				String age = ((String) advisorJSON.get(USER_AGE));
 				String password = (String) advisorJSON.get(USER_PASSWORD);
 				boolean admin = ((boolean) advisorJSON.get(ADMIN));
-				ArrayList<String> studentList = (ArrayList<String>) advisorJSON.get(STUDENT_LIST);
+				ArrayList<Student> studentList = (ArrayList<Student>) advisorJSON.get(STUDENT_LIST);
 				advisorList.add(
 						new Advisor(userid, studentList, firstName, middleName, lastName, age, email, admin, password));
 			}

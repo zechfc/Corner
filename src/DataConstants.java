@@ -27,7 +27,6 @@ public abstract class DataConstants {
     protected static final String TRANSFER_CREDITS = "transferCredits";
 
     protected static final String COURSE_PREREQS = "prerequisite";
-    protected static final String COURSE_COREQS = "corequisite";
     protected static final String COURSE_ID = "courseID";
     protected static final String COURSE_SUBJECT = "subject";
     protected static final String COURSE_NUMBER = "number";
@@ -37,6 +36,7 @@ public abstract class DataConstants {
     protected static final String COURSE_CREDITS = "credit_hours";
     protected static final String COURSE_PASSING_GRADE = "passingGrade";
     protected static final String COURSE_PREREQ_REQUIRETYPE = "requireType";
+    protected static final String COURSE_ELECTIVE_AREA = "electiveArea";
     //better way to store year
 
 }
