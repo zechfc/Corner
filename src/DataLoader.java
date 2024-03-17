@@ -93,6 +93,40 @@ public class DataLoader extends DataConstants {
 		return null;
 	}
 
+	
+	public static ArrayList<Major> getMajor() {
+		ArrayList<Major> majorList = new ArrayList<Major>();
+
+		try {
+			FileReader reader = new FileReader(MAJORS_FILE_NAME);
+			JSONParser parser = new JSONParser();
+			JSONArray majorListJSON = (JSONArray) new JSONParser().parse(reader);
+
+			for (int i = 0; i < majorListJSON.size(); i++) {
+				JSONObject majorJSON = (JSONObject) majorListJSON.get(i);
+				String majorid = (String) majorJSON.get(MAJOR_ID);
+				String name = (String) majorJSON.get(MAJOR_NAME);
+				String description = (String) majorJSON.get(DESCRIPTION);
+				long totalHoursProgramRequirements = (long) majorJSON.get(TOTAL_PROGRAM_REQ_HOURS);
+				long totalHours = (long) majorJSON.get(TOTAL_HOURS);
+				long carolinaHours = ((long) majorJSON.get(CAROLINA_HOURS));
+				long majorHours = ((long) majorJSON.get(MAJOR_REQUIRMENTS_HOURS));
+
+				ArrayList<Course> programRequirements = (ArrayList<Course>) majorJSON.get(PROGRAM_REQUIREMENTS);
+				ArrayList<Course> carolinaCore = (ArrayList<Course>) majorJSON.get(CAROLINA_CORE);
+				ArrayList<Course> majorRequirements = (ArrayList<Course>) majorJSON.get(MAJOR_REQUIRMENTS);
+
+				majorList.add(
+				new Major(programRequirements, carolinaCore, majorRequirements, majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours));
+			}
+
+			return majorList;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 	public static ArrayList<Course> getCourses() {
 		ArrayList<Course> classlist = new ArrayList<Course>();
 		try {

@@ -3,22 +3,33 @@ import java.util.ArrayList;
 public class Major {
     private String name;
     private String description;
-    private ArrayList<Course> collegeRequirements;
+    private ArrayList<Course> programRequirements;
     private ArrayList<Course> carolinacoreCoursesReq;
-    private ArrayList<Course> carolinacoreCourses;
+    //private ArrayList<Course> carolinacoreCourses;
     private ArrayList<Course> majorCourses;
-    private int totalhours;
+    private long totalhours;
+    private long carolinaHours;
+    private long majorHours;
+    private long totalHoursProgramRequirements;
+
+
+
     private String majorID;
 
 
-    public Major(ArrayList<Course> collegeRequirements, ArrayList<Course> carolinacoreCoursesReq, 
-        ArrayList<Course> concentrationCourses, ArrayList<Course> carolinacoreCourses, ArrayList<Course> majorCourses, String majorID, String description){
-        this.collegeRequirements = collegeRequirements;
+    public Major(ArrayList<Course> programRequirements, ArrayList<Course> carolinacoreCoursesReq, ArrayList<Course> majorCourses,
+    String majorID, String description, long carolinaHours,long majorHours,long totalHoursProgramRequirements, long totalhours)
+    {
+        this.programRequirements = programRequirements;
         this.carolinacoreCoursesReq = carolinacoreCoursesReq;
         this.description = description;
-        this.carolinacoreCourses = carolinacoreCourses;
         this.majorCourses = majorCourses;
         this.majorID = majorID;
+        this.majorHours = majorHours;
+        this.carolinaHours = carolinaHours;
+        this.totalHoursProgramRequirements = totalHoursProgramRequirements;
+        this.totalhours = totalhours;
+
     }
 
     public String getMajor() {
@@ -32,12 +43,12 @@ public class Major {
     public String getDescription() {
 		return description;
 	}
-    public int getTotalHours() {
+    public long getTotalHours() {
 		return totalhours;
 	}
 
-    public ArrayList<Course> getCollegeRequirements() {    
-        return collegeRequirements;
+    public ArrayList<Course> getprogramRequirements() {    
+        return programRequirements;
 	}
 
     public ArrayList<Course> getCarolinacoreCoursesReq() {    
@@ -56,7 +67,7 @@ public class Major {
         ArrayList<Course> requiredCourses = new ArrayList<>();
         requiredCourses.addAll(this.getCarolinacoreCoursesReq());
         requiredCourses.addAll(this.getCarolinacoreCourses());
-        requiredCourses.addAll(this.getCollegeRequirements());
+        requiredCourses.addAll(this.getprogramRequirements());
         requiredCourses.addAll(this.getMajorCourses());
 
         return requiredCourses;
