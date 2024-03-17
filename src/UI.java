@@ -133,7 +133,7 @@ public class UI {
         String age = "47";
         String email = "molee@email.sc.edu";
         String password = "safesecurepass";
-        ArrayList<Student> studentsSupervising = new ArrayList<Student>();
+        ArrayList<String> studentsSupervising = new ArrayList<String>();
         boolean admin = false;
         User newUser = application.createAdvisorAccount(userID, firstName, middleName, lastName, age, email, password, studentsSupervising, admin);
         
@@ -179,7 +179,7 @@ public class UI {
     public void demoscenario2(){
         System.out.println("\nScenario 2");
         System.out.println("Creating a new account...");
-        ArrayList<Student> studentsSupervising = new ArrayList<Student>();
+        ArrayList<String> studentsSupervising = new ArrayList<String>();
         User newuser = application.createAdvisorAccount("asifkk-vsfmmmsc-lafd023", "Osbert", "Will", "Odden", "34", "oddeno@email.sc.edu", "oddenpassword", studentsSupervising, false);
 
         if(newuser == null){

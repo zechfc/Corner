@@ -19,9 +19,9 @@ public class CourseList {
         return courseList;
     }
 
-    public Course getCourse(String courseKey) {
+    public Course getCourse(String courseName) {
         for (Course course : courseList) {
-            if (course.getCourseKey().equals(courseKey)) {
+            if (course.getCourseName().equals(courseName)) {
                 return course;
             }
         }
