@@ -1,16 +1,21 @@
 {
-    "majorid": "cs_bscs",
-    "name": "Computer Science, B.S.C.S.",
+    "majorid": "a31c3094-3470-4c46-a45f-3b1001d15da2",
+    "name": "Computer Science",
     "description": "Bachelor of Science in Computer Science",
     "totalHoursProgramRequirements": 55,
     "programRequirements": [{
-        "foundationalCourses": [{
+        "foundationalCourses": [
+            {
+                "uuid":  "f8b358bf-d69e-4aae-b10c-8dc98f1f651f",
                 "courseCode": "MATH241",
                 "title": "Vector Calculus",
                 "credits": 3,
                 "recommendedtime": "Sophmore"
+
             },
             {
+
+                "uuid":  "12b2ee6d-d2c5-47fb-93de-08b5950ea2ae",
                 "courseCode": "MATH344",
                 "title": "Applied Linear Algebra",
                 "credits": 3,
@@ -18,35 +23,41 @@
 
             },
             {
+                "uuid":  "944f3d4d-9424-48c0-840e-18a79e18e00b",
                 "courseCode": "MATH344L",
                 "title": "Applied Linear Algebra Lab",
                 "credits": 1,
                 "recommendedtime": "Senior"
             },
             {
+                "uuid":  "928eb174-dea9-4b98-80b1-ac594c4360f8",
                 "courseCode": "MATH374",
                 "title": "Discrete Structures",
                 "credits": 3,
                 "recommendedtime": "Sophmore"
             },
             {
+                "uuid":  "f4b55e57-6034-4462-81ca-13c559697988",
                 "courseCode": "STAT509",
                 "title": "Statistics for Engineers",
                 "credits": 3,
                 "recommendedtime": "Junior"
             },
             {
+                "uuid":  "c30f5f36-fc9c-49d4-b5c4-baec9cc82194",
                 "courseCode": "ENGL462",
                 "title": "Technical Writing",
                 "credits": 3,
                 "recommendedtime": "Junior"
             }
         ],
+
         "labScienceRequirement": [{
             "courseCode": "ASTR101",
             "title": "Introduction to Astronomy",
             "credits": 4
         }],
+        
         "lowerDivisionComputing": [{
                 "courseCode": "CSCE145",
                 "title": "Algorithmic Design I",
