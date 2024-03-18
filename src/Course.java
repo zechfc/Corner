@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Course {
-    private ArrayList<Course> prerequisite;
+    private ArrayList<CourseChoice> prerequisite;
     private String courseID;
     private String courseKey;
     private String courseNumber;
@@ -10,7 +10,7 @@ public class Course {
     private double courseCredits;
 
     // Not sure all of the things in the constructor are stored.
-    public Course(ArrayList<Course> prereq, String id, String key, String name, String description,
+    public Course(ArrayList<CourseChoice> prereq, String id, String key, String name, String description,
             double credits, String semester, int year) {
         this.prerequisite = prereq;
         this.courseID = id;
@@ -22,7 +22,7 @@ public class Course {
 
     public boolean checkPrerequisites(ArrayList<Course> courses) {
         boolean b = true;
-        for (Course pre : prerequisite) {
+        for (CourseChoice pre : prerequisite) {
             b = b && pre.checkPrerequisites(courses); // This is genius don;t think about it
         }
         return b;
@@ -52,7 +52,7 @@ public class Course {
         return courseDescription;
     }
 
-    public ArrayList<Course> getPrereqs() { // Only if you want array itself. For string form look at other method.
+    public ArrayList<CourseChoice> getPrereqs() { // Only if you want array itself. For string form look at other method.
         return this.prerequisite;
     }
 
@@ -60,11 +60,11 @@ public class Course {
         return courseName + " " + courseNumber + ": " + courseName;
     }
 
-    // public String getPrereqsToString() {
-    //     String s = "";
-    //     for (Course cc : this.prerequisite) {
-    //         s += cc.getCoursesToString();
-    //     }
-    //     return s;
-    // }
+     public String getPrereqsToString() {
+         String s = "";
+         for (CourseChoice cc : this.prerequisite) {
+             s += cc.getCoursesToString();
+         }
+         return s;
+     }
 }
