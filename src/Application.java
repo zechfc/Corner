@@ -5,12 +5,16 @@ public class Application {
     private StudentList studentList;
     private AdvisorList advisorList;
     private CourseList classList;
+    private MajorList majorList;
+
     private User user;
 
     public Application() {
         this.studentList = StudentList.getInstance();
         this.advisorList = AdvisorList.getInstance();
         this.classList = CourseList.getInstance();
+        this.majorList = MajorList.getInstance();
+
     }
 
     public int checkUser(String input) {

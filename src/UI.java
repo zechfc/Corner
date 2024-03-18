@@ -174,6 +174,18 @@ public class UI {
 
     public void demoscenario1(){
         System.out.println("\nScenario 1");
+    
+        System.out.println("Type student or advisor for what you are"); // ?
+        application.checkUser("student"); 
+        System.out.println("User is a student");
+    
+        if(!application.login(1, "westb@email.sc.edu", "mypassword56")){
+            System.out.println("Sorry we couldn't login."); //login failed
+            return;
+        }
+        System.out.println("Brax West is now logged in");
+        DataLoader.getMajor();
+
 
     }
 

@@ -49,7 +49,7 @@ public class DataLoader extends DataConstants {
 
 		try {
 			FileReader reader = new FileReader(ADVISOR_FILE_NAME);
-			JSONParser parser = new JSONParser();
+			// JSONParser parser = new JSONParser();
 			JSONArray advisorListJSON = (JSONArray) new JSONParser().parse(reader);
 
 			for (int i = 0; i < advisorListJSON.size(); i++) {
@@ -80,7 +80,7 @@ public class DataLoader extends DataConstants {
 
 		try {
 			FileReader reader = new FileReader(MAJORS_FILE_NAME);
-			JSONParser parser = new JSONParser();
+			// JSONParser parser = new JSONParser();
 			JSONArray majorListJSON = (JSONArray) new JSONParser().parse(reader);
 
 			for (int i = 0; i < majorListJSON.size(); i++) {
@@ -98,7 +98,7 @@ public class DataLoader extends DataConstants {
 				ArrayList<Course> majorRequirements = (ArrayList<Course>) majorJSON.get(MAJOR_REQUIRMENTS);
 
 				majorList.add(
-				new Major(programRequirements, carolinaCore, majorRequirements, majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours));
+				new Major(name, programRequirements, carolinaCore, majorRequirements, majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours));
 			}
 
 			return majorList;
