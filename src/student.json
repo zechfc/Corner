@@ -149,11 +149,11 @@
     {"courseID":"", "grade": "B+", "semester": "summer","year":2024}],
 
     "coursesPresent":
-    [{"courseID":"", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"", "grade": "TBD", "semester": "spring","year":2024}]
+    [{"courseID":"684f6d78-9f42-4e22-b447-7b15782007b3", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"d71f3a41-5b83-40b6-94a7-609b01ca2caa", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"6c8202fd-b31b-4647-b551-b7f4dbf007a0", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"96cd3d5d-590a-4567-9cc3-787e03cc5140", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"7100ca89-33cf-40da-acbe-84af49e92c3c", "grade": "TBD", "semester": "spring","year":2024}]
 },{
     "userid":"0a119e07-a0aa-435e-9b9d-21e5b91b1c39",
     "firstName":"Tawnie",
