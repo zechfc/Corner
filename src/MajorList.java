@@ -15,6 +15,10 @@ public class MajorList {
         return majorList;
     }
 
+    public ArrayList<Major> getMajors(){
+        return majors;
+    }
+
     public Major getMajor(String major){
         for (Major newmajor:majors){
             if(major.equals(newmajor.getMajor())){

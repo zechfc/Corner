@@ -1,25 +1,21 @@
 import java.util.ArrayList;
-
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class Major {
     private String name;
     private String description;
-    private ArrayList<String> programRequirements;
-    private ArrayList<String> carolinacoreCoursesReq;
-    //private ArrayList<Course> carolinacoreCourses;
-    private ArrayList<String> majorCourses;
+    private JSONArray programRequirements;
+    private JSONArray carolinacoreCoursesReq;
+    private JSONArray carolinacoreCourses;
+    private JSONArray majorCourses;
     private long totalhours;
     private long carolinaHours;
     private long majorHours;
     private long totalHoursProgramRequirements;
-
-
-
     private String majorID;
 
-
-    public Major(String name, ArrayList<String> programRequirements, ArrayList<String> carolinacoreCoursesReq, ArrayList<String> majorCourses,
+    public Major(String name, JSONArray programRequirements, JSONArray carolinacoreCoursesReq, JSONArray majorCourses,
     String majorID, String description, long carolinaHours,long majorHours,long totalHoursProgramRequirements, long totalhours)
     {
         this.name = name;
@@ -44,8 +40,16 @@ public class Major {
 
       public void getprogramRequirementsValues(){
         for(int i = 0; i < programRequirements.size(); i++){
-           String temp = programRequirements.;
+            JSONObject temp =  (JSONObject) programRequirements.get(i);
+            String id = (String) temp.get("majorid"); //if this data field gets changed in majors.json, change it
            
+            MajorList majorList = MajorList.getInstance();
+            ArrayList<Major> majors = majorList.getMajors();
+            for(Major major : majors){
+                if(major.getMajorID().equals(id)){
+                    System.out.println(); //print what you wanted
+                }
+            }
         }
     }
 
@@ -60,19 +64,19 @@ public class Major {
 		return totalhours;
 	}
 
-    public ArrayList<String> getprogramRequirements() {    
+    public JSONArray getprogramRequirements() {    
         return programRequirements;
 	}
 
-    public ArrayList<String> getCarolinacoreCoursesReq() {    
+    public JSONArray getCarolinacoreCoursesReq() {    
         return carolinacoreCoursesReq;
 	}
 
-    public ArrayList<String> getCarolinacoreCourses() {    
+    public JSONArray getCarolinacoreCourses() {    
         return carolinacoreCourses;
 	}
 
-    public ArrayList<String> getMajorCourses() {    
+    public JSONArray getMajorCourses() {    
         return majorCourses;
 	}
     
