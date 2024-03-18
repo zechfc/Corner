@@ -200,38 +200,54 @@ public class Application {
         }
     }
 
-    public void getMajorRequirements(String majorID, String email){
+    public String getMajorRequirements(String majorID, String email){
         Major major = majorList.getMajor(majorID);
         if(major != null){
-            major.getMajorRequirementsValues(email);
+           return major.getMajorRequirementsValues(email);
 
         }
+        return null;
     }
 
-    public void getProgramRequirements(String majorID, String email){
+    public String getProgramRequirements(String majorID, String email){
         Major major = majorList.getMajor(majorID);
         if(major != null){
-            major.getprogramRequirementsValues(email);
+            return major.getprogramRequirementsValues(email);
 
         }
+        return null;
+
+    }
+    public String getRemaningProgramRequirements(String majorID, String email){
+        Major major = majorList.getMajor(majorID);
+        if(major != null){
+            return major.getRemaningProgramReq(email);
+
+        }
+        return null;
+
     }
 
-    public void getCarolinaRequirements(String majorID, String email){
+    public String getCarolinaRequirements(String majorID, String email){
         Major major = majorList.getMajor(majorID);
         if(major != null){
           
-            major.getCarolinaCoreRequirementsValues(email);
+            return major.getCarolinaCoreRequirementsValues(email);
 
         }
+        return null;
+
     }
 
-    public void getCarolinaCore(String majorID, String email){
+    public String getCarolinaCore(String majorID, String email){
         Major major = majorList.getMajor(majorID);
         if(major != null){
           
-            major.getCarolinaCoreValues(email);
+            return  major.getCarolinaCoreValues(email);
 
         }
+        return null;
+
     }
     public Student getStudent(String firstName, String lastName) {
         User user = studentList.getStudent(firstName, lastName);

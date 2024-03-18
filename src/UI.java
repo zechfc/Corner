@@ -190,19 +190,23 @@ public class UI {
         if(!application.studentProfile("81668235-0606-4e6b-bfcf-d3243f916315")){
             System.out.println("Sorry, could not print student profile."); //failed
         }
-        System.out.println("Here is your Progress to your Major Map"); 
+        System.out.println("Here is your Progress to your Major Map \n"); 
 
-        System.out.println("Here are your completed Program Requirements "); 
-        application.getProgramRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" ); //CS major
+        System.out.println("\n Here is your Progress in Program Requirements \n"); 
+        System.out.println(application.getProgramRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); 
 
-        System.out.println("Here are your completed Carolina Core Requried Class "); 
-        application.getCarolinaRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" ); //CS major
 
-        System.out.println("Here are your completed Major Requirements "); 
-        application.getMajorRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" ); //CS major
+        System.out.println("\n Here is your Progress in Carolina Core Requried Class \n"); 
+        System.out.println(application.getCarolinaRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); //CS major
 
-        System.out.println("Here are your completed Non Required Carolina Core Classes "); 
-        application.getCarolinaCore("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" ); //CS major
+        System.out.println("\n Here is your Progress in Major Requirements \n"); 
+        System.out.println(application.getMajorRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); //CS major
+
+        // System.out.println("\n Here is your Progress in Non Required Carolina Core Classes \n"); 
+        // System.out.println(application.getCarolinaCore("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); //CS major
+
+        // System.out.println("\n Here are the remaining courses you can take \n"); 
+        // System.out.println(application.getRemaningProgramRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); 
 
 
 

@@ -39,6 +39,8 @@ public class Major {
 	}
 
     public String getprogramRequirementsValues(String email){
+        String toString;
+        String list ="";
         for(int i = 0; i < programRequirements.size(); i++){
             JSONObject temp =  (JSONObject) programRequirements.get(i);
             String id = (String) temp.get("courseID"); //if this data field gets changed in majors.json, change it
@@ -57,15 +59,15 @@ public class Major {
                 }
 
             }
-
+            String pass = "";
+           
             
             for(int j=0; j<pastCourses.size(); j++){
                 JSONObject pastCourse = (JSONObject) pastCourses.get(j);
                 String idCourse = (String) pastCourse.get("courseID"); //if this data field gets changed in majors.json, change it
                 String courseName= (String) temp.get("name"); //if this data field gets changed in majors.json, change it
                 String courseGrade = (String) pastCourse.get("grade"); //if this data field gets changed in majors.json, change it
-                String pass = "";
-
+                
                 if(idCourse.equals(id)){
                     if (courseGrade.compareToIgnoreCase("C") <= 0) 
                     {
@@ -79,59 +81,104 @@ public class Major {
                         pass="pass";
                     }
 
-                    String toString;
 
                     for(int k=0; k<courses.size(); k++){
                         String temp2 = courses.get(k).getCourseName();
-
-                        if (courses.get(k).getCourseID().equalsIgnoreCase(idCourse)) {
+                        String UUID = courses.get(k).getCourseID();
+                        if (UUID.equalsIgnoreCase(idCourse)) {
                             toString = (temp2 + " " + courseGrade + " " + pass);
 
-                            return (toString);
+                            list += (toString + "\n");
+
 
                         }
                         }
                     }
-                    
                 }
+              
                 for(int j=0; j<currentCourses.size(); j++){
                     JSONObject currentCourse = (JSONObject) currentCourses.get(j);
                     String idCourse = (String) currentCourse.get("courseID"); //if this data field gets changed in majors.json, change it
                     String courseName= (String) temp.get("name"); //if this data field gets changed in majors.json, change it
                     String courseGrade = (String) currentCourse.get("grade"); //if this data field gets changed in majors.json, change it
-                    String pass = "";
+                     pass = "";
     
                     if(idCourse.equals(id)){
-                        if (courseGrade.compareToIgnoreCase("C") <= 0) 
-                        {
-                             pass = "fail";    
-                        }
-                        if(courseGrade.equalsIgnoreCase("C+") || courseGrade.equalsIgnoreCase("B+")){
-                            pass = "pass";    
-    
-                        }
-                        else{
-                            pass="pass";
-                        }
-    
-                        String toString;
+                     
+                        
+
     
                         for(int k=0; k<courses.size(); k++){
                             String temp2 = courses.get(k).getCourseName();
     
                             if (courses.get(k).getCourseID().equalsIgnoreCase(idCourse)) {
-                                toString = (temp2 + " " + courseGrade + " " + pass);
-    
-                                return (toString);
+                                toString = ("Inprogress " + temp2 + " " + courseGrade + " " + "TBD");
+                                list += (toString + "\n");
     
                             }
                             }
                         }
                     }
-            }
-        return null;
-    }
 
+            }
+            return list;
+
+    }
+    
+    public String getRemaningProgramReq(String email){
+        String toString;
+        String list ="";
+        JSONArray pastCourses = new JSONArray(); //wdwddwd
+        StudentList studentList = StudentList.getInstance();
+        ArrayList<Student> students = studentList.getStudents();
+        JSONArray programRequirements = new JSONArray(); //wdwddwd
+        JSONArray currentCourses = new JSONArray();
+
+        
+        for(Student student : students){
+            if (email.equals(student.getEmail())) {
+                pastCourses = student.getPastCourses();   
+            }
+
+        }
+        for(int i = 0; i < pastCourses.size(); i++){
+            JSONObject temp =  (JSONObject) pastCourses.get(i);
+            String id = (String) temp.get("courseID"); //if this data field gets changed in majors.json, change it
+           
+            CourseList courseList = CourseList.getInstance();
+            ArrayList<Course> courses =courseList.getCourses();
+
+            for(int j=0; j<this.programRequirements.size(); j++){
+                JSONObject programRequirement = (JSONObject) this.programRequirements.get(j); //fefeffefef
+                String idCourse = (String) programRequirement.get("courseID"); //if this data field gets changed in majors.json, change it
+                
+                
+                if((idCourse.equals(id))){
+                    break;
+                }
+                else{
+                    for(int k=0; k<courses.size(); k++){
+                        String temp2 = courses.get(k).getCourseName();
+                        String UUID = courses.get(k).getCourseID();
+                        if (UUID.equalsIgnoreCase(idCourse)) {
+                            toString = (temp2 + " " );
+
+                            list += (toString + "\n");
+
+
+                        }
+                        }
+                }
+                  
+                    }
+                
+              
+                
+
+            }
+            return list;
+
+    }
     public String getMajorID() {
 		return majorID;
 	}
@@ -160,6 +207,8 @@ public class Major {
 	}
 
     public String getMajorRequirementsValues(String email) {
+        String toString;
+        String list ="";
         for(int i = 0; i < majorCourses.size(); i++){
             JSONObject temp =  (JSONObject) majorCourses.get(i);
             String id = (String) temp.get("courseID"); //if this data field gets changed in majors.json, change it
@@ -178,15 +227,15 @@ public class Major {
                 }
 
             }
-
+            String pass = "";
+           
             
             for(int j=0; j<pastCourses.size(); j++){
                 JSONObject pastCourse = (JSONObject) pastCourses.get(j);
                 String idCourse = (String) pastCourse.get("courseID"); //if this data field gets changed in majors.json, change it
                 String courseName= (String) temp.get("name"); //if this data field gets changed in majors.json, change it
                 String courseGrade = (String) pastCourse.get("grade"); //if this data field gets changed in majors.json, change it
-                String pass = "";
-
+                
                 if(idCourse.equals(id)){
                     if (courseGrade.compareToIgnoreCase("C") <= 0) 
                     {
@@ -200,60 +249,55 @@ public class Major {
                         pass="pass";
                     }
 
-                    String toString;
 
                     for(int k=0; k<courses.size(); k++){
                         String temp2 = courses.get(k).getCourseName();
-
-                        if (courses.get(k).getCourseID().equalsIgnoreCase(idCourse)) {
+                        String UUID = courses.get(k).getCourseID();
+                        if (UUID.equalsIgnoreCase(idCourse)) {
                             toString = (temp2 + " " + courseGrade + " " + pass);
 
-                            return (toString);
+                            list += (toString + "\n");
+
 
                         }
                         }
                     }
                 }
+              
                 for(int j=0; j<currentCourses.size(); j++){
                     JSONObject currentCourse = (JSONObject) currentCourses.get(j);
                     String idCourse = (String) currentCourse.get("courseID"); //if this data field gets changed in majors.json, change it
                     String courseName= (String) temp.get("name"); //if this data field gets changed in majors.json, change it
                     String courseGrade = (String) currentCourse.get("grade"); //if this data field gets changed in majors.json, change it
-                    String pass = "";
+                     pass = "";
     
                     if(idCourse.equals(id)){
-                        if (courseGrade.compareToIgnoreCase("C") <= 0) 
-                        {
-                             pass = "fail";    
-                        }
-                        if(courseGrade.equalsIgnoreCase("C+") || courseGrade.equalsIgnoreCase("B+")){
-                            pass = "pass";    
-    
-                        }
-                        else{
-                            pass="pass";
-                        }
-    
-                        String toString;
+                     
+                        
+
     
                         for(int k=0; k<courses.size(); k++){
                             String temp2 = courses.get(k).getCourseName();
     
                             if (courses.get(k).getCourseID().equalsIgnoreCase(idCourse)) {
-                                toString = (temp2 + " " + courseGrade + " " + pass);
-    
-                                return (toString);
+                                toString = ("Inprogress " + temp2 + " " + courseGrade + " " + "TBD");
+                                list += (toString + "\n");
     
                             }
                             }
                         }
                     }
-            }
-            return null;
 
+            }
+            if (list == "") {
+                list = "null";
+            }
+            return list;
     }
 
     public String getCarolinaCoreRequirementsValues(String email) {
+        String toString;
+        String list ="";
         for(int i = 0; i < carolinacoreCoursesReq.size(); i++){
             JSONObject temp =  (JSONObject) carolinacoreCoursesReq.get(i);
             String id = (String) temp.get("courseID"); //if this data field gets changed in majors.json, change it
@@ -272,15 +316,15 @@ public class Major {
                 }
 
             }
-
+            String pass = "";
+           
             
             for(int j=0; j<pastCourses.size(); j++){
                 JSONObject pastCourse = (JSONObject) pastCourses.get(j);
                 String idCourse = (String) pastCourse.get("courseID"); //if this data field gets changed in majors.json, change it
                 String courseName= (String) temp.get("name"); //if this data field gets changed in majors.json, change it
                 String courseGrade = (String) pastCourse.get("grade"); //if this data field gets changed in majors.json, change it
-                String pass = "";
-
+                
                 if(idCourse.equals(id)){
                     if (courseGrade.compareToIgnoreCase("C") <= 0) 
                     {
@@ -294,62 +338,144 @@ public class Major {
                         pass="pass";
                     }
 
-                    String toString;
 
                     for(int k=0; k<courses.size(); k++){
                         String temp2 = courses.get(k).getCourseName();
-
-                        if (courses.get(k).getCourseID().equalsIgnoreCase(idCourse)) {
+                        String UUID = courses.get(k).getCourseID();
+                        if (UUID.equalsIgnoreCase(idCourse)) {
                             toString = (temp2 + " " + courseGrade + " " + pass);
 
-                            return (toString);
+                            list += (toString + "\n");
+
 
                         }
                         }
                     }
                 }
+              
                 for(int j=0; j<currentCourses.size(); j++){
                     JSONObject currentCourse = (JSONObject) currentCourses.get(j);
                     String idCourse = (String) currentCourse.get("courseID"); //if this data field gets changed in majors.json, change it
                     String courseName= (String) temp.get("name"); //if this data field gets changed in majors.json, change it
                     String courseGrade = (String) currentCourse.get("grade"); //if this data field gets changed in majors.json, change it
-                    String pass = "";
+                     pass = "";
     
                     if(idCourse.equals(id)){
-                        if (courseGrade.compareToIgnoreCase("C") <= 0) 
-                        {
-                             pass = "fail";    
-                        }
-                        if(courseGrade.equalsIgnoreCase("C+") || courseGrade.equalsIgnoreCase("B+")){
-                            pass = "pass";    
-    
-                        }
-                        else{
-                            pass="pass";
-                        }
-    
-                        String toString;
+                     
+                        
+
     
                         for(int k=0; k<courses.size(); k++){
                             String temp2 = courses.get(k).getCourseName();
     
                             if (courses.get(k).getCourseID().equalsIgnoreCase(idCourse)) {
-                                toString = (temp2 + " " + courseGrade + " " + pass);
-    
-                                return (toString);
+                                toString = ("Inprogress " + temp2 + " " + courseGrade + " " + "TBD");
+                                list += (toString + "\n");
     
                             }
                             }
                         }
                     }
-            }
-            return null;
-    }
 
-    public void getCarolinaCoreValues(String email) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCarolinaCoreValues'");
+            }
+            return list;
+
     }
+    
+
+    public String getCarolinaCoreValues(String email) {
+        JSONArray allMajorCourses = new JSONArray();
+        allMajorCourses.addAll(carolinacoreCoursesReq);
+        allMajorCourses.addAll(majorCourses);
+        allMajorCourses.addAll(programRequirements);
+        String toString;
+        String list ="";
+        for(int i = 0; i < carolinacoreCoursesReq.size(); i++){
+            JSONObject temp =  (JSONObject) carolinacoreCoursesReq.get(i);
+            String id = (String) temp.get("courseID"); //if this data field gets changed in majors.json, change it
+           
+            CourseList courseList = CourseList.getInstance();
+            ArrayList<Course> courses =courseList.getCourses();
+            StudentList studentList = StudentList.getInstance();
+            ArrayList<Student> students = studentList.getStudents();
+            JSONArray pastCourses = new JSONArray();
+            JSONArray currentCourses = new JSONArray();
+
+
+            for(Student student : students){
+                if (email.equals(student.getEmail())) {
+                    pastCourses = student.getPastCourses();   
+                }
+
+            }
+            String pass = "";
+           
+            
+            for(int j=0; j<pastCourses.size(); j++){
+                JSONObject pastCourse = (JSONObject) pastCourses.get(j);
+                String idCourse = (String) pastCourse.get("courseID"); //if this data field gets changed in majors.json, change it
+                String courseName= (String) temp.get("name"); //if this data field gets changed in majors.json, change it
+                String courseGrade = (String) pastCourse.get("grade"); //if this data field gets changed in majors.json, change it
+                
+                if(!(idCourse.equals(id))){
+                    if (courseGrade.compareToIgnoreCase("C") <= 0) 
+                    {
+                         pass = "fail";    
+                    }
+                    if(courseGrade.equalsIgnoreCase("C+") || courseGrade.equalsIgnoreCase("B+")){
+                        pass = "pass";    
+
+                    }
+                    else{
+                        pass="pass";
+                    }
+
+
+                    for(int k=0; k<courses.size(); k++){
+                        String temp2 = courses.get(k).getCourseName();
+                        String UUID = courses.get(k).getCourseID();
+                        if (UUID.equalsIgnoreCase(idCourse)) {
+                            toString = (temp2 + " " + courseGrade + " " + pass);
+
+                            list += (toString + "\n");
+
+
+                        }
+                        }
+                    }
+                }
+              
+                for(int j=0; j<currentCourses.size(); j++){
+                    JSONObject currentCourse = (JSONObject) currentCourses.get(j);
+                    String idCourse = (String) currentCourse.get("courseID"); //if this data field gets changed in majors.json, change it
+                    String courseName= (String) temp.get("name"); //if this data field gets changed in majors.json, change it
+                    String courseGrade = (String) currentCourse.get("grade"); //if this data field gets changed in majors.json, change it
+                     pass = "";
+    
+                    if(!(idCourse.equals(id))){
+                     
+                        
+
+    
+                        for(int k=0; k<courses.size(); k++){
+                            String temp2 = courses.get(k).getCourseName();
+    
+                            if (courses.get(k).getCourseID().equalsIgnoreCase(idCourse)) {
+                                toString = ("Inprogress " + temp2 + " " + courseGrade + " " + "TBD");
+                                list += (toString + "\n");
+    
+                            }
+                            }
+                        }
+                    }
+
+            }
+            if (list == "") {
+                list = "null";
+            }
+            return list;
+}
+}
     
     // public ArrayList<Course> getRequiredCourses() {    
     //     ArrayList<Course> requiredCourses = new ArrayList<>();
@@ -360,4 +486,3 @@ public class Major {
 
     //     return requiredCourses;
 	// }
-}
