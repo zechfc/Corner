@@ -184,12 +184,14 @@ public class UI {
             return;
         }
         System.out.println("Brax West is now logged in");
-        DataLoader.getMajor();
+        // DataLoader.getMajor();
 
         System.out.println("\nStudent Profile:");
         if(!application.studentProfile("81668235-0606-4e6b-bfcf-d3243f916315")){
             System.out.println("Sorry, could not print student profile."); //failed
         }
+
+        application.getMajorRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2"); //CS major
     }
 
     public void demoscenario2(){

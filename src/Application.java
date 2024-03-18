@@ -182,6 +182,13 @@ public class Application {
         }
     }
 
+    public void getMajorRequirements(String majorID){
+        Major major = majorList.getMajor(majorID);
+        if(major != null){
+            major.getprogramRequirementsValues();
+        }
+    }
+
     public Student getStudent(String firstName, String lastName) {
         User user = studentList.getStudent(firstName, lastName);
         if (user != null && user instanceof Student) {
