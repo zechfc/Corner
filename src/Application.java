@@ -203,13 +203,36 @@ public class Application {
     public void getMajorRequirements(String majorID, String email){
         Major major = majorList.getMajor(majorID);
         if(major != null){
-            major.getprogramRequirementsValues(email);
             major.getMajorRequirementsValues(email);
+
+        }
+    }
+
+    public void getProgramRequirements(String majorID, String email){
+        Major major = majorList.getMajor(majorID);
+        if(major != null){
+            major.getprogramRequirementsValues(email);
+
+        }
+    }
+
+    public void getCarolinaRequirements(String majorID, String email){
+        Major major = majorList.getMajor(majorID);
+        if(major != null){
+          
             major.getCarolinaCoreRequirementsValues(email);
 
         }
     }
 
+    public void getCarolinaCore(String majorID, String email){
+        Major major = majorList.getMajor(majorID);
+        if(major != null){
+          
+            major.getCarolinaCoreValues(email);
+
+        }
+    }
     public Student getStudent(String firstName, String lastName) {
         User user = studentList.getStudent(firstName, lastName);
         if (user != null && user instanceof Student) {

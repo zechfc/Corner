@@ -190,8 +190,24 @@ public class UI {
         if(!application.studentProfile("81668235-0606-4e6b-bfcf-d3243f916315")){
             System.out.println("Sorry, could not print student profile."); //failed
         }
+        System.out.println("Here is your Progress to your Major Map"); 
 
+        System.out.println("Here are your completed Program Requirements "); 
+        application.getProgramRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" ); //CS major
+
+        System.out.println("Here are your completed Carolina Core Requried Class "); 
+        application.getCarolinaRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" ); //CS major
+
+        System.out.println("Here are your completed Major Requirements "); 
         application.getMajorRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" ); //CS major
+
+        System.out.println("Here are your completed Non Required Carolina Core Classes "); 
+        application.getCarolinaCore("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" ); //CS major
+
+
+
+
+
     }
 
     public void demoscenario2(){
@@ -208,7 +224,7 @@ public class UI {
         }
         
         System.out.println("\nLogging in...");
-        //THIS WILL GIVE AN ERROR unless DataWriter append in savestudents and saveadvisors is removed
+        //THIS WILL GIVE AN ERROR unless DataWriter append in savestudents and save advisors is removed
         if(!application.login(2, "oddeno@email.sc.edu", "oddenpassword")){
             System.out.println("Sorry we couldn't login."); //login failed
             return;
