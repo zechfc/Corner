@@ -133,7 +133,7 @@ public class DataLoader extends DataConstants {
 				double courseCredits = ((double) courseJSON.get(COURSE_CREDITS));
 				ArrayList<String> term = courseJSON.get(COURSE_TERM) != null ? (ArrayList<String>) courseJSON.get(COURSE_TERM) : new ArrayList<String>();
 				String electiveArea = courseJSON.get(COURSE_ELECTIVE_AREA) != null ? (String)courseJSON.get(COURSE_ELECTIVE_AREA) : null;
-				double passingGrade = (courseJSON.get(COURSE_PASSING_GRADE) != null) ? passingGrade = (double)((long) courseJSON.get(COURSE_PASSING_GRADE)) : 0;
+				String passingGrade = (courseJSON.get(COURSE_PASSING_GRADE) != null) ? passingGrade = (String)(courseJSON.get(COURSE_PASSING_GRADE)) : "";
 
 				classlist.add(new Course(cc, courseid, coursekey, courseName, courseDescription, courseAvailability, courseCredits, term, electiveArea, passingGrade));
 			}

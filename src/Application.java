@@ -200,10 +200,10 @@ public class Application {
         }
     }
 
-    public void getMajorRequirements(String majorID){
+    public void getMajorRequirements(String majorID, String email){
         Major major = majorList.getMajor(majorID);
         if(major != null){
-            major.getprogramRequirementsValues();
+            major.getprogramRequirementsValues(email);
         }
     }
 

@@ -38,16 +38,30 @@ public class Major {
 		return name;
 	}
 
-    public void getprogramRequirementsValues(){
+    public void getprogramRequirementsValues(String email){
         for(int i = 0; i < programRequirements.size(); i++){
             JSONObject temp =  (JSONObject) programRequirements.get(i);
             String id = (String) temp.get("courseID"); //if this data field gets changed in majors.json, change it
            
             CourseList courseList = CourseList.getInstance();
-            ArrayList<Course> courses = courseList.getCourses();
-            for(Course course : courses){
-                if(course.getCourseID().equals(id)){
-                    
+            StudentList studentList = StudentList.getInstance();
+            ArrayList<Student> students = studentList.getStudents();
+            JSONArray pastCourses = new JSONArray();
+
+            for(Student student : students){
+                if (email.equals(student.getEmail())) {
+                    pastCourses = student.getPastCourses();   
+                }
+
+            }
+
+            
+            for(int j=0; j<pastCourses.size(); j++){
+                JSONObject pastCourse = (JSONObject) pastCourses.get(j);
+                String idCourse = (String) pastCourse.get("courseID"); //if this data field gets changed in majors.json, change it
+
+                if(idCourse.equals(id)){
+                        System.out.println(idCourse);
                 }
             }
         }
