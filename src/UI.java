@@ -19,7 +19,7 @@ public class UI {
         //scenario5(); //Advisor (not an admin) account created success scenario
         //scenario6();
         demoscenario1();
-        demoscenario2();
+        //demoscenario2();
     }
 
     public void scenario1(){
@@ -175,9 +175,9 @@ public class UI {
     public void demoscenario1(){
         System.out.println("\nScenario 1");
     
-        System.out.println("Type student or advisor for what you are"); // ?
+        //System.out.println("Type student or advisor for what you are"); // ?
         application.checkUser("student"); 
-        System.out.println("User is a student");
+        //System.out.println("User is a student");
     
         if(!application.login(1, "westb@email.sc.edu", "mypassword56")){
             System.out.println("Sorry we couldn't login."); //login failed
@@ -208,7 +208,8 @@ public class UI {
         // System.out.println("\n Here are the remaining courses you can take \n"); 
         // System.out.println(application.getRemaningProgramRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); 
 
-
+        System.out.println("Making Semester Plan");
+        application.getStudent("westb@email.sc.edu").makeSemesterPlan();
 
 
 

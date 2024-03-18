@@ -473,6 +473,21 @@ public class Major {
             if (list == "") {
                 list = "null";
             }
+            return null;
+    }
+
+    /*public void getCarolinaCoreValues(String email) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getCarolinaCoreValues'");
+    }*/
+
+    public long getProgramReqHours() {
+        return this.totalHoursProgramRequirements;
+    }
+
+    public long getcarolinaHours() {
+        return this.carolinaHours;
+    }
             return list;
 }
 }
