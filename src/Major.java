@@ -44,6 +44,7 @@ public class Major {
             String id = (String) temp.get("courseID"); //if this data field gets changed in majors.json, change it
            
             CourseList courseList = CourseList.getInstance();
+            ArrayList<Course> courses =courseList.getCourses();
             StudentList studentList = StudentList.getInstance();
             ArrayList<Student> students = studentList.getStudents();
             JSONArray pastCourses = new JSONArray();
@@ -59,12 +60,46 @@ public class Major {
             for(int j=0; j<pastCourses.size(); j++){
                 JSONObject pastCourse = (JSONObject) pastCourses.get(j);
                 String idCourse = (String) pastCourse.get("courseID"); //if this data field gets changed in majors.json, change it
+                String courseName= (String) temp.get("name"); //if this data field gets changed in majors.json, change it
+                String courseGrade = (String) pastCourse.get("grade"); //if this data field gets changed in majors.json, change it
+                String pass = "";
 
                 if(idCourse.equals(id)){
-                        System.out.println(idCourse);
+                    if (courseGrade.compareToIgnoreCase("C") <= 0) 
+                    {
+                         pass = "fail";    
+                    }
+                    if(courseGrade.equalsIgnoreCase("C+") || courseGrade.equalsIgnoreCase("B+")){
+                        pass = "pass";    
+
+                    }
+                    else{
+                        pass="pass";
+                    }
+
+                    String toString;
+
+                    for(int k=0; k<courses.size(); k++){
+                        String temp2 = courses.get(k).getCourseName();
+
+                        if (courses.get(k).getCourseID().equalsIgnoreCase(idCourse)) {
+                            toString = (temp2 + " " + courseGrade + " " + pass);
+
+                            System.out.println(toString);
+
+                        }
+                       
+
+                        }
+
+
+                    }
+
+
+                    
                 }
             }
-        }
+        
     }
 
     public String getMajorID() {
