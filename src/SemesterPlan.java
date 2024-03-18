@@ -8,11 +8,11 @@ public class SemesterPlan {
         this.studentRequirements = major;
         this.SemesterPlan = new ArrayList<>();
         // Generate semester plan based on completed courses and major requirements
-        generatePlan(completedCourses);
+        generatePlan(Major major, completedCourses);
     }
 
     // 8 semester plan
-    private void generatePlan(ArrayList<Course> completedCourses) {
+    private void generatePlan(Major major, ArrayList<Course> completedCourses) {
         // Logic to generate semester plan based on completed courses and major
         // requirements
         // This can include checking prerequisites, corequisites, and other major
@@ -20,6 +20,7 @@ public class SemesterPlan {
         // and then planning out the upcoming semesters accordingly
 
         // csce major map is
+        if(major)
 
         /*
         Semester 1
