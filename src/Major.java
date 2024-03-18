@@ -93,6 +93,18 @@ public class Major {
     public JSONArray getMajorCourses() {    
         return majorCourses;
 	}
+
+    public long getcarolinaHours() {
+        return this.carolinaHours;
+    }
+
+    public long getmajorHours() {
+        return this.majorHours;
+    }
+
+    public long getProgramReqHours() {
+        return this.totalHoursProgramRequirements;
+    }
     
     // public ArrayList<Course> getRequiredCourses() {    
     //     ArrayList<Course> requiredCourses = new ArrayList<>();

@@ -142,7 +142,7 @@ public class Student extends User {
     }
 
     public SemesterPlan getSemesterPlan() {
-        return new SemesterPlan(major, pastCourses);
+        return new SemesterPlan(major, (ArrayList<Course>)pastCourses, this.firstName);
         // SemesterPlan needs an ArrayList of completedCourses
         // Student only stores the hashmap of classesTaken
 

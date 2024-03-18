@@ -1,23 +1,50 @@
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SemesterPlan {
-    private String studentRequirements;
-    protected ArrayList<String> SemesterPlan;
+        private SemesterTextFormatter studentRequirements;
+        protected ArrayList<String> SemesterPlan;
 
-    public SemesterPlan(Major major, ArrayList<Course> completedCourses, String name) {
-//        this.studentRequirements = major;
-        this.SemesterPlan = new ArrayList<>();
-        // Generate semester plan based on completed courses and major requirements
-        generatePlan(major, completedCourses, name);
-    }
+        public SemesterPlan(String major, ArrayList<Course> completedCourses, String name) {
+                this.studentRequirements = new SemesterTextFormatter();
+                this.SemesterPlan = new ArrayList<>();
+                // Generate semester plan based on completed courses and major requirements
+                generatePlan(major, completedCourses, name);
+        }
 
-    // 8 semester plan
-    private void generatePlan(Major major, ArrayList<Course> completedCourses, String name) {
+        private class SemesterTextFormatter {
+                private Map<Integer, List<Course>> plan;
+
+                public SemesterTextFormatter() {
+                        this.plan = new HashMap<>();
+                }
+
+                public void addCourse(int semester, Course course) {
+                        plan.computeIfAbsent(semester, k -> new ArrayList<>()).add(course);
+                } // I am abusing the fact that we can assume they are following the right order
+
+                public String generatePlan() {
+                        StringBuilder builder = new StringBuilder();
+                        for (int semester = 1; semester <= 8; semester++) {
+                                builder.append("Semester ").append(semester).append(":\n");
+                                List<Course> courses = plan.getOrDefault(semester, new ArrayList<>());
+                                for (Course course : courses) {
+                                        builder.append(course.toString()).append("\n");
+                                }
+                        }
+                        return builder.toString();
+                }
+        }
+
+        // 8 semester plan
+    private void generatePlan(String major, ArrayList<Course> completedCourses, String name) {
         // Logic to generate semester plan based on completed courses and major
         // requirements
         // This can include checking prerequisites, corequisites, and other major
@@ -30,36 +57,95 @@ public class SemesterPlan {
                 new JSONArray(), "a987654",
                 "John is doing well in his courses and is on track to graduate next semester.");*/
         Student student = StudentList.getInstance().getStudent(name);
-
         if(major.equals("Computer Science")){
-            // find what year and semester student is in
-
-            StringBuilder sb = new StringBuilder();
-            String gradeLevel = student.getClassification();
-            String currentSemester = "";
-
-            // iterate and find the specific course
-//            String[] courseTypes = {"getCarolinacoreCourses","getMajorCourses"};
-
-            ArrayList<String> pastCourses = new ArrayList<String>();
-            ArrayList<String> currentCourses = new ArrayList<String>();
-            ArrayList<String> futureCourses = new ArrayList<String>();
-            final List<String> year = List.of("Freshman","Junior","Sophomore","Senior");
-            final List<String> terms = List.of("Fall","Spring");
-            for (int j = 0; j < major.getCarolinacoreCourses().size(); j++) {
-                JSONObject course = major.getJSONObject();
-                String term = course.getString("recommendedtime");
-                String time = course.getString("recommendedterm");
-
-                if(year.indexOf(time) < year.indexOf(gradeLevel) && terms.indexOf(term) < terms.indexOf(currentSemester)){
-
+                // find what year and semester student is in
+                Major m = MajorList.getInstance().getMajor("a31c3094-3470-4c46-a45f-3b1001d15da2");
+                CourseList cList = CourseList.getInstance();
+                JSONArray coursesTaken = student.getPastCourses();
+                JSONArray coursesRequired = m.getprogramRequirements();
+                // iterate and find the specific course
+        //            String[] courseTypes = {"getCarolinacoreCourses","getMajorCourses"};
+                int semestart = (int)((JSONObject) coursesTaken.get(0)).get("year");
+                int semester = 0;
+                for (int i = 0; i < coursesTaken.size();i++) {
+                        JSONObject courseData = (JSONObject) coursesTaken.get(i);
+                        String term = (String) courseData.get("semester");
+                        semester = (((int)((JSONObject) coursesTaken.get(i)).get("year")) - semestart)*2;
+                        if (term.equals("spring"))
+                                semester += 1;
+                        this.studentRequirements.addCourse(semester+1, cList.getCourse((String)courseData.get("courseID")));
                 }
-
-            }
-            for (int j = 0; j < major.getMajorCourses().size(); j++) {
-
-            }
+                long h = 0;
+                long require = m.getProgramReqHours();
+                for (int i = 0; i < coursesRequired.size() && h < require;i++) {
+                        JSONObject courseData = (JSONObject) coursesRequired.get(i);
+                        String time = (String) courseData.get("recommendedtime");
+                        int sem = 0;
+                        if (time.equals("Senior")) {
+                                sem = 6;
+                        }
+                        else if (time.equals("Junior")) {
+                                sem = 4;
+                        }
+                        else if (time.equals("Sophmore")) {
+                                sem = 2;
+                        }
+                        if (((String) courseData.get("recommendedterm")).equals("Spring"))
+                                sem += 1;
+                        this.studentRequirements.addCourse(sem+1, cList.getCourse((String)courseData.get("courseID")));
+                }
+                JSONArray carolinaCores = m.getCarolinacoreCourses();
+                h = 0;
+                require = m.getcarolinaHours();
+                for (int i = 0; i < carolinaCores.size() && h < require;i++) {
+                        JSONObject courseData = (JSONObject) carolinaCores.get(i);
+                        String time = (String) courseData.get("recommendedtime");
+                        int sem = 0;
+                        if (time.equals("Senior")) {
+                                sem = 6;
+                        }
+                        else if (time.equals("Junior")) {
+                                sem = 4;
+                        }
+                        else if (time.equals("Sophmore")) {
+                                sem = 2;
+                        }
+                        if (((String) courseData.get("recommendedterm")).equals("Spring"))
+                                sem += 1;
+                        this.studentRequirements.addCourse(sem+1, cList.getCourse((String)courseData.get("courseID")));
+                }
+                JSONArray majorReqs = m.getMajorCourses();
+                h = 0;
+                require = m.getcarolinaHours();
+                for (int i = 0; i < majorReqs.size() && h < require;i++) {
+                        JSONObject courseData = (JSONObject) majorReqs.get(i);
+                        String time = (String) courseData.get("recommendedtime");
+                        int sem = 0;
+                        if (time.equals("Senior")) {
+                                sem = 6;
+                        }
+                        else if (time.equals("Junior")) {
+                                sem = 4;
+                        }
+                        else if (time.equals("Sophmore")) {
+                                sem = 2;
+                        }
+                        if (((String) courseData.get("recommendedterm")).equals("Spring"))
+                                sem += 1;
+                        this.studentRequirements.addCourse(sem+1, cList.getCourse((String)courseData.get("courseID")));
+                }
+                String s = this.studentRequirements.generatePlan();
+                System.out.println(s);
+                try {
+                        FileWriter myWriter = new FileWriter("semesterPlan.txt");
+                        myWriter.write(s);
+                        myWriter.close();
+                } catch (Exception e) {
+                        e.printStackTrace();
+                }
         }
+
+}
 
 
         /*
@@ -155,30 +241,31 @@ public class SemesterPlan {
                 Application Area Elective
                         See Bulletin listing
          */
-    }
 
-    public ArrayList<String> getStudentReq(String majorReq) {
-        // Logic to retrieve specific student requirements based on major
-        return new ArrayList<>(); // Placeholder
-    }
 
-    public ArrayList<Course> remainingCourses(String input) {
-        // Logic to calculate remaining courses based on input
-        return new ArrayList<>(); // Placeholder
-    }
+        public ArrayList<String> getStudentReq(String majorReq) {
+                // Logic to retrieve specific student requirements based on major
+                return new ArrayList<>(); // Placeholder
+        }
 
-    public int totalCourses(String input) {
-        // Logic to calculate total number of courses based on input
-        return 0; // Placeholder
-    }
+        public ArrayList<Course> remainingCourses(String input) {
+                // Logic to calculate remaining courses based on input
+                return new ArrayList<>(); // Placeholder
+        }
 
-    public ArrayList<String> output(String semesterPlan) {
-        // Logic to output semester plan
-        return new ArrayList<>(); // Placeholder
-    }
+        public int totalCourses(String input) {
+                // Logic to calculate total number of courses based on input
+                return 0; // Placeholder
+        }
 
-    public int progress(double remainingCourses, double totalCourses) {
-        // Logic to calculate progress based on remaining and total courses
-        return 0; // Placeholder
-    }
+        public ArrayList<String> output(String semesterPlan) {
+                // Logic to output semester plan
+                return new ArrayList<>(); // Placeholder
+        }
+
+        public int progress(double remainingCourses, double totalCourses) {
+                // Logic to calculate progress based on remaining and total courses
+                return 0; // Placeholder
+        }
 }
+
