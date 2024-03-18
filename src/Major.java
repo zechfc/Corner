@@ -31,6 +31,9 @@ public class Major {
         this.totalHoursProgramRequirements = totalHoursProgramRequirements;
         this.totalhours = totalhours;
 
+        System.out.println(programRequirements.get(0));
+
+
     }
 
     public String getMajor() {
