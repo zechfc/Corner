@@ -16,7 +16,7 @@ public class SemesterPlan {
                 this.studentRequirements = new SemesterTextFormatter();
                 this.SemesterPlan = new ArrayList<>();
                 // Generate semester plan based on completed courses and major requirements
-                generatePlan(major, completedCourses, name);
+                generatePlan(major, name);
         }
 
         private class SemesterTextFormatter {
@@ -27,6 +27,11 @@ public class SemesterPlan {
                 }
 
                 public void addCourse(int semester, Course course) {
+                        for (List<Course> courses : plan.values()) {
+                                if (courses.contains(course)) {
+                                    return; // Course already exists in the plan, no need to add it again
+                                }
+                        }
                         plan.computeIfAbsent(semester, k -> new ArrayList<>()).add(course);
                 } // I am abusing the fact that we can assume they are following the right order
 
@@ -36,7 +41,8 @@ public class SemesterPlan {
                                 builder.append("Semester ").append(semester).append(":\n");
                                 List<Course> courses = plan.getOrDefault(semester, new ArrayList<>());
                                 for (Course course : courses) {
-                                        builder.append(course.toString()).append("\n");
+                                        if (course != null)
+                                                builder.append(course.toString()).append("\n");
                                 }
                         }
                         return builder.toString();
@@ -44,7 +50,7 @@ public class SemesterPlan {
         }
 
         // 8 semester plan
-    private void generatePlan(String major, ArrayList<Course> completedCourses, String name) {
+    private void generatePlan(String major, String name) {
         // Logic to generate semester plan based on completed courses and major
         // requirements
         // This can include checking prerequisites, corequisites, and other major
@@ -65,12 +71,12 @@ public class SemesterPlan {
                 JSONArray coursesRequired = m.getprogramRequirements();
                 // iterate and find the specific course
         //            String[] courseTypes = {"getCarolinacoreCourses","getMajorCourses"};
-                int semestart = (int)((JSONObject) coursesTaken.get(0)).get("year");
+                int semestart = (int)(long)((JSONObject) coursesTaken.get(0)).get("year");
                 int semester = 0;
                 for (int i = 0; i < coursesTaken.size();i++) {
                         JSONObject courseData = (JSONObject) coursesTaken.get(i);
                         String term = (String) courseData.get("semester");
-                        semester = (((int)((JSONObject) coursesTaken.get(i)).get("year")) - semestart)*2;
+                        semester = (((int)(long)((JSONObject) coursesTaken.get(i)).get("year")) - semestart)*2;
                         if (term.equals("spring"))
                                 semester += 1;
                         this.studentRequirements.addCourse(semester+1, cList.getCourse((String)courseData.get("courseID")));
@@ -80,6 +86,7 @@ public class SemesterPlan {
                 for (int i = 0; i < coursesRequired.size() && h < require;i++) {
                         JSONObject courseData = (JSONObject) coursesRequired.get(i);
                         String time = (String) courseData.get("recommendedtime");
+                        if (time == null) continue;
                         int sem = 0;
                         if (time.equals("Senior")) {
                                 sem = 6;
@@ -94,7 +101,7 @@ public class SemesterPlan {
                                 sem += 1;
                         this.studentRequirements.addCourse(sem+1, cList.getCourse((String)courseData.get("courseID")));
                 }
-                JSONArray carolinaCores = m.getCarolinacoreCourses();
+                JSONArray carolinaCores = m.getCarolinacoreCoursesReq();
                 h = 0;
                 require = m.getcarolinaHours();
                 for (int i = 0; i < carolinaCores.size() && h < require;i++) {

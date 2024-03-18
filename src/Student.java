@@ -141,8 +141,12 @@ public class Student extends User {
         majorMap = newMajorMap;
     }
 
+    public void makeSemesterPlan() {
+        this.semesterPlan = new SemesterPlan("Computer Science", pastCourses, this.userID);
+    }
+
     public SemesterPlan getSemesterPlan() {
-        return new SemesterPlan(major, (ArrayList<Course>)pastCourses, this.firstName);
+        return new SemesterPlan(major, (ArrayList<Course>)pastCourses, this.userID);
         // SemesterPlan needs an ArrayList of completedCourses
         // Student only stores the hashmap of classesTaken
 
