@@ -29,7 +29,7 @@ public class CourseList {
     }
 
     public Course checkPrereq(Course course, double grade) {
-        Course c = new Course(null, null, null, null, null, 0, null, 0);
+        Course c = new Course(null, null, null, null, null, false, 0, null, null, grade);
         return c;
     }
 }

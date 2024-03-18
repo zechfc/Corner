@@ -35,6 +35,7 @@ public abstract class DataConstants {
     protected static final String COURSE_DESCRIPTION = "courseDescription";
     protected static final String COURSE_AVAILABILITY = "courseAvailability";
     protected static final String COURSE_CREDITS = "courseCredits";
+    protected static final String COURSE_TERM = "courseTerm";
     protected static final String COURSE_PASSING_GRADE = "passingGrade";
     protected static final String COURSE_PREREQ_REQUIRETYPE = "requireType";
     protected static final String COURSE_ELECTIVE_AREA = "electiveArea";
