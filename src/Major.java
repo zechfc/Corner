@@ -11,9 +11,6 @@ public class Major {
     private long carolinaHours;
     private long majorHours;
     private long totalHoursProgramRequirements;
-
-
-
     private String majorID;
 
 

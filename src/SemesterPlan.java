@@ -1,4 +1,7 @@
+import org.json.simple.JSONArray;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SemesterPlan {
     private String studentRequirements;
@@ -20,7 +23,20 @@ public class SemesterPlan {
         // and then planning out the upcoming semesters accordingly
 
         // csce major map is
-        if(major)
+        Student student = new Student("u123456", "john.doe@example.com", "John", "William", "Doe", "25", "securePassword123",
+                "Computer Science", "Senior", 30, new JSONArray(),
+                new JSONArray(), "a987654",
+                "John is doing well in his courses and is on track to graduate next semester.");
+        if(major.equals("Computer Science")){
+            // find what year and semester student is in
+
+            StringBuilder sb = new StringBuilder();
+            String gradeLevel = student.getClassification();
+            String currentSemeser = "";
+
+            major.
+
+        }
 
         /*
         Semester 1
