@@ -473,7 +473,7 @@ public class Major {
             if (list == "") {
                 list = "null";
             }
-            return null;
+            return list;
     }
 
     /*public void getCarolinaCoreValues(String email) {
@@ -488,9 +488,9 @@ public class Major {
     public long getcarolinaHours() {
         return this.carolinaHours;
     }
-            return list;
-}
-}
+    }
+
+
     
     // public ArrayList<Course> getRequiredCourses() {    
     //     ArrayList<Course> requiredCourses = new ArrayList<>();

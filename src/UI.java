@@ -19,7 +19,7 @@ public class UI {
         //scenario5(); //Advisor (not an admin) account created success scenario
         //scenario6();
         demoscenario1();
-        //demoscenario2();
+        demoscenario2();
     }
 
     public void scenario1(){
