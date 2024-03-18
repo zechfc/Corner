@@ -178,6 +178,10 @@ public class Application {
     public void getStudentApplicationArea(String userID) {
         Student student = studentList.getStudent(userID);
         if (student != null)
+            if (student.getApplicationArea() == null) {
+                System.out.println("Student has no application area.");
+                return;
+            }
             System.out.println(student.getApplicationArea());
     }
 
