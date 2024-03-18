@@ -94,9 +94,9 @@ public class DataLoader extends DataConstants {
 				long carolinaHours = ((long) majorJSON.get(CAROLINA_HOURS));
 				long majorHours = ((long) majorJSON.get(MAJOR_REQUIRMENTS_HOURS));
 
-				ArrayList<Course> programRequirements = (ArrayList<Course>) majorJSON.get(PROGRAM_REQUIREMENTS);
-				ArrayList<Course> carolinaCore = (ArrayList<Course>) majorJSON.get(CAROLINA_CORE);
-				ArrayList<Course> majorRequirements = (ArrayList<Course>) majorJSON.get(MAJOR_REQUIRMENTS);
+				JSONArray programRequirements = (JSONArray) majorJSON.get(PROGRAM_REQUIREMENTS);
+				JSONArray carolinaCore = (JSONArray) majorJSON.get(CAROLINA_CORE);
+				JSONArray majorRequirements = (JSONArray) majorJSON.get(MAJOR_REQUIRMENTS);
 
 				majorList.add(
 				new Major(name, programRequirements, carolinaCore, majorRequirements, majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours));
