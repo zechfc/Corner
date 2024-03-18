@@ -88,7 +88,7 @@ public class UI {
         JSONArray currentCourses = new JSONArray();
         JSONArray pastCourses = new JSONArray();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
-        transferCredits, advisorID, note, currentCourses, pastCourses);
+        transferCredits, null, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -115,7 +115,7 @@ public class UI {
         JSONArray currentCourses = new JSONArray();
         JSONArray pastCourses = new JSONArray();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
-            transferCredits, advisorID, note, currentCourses, pastCourses);
+            transferCredits, null, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -186,7 +186,10 @@ public class UI {
         System.out.println("Brax West is now logged in");
         DataLoader.getMajor();
 
-
+        System.out.println("\nStudent Profile:");
+        if(!application.studentProfile("81668235-0606-4e6b-bfcf-d3243f916315")){
+            System.out.println("Sorry, could not print student profile."); //failed
+        }
     }
 
     public void demoscenario2(){
@@ -216,7 +219,7 @@ public class UI {
             System.out.println("Could not add student."); //failed
             return;
         } else{
-            System.out.println("Successfully added student to supervising list.");
+            System.out.println("Successfully added student to supervising list."); //check advisorJSON, should have updated
         }
 
         System.out.println("\nPrinting student's past courses...");
@@ -228,7 +231,7 @@ public class UI {
             return;
         } else{
             System.out.println("\nSuccessfully edited advisor note.");
-            System.out.println("Showing student's advisor note...");
+            System.out.println("Showing student's advisor note..."); //shows that the student's note WAS changed in JSON
             application.getAdvisorNote("0a119e07-a0aa-435e-9b9d-21e5b91b1c39");
         }
     }

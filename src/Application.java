@@ -46,14 +46,14 @@ public class Application {
     }
 
     public User createStudentAccount(String userID, String firstName, String middleName, String lastName, String age,
-            String email, String password, String major, String classification, int transferCredits, String advisorID, 
+            String email, String password, String major, String classification, int transferCredits, String applicationArea, String advisorID, 
             String advisorNote, JSONArray currentCourses, JSONArray pastCourses) {
         // Email (username) already used
         if (studentList.emailTaken(email)){
             return null;
         }
         Student newStudent = new Student(userID, email, firstName, middleName, lastName, age, password, major, classification, 
-                transferCredits, currentCourses, pastCourses, advisorID, advisorNote);
+                transferCredits, applicationArea, currentCourses, pastCourses, advisorID, advisorNote);
         studentList.addStudent(newStudent);
         return newStudent; 
     }
@@ -63,10 +63,27 @@ public class Application {
             if (advisorList.emailTaken(email)){
                 return null;
             }
-            Advisor newAdvisor = new Advisor(userID, studentsSupervising, firstName, middleName, lastName, age, email, admin, password);
-            advisorList.addAdvisor(newAdvisor);
-            return newAdvisor;
+        Advisor newAdvisor = new Advisor(userID, studentsSupervising, firstName, middleName, lastName, age, email, admin, password);
+        advisorList.addAdvisor(newAdvisor);
+        return newAdvisor;
+    }
+
+    public boolean studentProfile(String userID){
+        Student student = studentList.getStudent(userID);
+        if(student != null){
+            String firstName = student.getFirstName();
+            String middleName = student.getMiddleName();
+            String lastName = student.getLastName();
+            String email = student.getEmail();
+            String classification = student.getClassification();
+            String college = "UofSC";
+            System.out.println(firstName + " " + middleName + " " + lastName + 
+                "\nEmail: " + email +
+                "\nClassification: " + classification + " at " + college);
+            return true;
         }
+        return false;
+    }
 
     public boolean getMajorMap(String userID) {
         if (user != null && user.getUserID().equals(userID)) {
