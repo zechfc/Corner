@@ -88,18 +88,10 @@ public class Major {
                             System.out.println(toString);
 
                         }
-                       
-
                         }
-
-
                     }
-
-
-                    
                 }
             }
-        
     }
 
     public String getMajorID() {
@@ -128,6 +120,16 @@ public class Major {
     public JSONArray getMajorCourses() {    
         return majorCourses;
 	}
+
+    public void getMajorRequirementsValues(String email) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getMajorRequirementsValues'");
+    }
+
+    public void getCarolinaCoreRequirementsValues(String email) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getCarolinaCoreRequirementsValues'");
+    }
     
     // public ArrayList<Course> getRequiredCourses() {    
     //     ArrayList<Course> requiredCourses = new ArrayList<>();

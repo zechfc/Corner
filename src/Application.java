@@ -204,6 +204,9 @@ public class Application {
         Major major = majorList.getMajor(majorID);
         if(major != null){
             major.getprogramRequirementsValues(email);
+            major.getMajorRequirementsValues(email);
+            major.getCarolinaCoreRequirementsValues(email);
+
         }
     }
 
