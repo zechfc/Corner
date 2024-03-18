@@ -88,7 +88,7 @@ public class UI {
         JSONArray currentCourses = new JSONArray();
         JSONArray pastCourses = new JSONArray();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
-        transferCredits, advisorID, note, currentCourses, pastCourses);
+        transferCredits, null, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {
@@ -115,7 +115,7 @@ public class UI {
         JSONArray currentCourses = new JSONArray();
         JSONArray pastCourses = new JSONArray();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
-            transferCredits, advisorID, note, currentCourses, pastCourses);
+            transferCredits, null, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){
             System.out.println("Failed to create account.");
         }else {

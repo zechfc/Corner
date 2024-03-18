@@ -46,14 +46,14 @@ public class Application {
     }
 
     public User createStudentAccount(String userID, String firstName, String middleName, String lastName, String age,
-            String email, String password, String major, String classification, int transferCredits, String advisorID, 
+            String email, String password, String major, String classification, int transferCredits, String applicationArea, String advisorID, 
             String advisorNote, JSONArray currentCourses, JSONArray pastCourses) {
         // Email (username) already used
         if (studentList.emailTaken(email)){
             return null;
         }
         Student newStudent = new Student(userID, email, firstName, middleName, lastName, age, password, major, classification, 
-                transferCredits, currentCourses, pastCourses, advisorID, advisorNote);
+                transferCredits, applicationArea, currentCourses, pastCourses, advisorID, advisorNote);
         studentList.addStudent(newStudent);
         return newStudent; 
     }
