@@ -12,7 +12,7 @@
     "courseAvailability": true,
     "courseCredits": 3.5,
     "courseTerm": ["SPRING"],
-    "passingGrade": 70
+    "passingGrade": "C"
 },
 {
     "prerequisite":[
@@ -31,7 +31,7 @@
     "courseAvailability": true,
     "courseCredits": 4.0,
     "courseTerm": ["FALL"],
-    "passingGrade": 70
+    "passingGrade": "C"
 },
 {
     "prerequisite":[],
@@ -43,7 +43,7 @@
     "courseCredits": 1.0,
     "courseTerm": ["SPRING"],
     "electiveArea":"VSR",
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -64,7 +64,7 @@
     "courseCredits": 3.0,
     "courseTerm": ["SPRING"],
     "electiveArea":"SCI",
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -96,7 +96,7 @@
     "courseDescription": "Basic college algebra; linear and quadratic equations, inequalities, functions and graphs of functions, exponential and logarithm functions, systems of equations.",
     "courseAvailability": true,
     "courseCredits": 3.0,
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -113,7 +113,7 @@
     "courseAvailability": true,
     "courseCredits": 4.0,
     "courseTerm": ["SPRING"],
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -126,7 +126,7 @@
     "courseCredits": 3.0,
     "courseTerm": ["SPRING"],
     "electiveArea":"CMW",
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -144,7 +144,7 @@
     "courseCredits": 3.0,
     "courseTerm": ["SPRING"],
     "electiveArea":"CMW",
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -162,7 +162,7 @@
     "courseCredits": 4.0,
     "courseTerm": ["SPRING"],
     "electiveArea":"ARP",
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -179,7 +179,7 @@
     "courseAvailability": true,
     "courseCredits": 3.0,
     "courseTerm": ["SPRING"],
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -196,7 +196,7 @@
     "courseAvailability": true,
     "courseCredits": 3.0,
     "courseTerm": ["SPRING"],
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -209,7 +209,7 @@
     "courseCredits": 3.0,
     "courseTerm": ["SPRING","SUMMER","FALL"],
     "electiveArea":"ARP",
-    "passingGrade": 70
+    "passingGrade": "C"
 }
 ,
 {
@@ -227,6 +227,6 @@
     "courseCredits": 3.0,
     "courseTerm":["SPRING"],
     "electiveArea":"ARP",
-    "passingGrade":70
+    "passingGrade": "C"
 }
 ]

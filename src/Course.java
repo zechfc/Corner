@@ -12,7 +12,7 @@ public class Course {
 
     // Not sure all of the things in the constructor are stored.
     public Course(ArrayList<CourseChoice> prereq, String id, String key, String name, String description,
-            boolean availability, double credits, ArrayList<String> term, String elecArea, double passingGrade) {
+            boolean availability, double credits, ArrayList<String> term, String elecArea, String passingGrade) {
         this.prerequisite = prereq;
         this.courseID = id;
         this.courseKey = key;
