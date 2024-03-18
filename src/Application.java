@@ -167,6 +167,20 @@ public class Application {
     //     return false;
     // }
 
+    public Student getStudentById(String userID) {
+        User user = studentList.getStudentID(userID);
+        if (user != null && user instanceof Student) {
+            return (Student) user;
+        }
+        return null;
+    }
+
+    public void getStudentApplicationArea(String userID) {
+        Student student = studentList.getStudent(userID);
+        if (student != null)
+            System.out.println(student.getApplicationArea());
+    }
+
     public Student getStudent(String email) {
         User user = studentList.getStudent(email);
         if (user != null && user instanceof Student) {
