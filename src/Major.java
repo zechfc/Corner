@@ -43,10 +43,10 @@ public class Major {
             JSONObject temp =  (JSONObject) programRequirements.get(i);
             String id = (String) temp.get("courseID"); //if this data field gets changed in majors.json, change it
            
-            MajorList majorList = MajorList.getInstance();
-            ArrayList<Major> majors = majorList.getMajors();
+            CourseList courseList = CourseList.getInstance();
+            ArrayList<Course> courses = courseList.getCourses();
             for(Course course : courses){
-                if(major.getMajorID().equals(id)){
+                if(course.getCourseID().equals(id)){
                     
                 }
             }
