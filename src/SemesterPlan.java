@@ -1,21 +1,23 @@
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class SemesterPlan {
     private String studentRequirements;
     protected ArrayList<String> SemesterPlan;
 
-    public SemesterPlan(String major, ArrayList<Course> completedCourses) {
-        this.studentRequirements = major;
+    public SemesterPlan(Major major, ArrayList<Course> completedCourses, String name) {
+//        this.studentRequirements = major;
         this.SemesterPlan = new ArrayList<>();
         // Generate semester plan based on completed courses and major requirements
-        generatePlan(Major major, completedCourses);
+        generatePlan(major, completedCourses, name);
     }
 
     // 8 semester plan
-    private void generatePlan(Major major, ArrayList<Course> completedCourses) {
+    private void generatePlan(Major major, ArrayList<Course> completedCourses, String name) {
         // Logic to generate semester plan based on completed courses and major
         // requirements
         // This can include checking prerequisites, corequisites, and other major
@@ -23,20 +25,42 @@ public class SemesterPlan {
         // and then planning out the upcoming semesters accordingly
 
         // csce major map is
-        Student student = new Student("u123456", "john.doe@example.com", "John", "William", "Doe", "25", "securePassword123",
+        /*Student student = new Student("u123456", "john.doe@example.com", "John", "William", "Doe", "25", "securePassword123",
                 "Computer Science", "Senior", 30, new JSONArray(),
                 new JSONArray(), "a987654",
-                "John is doing well in his courses and is on track to graduate next semester.");
+                "John is doing well in his courses and is on track to graduate next semester.");*/
+        Student student = StudentList.getInstance().getStudent(name);
+
         if(major.equals("Computer Science")){
             // find what year and semester student is in
 
             StringBuilder sb = new StringBuilder();
             String gradeLevel = student.getClassification();
-            String currentSemeser = "";
+            String currentSemester = "";
 
-            major.
+            // iterate and find the specific course
+//            String[] courseTypes = {"getCarolinacoreCourses","getMajorCourses"};
 
+            ArrayList<String> pastCourses = new ArrayList<String>();
+            ArrayList<String> currentCourses = new ArrayList<String>();
+            ArrayList<String> futureCourses = new ArrayList<String>();
+            final List<String> year = List.of("Freshman","Junior","Sophomore","Senior");
+            final List<String> terms = List.of("Fall","Spring");
+            for (int j = 0; j < major.getCarolinacoreCourses().size(); j++) {
+                JSONObject course = major.getJSONObject();
+                String term = course.getString("recommendedtime");
+                String time = course.getString("recommendedterm");
+
+                if(year.indexOf(time) < year.indexOf(gradeLevel) && terms.indexOf(term) < terms.indexOf(currentSemester)){
+
+                }
+
+            }
+            for (int j = 0; j < major.getMajorCourses().size(); j++) {
+
+            }
         }
+
 
         /*
         Semester 1
