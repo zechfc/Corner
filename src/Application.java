@@ -167,6 +167,24 @@ public class Application {
     //     return false;
     // }
 
+    public Student getStudentById(String userID) {
+        User user = studentList.getStudentID(userID);
+        if (user != null && user instanceof Student) {
+            return (Student) user;
+        }
+        return null;
+    }
+
+    public void getStudentApplicationArea(String userID) {
+        Student student = studentList.getStudent(userID);
+        if (student != null)
+            if (student.getApplicationArea() == null) {
+                System.out.println("Student has no application area.");
+                return;
+            }
+            System.out.println(student.getApplicationArea());
+    }
+
     public Student getStudent(String email) {
         User user = studentList.getStudent(email);
         if (user != null && user instanceof Student) {
@@ -179,6 +197,13 @@ public class Application {
         Student student = studentList.getStudent(userID);
         if(student != null){
             student.getPastCourseValues();
+        }
+    }
+
+    public void getMajorRequirements(String majorID){
+        Major major = majorList.getMajor(majorID);
+        if(major != null){
+            major.getprogramRequirementsValues();
         }
     }
 

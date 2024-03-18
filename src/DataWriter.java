@@ -63,6 +63,7 @@ public class DataWriter extends DataConstants {
 		studentDetails.put(CLASSIFICATION, student.getClassification());
 		studentDetails.put(NOTES, student.getAdvisorNote());
 		studentDetails.put(TRANSFER_CREDITS, student.getTransferCredits());
+		studentDetails.put(APPLICATION_AREA, student.getApplicationArea());
 		studentDetails.put(COURSES_PRESENT, student.getCurrentCourses());
 		studentDetails.put(COURSES_PAST, student.getPastCourses());
 

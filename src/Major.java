@@ -38,16 +38,16 @@ public class Major {
 		return name;
 	}
 
-      public void getprogramRequirementsValues(){
+    public void getprogramRequirementsValues(){
         for(int i = 0; i < programRequirements.size(); i++){
             JSONObject temp =  (JSONObject) programRequirements.get(i);
-            String id = (String) temp.get("majorid"); //if this data field gets changed in majors.json, change it
+            String id = (String) temp.get("courseID"); //if this data field gets changed in majors.json, change it
            
-            MajorList majorList = MajorList.getInstance();
-            ArrayList<Major> majors = majorList.getMajors();
-            for(Major major : majors){
-                if(major.getMajorID().equals(id)){
-                    System.out.println(); //print what you wanted
+            CourseList courseList = CourseList.getInstance();
+            ArrayList<Course> courses = courseList.getCourses();
+            for(Course course : courses){
+                if(course.getCourseID().equals(id)){
+                    
                 }
             }
         }

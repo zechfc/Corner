@@ -30,7 +30,7 @@
     "courseDescription":"Rigorous development of algorithms and computer programs; elementary data structures. Three lecture hours and two laboratory hours per week. Open to all majors.",
     "courseAvailability": true,
     "courseCredits": 4.0,
-    "courseTerm": "FALL",
+    "courseTerm": ["FALL"],
     "passingGrade": 70
 },
 {
@@ -41,7 +41,7 @@
     "courseDescription": "Professional issues in the information technology professions; history and social context of computing; professional responsibilities; privacy; intellectual property; risks and liabilities of computer-based systems.",
     "courseAvailability": true,
     "courseCredits": 1.0,
-    "courseTerm": "SPRING",
+    "courseTerm": ["SPRING"],
     "electiveArea":"VSR",
     "passingGrade": 70
 }
@@ -62,7 +62,7 @@
     "courseDescription": "Survey of the principles that underlie all chemistry with applications illustrating these principles. Three lecture and one recitation hours per week.",
     "courseAvailability": true,
     "courseCredits": 3.0,
-    "courseTerm": "SPRING",
+    "courseTerm": ["SPRING"],
     "electiveArea":"SCI",
     "passingGrade": 70
 }
@@ -84,7 +84,7 @@
     "courseDescription": "Introduction to the principles and techniques of experimental chemistry with emphasis on formula investigations, equations, elementary statistics, and chemical reactivity.",
     "courseAvailability": true,
     "courseCredits": 1.0,
-    "courseTerm": "SPRING",
+    "courseTerm": ["SPRING"],
     "electiveArea":"SCI"
 }
 ,
@@ -112,7 +112,7 @@
     "courseDescription": "Topics in algebra and trigonometry specifically needed for MATH 141, MATH 142, MATH 241. Subsets of the real line, absolute value; polynomial, rational, inverse, logarithmic, exponential functions; circular functions; analytic trigonometry.",
     "courseAvailability": true,
     "courseCredits": 4.0,
-    "courseTerm": "SPRING",
+    "courseTerm": ["SPRING"],
     "passingGrade": 70
 }
 ,
@@ -124,7 +124,7 @@
     "courseDescription": "Instruction in strategies for critically reading and analyzing literature and non-literary texts; structured, sustained practice in composing expository and analytical essays.",
     "courseAvailability": true,
     "courseCredits": 3.0,
-    "courseTerm": "SPRING",
+    "courseTerm": ["SPRING"],
     "electiveArea":"CMW",
     "passingGrade": 70
 }
@@ -142,7 +142,7 @@
     "courseDescription": "Instruction and intensive practice in researching, analyzing, and composing written arguments about academic and public issues.",
     "courseAvailability": true,
     "courseCredits": 3.0,
-    "courseTerm": "SPRING",
+    "courseTerm": ["SPRING"],
     "electiveArea":"CMW",
     "passingGrade": 70
 }
@@ -160,7 +160,7 @@
     "courseDescription": "Problem-solving, algorithmic design, and programming. Three lectures and two laboratory hours per week.",
     "courseAvailability": true,
     "courseCredits": 4.0,
-    "courseTerm": "SPRING",
+    "courseTerm": ["SPRING"],
     "electiveArea":"ARP",
     "passingGrade": 70
 }
@@ -178,7 +178,7 @@
     "courseDescription": "Scientific visualization tools as applied to sampled and generated data; methods for data manipulation and representation; investigation of visualization techniques.",
     "courseAvailability": true,
     "courseCredits": 3.0,
-    "courseTerm": "SPRING",
+    "courseTerm": ["SPRING"],
     "passingGrade": 70
 }
 ,
@@ -195,7 +195,7 @@
     "courseDescription": "Introduction to the theory and practice of computer security, including security policies, authentification, digital certificates, firewalls, malicious code, legal and ethical issues, and incident handling.",
     "courseAvailability": true,
     "courseCredits": 3.0,
-    "courseTerm": "SPRING",
+    "courseTerm": ["SPRING"],
     "passingGrade": 70
 }
 ,
@@ -225,7 +225,7 @@
     "courseDescription":"Introduction to the fundamentals of modern statistical methods, including descriptive statistics, probability, random sampling, simple linear regression, correlation, tests of hypotheses, and estimation.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3.0,
-    "courseTerm":"SPRING",
+    "courseTerm":["SPRING"],
     "electiveArea":"ARP",
     "passingGrade":70
 }

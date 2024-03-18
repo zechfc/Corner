@@ -19,6 +19,7 @@ public class Course {
         this.courseName = name;
         this.courseDescription = description;
         this.courseAvailability = availability;
+        this.seasonOffered = new ArrayList<Semester>();
         for (String s : term)
             this.seasonOffered.add(Semester.valueOf(s));
         this.electiveArea = elecArea;
