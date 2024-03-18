@@ -14,13 +14,14 @@ public class Student extends User {
     private boolean failureRisk;
     private int totalCredits;
     private int transferCredits;
+    private String applicationArea;
     private Advisor advisor;
     public String advisorID;
     private String advisorNote;
     private String classification;
 
     public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password,  
-        String major, String classification, int transferCredits, JSONArray currentCourses, JSONArray pastCourses, 
+        String major, String classification, int transferCredits, String applicationArea, JSONArray currentCourses, JSONArray pastCourses, 
         String advisorID, String advisorNote){
             
         super(userID, firstName, middleName, lastName, age, email, password);
@@ -29,6 +30,7 @@ public class Student extends User {
         this.advisorNote = advisorNote;
         this.transferCredits = transferCredits;
         this.totalCredits = 0;
+        this.applicationArea = applicationArea;
         this.classification = classification;
         this.currentCourses = currentCourses;
         this.pastCourses = pastCourses;
@@ -170,6 +172,14 @@ public class Student extends User {
 
     public JSONArray getCurrentCourses(){
         return currentCourses;
+    }
+
+    public String getApplicationArea() {
+        return applicationArea;
+    }
+
+    public void setApplicationArea(String area) {
+        this.applicationArea = area;
     }
 
     public void getPastCourseValues(){
