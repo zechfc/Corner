@@ -1,28 +1,30 @@
 import java.util.ArrayList;
 
 public class MajorList {
-    private static MajorList majorList;
-    private static ArrayList<Major> majors;
+    private static MajorList majors;
+    private static ArrayList<Major> majorList;
 
     private MajorList() {
-        majors = new ArrayList<Major>();
+        this.majorList = DataLoader.getMajor();
     }
 
     public static MajorList getInstance() {
-        if (majorList == null) {
-            majorList = new MajorList();
+        if (majors == null) {
+            majors = new MajorList();
         }
+        return majors;
+    }
+
+    public ArrayList<Major> getMajors(){
         return majorList;
     }
 
-    public Major getMajor(String major){
-        for (Major newmajor:majors){
-            if(major.equals(newmajor.getMajor())){
-                return newmajor;
+    public Major getMajor(String id) {
+        for (Major major : majorList) {
+            if (major.getMajorID().equals(id)) {
+                return major;
             }
-            
         }
-
         return null;
     }
 

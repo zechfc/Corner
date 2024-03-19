@@ -28,14 +28,6 @@ public class StudentList {
         return null;
     }
 
-    public void setStudent() {
-
-    }
-
-    public void editStudent(String student) {
-
-    }
-
     public void addStudent(String userID, String email, String firstName, String middleName, String lastName,
             String age,
             String password, String major, String concentration, int transferCredits) {

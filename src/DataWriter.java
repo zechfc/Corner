@@ -17,7 +17,7 @@ public class DataWriter extends DataConstants {
 		}
 
 		// Write JSON file
-		try (FileWriter file = new FileWriter(STUDENT_FILE_NAME, true)) { //REMOVE TRUE later
+		try (FileWriter file = new FileWriter(STUDENT_FILE_NAME)) { //REMOVE TRUE later
 			file.write(jsonStudents.toJSONString());
 			file.flush();
 
@@ -37,7 +37,7 @@ public class DataWriter extends DataConstants {
 		}
 
 		// Write JSON file
-		try (FileWriter file = new FileWriter(ADVISOR_FILE_NAME, true)) { // REMOVE TRUE later
+		try (FileWriter file = new FileWriter(ADVISOR_FILE_NAME)) { // REMOVE TRUE later
 			file.write(jsonAdvisors.toJSONString());
 			file.flush();
 
@@ -63,6 +63,7 @@ public class DataWriter extends DataConstants {
 		studentDetails.put(CLASSIFICATION, student.getClassification());
 		studentDetails.put(NOTES, student.getAdvisorNote());
 		studentDetails.put(TRANSFER_CREDITS, student.getTransferCredits());
+		studentDetails.put(APPLICATION_AREA, student.getApplicationArea());
 		studentDetails.put(COURSES_PRESENT, student.getCurrentCourses());
 		studentDetails.put(COURSES_PAST, student.getPastCourses());
 

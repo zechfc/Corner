@@ -1,6 +1,5 @@
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -9,7 +8,7 @@ public class DataLoader extends DataConstants {
 
 	public static ArrayList<Student> getStudents() {
 		ArrayList<Student> studentList = new ArrayList<Student>();
-
+		
 		try {
 			FileReader reader = new FileReader(STUDENT_FILE_NAME);
 			JSONParser parser = new JSONParser();
@@ -26,14 +25,15 @@ public class DataLoader extends DataConstants {
 				String password = (String) studentJSON.get(USER_PASSWORD);
 				String major = (String) studentJSON.get(MAJOR);
 				String classification = (String) studentJSON.get(CLASSIFICATION);
+				String applicationArea = studentJSON.get(APPLICATION_AREA) != null ? (String)studentJSON.get(COURSE_ELECTIVE_AREA) : null;
 				int transferCredits = ((Long) studentJSON.get(TRANSFER_CREDITS)).intValue();
-				ArrayList<Course> currentCourses = (ArrayList<Course>) studentJSON.get(COURSES_PRESENT);
-				ArrayList<Course> pastCourses = (ArrayList<Course>) studentJSON.get(COURSES_PAST);
+				JSONArray pastCourses = (JSONArray) studentJSON.get(COURSES_PAST);
+				JSONArray currentCourses = (JSONArray) studentJSON.get(COURSES_PRESENT);
 
 				String advisorID = (String) studentJSON.get(ADVISOR_ID);
 				String advisorNote = (String) studentJSON.get(NOTES);
 				studentList.add(new Student(userID, email, firstName, middleName, lastName, age,
-					password, major, classification, transferCredits, currentCourses, pastCourses, advisorID, advisorNote));
+					password, major, classification, transferCredits, applicationArea, currentCourses, pastCourses, advisorID, advisorNote));
 			}
 
 
@@ -50,12 +50,12 @@ public class DataLoader extends DataConstants {
 
 		try {
 			FileReader reader = new FileReader(ADVISOR_FILE_NAME);
-			JSONParser parser = new JSONParser();
+			// JSONParser parser = new JSONParser();
 			JSONArray advisorListJSON = (JSONArray) new JSONParser().parse(reader);
 
 			for (int i = 0; i < advisorListJSON.size(); i++) {
 				JSONObject advisorJSON = (JSONObject) advisorListJSON.get(i);
-				String Userid = (String) advisorJSON.get(USER_ID);
+				String userid = (String) advisorJSON.get(USER_ID);
 				String email = (String) advisorJSON.get(USER_USER_NAME);
 				String firstName = (String) advisorJSON.get(USER_FIRST_NAME);
 				String middleName = (String) advisorJSON.get(USER_MIDDLE_NAME);
@@ -63,12 +63,46 @@ public class DataLoader extends DataConstants {
 				String age = ((String) advisorJSON.get(USER_AGE));
 				String password = (String) advisorJSON.get(USER_PASSWORD);
 				boolean admin = ((boolean) advisorJSON.get(ADMIN));
-				ArrayList<Student> studentList = (ArrayList<Student>) advisorJSON.get(STUDENT_LIST);
+				ArrayList<String> studentList = (ArrayList<String>) advisorJSON.get(STUDENT_LIST);
 				advisorList.add(
-						new Advisor(Userid, studentList, firstName, middleName, lastName, age, email, admin, password));
+						new Advisor(userid, studentList, firstName, middleName, lastName, age, email, admin, password));
 			}
 
 			return advisorList;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	
+	public static ArrayList<Major> getMajor() {
+		ArrayList<Major> majorList = new ArrayList<Major>();
+
+		try {
+			FileReader reader = new FileReader(MAJORS_FILE_NAME);
+			// JSONParser parser = new JSONParser();
+			JSONArray majorListJSON = (JSONArray) new JSONParser().parse(reader);
+
+			for (int i = 0; i < majorListJSON.size(); i++) {
+				JSONObject majorJSON = (JSONObject) majorListJSON.get(i);
+				String majorid = (String) majorJSON.get(MAJOR_ID);
+				String name = (String) majorJSON.get(MAJOR_NAME);
+				String description = (String) majorJSON.get(DESCRIPTION);
+				long totalHoursProgramRequirements = (long) majorJSON.get(TOTAL_PROGRAM_REQ_HOURS);
+				long totalHours = (long) majorJSON.get(TOTAL_HOURS);
+				long carolinaHours = ((long) majorJSON.get(CAROLINA_HOURS));
+				long majorHours = ((long) majorJSON.get(MAJOR_REQUIRMENTS_HOURS));
+
+				JSONArray programRequirements = (JSONArray) majorJSON.get(PROGRAM_REQUIREMENTS);
+				JSONArray carolinaCore = (JSONArray) majorJSON.get(CAROLINA_CORE);
+				JSONArray majorRequirements = (JSONArray) majorJSON.get(MAJOR_REQUIRMENTS);
+
+				majorList.add(
+				new Major(name, programRequirements, carolinaCore, majorRequirements, majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours));
+			}
+
+			return majorList;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -96,17 +130,12 @@ public class DataLoader extends DataConstants {
 				String courseName = (String) courseJSON.get(COURSE_NAME);
 				String courseDescription = (String) courseJSON.get(COURSE_DESCRIPTION);
 				boolean courseAvailability = (boolean) courseJSON.get(COURSE_AVAILABILITY);
-				double courseCredits = ((double) courseJSON.get(COURSE_CREDITS));
-				String term = (String) courseJSON.get(COURSE_TERM);
-				double passingGrade;
-				if (courseJSON.get(COURSE_PASSING_GRADE) != null) {
-					passingGrade = (double)((long) courseJSON.get(COURSE_PASSING_GRADE));
-				}
-				else {
-					passingGrade = 0;
-				}
-				classlist.add(new Course(cc, courseid, coursekey, courseName, courseDescription, courseAvailability,
-						courseCredits, term, passingGrade));
+				double courseCredits = ((double)(long) courseJSON.get(COURSE_CREDITS));
+				ArrayList<String> term = courseJSON.get(COURSE_TERM) != null ? (ArrayList<String>) courseJSON.get(COURSE_TERM) : new ArrayList<String>();
+				String electiveArea = courseJSON.get(COURSE_ELECTIVE_AREA) != null ? (String)courseJSON.get(COURSE_ELECTIVE_AREA) : null;
+				String passingGrade = (courseJSON.get(COURSE_PASSING_GRADE) != null) ? passingGrade = (String)(courseJSON.get(COURSE_PASSING_GRADE)) : "";
+
+				classlist.add(new Course(cc, courseid, coursekey, courseName, courseDescription, courseAvailability, courseCredits, term, electiveArea, passingGrade));
 			}
 			for (Course c : classlist) {
 				//System.out.println(c.getCourseName());
