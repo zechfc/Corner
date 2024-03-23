@@ -37,22 +37,7 @@ public class Student extends User {
         this.advisorID = advisorID;
     }
 
-    //Error thrown line 43 of StudentList, no constructor matches args
-    // overloaded removed ArrayLists 3/14
-    public Student(String userID, String email, String firstName, String middleName, String lastName, String age, String password,
-                   String major, String classification, int transferCredits){
-
-        super(userID, firstName, middleName, lastName, age, email, password);
-        this.major = major;
-        this.classification = classification;
-//        this.advisorNote = null;
-        this.transferCredits = transferCredits;
-        this.totalCredits = 0;
-        this.classification = classification;
-//        this.currentCourses = null;
-//        this.pastCourses = null;
-//        this.advisorID = null;
-    }
+    
 
     public void totalCompletedCredits(int transferCredits, int USC_CREDITS) {
         totalCredits = transferCredits + USC_CREDITS;
