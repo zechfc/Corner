@@ -92,6 +92,8 @@ public class DataLoader extends DataConstants {
 				long totalHoursProgramRequirements = (long) majorJSON.get(TOTAL_PROGRAM_REQ_HOURS);
 				long totalHours = (long) majorJSON.get(TOTAL_HOURS);
 				long carolinaHours = ((long) majorJSON.get(CAROLINA_HOURS));
+				long carolinaReqHours = ((long) majorJSON.get(CAROLINA_HOURS));
+
 				long majorHours = ((long) majorJSON.get(MAJOR_REQUIRMENTS_HOURS));
 
 				JSONArray programRequirements = (JSONArray) majorJSON.get(PROGRAM_REQUIREMENTS);
@@ -101,7 +103,7 @@ public class DataLoader extends DataConstants {
 
 
 				majorList.add(
-				new Major(name, getProgramRequirements(programRequirements), getCarolinaCore(carolinaCore), getMajorRequirements(majorRequirements), majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours));
+				new Major(name, getProgramRequirements(programRequirements), getCarolinaCore(carolinaCore), getMajorRequirements(majorRequirements), majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours, majorHours));
 			}
 
 			return majorList;

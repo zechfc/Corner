@@ -11,18 +11,20 @@ public class Major {
     private ArrayList<CourseReccommended> majorCourses;
     private long totalhours;
     private long carolinaHours;
+    private long carolinaReqHours;
     private long majorHours;
     private long totalHoursProgramRequirements;
     private String majorID;
 
     public Major(String name, ArrayList<CourseReccommended> programRequirements, ArrayList<CourseReccommended> carolinacoreCoursesReq, ArrayList<CourseReccommended> majorCourses,
-    String majorID, String description, long carolinaHours,long majorHours,long totalHoursProgramRequirements, long totalhours)
+    String majorID, String description, long carolinaHours,long majorHours,long carolinaReqHours,long totalHoursProgramRequirements, long totalhours)
     {
         this.name = name;
         this.programRequirements = programRequirements;
         this.carolinacoreCoursesReq = carolinacoreCoursesReq;
         this.description = description;
         this.majorCourses = majorCourses;
+        this.carolinaReqHours = carolinaReqHours;
         this.majorID = majorID;
         this.majorHours = majorHours;
         this.carolinaHours = carolinaHours;
