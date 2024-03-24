@@ -5,17 +5,17 @@ import org.json.simple.JSONObject;
 public class Major {
     private String name;
     private String description;
-    private JSONArray programRequirements;
-    private JSONArray carolinacoreCoursesReq;
-    private JSONArray carolinacoreCourses;
-    private JSONArray majorCourses;
+    private ArrayList<CourseReccommended> programRequirements;
+    private ArrayList<CourseReccommended> carolinacoreCoursesReq;
+    private ArrayList<CourseReccommended> carolinacoreCourses;
+    private ArrayList<CourseReccommended> majorCourses;
     private long totalhours;
     private long carolinaHours;
     private long majorHours;
     private long totalHoursProgramRequirements;
     private String majorID;
 
-    public Major(String name, JSONArray programRequirements, JSONArray carolinacoreCoursesReq, JSONArray majorCourses,
+    public Major(String name, ArrayList<CourseReccommended> programRequirements, ArrayList<CourseReccommended> carolinacoreCoursesReq, ArrayList<CourseReccommended> majorCourses,
     String majorID, String description, long carolinaHours,long majorHours,long totalHoursProgramRequirements, long totalhours)
     {
         this.name = name;
@@ -35,6 +35,10 @@ public class Major {
     }
 
     public String getMajor() {
+		return name;
+	}
+
+    public String getCarolinaCoreCourses() {
 		return name;
 	}
 

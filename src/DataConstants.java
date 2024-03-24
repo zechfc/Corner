@@ -53,6 +53,9 @@ public abstract class DataConstants {
     protected static final String PROGRAM_REQUIREMENTS = "programRequirements";
     protected static final String CAROLINA_CORE = "carolinaCore";
     protected static final String MAJOR_REQUIRMENTS = "majorRequirements";
+    protected static final String RECCOMMENDED_TIME = "recommendedtime";
+    protected static final String RECCOMMENDED_TERM = "recommendedterm";
+
 
 
 

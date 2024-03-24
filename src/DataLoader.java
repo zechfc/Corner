@@ -95,11 +95,13 @@ public class DataLoader extends DataConstants {
 				long majorHours = ((long) majorJSON.get(MAJOR_REQUIRMENTS_HOURS));
 
 				JSONArray programRequirements = (JSONArray) majorJSON.get(PROGRAM_REQUIREMENTS);
+
 				JSONArray carolinaCore = (JSONArray) majorJSON.get(CAROLINA_CORE);
 				JSONArray majorRequirements = (JSONArray) majorJSON.get(MAJOR_REQUIRMENTS);
 
+
 				majorList.add(
-				new Major(name, programRequirements, carolinaCore, majorRequirements, majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours));
+				new Major(name, getProgramRequirements(programRequirements), getCarolinaCore(carolinaCore), getMajorRequirements(majorRequirements), majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours));
 			}
 
 			return majorList;
@@ -108,6 +110,67 @@ public class DataLoader extends DataConstants {
 		}
 		return null;
 	}
+
+	public static ArrayList<CourseReccommended> getProgramRequirements(JSONArray array) {
+		ArrayList<CourseReccommended> programRequirements = new ArrayList<CourseReccommended>();
+
+		try {
+		for (int i = 0; i < array.size(); i++) {
+			JSONObject programJSON = (JSONObject) array.get(i);
+			String courseid = (String) programJSON.get(COURSE_ID);
+			String term = (String) programJSON.get(RECCOMMENDED_TERM);
+			String time = (String) programJSON.get(RECCOMMENDED_TIME);
+		programRequirements.add(new CourseReccommended(courseid, time, term));
+		} 
+		return programRequirements;
+	}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static ArrayList<CourseReccommended> getCarolinaCore(JSONArray array) {
+		ArrayList<CourseReccommended> carolinaCore = new ArrayList<CourseReccommended>();
+
+		try {
+		for (int i = 0; i < array.size(); i++) {
+			JSONObject programJSON = (JSONObject) array.get(i);
+			String courseid = (String) programJSON.get(COURSE_ID);
+			String term = (String) programJSON.get(RECCOMMENDED_TERM);
+			String time = (String) programJSON.get(RECCOMMENDED_TIME);
+			carolinaCore.add(new CourseReccommended(courseid, time, term));
+		} 
+		return carolinaCore;
+	}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static ArrayList<CourseReccommended> getMajorRequirements(JSONArray array) {
+		ArrayList<CourseReccommended> majorRequirements = new ArrayList<CourseReccommended>();
+
+		try {
+		for (int i = 0; i < array.size(); i++) {
+			JSONObject programJSON = (JSONObject) array.get(i);
+			String courseid = (String) programJSON.get(COURSE_ID);
+			String term = (String) programJSON.get(RECCOMMENDED_TERM);
+			String time = (String) programJSON.get(RECCOMMENDED_TIME);
+			majorRequirements.add(new CourseReccommended(courseid, time, term));
+		} 
+		return majorRequirements;
+	}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 
 	public static ArrayList<Course> getCourses() {
 		ArrayList<Course> classlist = new ArrayList<Course>();
