@@ -7,7 +7,7 @@ public class Major {
     private String description;
     private ArrayList<CourseReccommended> programRequirements;
     private ArrayList<CourseReccommended> carolinacoreCoursesReq;
-    private ArrayList<CourseReccommended> carolinacoreCourses;
+    private ArrayList<Course> carolinacoreCourses;
     private ArrayList<CourseReccommended> majorCourses;
     private long totalhours;
     private long carolinaHours;
@@ -39,7 +39,7 @@ public class Major {
 	}
 
     public String getCarolinaCoreCourses() {
-		return name;
+		return CourseList.getInstance().getCarolinaCoreCourses();
 	}
 
     public String getprogramRequirementsValues(String email){
