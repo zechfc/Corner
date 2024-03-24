@@ -11,11 +11,8 @@ import java.util.Arrays;
 @TestInstance(Lifecycle.PER_CLASS)
 public class CourseChoiceTest {
     private CourseChoice cc;
-    private ArrayList<Course> coursesTaken;
+    private ArrayList<Course> coursesTaken = new ArrayList<Course>();
     private Course prereq;
-
-        
-
 
     @BeforeAll
     public void inital_setup(){
@@ -42,31 +39,47 @@ public class CourseChoiceTest {
                 null,
                 "C");
 
-        // cc = new CourseChoice("3a9b678a-8dcb-4d3c-9269-3a997710fdf8", new ArrayList<String>(){{ add("3a9b678a-8dcb-4d3c-9269-3a997710fdf8"); }});
+        Course classRequiringPrereq = new Course(new ArrayList<CourseChoice>()
+        ,"3a9b678a-8dcb-4d3c-9269-3a997710fdf8",
+                "ACCT475",
+                "Integrated Business Processes with Enterprise Systems",
+        "The integration, configuration, and operation of accounting information within enterprise resource planning and other databases as applied to current business practices.   FS: 02/03/2021.",
+        true, 3.0,
+        new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
+        null, "C");
 
-        // coursesTaken.add(new Course(new ArrayList<CourseChoice>()
-        //         ,"3a9b678a-8dcb-4d3c-9269-3a997710fdf8",
-        //                 "ACCT475",
-        //                 "Integrated Business Processes with Enterprise Systems",
-        //         "The integration, configuration, and operation of accounting information within enterprise resource planning and other databases as applied to current business practices.   FS: 02/03/2021.",
-        //         true, 3.0,
-        //         new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
-        //         null, "C"));
-    }
+         cc = new CourseChoice("OR", 
+        new ArrayList<String>(){
+                { add(classRequiringPrereq.getCourseID());
+                add(prereq.getCourseID());
+         }});
 
-    @BeforeEach
-    public void setup(){
+        coursesTaken.add(prereq);
+        coursesTaken.add(classRequiringPrereq);
+        
 
+        cc.linkFromUUIDRelatedClasses(coursesTaken);
     }
 
     //checkConstructor
     @Test
     public void test_CourseChoiceConstructor_Valid() {
+
     }
 
     @Test
     public void test_CourseChoiceConstructor_Invalid() {
+        // CourseChoice nullCourseChoice = new CourseChoice(null,s);
     }
+
+    // @Test
+    // public void test_CourseChoiceConstructor_Null_Invalid() {
+    //     assertThrows(IllegalArgumentException.class, () -> {
+    //         CourseChoice nullCourseChoice = new CourseChoice(null, new ArrayList<>());
+    //     });
+    // }
+    // CourseChoice nullCourseChoice = new CourseChoice(null,s);
+
 
     //checkPrerequisites
     @Test
@@ -74,13 +87,33 @@ public class CourseChoiceTest {
         ArrayList<Course> courselist = new ArrayList<Course>();
         courselist.add(prereq);
         assertTrue (cc.checkPrerequisites(courselist));
-
     }
 
     @Test
     public void test_checkPrerequisites_OR_Invalid(){
+        ArrayList<Course> courselist = new ArrayList<Course>();
+        Course dummyCourse = new Course(new ArrayList<CourseChoice>()
+        ," ",
+                " ",
+                " ",
+        " ",
+        true, 3.0,
+        new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
+        null, "C");
+        courselist.add(dummyCourse);
+        assertFalse (cc.checkPrerequisites(courselist));
 
     }
+
+    // @Test
+    // public void test_checkPrerequisites_null_Invalid(){
+    //     ArrayList<String> s = new ArrayList<String>();
+        
+        // assertThrows(IllegalArgumentException.class, () -> {
+        //     cc.checkPrerequisites(null);
+        // });
+
+    // }
     @Test
     public void test_checkPrerequisites_AND_Valid(){
 
