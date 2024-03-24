@@ -6,9 +6,6 @@
     "totalHoursProgramRequirements": 46,
     "programRequirements": [{
                     "courseID":  "f8b358bf-d69e-4aae-b10c-8dc98f1f651f",
-                    "courseCode": "MATH241",
-                    "title": "Vector Calculus",
-                    "credits": 3,
                     "recommendedtime": "Sophomore",
                     "recommendedterm":"Spring"
                 },
