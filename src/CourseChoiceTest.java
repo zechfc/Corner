@@ -13,10 +13,8 @@ public class CourseChoiceTest {
     private CourseChoice cc;
     private ArrayList<Course> coursesTaken = new ArrayList<Course>();
     private Course prereq;
-
-    @BeforeAll
-    public void inital_setup(){
-//        {
+    private Course classRequiringPrereq;
+ //        {
 //            "requireType": "OR",
 //                "courseID": [
 //            "47c4e89e-9000-4203-ba31-77441dff5028",
@@ -26,40 +24,44 @@ public class CourseChoiceTest {
 //        {
 //            "requireType": "AND",
 //                "courseID": ["0287575f-710b-4526-aa12-d87e89d9477a"]
-//        }
+//        }   
 
-        //checkPrerequisites
-        prereq = new Course(new ArrayList<CourseChoice>(),"47c4e89e-9000-4203-ba31-77441dff5028",
-                "ACCT404",
-                "Accounting Information Systems I",
-                "Accounting systems for business decision-making and effective control of the business enterprise.   FS: 06/01/2022.",
-                true,
-                3.0,
-                new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
-                null,
-                "C");
+    // @BeforeAll
+    // public void inital_setup(){
 
-        Course classRequiringPrereq = new Course(new ArrayList<CourseChoice>()
-        ,"3a9b678a-8dcb-4d3c-9269-3a997710fdf8",
-                "ACCT475",
-                "Integrated Business Processes with Enterprise Systems",
-        "The integration, configuration, and operation of accounting information within enterprise resource planning and other databases as applied to current business practices.   FS: 02/03/2021.",
-        true, 3.0,
-        new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
-        null, "C");
 
-         cc = new CourseChoice("OR", 
-        new ArrayList<String>(){
-                { add(classRequiringPrereq.getCourseID());
-                add(prereq.getCourseID());
-         }});
+    //     //checkPrerequisites
+    //     prereq = new Course(new ArrayList<CourseChoice>(),"47c4e89e-9000-4203-ba31-77441dff5028",
+    //             "ACCT404",
+    //             "Accounting Information Systems I",
+    //             "Accounting systems for business decision-making and effective control of the business enterprise.   FS: 06/01/2022.",
+    //             true,
+    //             3.0,
+    //             new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
+    //             null,
+    //             "C");
 
-        coursesTaken.add(prereq);
-        coursesTaken.add(classRequiringPrereq);
+    //     classRequiringPrereq = new Course(new ArrayList<CourseChoice>()
+    //     ,"3a9b678a-8dcb-4d3c-9269-3a997710fdf8",
+    //             "ACCT475",
+    //             "Integrated Business Processes with Enterprise Systems",
+    //     "The integration, configuration, and operation of accounting information within enterprise resource planning and other databases as applied to current business practices.   FS: 02/03/2021.",
+    //     true, 3.0,
+    //     new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
+    //     null, "C");
+
+    //      cc = new CourseChoice("OR", 
+    //     new ArrayList<String>(){
+    //             { add(classRequiringPrereq.getCourseID());
+    //             add(prereq.getCourseID());
+    //      }});
+
+    //     coursesTaken.add(prereq);
+    //     coursesTaken.add(classRequiringPrereq);
         
 
-        cc.linkFromUUIDRelatedClasses(coursesTaken);
-    }
+    //     cc.linkFromUUIDRelatedClasses(coursesTaken);
+    // }
 
     //checkConstructor
     @Test
@@ -114,18 +116,99 @@ public class CourseChoiceTest {
         // });
 
     // }
-    @Test
-    public void test_checkPrerequisites_AND_Valid(){
+    // @TestInstance(Lifecycle.PER_CLASS)
+    @Nested
+    class testPrereqsAnd{
+    // @BeforeAll
+    // public void inital_setup(){
+    //    {
+    //        "requireType": "OR",
+    //            "courseID": [
+    //        "47c4e89e-9000-4203-ba31-77441dff5028",
+    //                "1fe509c2-879d-4f76-9ad8-5f37468fcc66"
+    //    ]
+    //    },
+    //    {
+    //        "requireType": "AND",
+    //            "courseID": ["0287575f-710b-4526-aa12-d87e89d9477a"]
+    //    }
 
+        // checkPrerequisites
+        
+    // }
+        @BeforeEach
+        public void test_checkPrerequisites_setup(){
+            
+            cc = new CourseChoice("AND", 
+            new ArrayList<String>(){
+                    { add(classRequiringPrereq.getCourseID());
+                    add(prereq.getCourseID());
+             }});
+            // cc = new CourseChoice("AND", 
+            // new ArrayList<String>(){
+            //         { add(classRequiringPrereq.getCourseID());
+            //         add(prereq.getCourseID());
+            //  }});
+             prereq = new Course(new ArrayList<CourseChoice>(),"47c4e89e-9000-4203-ba31-77441dff5028",
+             "ACCT404",
+             "Accounting Information Systems I",
+             "Accounting systems for business decision-making and effective control of the business enterprise.   FS: 06/01/2022.",
+             true,
+             3.0,
+             new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
+             null,
+             "C");
+
+             prereq = new Course(new ArrayList<CourseChoice>(),"47c4e89e-9000-4203-ba31-77441dff5028",
+             "ACCT404",
+             "Accounting Information Systems I",
+             "Accounting systems for business decision-making and effective control of the business enterprise.   FS: 06/01/2022.",
+             true,
+             3.0,
+             new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
+             null,
+             "C");
+
+            classRequiringPrereq = new Course(new ArrayList<CourseChoice>()
+            ,"3a9b678a-8dcb-4d3c-9269-3a997710fdf8",
+                    "ACCT475",
+                    "Integrated Business Processes with Enterprise Systems",
+            "The integration, configuration, and operation of accounting information within enterprise resource planning and other databases as applied to current business practices.   FS: 02/03/2021.",
+            true, 3.0,
+            new ArrayList<>(Arrays.asList("SPRING", "SUMMER", "FALL")),
+            null, "C");
+
+            cc = new CourseChoice("OR", 
+            new ArrayList<String>(){
+                    { add(classRequiringPrereq.getCourseID());
+                    add(prereq.getCourseID());
+            }});
+
+            coursesTaken.add(prereq);
+            coursesTaken.add(classRequiringPrereq);
+            
+
+            cc.linkFromUUIDRelatedClasses(coursesTaken);
+        }
+
+        @Test
+        public void test_checkPrerequisites_AND_Valid(){
+            
+            ArrayList<Course> courselist = new ArrayList<Course>();
+        courselist.add(prereq);
+            assertTrue(cc.checkPrerequisites(courselist));
+        }
+    
+        @Test
+        public void test_checkPrerequisites_AND_Invalid(){
+            assertTrue(cc.checkPrerequisites(new ArrayList<Course>()));
+        }
     }
-
-    @Test
-    public void test_checkPrerequisites_AND_Invalid(){
-
-    }
+    
 
     @Test
     public void test_checkPrerequisites_PRE_OR_COREQ_Valid(){
+
 
     }
 
