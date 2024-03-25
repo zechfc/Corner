@@ -57,6 +57,7 @@ public class CourseChoiceTest {
         @BeforeEach
         public void setUp() {
             cc = new CourseChoice("AND", new ArrayList<>(Arrays.asList(prereq.getCourseID(), classRequiringPrereq.getCourseID())));
+            cc.linkFromUUIDRelatedClasses(coursesTaken);
         }
 
         @Test
