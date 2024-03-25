@@ -46,11 +46,9 @@ public abstract class DataConstants {
     protected static final String MAJOR_ID = "majorid";
     protected static final String MAJOR_NAME = "name";
     protected static final String DESCRIPTION = "description";
-    protected static final String TOTAL_PROGRAM_REQ_HOURS = "totalHoursProgramRequirements";
     protected static final String TOTAL_HOURS = "totalHours";
     protected static final String CAROLINA_REQ_HOURS = "carolinaCoreReqHours";
-    protected static final String CAROLINA_CORE_HOURS = "carolinaCoreHours";
-    protected static final String CAROLINA_HOURS = "carolinaHours";
+    protected static final String CAROLINA_CORE_HOURS = "carolinaHours";
     protected static final String PROGRAM_REQUIRMENTS_HOURS = "programRequirementsHours";
     protected static final String MAJOR_REQUIRMENTS_HOURS = "majorHours";
     protected static final String PROGRAM_REQUIREMENTS = "programRequirements";
