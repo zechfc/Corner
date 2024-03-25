@@ -77,6 +77,7 @@ public class SemesterPlan {
                         // String[] courseTypes = {"getCarolinacoreCourses","getMajorCourses"};
                         int semestart = (int) (long) ((JSONObject) coursesTaken.get(0)).get("year");
                         int semester = 0;
+                        int currentSemester = 0;
                         for (int i = 0; i < coursesTaken.size(); i++) {
                                 JSONObject courseData = (JSONObject) coursesTaken.get(i);
                                 String term = (String) courseData.get("semester");
@@ -84,6 +85,18 @@ public class SemesterPlan {
                                                 * 2;
                                 if (term.equals("fall"))
                                         semester += 1;
+                                this.studentRequirements.addCourse(semester,
+                                                cList.getCourse((String) courseData.get("courseID")));
+                        }
+                        JSONArray coursesTaking = student.getCurrentCourses();
+                        for (int i = 0; i < coursesTaking.size(); i++) {
+                                JSONObject courseData = (JSONObject) coursesTaking.get(i);
+                                String term = (String) courseData.get("semester");
+                                semester = (((int) (long) ((JSONObject) coursesTaking.get(i)).get("year")) - semestart)
+                                                * 2;
+                                if (term.equals("fall"))
+                                        semester += 1;
+                                currentSemester = semester;
                                 this.studentRequirements.addCourse(semester,
                                                 cList.getCourse((String) courseData.get("courseID")));
                         }
@@ -104,8 +117,10 @@ public class SemesterPlan {
                                 }
                                 if (((String) courseData.get("recommendedterm")).equals("Spring"))
                                         sem += 1;
-                                this.studentRequirements.addCourse(sem + 1,
-                                                cList.getCourse((String) courseData.get("courseID")));
+                                if (sem <= currentSemester) continue;
+                                Course c = cList.getCourse((String) courseData.get("courseID"));
+                                h += c.getCourseCredtis();
+                                this.studentRequirements.addCourse(sem + 1, c);
                         }
                         JSONArray carolinaCores = m.getCarolinacoreCoursesReq();
                         h = 0;
@@ -123,8 +138,10 @@ public class SemesterPlan {
                                 }
                                 if (((String) courseData.get("recommendedterm")).equals("Spring"))
                                         sem += 1;
-                                this.studentRequirements.addCourse(sem + 1,
-                                                cList.getCourse((String) courseData.get("courseID")));
+                                if (sem <= currentSemester) continue;
+                                Course c = cList.getCourse((String) courseData.get("courseID"));
+                                h += c.getCourseCredtis();
+                                this.studentRequirements.addCourse(sem + 1, c);
                         }
                         JSONArray majorReqs = m.getMajorCourses();
                         h = 0;
@@ -142,8 +159,10 @@ public class SemesterPlan {
                                 }
                                 if (((String) courseData.get("recommendedterm")).equals("Spring"))
                                         sem += 1;
-                                this.studentRequirements.addCourse(sem + 1,
-                                                cList.getCourse((String) courseData.get("courseID")));
+                                if (sem <= currentSemester) continue;
+                                Course c = cList.getCourse((String) courseData.get("courseID"));
+                                //h += c.getCourseCredtis();
+                                this.studentRequirements.addCourse(sem + 1, c);
                         }
                         String s = this.studentRequirements.generatePlan();
                         System.out.println(s);
