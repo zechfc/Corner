@@ -12,6 +12,8 @@ public class UI {
     }
 
     public void run(){
+        System.out.print("\033[H\033[2J");  
+        System.out.flush(); //to clear the console
         //scenario1(); //Student login success scenario
         //scenario2(); //Student login failure scenario
         //scenario3(); //Student account created success scenario
@@ -190,16 +192,16 @@ public class UI {
         if(!application.studentProfile("81668235-0606-4e6b-bfcf-d3243f916315")){
             System.out.println("Sorry, could not print student profile."); //failed
         }
-        System.out.println("Here is your Progress to your Major Map \n"); 
+        System.out.println("Here is your Progress to your Major Map\n"); 
 
-        System.out.println("\n Here is your Progress in Program Requirements \n"); 
+        System.out.println("Here is your Progress in Program Requirements\n"); 
         System.out.println(application.getProgramRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); 
 
 
-        System.out.println("\n Here is your Progress in Carolina Core Requried Class \n"); 
+        System.out.println("Here is your Progress in Carolina Core Requried Class\n"); 
         System.out.println(application.getCarolinaRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); //CS major
 
-        System.out.println("\n Here is your Progress in Major Requirements \n"); 
+        System.out.println("Here is your Progress in Major Requirements\n"); 
         System.out.println(application.getMajorRequirements("a31c3094-3470-4c46-a45f-3b1001d15da2","westb@email.sc.edu" )); //CS major
 
         // System.out.println("\n Here is your Progress in Non Required Carolina Core Classes \n"); 
