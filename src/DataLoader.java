@@ -33,13 +33,54 @@ public class DataLoader extends DataConstants {
 				String advisorID = (String) studentJSON.get(ADVISOR_ID);
 				String advisorNote = (String) studentJSON.get(NOTES);
 				studentList.add(new Student(userID, email, firstName, middleName, lastName, age,
-					password, major, classification, transferCredits, applicationArea, currentCourses, pastCourses, advisorID, advisorNote));
+					password, major, classification, transferCredits, applicationArea, getCurrentCourses(currentCourses), getPastCourses(pastCourses), advisorID, advisorNote));
 			}
 
 
 			return studentList;
 
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static ArrayList<pastCourses> getPastCourses(JSONArray array) {
+		ArrayList<pastCourses> pastCourses = new ArrayList<pastCourses>();
+
+		try {
+		for (int i = 0; i < array.size(); i++) {
+			JSONObject pastCoursesJSON = (JSONObject) array.get(i);
+			String courseid = (String) pastCoursesJSON.get(COURSE_ID);
+			String grade = (String) pastCoursesJSON.get(GRADE);
+			String semester = (String) pastCoursesJSON.get(SEMESTER);
+			long year = (long) pastCoursesJSON.get(YEAR);
+			pastCourses.add(new pastCourses(courseid, grade, semester, year));
+		} 
+		return pastCourses;
+	}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static ArrayList<currentCourses> getCurrentCourses(JSONArray array) {
+		ArrayList<currentCourses> currentCourses = new ArrayList<currentCourses>();
+
+		try {
+		for (int i = 0; i < array.size(); i++) {
+			JSONObject currentCoursesJSON = (JSONObject) array.get(i);
+			String courseid = (String) currentCoursesJSON.get(COURSE_ID);
+			String grade = (String) currentCoursesJSON.get(GRADE);
+			String semester = (String) currentCoursesJSON.get(SEMESTER);
+			long year = (long) currentCoursesJSON.get(YEAR);
+			currentCourses.add(new currentCourses(courseid, grade, semester, year));
+		} 
+		return currentCourses;
+	}
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 		return null;
@@ -89,25 +130,88 @@ public class DataLoader extends DataConstants {
 				String majorid = (String) majorJSON.get(MAJOR_ID);
 				String name = (String) majorJSON.get(MAJOR_NAME);
 				String description = (String) majorJSON.get(DESCRIPTION);
-				long totalHoursProgramRequirements = (long) majorJSON.get(TOTAL_PROGRAM_REQ_HOURS);
+				long totalHoursProgramRequirements = (long) majorJSON.get(PROGRAM_REQUIRMENTS_HOURS);
 				long totalHours = (long) majorJSON.get(TOTAL_HOURS);
-				long carolinaHours = ((long) majorJSON.get(CAROLINA_HOURS));
+				long carolinaHours = ((long) majorJSON.get(CAROLINA_CORE_HOURS));
+				long carolinaReqHours = ((long) majorJSON.get(CAROLINA_REQ_HOURS));
 				long majorHours = ((long) majorJSON.get(MAJOR_REQUIRMENTS_HOURS));
-
+				
 				JSONArray programRequirements = (JSONArray) majorJSON.get(PROGRAM_REQUIREMENTS);
 				JSONArray carolinaCore = (JSONArray) majorJSON.get(CAROLINA_CORE);
 				JSONArray majorRequirements = (JSONArray) majorJSON.get(MAJOR_REQUIRMENTS);
 
+
 				majorList.add(
-				new Major(name, programRequirements, carolinaCore, majorRequirements, majorid, description, carolinaHours, majorHours, totalHoursProgramRequirements, totalHours));
+				new Major(name, getProgramRequirements(programRequirements), getCarolinaCore(carolinaCore), getMajorRequirements(majorRequirements), majorid, description, carolinaHours, majorHours, carolinaReqHours, totalHoursProgramRequirements, totalHours));
 			}
 
 			return majorList;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return majorList; //changed this from null to majorList bc the other major has not be updated in the JSON
+	}
+
+	public static ArrayList<CourseReccommended> getProgramRequirements(JSONArray array) {
+		ArrayList<CourseReccommended> programRequirements = new ArrayList<CourseReccommended>();
+
+		try {
+		for (int i = 0; i < array.size(); i++) {
+			JSONObject programJSON = (JSONObject) array.get(i);
+			String courseid = (String) programJSON.get(COURSE_ID);
+			String term = (String) programJSON.get(RECCOMMENDED_TERM);
+			String time = (String) programJSON.get(RECCOMMENDED_TIME);
+		programRequirements.add(new CourseReccommended(courseid, time, term));
+		} 
+		return programRequirements;
+	}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
 		return null;
 	}
+
+	public static ArrayList<CourseReccommended> getCarolinaCore(JSONArray array) {
+		ArrayList<CourseReccommended> carolinaCore = new ArrayList<CourseReccommended>();
+
+		try {
+		for (int i = 0; i < array.size(); i++) {
+			JSONObject programJSON = (JSONObject) array.get(i);
+			String courseid = (String) programJSON.get(COURSE_ID);
+			String term = (String) programJSON.get(RECCOMMENDED_TERM);
+			String time = (String) programJSON.get(RECCOMMENDED_TIME);
+			carolinaCore.add(new CourseReccommended(courseid, time, term));
+		} 
+		return carolinaCore;
+	}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static ArrayList<CourseReccommended> getMajorRequirements(JSONArray array) {
+		ArrayList<CourseReccommended> majorRequirements = new ArrayList<CourseReccommended>();
+
+		try {
+		for (int i = 0; i < array.size(); i++) {
+			JSONObject programJSON = (JSONObject) array.get(i);
+			String courseid = (String) programJSON.get(COURSE_ID);
+			String term = (String) programJSON.get(RECCOMMENDED_TERM);
+			String time = (String) programJSON.get(RECCOMMENDED_TIME);
+			majorRequirements.add(new CourseReccommended(courseid, time, term));
+		} 
+		return majorRequirements;
+	}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 
 	public static ArrayList<Course> getCourses() {
 		ArrayList<Course> classlist = new ArrayList<Course>();

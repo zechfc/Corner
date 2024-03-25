@@ -12,7 +12,7 @@ public class SemesterPlan {
         private SemesterTextFormatter studentRequirements;
         protected ArrayList<String> SemesterPlan;
 
-        public SemesterPlan(String major, ArrayList<Course> completedCourses, String name) {
+        public SemesterPlan(String major, ArrayList<pastCourses> pastCourses, String name) {
                 this.studentRequirements = new SemesterTextFormatter();
                 this.SemesterPlan = new ArrayList<>();
                 // Generate semester plan based on completed courses and major requirements

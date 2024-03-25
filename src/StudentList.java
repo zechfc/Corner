@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import org.json.simple.JSONArray;
+
 public class StudentList {
     private static StudentList students;
     private ArrayList<Student> studentList;
@@ -28,12 +30,13 @@ public class StudentList {
         return null;
     }
 
-    public void addStudent(String userID, String email, String firstName, String middleName, String lastName,
-            String age,
-            String password, String major, String concentration, int transferCredits) {
+    //Will need to change JSONArray to ArrayList
+    public void addStudent(String userID, String email, String firstName, String middleName, String lastName, String age, String password,  
+        String major, String classification, int transferCredits, String applicationArea, JSONArray currentCourses, JSONArray pastCourses, 
+        String advisorID, String advisorNote) {
 
-        studentList.add(new Student(userID, email, firstName, middleName, lastName, age, password, major, concentration,
-                transferCredits));
+        studentList.add(new Student(userID, email, firstName, middleName, lastName, age, password, major, classification,
+                transferCredits, applicationArea, currentCourses, pastCourses, advisorID, advisorNote));
         DataWriter.saveStudents();
     }
 

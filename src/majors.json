@@ -3,12 +3,13 @@
     "name": "Computer Science",
     "description": "Bachelor of Science in Computer Science",
     "totalHours":150,
-    "totalHoursProgramRequirements": 46,
+    "programRequirementsHours":46,
+    "carolinaCoreReqHours":18,
+    "majorHours": 30,
+    "carolinaHours":50,
+
     "programRequirements": [{
                     "courseID":  "f8b358bf-d69e-4aae-b10c-8dc98f1f651f",
-                    "courseCode": "MATH241",
-                    "title": "Vector Calculus",
-                    "credits": 3,
                     "recommendedtime": "Sophomore",
                     "recommendedterm":"Spring"
                 },
@@ -123,7 +124,7 @@
                     "recommendedterm":"Spring"
                 }
     ],
-    "carolinaCore": [{
+    "carolinaCoreReq": [{
         "courseID":  "12224407-e656-4fe7-9078-88f1d9dc8325",
         "courseCode": "ENGL101",
         "title": "English Composition I",
@@ -181,65 +182,72 @@
         "recommendedterm":"Fall"
     }
     ],
-    "carolinaHours":50,
-    "majorRequirements": [{
-        "courseID":  "684f6d78-9f42-4e22-b447-7b15782007b3",
-        "courseCode": "CSCE311",
-        "title": "Operating Systems",
-        "credits": 3,
-        "recommendedtime": "Junior",
-        "recommendedterm":""
-    },
-    {
-        "courseID":  "d71f3a41-5b83-40b6-94a7-609b01ca2caa",
-        "courseCode": "CSCE330",
-        "title": "Programming Language Structures",
-        "credits": 3,
-        "recommendedtime": "Junior",
-        "recommendedterm":"Fall"
-    },
-    {
-        "courseID":  "6c8202fd-b31b-4647-b551-b7f4dbf007a0",
-        "courseCode": "CSCE350",
-        "title": "Data Structures and Algorithms",
-        "credits": 3,
-        "recommendedtime": "Junior",
-        "recommendedterm":"Fall"
-    },
-    {
-        "courseID":  "dcf88287-b888-4fe0-949f-1b2ecd8af011",
-        "courseCode": "CSCE355",
-        "title": "Foundations of Computation",
-        "credits": 3,
-        "recommendedtime": "Senior",
-        "recommendedterm":"Fall"
-    },
-    {
-        "courseID":  "f16c3f7d-4f83-4a11-8b47-632572514136",
-        "courseCode": "CSCE416",
-        "title": "Introduction to Computer Networks",
-        "credits": 3,
-        "recommendedtime": "Junior",
-        "recommendedterm":"Spring"
-    },
-    {
-        "courseID":  "42288ffd-4ead-4718-b840-4be2894d8f30",
-        "courseCode": "CSCE490",
-        "title": "Capstone Computing Project I",
-        "credits": 3,
-        "recommendedtime": "Senior",
-        "recommendedterm":"Fall"
-    },
-    {
-        "courseID":  "f425f91f-92da-4261-be45-347d81b6ab9d",
-        "courseCode": "CSCE492",
-        "title": "Capstone Computing Project II",
-        "credits": 3,
-        "recommendedtime": "Senior",
-        "recommendedterm":"Spring"
-    }
-    ],
-    "majorHours": 30
+    "carolinaCore": [{
+        "GFL":6,
+        "GHS":3,
+        "GSS":3,
+        "AIU":3,
+        "CMS":3
+ }],
+
+
+"majorRequirements": [{
+    "courseID":  "684f6d78-9f42-4e22-b447-7b15782007b3",
+    "courseCode": "CSCE311",
+    "title": "Operating Systems",
+    "credits": 3,
+    "recommendedtime": "Junior",
+    "recommendedterm":""
+},
+{
+    "courseID":  "d71f3a41-5b83-40b6-94a7-609b01ca2caa",
+    "courseCode": "CSCE330",
+    "title": "Programming Language Structures",
+    "credits": 3,
+    "recommendedtime": "Junior",
+    "recommendedterm":"Fall"
+},
+{
+    "courseID":  "6c8202fd-b31b-4647-b551-b7f4dbf007a0",
+    "courseCode": "CSCE350",
+    "title": "Data Structures and Algorithms",
+    "credits": 3,
+    "recommendedtime": "Junior",
+    "recommendedterm":"Fall"
+},
+{
+    "courseID":  "dcf88287-b888-4fe0-949f-1b2ecd8af011",
+    "courseCode": "CSCE355",
+    "title": "Foundations of Computation",
+    "credits": 3,
+    "recommendedtime": "Senior",
+    "recommendedterm":"Fall"
+},
+{
+    "courseID":  "f16c3f7d-4f83-4a11-8b47-632572514136",
+    "courseCode": "CSCE416",
+    "title": "Introduction to Computer Networks",
+    "credits": 3,
+    "recommendedtime": "Junior",
+    "recommendedterm":"Spring"
+},
+{
+    "courseID":  "42288ffd-4ead-4718-b840-4be2894d8f30",
+    "courseCode": "CSCE490",
+    "title": "Capstone Computing Project I",
+    "credits": 3,
+    "recommendedtime": "Senior",
+    "recommendedterm":"Fall"
+},
+{
+    "courseID":  "f425f91f-92da-4261-be45-347d81b6ab9d",
+    "courseCode": "CSCE492",
+    "title": "Capstone Computing Project II",
+    "credits": 3,
+    "recommendedtime": "Senior",
+    "recommendedterm":"Spring"
+}
+]
 },
 
 {
@@ -248,7 +256,6 @@
     "description": "Bachelor of Science in Computer Information Systems",
     "totalHours":150,
 
-    "totalHoursProgramRequirements": 48,
     "programRequirements": [{
                     "courseID":  "7100ca89-33cf-40da-acbe-84af49e92c3c",
                     "courseCode": "ENGL462",
@@ -441,7 +448,6 @@
         }
 
     ]   ,    
-    "carolinaHours":50,
     
     "majorRequirements": [
         {

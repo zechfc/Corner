@@ -8,6 +8,8 @@ public class Course {
     private boolean courseAvailability;
     private ArrayList<Semester> seasonOffered;
     private String electiveArea;
+    private String learningOutcome;
+
     private double courseCredits;
 
     // Not sure all of the things in the constructor are stored.
@@ -35,6 +37,10 @@ public class Course {
     }
     public boolean checkCoreqs(ArrayList<Course> courses) {
         return true;
+    }
+
+    public String setLearningOutcomes(String outcome) {
+        return this.learningOutcome=outcome;
     }
     public String getCourseID() {
         return this.courseID;
