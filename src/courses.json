@@ -1123,6 +1123,7 @@
     "courseDescription": "Introduction to the analysis and discussion of creative works and traditions by and about African Americans through folklore, music, art, dance, and literature.   FS: 11/04/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -2991,6 +2992,7 @@
     "courseDescription": "Grammar and practical vocabulary necessary for fundamental communication skills. Assumes no prior experience in the language. Offered only in fall.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "GFL",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -3002,6 +3004,7 @@
     "courseDescription": "Practice and further development of essential listening, reading, speaking, and writing skills. Admission only by successful completion of Arabic 121. Offered only in spring.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "GFL",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -3516,6 +3519,7 @@
     "courseDescription": "Introduction to art appreciation. Elements and principles of the visual arts, with examples from the history of art.   FS: 09/09/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -3538,6 +3542,7 @@
     "courseDescription": "The study of relationships among visual arts, music, theatre, and dance.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -3789,6 +3794,7 @@
     "courseDescription": "The visual arts from Paleolithic times to the Renaissance.   FS: 12/04/2019.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -3800,6 +3806,7 @@
     "courseDescription": "The visual arts from the Renaissance to the present.   FS: 12/02/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -4530,6 +4537,7 @@
     "courseDescription": "Introduction to visual thinking and principles of two-dimensional design.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -4541,6 +4549,7 @@
     "courseDescription": "Introduction to visual thinking and principles of three-dimensional design.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -4595,6 +4604,7 @@
     "courseDescription": "An introductory course in the materials and techniques of painting.   FS: 06/05/2019.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -6100,6 +6110,7 @@
     "courseDescription": "Introduction to basic vocabulary and common grammar structures of ASL. Focus on communication and familiarization with aspects of deaf culture. This course does not satisfy the foreign language requirements of any college.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "GFL",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -6116,6 +6127,7 @@
     "courseDescription": "Practice and further development in the language and culture of the American deaf community. This course does not satisfy the foreign language requirement of any college.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "GFL",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -10415,6 +10427,7 @@
     "courseDescription": "Grammar and practical vocabulary necessary for fundamental communication skills. Assumes no prior experience in the language.    CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "GFL",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -10431,6 +10444,7 @@
     "courseDescription": "Practice and further development of essential listening, reading, speaking, and writing skills. Admission only by successful completion of Chinese 121.    CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "GFL",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -10616,6 +10630,7 @@
     "courseDescription": "Major gods, goddesses, heroes, and heroines of classical mythology as portrayed in major literary works; the function of myth in society and its relevance to modern life.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -11074,6 +11089,7 @@
     "courseDescription": "Analysis of major works of world literature focusing on values, ethics, and social responsibility.   FS: 12/7/2016.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -11085,6 +11101,7 @@
     "courseDescription": "Selected masterpieces of world literature from antiquity to the present.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -11766,6 +11783,7 @@
     "courseDescription": "History, application, and social impact of computers; problem-solving, algorithm development, applications software, and programming in a procedural language.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -11777,6 +11795,7 @@
     "courseDescription": "Introduction to systematic computer problem-solving and programming for a variety of applications.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -11796,6 +11815,7 @@
     "courseDescription": "Problem-solving, algorithmic design, and programming. Three lectures and two laboratory hours per week.   FS: 12/04/2013.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -13178,6 +13198,7 @@
     "courseDescription": "An eclectic survey of various dance forms including primitive, historic, ballet, modern, and Broadway musical.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -22150,6 +22171,7 @@
     "courseDescription": "Instruction in strategies for critically reading and analyzing literature and non-literary texts; structured, sustained practice in composing expository and analytical essays.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMW",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -22166,6 +22188,7 @@
     "courseDescription": "Instruction and intensive practice in researching, analyzing, and composing written arguments about academic and public issues.   FS: 12/7/2016.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMW",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -22185,6 +22208,7 @@
     "courseDescription": "Workshop course on creative writing with a focus on values, ethics, and social responsibility.   FS: 12/05/2018.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -22204,6 +22228,7 @@
     "courseDescription": "Selected masterpieces of world literature from antiquity to present.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -22223,6 +22248,7 @@
     "courseDescription": "Fiction, poetry, drama and other cultural texts engaged with questions of values, ethics and social responsibility.   FS: 04/06/2022.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -22242,6 +22268,7 @@
     "courseDescription": "Special topics in fiction from several countries and historical periods, illustrating the nature of the genre.  May be repeated for credit.  Content varies by title and semester.   FS: 11/04/2015.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -22261,6 +22288,7 @@
     "courseDescription": "Special topics in British literature exemplifying persistent themes of British culture.  May be repeated for credit.  Content varies by title and semester.   FS: 11/04/2015.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -22280,6 +22308,7 @@
     "courseDescription": "Drama from several countries and historical periods, illustrating the nature of the genre.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -22299,6 +22328,7 @@
     "courseDescription": "Special topics in American literature exemplifying persistent themes of American culture.  May be repeated for credit. Content varies by title and semester.   FS: 11/04/2015.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -22318,6 +22348,7 @@
     "courseDescription": "Poetry from several countries and historical periods, illustrating the nature of the genre.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -22337,6 +22368,7 @@
     "courseDescription": "An introduction to American literary history, emphasizing the analysis of literary texts, the development of literary traditions over time, the emergence of new genres and forms, and the writing of successful essays about literature. Designed for English majors.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -22356,6 +22388,7 @@
     "courseDescription": "An introduction to English literary history, emphasizing the analysis of literary texts, the development of literary traditions over time, the emergence of new genres and forms, and the writing of successful essays about literature. Designed for English majors.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -26233,6 +26266,7 @@
     "courseDescription": "Introduction to the critical study of film, video, photography, audio, and new media.   FS: 12/02/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -26244,6 +26278,7 @@
     "courseDescription": "How the film industry developed and the impact the movies have had on global popular culture. Does not count toward the film studies major.   FS: 12/2/2015.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -26255,6 +26290,7 @@
     "courseDescription": "Introduction to the critical study of film and media. Students will closely analyze moving images and develop written arguments about film and media.   FS: 11/1/2017.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -27360,6 +27396,7 @@
     "courseDescription": "Introduction to grammar and practical vocabulary necessary for fundamental communication skills.  Admission to FREN 109 restricted to those who have never studied French, who have not studied French in the previous five years, or who have a score of F-1 on the placement test.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "GFL",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -27376,6 +27413,7 @@
     "courseDescription": "Introduction to grammar and practical vocabulary necessary for fundamental communication skills.  Admission to 110 restricted to those who have completed FREN 109. Credit may be received only for one of the following: FREN 109/FREN 110 or FREN 121.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "GFL",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -27449,6 +27487,7 @@
     "courseDescription": "Readings and discussion in English, with consideration of the cultural context.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -27974,6 +28013,7 @@
     "courseDescription": "Introduction to geographic data; use of digital maps and aerial/satellite images as means of Earth observation; basics of spatial data analysis; location-based Web APPs; digital map services.     FS: 12/02/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -29971,6 +30011,7 @@
     "courseDescription": "Survey of medieval romances and love lyrics of Germany.  History and culture of the High Middle Ages in Germany, especially courtly society.  The function of chivalry and courtly literature in society.   FS: 06/04/2014.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -29993,6 +30034,7 @@
     "courseDescription": "Survey of Germanic mythological and heroic texts of the Viking Age.  History and culture of Germanic tribes, especially the Vikings. The function of myth in society.   FS: 12/05/2018.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -40333,6 +40375,7 @@
     "courseDescription": "Introductory media arts creation and study for non-majors, with emphasis on developing an individual aesthetic for screen and related media.   FS: 12/01/2021.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -40344,6 +40387,7 @@
     "courseDescription": "Introduction to the critical study of film,video, photography, audio, and new media.   FS: 12/02/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -40355,6 +40399,7 @@
     "courseDescription": "Fundamental conceptual and technical aspects of media.   FS: 11/2/2016.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -40366,6 +40411,7 @@
     "courseDescription": "Introduction to theory and practice of origination, sequencing, and processing of screen-based and related media art.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -40967,6 +41013,7 @@
     "courseDescription": "Derivatives and integrals of elementary algebraic, exponential, and logarithmic functions. Maxima, minima, rate of change, motion, work, area under a curve, and volume.   FS: 11/02/2016.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -40987,6 +41034,7 @@
     "courseDescription": "Functions, limits, derivatives, introduction to integrals, the Fundamental Theorem of Calculus, applications of derivatives and integrals. Four classroom hours and one laboratory hour per week.    CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -41003,6 +41051,7 @@
     "courseDescription": "Methods of integration, sequences and series, approximations.   Four classroom hours and one laboratory hour per week.   FS: 12/03/2014.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 4,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -41055,6 +41104,7 @@
     "courseDescription": "Elementary matrix theory; systems of linear equations; permutations and combinations; probability and Markov chains; linear programming and game theory.   FS: 12/03/2014.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -41074,6 +41124,7 @@
     "courseDescription": "Biological modeling with differential and difference equations; techniques of model modifications; analytic, numerical, and graphical solution methods; equilibria, stability, and long-term system behavior; geometric series; vectors, matrices, eigenvalues, and eigenvectors. Applications principally to population dynamics and compartment models.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -41095,6 +41146,7 @@
     "courseDescription": "Logic, number theory, sequences, series, recursion, mathematical induction, set theory, enumeration, functions, relations, graphs and trees. Connections to computers and to programming are emphasized when possible.   FS: 11/04/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -45480,6 +45532,7 @@
     "courseDescription": "Perceptive listening and appreciation of musical elements, forms and style periods, including composers' lives, individual styles and representative works. Emphasis on classical music; jazz and American popular music included.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -45765,6 +45818,7 @@
     "courseDescription": "An investigation into the function of popular music in contemporary society. May be repeated as content varies by title.   FS: 12/01/2021.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -45776,6 +45830,7 @@
     "courseDescription": "Practice in basic written theory and aural skills. Concepts of rhythm, melody, harmony, form, and expression. Open to non-music majors. Not for credit toward major requirements in music degrees. Subdiscipline: Music (Theory and Composistion).   FS: 03/04/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -45792,6 +45847,7 @@
     "courseDescription": "A survey of the sound, harmony, melody, rhythm, and form of diatonic tonal music of a variety of styles.   FS: 12/01/2021.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -46231,6 +46287,7 @@
     "courseDescription": "Development of jazz and American popular music through the study of important soloists, ensembles, arrangers, and composers.   FS: 12/07/2022.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -46737,6 +46794,7 @@
     "courseDescription": "Course content varies by title.  Intended for nonmajors unless otherwise indicated.    FS:  06/03/2015.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -51820,6 +51878,7 @@
     "courseDescription": "Philosophical foundations of inductive inference, including probability, statistics, and decision theory; application of the  methods and results of inductive inference to philosophical problems such as the problem of rationality, epistemology, theory confirmation, social and political philosophy.    FS: 02/03/2016.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -51831,6 +51890,7 @@
     "courseDescription": "Formal logic, including foundational logical concepts, syntax and semantics of first-order logic; derivations; applications.   FS: 12/02/2015.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -51847,6 +51907,7 @@
     "courseDescription": "Intermediate topics in predicate logic, including second-order predicate logic; meta-theory, including soundness and completeness; introduction to non-classical logic   FS: 11/01/2017.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -51891,6 +51952,7 @@
     "courseDescription": "Moral issues confronting men and women in contemporary society and the challenges of communicating effectively about them. Topics will vary but may include access to health care, euthanasia, abortion, same sex marriage and the moral and environmental consequences of eating animals.   FS: 04/06/2016.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMS",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -52078,6 +52140,7 @@
     "courseDescription": "An investigation of ethical issues in engineering and engineering-related technology. Topics include whistleblowing, employee/employer relations, environmental issues, issues related to advances in information technology, and privacy.   FS: 06/03/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMS",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -56289,6 +56352,7 @@
     "courseDescription": "Literary, visual, and/or performance art associated with religious discourse and practice.   FS: 02/04/2015.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -57595,6 +57659,7 @@
     "courseDescription": "A multimedia introduction to Russian culture from its beginnings to the present. No knowledge of Russian required.   FS: 11/04/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -57856,6 +57921,7 @@
     "courseDescription": "Introduction to nature and relationship of ethics and oral forms of advocacy. Includes foundational training in ethical theory and its relevance to    socio-political expression and training in the principles and performance of ethical oral communication, with emphasis on argumentation and audience engagement.   FS: 12/7/2016.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMS",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -61205,7 +61271,7 @@
   {
     "prerequisite": [],
     "courseID": "bfb678e5-cf6e-449d-be73-099220d6710b",
-    "courseKey": "SOST101",
+    "courseKey": "SOST280",
     "courseName": "The Literary South",
     "courseDescription": "Principles, practices, and contexts of major literary works of the American South.   FS: 04/02/2014.   CL: 2020.",
     "courseAvailability": true,
@@ -61862,6 +61928,7 @@
     "courseDescription": "Selected major works, especially contemporary works, in all genres of Hispanic literature in English translation.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -62505,6 +62572,7 @@
     "courseDescription": "Introduction to theory and practice of oral communication in public, social, and institutional contexts. Includes foundational and cumulative training in the invention, performance, and critical analysis of oral communication, with emphasis on argumentation, persuasion, audience analysis, delivery, and ethical forms of engagement.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMS",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -62516,6 +62584,7 @@
     "courseDescription": "Introduction to theory and practice of live and recorded online spoken communication in public, social, and institutional contexts. Training in invention, performance, and critical analysis of online spoken communication, including audience analysis, persuasion, delivery, and ethical engagement. Includes significant practice in preparing and presenting live online public communication.   FS: 12/7/2016.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMS",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -62549,6 +62618,7 @@
     "courseDescription": "Moral issues confronting men and women in contemporary society and the challenges of communicating effectively about them. Topics will vary but may include access to health care, euthanasia, abortion, same sex marriage and the moral and environmental consequences of eating animals.   FS: 04/06/2016.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMS",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -62560,6 +62630,7 @@
     "courseDescription": "Fundamentals of oral communication within business and professional settings. Includes performance.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMS",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -62571,6 +62642,7 @@
     "courseDescription": "Preparing and delivering the debate. Academic debate serves as a model.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "CMS",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -63494,6 +63566,7 @@
     "courseDescription": "A course in statistical literacy. Topics include data sources and sampling, concepts of experimental design, graphical and numerical data description, measuring association for continuous and categorical variables, introduction to probability and statistical inference, and use of appropriate software.  Credit given only for STAT 110 or STAT 112.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -63505,6 +63578,7 @@
     "courseDescription": "Statistics and the Media. (3) Statistical and information literacy.  Experimental and survey design; descriptive statistics; basic probability; simple confidence intervals and hypothesis tests; statistical software; collection, management, and evaluation of information; and presentation of statistics in the media.  Credit given for only STAT 110 or STAT 112.   FS: 11/1/2017.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -63525,6 +63599,7 @@
     "courseDescription": "Introduction to the fundamentals of modern statistical methods, including descriptive statistics, probability, random sampling, simple linear regression, correlation, tests of hypotheses, and estimation.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -63541,6 +63616,7 @@
     "courseDescription": "Introduction to fundamental statistical methods with applications in the biological and life sciences. Includes descriptive statistics; probability; one and two-sample models for population means; contingency tables (including relative risk, odds ratios, case-control studies, and estimation of sensitivity and specificity); linear regression; logistic regression; aspects of survival analysis, and ANOVA.   FS: 06/06/2018.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "C"
   },
@@ -63557,6 +63633,7 @@
     "courseDescription": "Fundamental statistical methods with applications in business. Includes descriptive statistics, graphical methods, probability, distributions, sampling, inference, contingency tables, and linear regression.   FS: 12/04/2019.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "ARP",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -64247,6 +64324,7 @@
     "courseDescription": "Introduction to the art and craft of acting.  Practical exploration through improvisation and scripted scene work. Includes a brief history of the development of modern acting techniques.   FS: 12/03/2014.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -64269,6 +64347,7 @@
     "courseDescription": "Introduction to Shakespeare’s works on page, stage, and screen. Emphasis placed on performances of scripts. History of Shakespeare’s works/productions, stage/screen technique. Viewings of film adaptations required.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
@@ -64280,6 +64359,7 @@
     "courseDescription": "An introduction to the understanding and appreciation of theatrical experience. Attendance at theatrical performances required.   FS: 12/02/2020.   CL: 2020.",
     "courseAvailability": true,
     "courseCredits": 3,
+    "electiveArea": "AIU",
     "courseTerm": ["SPRING", "SUMMER", "FALL"],
     "passingGrade": "D"
   },
