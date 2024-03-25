@@ -11,6 +11,9 @@ public class CourseReccommended {
         this.recommendedTerm = recommendedTerm;
         
     }
+    public String getCourseRecID(){
+        return this.courseID;
+       }
 
    public String getCourseRecTime(String courseID){
     return this.recommendedTime;
