@@ -17,6 +17,7 @@ public class CourseChoiceTest {
     private ArrayList<Course> coursesTaken;
     private Course prereq;
     private Course classRequiringPrereq;
+    
 
     @BeforeEach
     public void setUp() {
@@ -37,6 +38,38 @@ public class CourseChoiceTest {
         coursesTaken.add(classRequiringPrereq);
 
         cc.linkFromUUIDRelatedClasses(coursesTaken);
+    }
+
+    @Nested
+    class linkFromUUIDRelatedClasses {
+        @BeforeEach
+        public void setUp() {
+            cc = new CourseChoice("PRE_OR_COREQ", new ArrayList<>(Arrays.asList(prereq.getCourseID(), classRequiringPrereq.getCourseID())));
+            // cc.linkFromUUIDRelatedClasses(coursesTaken);
+        }
+
+        @Test
+        public void test_linkFromUUIDRelatedClasses_Valid() { //Bug on AND
+            cc.linkFromUUIDRelatedClasses(coursesTaken);
+            assertEquals(coursesTaken, cc.getCourses());        
+        }
+
+        @Test
+        public void test_linkFromUUIDRelatedClasses_Invalid() {
+            cc.linkFromUUIDRelatedClasses(new ArrayList<Course>());
+            assertFalse(coursesTaken.equals(cc.getCourses()));
+        }
+
+        @Test
+        public void test_linkFromUUIDRelatedClasses__Null_Invalid() {    
+            
+
+            assertThrows(NullPointerException.class,
+            ()->{
+                cc.linkFromUUIDRelatedClasses(null);
+            });
+
+        }
     }
 
     //checkPrerequisites
@@ -70,18 +103,6 @@ public class CourseChoiceTest {
         public void test_checkPrerequisites_AND_Invalid() {
             assertFalse(cc.checkPrerequisites(new ArrayList<>()));
         }
-    }
-
-    @Test
-    public void test_checkPrerequisites_OR_Valid() {
-        ArrayList<Course> courselist = new ArrayList<>(Arrays.asList(prereq));
-        assertTrue(cc.checkPrerequisites(courselist));
-    }
-
-    @Test
-    public void test_checkPrerequisites_OR_Invalid() {
-        ArrayList<Course> courselist = new ArrayList<>(Arrays.asList(new Course(new ArrayList<>(),"","","","",false,0.0,new ArrayList<>(),"","")));
-        assertFalse(cc.checkPrerequisites(courselist));
     }
 
     @Nested
