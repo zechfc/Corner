@@ -83,7 +83,7 @@ public class DataLoader extends DataConstants {
 		{
 			e.printStackTrace();
 		}
-		return null;
+		return currentCourses;//changed this to current courses bc it would throw null pointer exceptions
 	}
 
 	public static ArrayList<Advisor> getAdvisors() {

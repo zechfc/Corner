@@ -92,6 +92,11 @@ public class Major {
 
     }
 
+        
+    public String getRemaningMajorRequirementsValues(String email){
+        return compareCoursesPast(programRequirements, email);
+    }
+    
     public String getCarolinaCoreRequirementsValues(String email) {
         String past = compareCoursesPast(carolinacoreCoursesReq, email);
         String current = compareCoursesPresent(carolinacoreCoursesReq, email);
@@ -99,6 +104,11 @@ public class Major {
         return full;
 
     }
+
+    public String getRemaningCarolinaCoreRequirementsValues(String email){
+        return compareCoursesPast(programRequirements, email);
+    }
+    
     
 
     public String getCarolinaCoreValues(String email) {
@@ -131,7 +141,9 @@ public class Major {
                 } catch (Exception e) {
                      courseName = "not in JSON " + idPastCourse;
                 }                
-                String courseGrade = pastCourses.get(j).getPastCourseGrade(idPastCourse);             
+                String courseGrade = pastCourses.get(j).getPastCourseGrade(idPastCourse);    
+                String courseSemester = pastCourses.get(j).getPastCourseSemester(idPastCourse);             
+                long courseYear = pastCourses.get(j).getPastCourseYear(idPastCourse);             
                 String pass = "";
                     if (courseGrade.compareToIgnoreCase("C") <= 0) 
                     {
@@ -143,7 +155,7 @@ public class Major {
                     else{
                         pass="pass";
                     }  
-                    toString = (courseName + " Grade:" + courseGrade + " " + pass);
+                    toString = (courseName + " Grade: " + courseGrade+ " " + courseSemester + " " + courseYear + " " + pass);
                     list += (toString + "\n");
                     }
                 }
@@ -151,7 +163,7 @@ public class Major {
             
             if(list.equals(""))
             {
-                list = "you have not made any progress in this section";
+                list = "you have not made any progress in this section yet\n";
             }
             return list;
     }
@@ -182,9 +194,11 @@ public class Major {
                      courseName = "not in JSON " + idPastCourse;
                 }                
                 String courseGrade = currentCourses.get(j).getCurrentCourseGrade(idPastCourse);             
-                String pass = "";
+                String courseSemester = currentCourses.get(j).getCurrentCourseSemester(idPastCourse);             
+                long courseYear = currentCourses.get(j).getCurrentCourseYear(idPastCourse);             
+
                    
-                    toString = (courseName + " Grade:" + courseGrade);
+                    toString = (courseName + " Grade: " + courseGrade + " " + courseSemester + " " + courseYear);
                     list += (toString + "\n");
                     }
                 }
@@ -192,7 +206,7 @@ public class Major {
             
             if(list.equals(""))
             {
-                list = "you are not making any progress in this section";
+                list = "you are not making any progress in this section yet\n";
             }
             return list;
     }
