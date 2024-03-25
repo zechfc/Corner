@@ -72,6 +72,38 @@ public class CourseChoiceTest {
         }
     }
 
+    @Test
+    public void test_checkPrerequisites_OR_Valid() {
+        ArrayList<Course> courselist = new ArrayList<>(Arrays.asList(prereq));
+        assertTrue(cc.checkPrerequisites(courselist));
+    }
+
+    @Test
+    public void test_checkPrerequisites_OR_Invalid() {
+        ArrayList<Course> courselist = new ArrayList<>(Arrays.asList(new Course(new ArrayList<>(),"","","","",false,0.0,new ArrayList<>(),"","")));
+        assertFalse(cc.checkPrerequisites(courselist));
+    }
+
+    @Nested
+    class TestPrereqsPreCoreq {
+        @BeforeEach
+        public void setUp() {
+            cc = new CourseChoice("PRE_OR_COREQ", new ArrayList<>(Arrays.asList(prereq.getCourseID(), classRequiringPrereq.getCourseID())));
+            cc.linkFromUUIDRelatedClasses(coursesTaken);
+        }
+
+        @Test
+        public void test_checkPrerequisites_PRE_OR_COREQ_Valid() { //Bug on AND
+            ArrayList<Course> courselist = new ArrayList<>(Arrays.asList(prereq, classRequiringPrereq));
+            assertTrue(cc.checkPrerequisites(courselist));
+        }
+
+        @Test
+        public void test_checkPrerequisites_PRE_OR_COREQ_Invalid() {
+            assertFalse(cc.checkPrerequisites(new ArrayList<>()));
+        }
+    }
+
     @AfterEach
     public void tearDown() {
         coursesTaken.clear();
