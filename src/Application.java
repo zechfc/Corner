@@ -68,6 +68,7 @@ public class Application {
         return newAdvisor;
     }
 
+    //this should prob be done in student
     public boolean studentProfile(String userID){
         Student student = studentList.getStudent(userID);
         if(student != null){
