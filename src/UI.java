@@ -87,8 +87,8 @@ public class UI {
         int transferCredits = 48;
         String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
         String note = "...";
-        JSONArray currentCourses = new JSONArray();
-        JSONArray pastCourses = new JSONArray();
+        ArrayList<currentCourses> currentCourses = new ArrayList<currentCourses>();
+        ArrayList<pastCourses> pastCourses = new ArrayList<pastCourses>();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
         transferCredits, null, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){
@@ -114,8 +114,8 @@ public class UI {
         String advisorID = "d5478261-e50a-4ff9-b8bf-8c03b0280bc2";
         String note = "...";
         int transferCredits = 23;
-        JSONArray currentCourses = new JSONArray();
-        JSONArray pastCourses = new JSONArray();
+        ArrayList<currentCourses> currentCourses = new ArrayList<currentCourses>();
+        ArrayList<pastCourses> pastCourses = new ArrayList<pastCourses>();
         User newUser = application.createStudentAccount(userID, firstName, middleName, lastName, age, email, password, major, classification, 
             transferCredits, null, advisorID, note, currentCourses, pastCourses);
         if(newUser == null){

@@ -14,7 +14,6 @@ public class Application {
         this.advisorList = AdvisorList.getInstance();
         this.classList = CourseList.getInstance();
         this.majorList = MajorList.getInstance();
-
     }
 
     public int checkUser(String input) {
@@ -45,9 +44,13 @@ public class Application {
         return false;
     }
 
+    public void logout(){
+        user = null;
+    }
+
     public User createStudentAccount(String userID, String firstName, String middleName, String lastName, String age,
             String email, String password, String major, String classification, int transferCredits, String applicationArea, String advisorID, 
-            String advisorNote, JSONArray currentCourses, JSONArray pastCourses) {
+            String advisorNote, ArrayList<currentCourses> currentCourses, ArrayList<pastCourses> pastCourses) {
         // Email (username) already used
         if (studentList.emailTaken(email) || advisorList.emailTaken(email)){
             return null;
@@ -284,8 +287,11 @@ public class Application {
         return null;
     }
 
-    //make functionality later isaac
-    public boolean isAdmin(boolean admin) {
-        return user != null && admin == true;
+    public boolean isAdmin(String advisorID) {
+        Advisor advisor = advisorList.getAdvisor(advisorID);
+        if(advisor != null && advisor.getAdmin() == true){
+            return true;
+        }
+        return false;
     }
 }

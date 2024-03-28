@@ -157,13 +157,13 @@ class ApplicationTest {
 
     @Test
     void testIsAdminNoOneLoggedIn(){
-        assertFalse(app.isAdmin(true));
+        assertFalse(app.isAdmin(null));
     }
 
     @Test
     void testIsAdminAdvisorNotAdmin(){
         app.login(2, "safeemail3@email.sc.edu", "password3");
-        assertFalse(app.isAdmin(true));
+        assertFalse(app.isAdmin("abcf"));
         //this user is not an admin, should return false, but boolean provided is true
 
         //looking back at the method, it literally just checks if true, 
@@ -173,11 +173,11 @@ class ApplicationTest {
     @Test
     void testIsAdminAdvisorAdmin(){
         app.login(2, "safeemail4@email.sc.edu", "password4");
-        assertTrue(app.isAdmin(true));
+        assertTrue(app.isAdmin("abcg"));
     }
 
     @Test
-    void testIsNotAdmin(){
-        assertFalse(app.isAdmin(false));
+    void testStudentIsNotAdmin(){
+        assertFalse(app.isAdmin("abce"));
     }
 }
