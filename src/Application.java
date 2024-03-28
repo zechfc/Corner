@@ -49,7 +49,7 @@ public class Application {
             String email, String password, String major, String classification, int transferCredits, String applicationArea, String advisorID, 
             String advisorNote, JSONArray currentCourses, JSONArray pastCourses) {
         // Email (username) already used
-        if (studentList.emailTaken(email)){
+        if (studentList.emailTaken(email) || advisorList.emailTaken(email)){
             return null;
         }
         Student newStudent = new Student(userID, email, firstName, middleName, lastName, age, password, major, classification, 
@@ -60,7 +60,7 @@ public class Application {
 
     public User createAdvisorAccount(String userID, String firstName, String middleName, String lastName, String age, String email, String password,
         ArrayList<String> studentsSupervising, boolean admin){
-            if (advisorList.emailTaken(email)){
+            if (advisorList.emailTaken(email) || studentList.emailTaken(email)){
                 return null;
             }
         Advisor newAdvisor = new Advisor(userID, studentsSupervising, firstName, middleName, lastName, age, email, admin, password);
@@ -284,6 +284,7 @@ public class Application {
         return null;
     }
 
+    //make functionality later isaac
     public boolean isAdmin(boolean admin) {
         return user != null && admin == true;
     }
