@@ -17,6 +17,7 @@ public class CourseChoiceTest {
     private ArrayList<Course> coursesTaken;
     private Course prereq;
     private Course classRequiringPrereq;
+    
 
     @BeforeEach
     public void setUp() {
@@ -39,6 +40,38 @@ public class CourseChoiceTest {
         cc.linkFromUUIDRelatedClasses(coursesTaken);
     }
 
+    @Nested
+    class linkFromUUIDRelatedClasses {
+        @BeforeEach
+        public void setUp() {
+            cc = new CourseChoice("PRE_OR_COREQ", new ArrayList<>(Arrays.asList(prereq.getCourseID(), classRequiringPrereq.getCourseID())));
+            // cc.linkFromUUIDRelatedClasses(coursesTaken);
+        }
+
+        @Test
+        public void test_linkFromUUIDRelatedClasses_Valid() { //Bug on AND
+            cc.linkFromUUIDRelatedClasses(coursesTaken);
+            assertEquals(coursesTaken, cc.getCourses());        
+        }
+
+        @Test
+        public void test_linkFromUUIDRelatedClasses_Invalid() {
+            cc.linkFromUUIDRelatedClasses(new ArrayList<Course>());
+            assertFalse(coursesTaken.equals(cc.getCourses()));
+        }
+
+        @Test
+        public void test_linkFromUUIDRelatedClasses__Null_Invalid() {    
+            
+
+            assertThrows(NullPointerException.class,
+            ()->{
+                cc.linkFromUUIDRelatedClasses(null);
+            });
+
+        }
+    }
+
     //checkPrerequisites
     @Test
     public void test_checkPrerequisites_OR_Valid() {
@@ -57,6 +90,7 @@ public class CourseChoiceTest {
         @BeforeEach
         public void setUp() {
             cc = new CourseChoice("AND", new ArrayList<>(Arrays.asList(prereq.getCourseID(), classRequiringPrereq.getCourseID())));
+            cc.linkFromUUIDRelatedClasses(coursesTaken);
         }
 
         @Test
@@ -67,6 +101,26 @@ public class CourseChoiceTest {
 
         @Test
         public void test_checkPrerequisites_AND_Invalid() {
+            assertFalse(cc.checkPrerequisites(new ArrayList<>()));
+        }
+    }
+
+    @Nested
+    class TestPrereqsPreCoreq {
+        @BeforeEach
+        public void setUp() {
+            cc = new CourseChoice("PRE_OR_COREQ", new ArrayList<>(Arrays.asList(prereq.getCourseID(), classRequiringPrereq.getCourseID())));
+            cc.linkFromUUIDRelatedClasses(coursesTaken);
+        }
+
+        @Test
+        public void test_checkPrerequisites_PRE_OR_COREQ_Valid() { //Bug on AND
+            ArrayList<Course> courselist = new ArrayList<>(Arrays.asList(prereq, classRequiringPrereq));
+            assertTrue(cc.checkPrerequisites(courselist));
+        }
+
+        @Test
+        public void test_checkPrerequisites_PRE_OR_COREQ_Invalid() {
             assertFalse(cc.checkPrerequisites(new ArrayList<>()));
         }
     }

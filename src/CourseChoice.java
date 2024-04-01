@@ -67,4 +67,7 @@ public class CourseChoice {
          }
          return s;
      }
+    public ArrayList<Course> getCourses(){
+        return courses;
+    }
 }
