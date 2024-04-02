@@ -77,8 +77,8 @@
     {"courseID":"", "grade": "B+", "semester": "summer","year":2024}],
 
     "coursesPresent": 
-    [{"courseID":"", "semester": "fall", "year":2024},
-    {"courseID":"", "semester": "fall", "year":2024},
+    [{"courseID":"", "grade": "TBD","semester": "fall", "year":2024},
+    {"courseID":"", "grade": "TBD","semester": "fall", "year":2024},
     {"courseID":"", "grade": "TBD", "semester": "fall", "year":2024},
     {"courseID":"", "grade": "TBD", "semester": "fall", "year":2024},
     {"courseID":"", "grade": "TBD", "semester": "fall", "year":2024}]
@@ -128,6 +128,7 @@
     {"courseID":"2e2ebf3f-c4d3-4dae-956b-d8afa7fca627", "grade": "C", "semester": "fall", "year":2022},
     {"courseID":"3cca9c4e-a195-4759-a761-cfe09adb20b8", "grade": "A", "semester": "fall", "year":2022},
     {"courseID":"478e1056-4ed2-4459-b0e7-56d78eca5d73", "grade": "B-", "semester": "fall","year":2022},
+    
     {"courseID":"980e1056-4ed2-4459-b0e7-56d78eca5d73", "grade": "A", "semester": "spring", "year":2023},
     {"courseID":"3d7aa3f8-bfb0-4f9e-af57-49818eacf9a6", "grade": "B", "semester": "spring", "year":2023},
     {"courseID":"a379a182-57c9-4b28-950d-35903009bce3", "grade": "B", "semester": "spring", "year":2023},
@@ -150,11 +151,11 @@
 
 
     "coursesPresent":
-    [{"courseID":"684f6d78-9f42-4e22-b447-7b15782007b3", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"d71f3a41-5b83-40b6-94a7-609b01ca2caa", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"6c8202fd-b31b-4647-b551-b7f4dbf007a0", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"96cd3d5d-590a-4567-9cc3-787e03cc5140", "grade": "TBD", "semester": "spring", "year":2024},
-    {"courseID":"7100ca89-33cf-40da-acbe-84af49e92c3c", "grade": "TBD", "semester": "spring","year":2024}]
+    [{"courseID":"684f6d78-9f42-4e22-b447-7b15782007b3", "grade": "TBD", "semester": "fall", "year":2024},
+    {"courseID":"d71f3a41-5b83-40b6-94a7-609b01ca2caa", "grade": "TBD", "semester": "fall", "year":2024},
+    {"courseID":"6c8202fd-b31b-4647-b551-b7f4dbf007a0", "grade": "TBD", "semester": "fall", "year":2024},
+    {"courseID":"96cd3d5d-590a-4567-9cc3-787e03cc5140", "grade": "TBD", "semester": "fall", "year":2024},
+    {"courseID":"7100ca89-33cf-40da-acbe-84af49e92c3c", "grade": "TBD", "semester": "fall","year":2024}]
 },{
     "userid":"0a119e07-a0aa-435e-9b9d-21e5b91b1c39",
     "firstName":"Tawnie",
@@ -174,5 +175,9 @@
     ],
 
     "coursesPresent":
-    [{}]
+    [{"courseID":"684f6d78-9f42-4e22-b447-7b15782007b3", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"d71f3a41-5b83-40b6-94a7-609b01ca2caa", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"6c8202fd-b31b-4647-b551-b7f4dbf007a0", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"96cd3d5d-590a-4567-9cc3-787e03cc5140", "grade": "TBD", "semester": "spring", "year":2024},
+    {"courseID":"7100ca89-33cf-40da-acbe-84af49e92c3c", "grade": "TBD", "semester": "spring","year":2024}]
 }]
